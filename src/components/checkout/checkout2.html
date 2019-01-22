@@ -1,0 +1,52 @@
+<ion-header class="checkout" scroll="false" scrollbar-y="false" overflow-scroll="false">
+	<ion-toolbar color="primary" no-padding no-margin>
+	<ion-title col-12><p>My Cart</p></ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content no-margin no-padding>
+<ion-grid padding-bottom >
+	<ion-row>
+		<ion-col>
+   			<p class="cart-message">{{cart.cartMessage}}</p>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+			<ion-col col-12 *ngFor="let selected of cart.selectedRepairs;let i = index">
+				<ion-row>
+				<ion-col col-9>
+					<p no-margin>{{cart.selectedRepairs[i]}}</p>
+				</ion-col>
+				<ion-col col-2>
+					<p no-margin>500</p>
+				</ion-col>
+				<ion-col col-1>
+					<button class="close">
+						<ion-icon name="close" (click)=(cart.removeRepair(i))></ion-icon>
+					</button>
+				</ion-col>
+				</ion-row>
+			</ion-col>
+
+	</ion-row>
+	<ion-row>
+		<ion-col>
+		<p offset-6 col-6>Total</p>
+		</ion-col>
+		<ion-col>
+			<p col-5>{{cart.Total}}</p>
+		</ion-col>
+	</ion-row>
+	<!-- <ion-row>
+		<ion-col col-12>
+      		<button  col-12 ion-button full><p style="font-size:0.8em">Need more than 1 repair? Click Here</p></button>
+      	</ion-col>
+	</ion-row> -->
+	<ion-row>
+		<ion-col col-12>
+      		<button  col-12 ion-button full (click)="checkOut()">Go to checkout</button>
+      	</ion-col>
+	</ion-row>
+
+</ion-grid>
+</ion-content>

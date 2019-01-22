@@ -1,0 +1,22 @@
+<ion-content padding>
+
+<form [formGroup]="login_form" >
+	  <ion-item>
+	    <ion-label floating>Make</ion-label>
+	    <ion-input type="text" formControlName="make" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label floating>Model</ion-label>
+	    <ion-input type="text" formControlName="model" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label floating>Color</ion-label>
+	    <ion-input type="text" formControlName="color" value=""></ion-input>
+	  </ion-item>
+	   <ion-item>
+	    <ion-label floating>Network</ion-label>
+	    <ion-input type="text" formControlName="network" value=""></ion-input>
+	  </ion-item>
+	  <button ion-button full  (click)="gotoCheckout(login_form.value)	"  [disabled]="!login_form.valid" >Okay</button>
+ </form>
+</ion-content>

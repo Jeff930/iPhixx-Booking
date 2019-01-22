@@ -1,0 +1,103 @@
+<ion-header class="hidden-sm-down">
+  <ion-navbar>
+    <ion-grid>
+      <ion-row start>
+        <ion-col col-md-3 col-lg-3 col-xl-2>
+           <img src="assets/imgs/logo.png"> 
+        </ion-col>
+        <ion-col offset-md-2 col-md-3 offset-lg-4 col-lg-2 offset-xl-7 col-xl-1>
+            <div float-right>
+              <button outline margin-left ion-button round color="light" >
+                 Become An iPhixx Partner
+              </button >
+            </div>
+        </ion-col >
+        <ion-col float-right offset-md-1 col-md-3 offset-lg-1 col-lg-2 col-xl-1>
+          <div  float-right>
+              <button round ion-button color="primary" (click)="register()" >
+                  Submit An Application
+              </button>
+            </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+<ion-header class="hidden-md-up">
+  <ion-navbar>
+    <ion-grid>
+      <ion-row start>
+        <ion-col col-6>
+           <img src="assets/imgs/logo.png"> 
+        </ion-col>
+        <ion-col col-6>
+          <div float-right>
+              <button round ion-button color="primary" (click)="register()" >
+                  Become An iPhixx Partner
+              </button>
+            </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding  class="login-cover"  >
+  
+
+
+<form  [formGroup]="login_form" >
+   
+<ion-grid class="login-form" >
+  
+  <ion-row >
+ 
+    <ion-col col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center >
+        <h3>Connect Your Shop to iPhixx</h3>
+     <ion-item class="form-input">
+            <ion-label color="primary"> <ion-icon name="ios-person-outline" color="light"></ion-icon> </ion-label>
+            <ion-input type="text" placeholder="Email Address" formControlName="username" class="form-controll" required></ion-input>
+      </ion-item>
+
+      <ion-item class="form-input" class="form-input">
+         <ion-label color="primary"> <ion-icon color="light" name="ios-lock-outline"></ion-icon> </ion-label>
+        <ion-input placeholder="Password" type="password" formControlName="password" class="form-controll" required></ion-input>
+      </ion-item>
+      <p class="p-grey" margin-bottom text-center (click)="recover()">Forgot your password?</p>
+      <button col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 class="login-button" round (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">LOGIN</button>
+       <button col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 class="login-button" round (click)="register()"  ion-button full class="login-button hidden-xs-up">Be An iPhixx Partner</button>
+      
+
+    </ion-col>
+  </ion-row>
+    
+    </ion-grid>
+
+   <!--  <ion-item>
+       <ion-label color="primary">Username</ion-label>
+      <ion-input type="text" formControlName="username" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <ion-item margin-top>
+      <ion-label color="primary">Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <p class="error-message" >{{error_message}}</p>
+    
+    <button (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Login</button>
+ -->
+ </form>
+
+
+
+  
+</ion-content>
+
+
+<!-- <ion-footer>
+  <p class="p-grey" text-center padding margin> Don't have an account? <a color="primary"> Signup </a> </p>
+</ion-footer> -->

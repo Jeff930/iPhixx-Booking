@@ -1,0 +1,38 @@
+<ion-row no-padding text-center  class="hidden-md-down"> 
+		<ion-col [ngClass]="booking.device"  col-md-12 col-lg-2 col-xl-2 no-padding no-margin (click)="viewDevice()">
+			
+   			<p class="text">Device</p>
+   			
+		</ion-col>
+		<ion-col [ngClass]="booking.brand"  col-md-2 col-lg-2 col-xl-2 no-padding no-margin (click)="viewBrand()">
+			
+   			<p class="text">Brand</p>
+   		
+		</ion-col>
+		<ion-col [ngClass]="booking.model"  col-md-2 col-lg-2 col-xl-2 no-padding no-margin (click)="viewModel()">
+			
+   			<p class="text">Model</p>
+   			
+		</ion-col>
+		<ion-col [ngClass]="booking.color"  col-md-2 col-lg-2 col-xl-2 no-padding no-margin (click)="viewColor()">
+			
+   			<p class="text">Color</p>
+   			
+		</ion-col>
+		<ion-col [ngClass]="booking.carrier" col-md-2 col-lg-2 col-xl-2 no-padding no-margin (click)="viewNetwork()">
+			
+   			<p class="text">Carrier</p>
+   			
+		</ion-col>
+		<ion-col [ngClass]="booking.repair" col-md-2 col-lg-2 col-xl-2 no-padding no-margin (click)="viewRepair()">
+			
+   			<p class="text">Repair</p>
+   			
+		</ion-col>
+</ion-row>
+<ion-row no-padding text-center  class="hidden-lg-up"> 
+		<ion-col  col-12 no-padding no-margin class="current">
+			<ion-icon name="back"></ion-icon>
+   			<p class="text"><b>{{booking.currentPage}}</b></p>
+		</ion-col>
+</ion-row>

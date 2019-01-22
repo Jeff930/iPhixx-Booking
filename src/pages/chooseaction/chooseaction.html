@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ChooseactionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header></header>
+
+<ion-content class="lightest" >
+   <div >
+	<ion-grid col-10 margin padding-bottom center class="page-content">
+    <div text-center>
+      <p class="question">Please Choose The Service Required</p>
+      <p class="tip">Pick one option below</p>
+    </div>
+		<ion-row>
+			<ion-col  text-center padding  align-self-center col-xs-12 col-sm-12 col-md-6 offset-lg-2 col-lg-4 offset-xl-2 col-xl-4>
+				<button  class="button" ion-button full   (click) ="selectAction('book')" >  
+          <!-- <ion-icon name="ios-phone-portrait-outline"></ion-icon>    -->
+          <p class="text-button"> Book A Repair </p>
+           <img class="image-icon" src="assets/imgs/book.png">
+
+        </button>
+			</ion-col>
+			<ion-col text-center padding align-self-center col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
+        <button  class="button" ion-button full   (click) ="selectAction('custcoll')" > 
+
+         <!-- <ion-icon name="ios-phone-portrait-outline"></ion-icon>  -->
+          <p class="text-button"> Customer Collection </p>    
+           <img class="image-icon" src="assets/imgs/collect.png">
+        </button>
+				
+			</ion-col>
+		</ion-row>
+  
+	</ion-grid>
+  </div>
+</ion-content>

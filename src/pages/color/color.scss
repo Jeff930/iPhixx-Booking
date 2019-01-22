@@ -1,0 +1,41 @@
+page-color {
+	.device{
+		font-size: 1em;
+	}
+
+
+	.color {
+		background-color:white;
+		border: 2px solid gray;
+		height:4.5em;
+		border-radius:5px;
+
+		div{
+			height: 35px;
+		    width: 35px;
+		    position: relative;
+		    border-radius: 50%;
+		    right:1em;
+		}
+
+		.Black{
+			background-color: black;
+		}
+		.White{
+			background-color: white;
+			border: 2px solid gray;
+		}
+		.RoseGold{
+			background-color: #b76e79;
+		}
+		.Silver{
+			background-color: #C0C0C0;
+		}
+
+		.text-button{
+			color:gray;
+		}
+
+	}
+
+}

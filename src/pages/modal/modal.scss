@@ -1,0 +1,29 @@
+page-modal {
+height:10px;
+width:10px;
+	ion-input {
+			border-bottom: 2px solid lightblue;
+  			}
+
+  			.modal-question{
+	font-size:2em;
+	margin-top:2vw;
+	font-weight:bolder;
+}
+
+ion-content .scroll-content {
+    overflow : hidden;
+ }
+
+.modal-tip{
+	font-size:1em;
+	margin-top:-1vw;
+	color:gray;
+	font-weight:lighter;}
+}
+
+.button{
+  		
+  		border-radius:20px;
+  		
+  	}

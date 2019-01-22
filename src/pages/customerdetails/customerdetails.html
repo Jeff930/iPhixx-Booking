@@ -1,0 +1,87 @@
+<!--
+  Generated template for the CustomerdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header></header>
+
+
+<ion-content no-padding padding-bottom class="lightest" no-margin>
+   
+   <ion-grid col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 no-padding margin-top padding-bottom center class="details-content">
+     <!--  <ion-row>
+        <ion-col class="logo">
+          <img src="assets/imgs/logo.jpg">
+        
+        </ion-col>
+      </ion-row> -->
+      <ion-row margin-horizontal class="box-shadow">
+        <ion-col>
+ <div text-center>
+            <p class="question">Please Enter the Details Below.</p>
+           
+          </div>
+          
+          
+          <!-- <ion-item class="form-input">
+             <ion-label color="primary"> <ion-icon name="ios-person-outline"></ion-icon> </ion-label>
+            <ion-input type="text" placeholder="Email Address" formControlName="username" class="form-controll" required></ion-input>
+          </ion-item> -->
+          <div [formGroup]="customerDetails">
+          <ion-item no-padding >
+            <ion-label color="dark" stacked>Customer Name </ion-label>
+            <ion-input type="text" formControlName="fullname" placeholder="First Name, Last Name"></ion-input>
+          </ion-item>
+          <ion-item no-padding >
+            <ion-label color="dark" stacked>Birthdate (required if repair ticket is lost)</ion-label>
+            <ion-datetime formControlName="birthdate" displayFormat="MMM DD, YYYY" placeholder="MMM DD, YYYY"></ion-datetime>
+          </ion-item>
+            <ion-item no-padding>
+            <ion-label color="dark" stacked>E-mail</ion-label>
+            <ion-input type="email" formControlName="email" placeholder="user@mail.com"></ion-input>
+          </ion-item>
+          <ion-item no-padding >
+            <ion-label color="dark" stacked>Phone Number</ion-label>
+            <ion-input type="number" formControlName="phone" placeholder="123456789"></ion-input>
+          </ion-item>
+          <ion-item no-padding >
+            <ion-label color="dark" stacked>Alternative Phone Number</ion-label>
+            <ion-input type="number" formControlName="phone2" placeholder="123456789"></ion-input>
+          </ion-item>
+          <ion-item no-padding>
+            <ion-label color="dark" stacked>Pincode</ion-label>
+            <ion-input type="password" formControlName="pin" placeholder="PIN"></ion-input>
+          </ion-item>
+         </div>
+          <ion-row class="login-row">
+            <ion-col text-center>
+              <button round [disabled]="!customerDetails.valid" (click)="login(customerDetails.value)" ion-button full class="login-button" 
+            type="submit">Book</button>
+  <!-- [disabled]="!login_form.valid" --> 
+            </ion-col>
+          </ion-row>
+         
+        </ion-col>
+      </ion-row>
+
+    
+    </ion-grid>
+
+   <!--  <ion-item>
+       <ion-label color="primary">Username</ion-label>
+      <ion-input type="text" formControlName="username" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <ion-item margin-top>
+      <ion-label color="primary">Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <p class="error-message" >{{error_message}}</p>
+    
+    <button (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Login</button>
+ -->
+  
+</ion-content>
+

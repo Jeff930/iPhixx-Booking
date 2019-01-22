@@ -1,0 +1,64 @@
+<ion-header no-border class="checkout" >
+	<ion-toolbar color="gray" no-padding no-margin class="toolbar">
+	<ion-title col-12 no-margin no-padding><p>My Cart</p></ion-title>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-grid padding-bottom class="checkout-content">
+	<ion-row>
+		<ion-col>
+   			<p class="cart-message">{{cart.cartMessage}}</p>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+			<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 *ngFor="let selected of cart.selectedRepairs;let i = index" class="card">
+				<ion-row>
+				<ion-col col-7>
+					<p no-margin>{{cart.selectedRepairs[i]}}</p>
+				</ion-col>
+				<ion-col col-4>
+					<p no-margin float-right>€{{cart.costs[i]}}</p>
+				</ion-col>
+				<ion-col col-1>
+					<button class="close">
+						<ion-icon name="close" (click)=(cart.removeIndex(selected,i))></ion-icon>
+					</button>
+				</ion-col>
+				</ion-row>
+			</ion-col>
+
+	</ion-row>
+	<ion-row>
+		<ion-col col-12>
+				<ion-row>
+				<ion-col text-center col-5>
+					<p text-center class="total">Total</p>
+				</ion-col>
+				<ion-col col-7 class="card">
+					<p float-right class="total">€{{cart.Total}}.00</p>
+				</ion-col>
+				</ion-row>
+			</ion-col>
+	</ion-row>
+	<!-- <ion-row>
+		<ion-col col-12>
+      		<button  col-12 ion-button full><p style="font-size:0.8em">Need more than 1 repair? Click Here</p></button>
+      	</ion-col>
+	</ion-row> -->
+	<ion-row *ngIf="cart.goCheckout == 1">
+			<ion-col col-12>
+				  <button  col-12 ion-button full (click)="goCheckout()">Go to checkout</button>
+			  </ion-col>
+	</ion-row>
+	<ion-row *ngIf="cart.completeCheckout == 1">
+			<ion-col col-12>
+				  <button  col-12 ion-button full (click)="completeCheckout()">Complete checkout</button>
+			  </ion-col>
+	</ion-row>
+
+
+</ion-grid>
+
+
+		

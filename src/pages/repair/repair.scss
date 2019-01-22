@@ -1,0 +1,32 @@
+page-repair {
+	.device{
+		font-size: 1em;
+	}
+	.custom-button{
+		text-transform: none;
+	}
+
+	.repair{
+		padding : 21px;
+		img{
+			height : 8em;
+		}
+	}
+
+	
+	.dark{
+		background-color:blue;
+		position:absolute;
+		top:-2vw;
+		right:8.3vw;
+	}
+
+	.checkout{
+		background-color:white;
+	}
+
+	.transparent{
+		color: transparent;
+	}
+
+}

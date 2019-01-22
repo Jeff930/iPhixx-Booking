@@ -1,0 +1,23 @@
+page-choosemodel {
+	.device{
+		font-size: 1em;
+	}
+
+	.brands-col{
+		background-color: #fff;
+    	border-radius: 10px;
+
+    	img{
+    		height:10em;
+    	}
+	}
+
+	.image-container{
+		border-top: solid 2px none;
+	}
+
+	.image-placeholder{
+		background-color: white;
+		height: 18em;
+	}
+}

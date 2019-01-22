@@ -1,0 +1,28 @@
+page-chooseaction {
+	.button-full-ios{
+		border-radius: 10px;
+		height: 5.5em;
+	}
+
+	ion-icon[name="ios-phone-portrait-outline"]{
+		font-size: 2.2em;
+		position: absolute;
+    	top: 4em;
+	}
+
+	p.text-button{
+    	padding-top: 5em;
+    }
+
+    .image-icon{
+    	height: 4em;
+	    position: absolute;
+	    top: 4em;
+
+    }
+
+    .button{
+    	height:15em;
+    }
+
+}

@@ -1,0 +1,38 @@
+<header></header>
+
+<ion-content class="lightest">
+
+
+  <!-- <h4 text-center margin class="device">My Device: {{device}}</h4> -->
+  <ion-grid  col-10 margin-horizontal no-padding margin-top padding-bottom center class="page-content">
+    <ion-row>
+      <ion-col id="main" col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-9>
+ <navigation></navigation>
+            <div text-center>
+              <p class="question">Other Phone Repair</p>
+              <p class="tip">What model do you have? Enter the details</p>
+            </div>
+           <ion-row>
+      <ion-col col-xs-6 offset-sm-3 col-sm-6 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4>
+       <ion-input placeholder="Device Brand Name" [(ngModel)]="brand"></ion-input>
+      </ion-col>
+     </ion-row>
+     <ion-row>
+     <ion-col col-xs-6 offset-sm-3 col-sm-6 col-md-6 offset-lg-4 col-lg-4 col-xl-4>
+       <ion-input placeholder="Device Model" [(ngModel)]="model" ></ion-input>
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col col-xs-6 offset-sm-3 col-sm-6 offset-md-3 col-md-6 offset-lg-3 col-lg-6  offset-lg-3 col-xl-6>
+          <button  col-xs-6 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4 class="button" ion-button full (click) ="selectModel()">Continue </button>
+      </ion-col>
+  </ion-row>
+      </ion-col>
+      <ion-col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3>
+        <checkout></checkout>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+        

@@ -1,0 +1,69 @@
+
+<!--
+  Generated template for the ChoosemodelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header></header>
+
+<ion-content class="lightest">
+<!-- 
+	<h4 text-center margin class="device">My Device: {{device}}</h4> -->
+
+	<ion-grid no-padding col-xs-12 col-sm-12 col-md-12 col-lg-12 offset-xl-1 col-xl-10 padding-bottom margin-top center class="page-content">
+    <ion-row>
+       <ion-col id="main" col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-9>
+          <navigation></navigation>
+          <div text-center>
+            <p class="question">{{brand}} Repair</p>
+            <p class="tip">What model do you have? Pick one option below</p>
+          </div>
+          <ion-row>
+            <ion-col text-center  *ngFor = "let model of repair.models" col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3>
+              <div (click) ="selectModel(model.model)" class="brands-col" padding>
+              <img src="{{'assets/imgs/'+brand+'/'+model.model.replace(' ','').replace( brand , '').toLowerCase()+'.jpg'}}">
+              <p>{{model.model}}</p>
+              <p>{{model.modelNum}}</p>
+              <!-- <button  ion-button full round (click) ="selectBrand(brand.brand)" > {{brand.brand}} </button> -->
+              </div>
+            </ion-col>
+            <!-- <ion-col text-center   col-6>
+              <button  ion-button full round (click)="presentPopover($event)">Other</button>
+            </ion-col> -->
+          </ion-row>
+      </ion-col>
+      <ion-col col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-3>
+      	<ion-row>
+      		<ion-col>
+        	<checkout></checkout>
+        	</ion-col>
+        </ion-row>
+        <ion-row>
+        	<ion-col>
+        	<div class="image-container">
+        		<p>How to view your model number:</p>
+        		<div class="image-placeholder">
+            		<img *ngIf="this.booking.userData.brand == 'iPhone'" src="assets/imgs/iosmodel.png">
+            		<img *ngIf="this.booking.userData.brand == 'iPad'" src="assets/imgs/iosmodel.png">
+            		<img *ngIf="this.booking.userData.brand != 'iPhone'&&this.booking.userData.brand != 'iPad'" src="assets/imgs/model.png">
+				</div>
+        	</div>
+        </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+	</ion-grid>
+
+</ion-content>
+
+<!-- <ion-footer>
+	<ion-row>
+    
+    		<ion-col text-center padding col-12>
+				<button   ion-button full round >CONTINUE</button>
+			</ion-col>
+
+	</ion-row>
+</ion-footer>
+ -->

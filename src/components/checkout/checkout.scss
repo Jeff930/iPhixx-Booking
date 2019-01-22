@@ -1,0 +1,33 @@
+checkout {
+overflow-y: visible !important;
+
+.checkout-content{
+	margin-top:2.5em;
+}
+
+ .scroll-content {
+ overflow-y: visible !important;
+ margin:8vw 0vw 0vw 0vw !important;
+  height:800px !important;
+ 
+ padding:0vw !important;}
+ 
+.card{
+	background-color:#efefef;
+	margin:2px 0px 0px 0px;
+}
+
+ .close{
+ top-margin:5vw;
+ background-color:transparent;
+ }
+ .toolbar{
+ height:40px;
+ }
+
+ .total{
+ 	font-size:18px !important;
+ 	font-weight:bold;
+ }
+
+}

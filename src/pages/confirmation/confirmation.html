@@ -1,0 +1,78 @@
+<!--
+  Generated template for the ConfirmationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header></header>
+
+
+<ion-content no-padding padding-bottom class="lightest" no-margin>
+	<ion-grid col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 margin-top padding-bottom center class="confirmation-content">
+	<ion-row>
+      <ion-col id="main">
+          <div text-center>
+            <p class="question">Thank you for choosing iPhixx to book your device!</p>
+            <p class="tip">An email will be sent to your email and a sms to your phone with the tracking number of your device.</p>
+          </div>
+          <p margin-top margin-left>Your receipt will be automatically downloaded. If not, please click the button below</p>
+      </ion-col>
+  </ion-row>
+
+	<ion-row>
+		<ion-col col-xs-6 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4>
+			<button class="button" ion-button full (click)="prepareToPrint()">Reprint Receipt</button>
+		</ion-col>
+	</ion-row>
+
+	<h2 margin-top margin-horizontal>Customer Details</h2>
+	<ion-list margin-horizontal>
+	  <ion-item><p>Full Name : {{userData.user.fullname}}</p></ion-item>
+	  <ion-item><p>Email : {{userData.user.email}}</p></ion-item>
+	  <ion-item><p>Phone Number : {{userData.user.phone}}</p></ion-item>
+	  <ion-item *ngIf="userData.user.phone2" ><p>Alternative Phone Number : {{userData.user.phone2}}</p></ion-item>
+	  <ion-item><p>Pin : {{userData.user.pin}}</p></ion-item>
+	</ion-list>
+
+	<h2 margin-horizontal>Device Details</h2>
+	<ion-list margin-horizontal>
+	  <ion-item><p>Brand: {{userData.brand }}</p></ion-item>
+	  <ion-item><p>Model: {{userData.model}}</p></ion-item>
+	  <ion-item><p>Color: {{userData.color}}</p></ion-item>
+	  <ion-item><p>Carrier: {{userData.network}}</p></ion-item>
+	</ion-list>
+
+	<h2 margin-horizontal>Repair Details</h2>
+	<ion-row margin-horizontal>
+		<ion-col col-12 *ngFor="let selected of cart.selectedRepairs;let i = index">
+				<ion-row>
+				<ion-col col-9>
+					<p no-margin>{{cart.selectedRepairs[i]}}</p>
+				</ion-col>
+				<ion-col col-3>
+					<p float-right no-margin>€{{cart.costs[i]}}</p>
+				</ion-col>
+				</ion-row>
+		</ion-col>
+	</ion-row>
+
+	<ion-row margin-horizontal margin-top>
+		<ion-col>
+				<ion-row>
+				<ion-col col-9>
+					<p class="confirm-total" no-margin>Total Repair Cost</p>
+				</ion-col>
+				<ion-col col-3>
+					<p class="confirm-total" float-right no-margin>€{{cart.Total}}.00</p>
+				</ion-col>
+				</ion-row>
+		</ion-col>
+	</ion-row>
+
+	<ion-row margin-top>
+		<ion-col col-xs-6 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4>
+			<button class="button"  ion-button full (click)="gotoHome()">Return to Home</button>
+		</ion-col>
+	</ion-row>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,117 @@
+<ion-header no-border>
+
+  <ion-navbar color="dark">
+    <!-- <ion-title ><p>iPhixx</p></ion-title> -->
+    <ion-grid >
+      <ion-row start>
+        <ion-col>
+           <img src="assets/imgs/signup-logo.png"> 
+        </ion-col>
+        <ion-col>
+            <div float-right>
+              <button round ion-button color="primary" (click)="login()" >
+                  Log In
+              </button>
+            </div> 
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content no-padding  class="lightest">
+  
+
+
+<form  [formGroup]="login_form" >
+   
+    <ion-grid  >
+     <!--  <ion-row>
+        <ion-col class="logo">
+          <img src="assets/imgs/logo.jpg">
+        
+        </ion-col>
+      </ion-row> -->
+      <ion-row margin class="box-shadow">
+        <ion-col  padding>
+
+          <h1 text-center >Retrieve Password</h1>
+          <p text-center  >Enter the 4 digit code lorem impsum dolores</p>
+          
+          <!-- <ion-item class="form-input">
+             <ion-label color="primary"> <ion-icon name="ios-person-outline"></ion-icon> </ion-label>
+            <ion-input type="text" placeholder="Email Address" formControlName="username" class="form-controll" required></ion-input>
+          </ion-item> -->
+          <ion-item no-padding margin-top >
+            <ion-label color="dark" stacked>Email Address</ion-label>
+            <ion-input type="text" formControlName="email"  ></ion-input>
+          </ion-item>
+          <div margin-top>
+
+          <p class="verfication-text" ><strong>Verification Code</strong> <span float-right>Send Again</span></p>
+
+           <!--  <ion-label color="dark" stacked><span>Verfication Code</span><span float-right>Send Again</span></ion-label> -->
+              <input type="tel" formControlName="code1" maxlength=1   />
+              <input type="tel" formControlName="code2" maxlength=1  />
+              <input type="tel" formControlName="code3" maxlength=1   />
+              <input type="tel" formControlName="code4" maxlength=1  />
+              <input type="tel" formControlName="code5" maxlength=1  />
+
+
+
+          </div>
+         
+          <ion-item no-padding margin-top >
+            <ion-label color="dark" stacked>Password</ion-label>
+            <ion-input type="password" formControlName="password" ></ion-input>
+          </ion-item>
+       
+          
+         <ion-item no-padding margin-top >
+            <ion-label color="dark" stacked>Confirm Password</ion-label>
+            <ion-input type="password" formControlName="password2" ></ion-input>
+          </ion-item>
+      
+          
+      
+      
+       
+       
+          <ion-row margin-top class="login-row">
+            <ion-col text-center>
+              <button round  (click)="verify(login_form.value)" ion-button color="primary" [disabled]="!login_form.valid" type="submit">Continue</button>
+              <!-- <p text-center>terms and condition</p> -->
+
+            </ion-col>
+          </ion-row>
+         
+        </ion-col>
+      </ion-row>
+
+    
+    </ion-grid>
+
+   <!--  <ion-item>
+       <ion-label color="primary">Username</ion-label>
+      <ion-input type="text" formControlName="username" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <ion-item margin-top>
+      <ion-label color="primary">Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <p class="error-message" >{{error_message}}</p>
+    
+    <button (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Login</button>
+ -->
+ </form>
+
+
+
+  
+</ion-content>
+
+

@@ -1,0 +1,36 @@
+<header></header>
+
+<ion-content class="lightest">
+
+
+  <!-- <h4 text-center margin class="device">My Device: {{device}}</h4> -->
+  <ion-grid  col-10 margin-horizontal no-padding margin-top padding-bottom center class="page-content">
+    <ion-row>
+      <ion-col id="main">
+            <div text-center>
+              <p class="question">Please call 0873838530. Please inform us of your repair to obtain a quote</p>
+              <p class="tip">Please enter the details below</p>
+            </div>
+            <div [formGroup]="otherRepair">
+           <ion-row>
+      <ion-col col-xs-12 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4>
+       <ion-input placeholder="Repair Option" [(ngModel)]="repairOption" formControlName="repairOption"></ion-input>
+      </ion-col>
+     </ion-row>
+     	<ion-row>
+     <ion-col col-xs-12 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4>
+       <ion-input type="number" placeholder="Repair Cost" [(ngModel)]="repairCost" formControlName="repairCost"></ion-input>
+      </ion-col>
+     </ion-row>
+   </div>
+     <ion-row>
+      <ion-col col-xs-12 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-3 col-lg-6  offset-lg-3 col-xl-6>
+          <button  [disabled]="!otherRepair.valid" col-xs-6 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4 class="button" ion-button full (click) ="goToCheckout()">Continue </button>
+      </ion-col>
+  </ion-row>
+</ion-col>
+</ion-row>
+  </ion-grid>
+
+</ion-content>
+        

@@ -1,0 +1,64 @@
+page-recover {
+	
+	.recover-content{
+  background-color:white;
+  margin-top:5% !important;
+}
+
+
+
+  .toolbar {
+
+    .row[start]{
+      padding: 0 5vw;
+   
+    }
+
+     img{
+      height: 50px;
+    }
+
+  }
+
+  .row.box-shadow{
+    margin: 3vw 8vw;
+
+        .col[padding]{
+          padding: 5vw 8vw;
+          background-color: #fff;
+        }
+
+        [margin-top]{
+          margin-top : 16px;
+        }
+  }
+
+    input[type="tel"]{
+    font-size: 50px;
+    width: 50px;
+    padding-left: 10px;
+    margin: 10px;
+    border: none;
+    border-bottom: solid 1px #b4b4b4;
+  }
+
+   
+
+  .verfication-text{
+    span{
+      color : #b4b4b4;
+    }
+  }
+
+   .login-row{
+    margin: 80px 0;
+    button{
+      width: 75%;
+
+    }
+  }
+
+
+
+ 
+}

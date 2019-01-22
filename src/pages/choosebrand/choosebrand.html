@@ -1,0 +1,53 @@
+<!--
+  Generated template for the ChoosemodelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header></header>
+
+
+<ion-content class="lightest has-footer" overflow-scroll="true">
+<!-- 
+	<h4 text-center margin class="device">My Device: {{device}}</h4> -->
+
+	<ion-grid no-padding col-xs-12 col-sm-12 col-md-12 col-lg-12 offset-xl-1 col-xl-10 padding-bottom margin-top center class="page-content" scrollY="true">
+    <ion-row>
+      <ion-col id="main" col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-9>
+          <navigation col-10 no-padding center></navigation>
+          <div text-center>
+            <p class="question">Choose Your {{device}} Brand</p>
+            <p class="tip">What kind of phone do you have? Pick one option below</p>
+          </div>
+          <ion-row>
+            <ion-col text-center  *ngFor = "let brand of brands" col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3>
+              <div (click) ="selectBrand(brand.brand)" class="brands-col" padding>
+              <img src="{{'assets/imgs/'+device+'/'+brand.brand.toLowerCase()+'.jpg'}}">
+              <p>{{brand.brand}}</p>
+              <!-- <button  ion-button full round (click) ="selectBrand(brand.brand)" > {{brand.brand}} </button> -->
+              </div>
+            </ion-col>
+            <!-- <ion-col text-center   col-6>
+              <button  ion-button full round (click)="presentPopover($event)">Other</button>
+            </ion-col> -->
+          </ion-row>
+      </ion-col>
+      <ion-col col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-3>
+        <checkout class="checkout"></checkout>
+      </ion-col>
+
+    </ion-row>
+    
+	</ion-grid>
+
+</ion-content>
+<!-- 
+<ion-footer>
+	<ion-row>
+    
+    		<ion-col text-center padding col-12>
+				<button   ion-button full round >CONTINUE</button>
+			</ion-col>
+
+	</ion-row>
+</ion-footer> -->

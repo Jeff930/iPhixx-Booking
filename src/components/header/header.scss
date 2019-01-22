@@ -1,0 +1,37 @@
+header {
+	.back{
+		color:#488aff;
+	}
+
+  .back-button{
+    margin-left:0vw;
+  }
+
+	.tool{
+		margin-left:-1vw;
+	}
+
+	@media (max-width: 850px) {
+  .hidden-md-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 851px) {
+  .hidden-lg-up {
+    display: none !important;
+  }
+
+}
+
+ .center-logo{
+ height:3em;
+  margin: auto;
+  display: block;
+  }
+
+  .left{
+    margin-left:-2vw !important;
+  }
+
+}

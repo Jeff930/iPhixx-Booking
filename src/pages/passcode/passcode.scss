@@ -1,0 +1,56 @@
+page-passcode {
+  .passcode{
+      margin-top: 60px;
+  }  
+  .passcode-content{
+    margin: 10vh 0;
+      h1{
+        font-weight: 900;
+        font-size : 3.3rem;
+      }
+  }
+
+  ion-grid.grid.passcode{
+    -webkit-box-shadow: -1px 1px 5px 1px rgba(5,5,5,0.14);
+    -moz-box-shadow: -1px 1px 5px 1px rgba(5,5,5,0.14);
+    box-shadow: -1px 0px 5px 1px rgba(5,5,5,0.14);
+  }
+  .text-input-ios{
+    font-size: 50px;
+
+    letter-spacing: 59px;
+  }
+   p.p-grey{
+    color : #b4b4b4;
+  }
+
+  input[type="tel"]{
+    font-size: 5em;
+    width: 45px;
+    margin: 0.1em;
+    border: none;
+    border-bottom: solid 1px #b4b4b4;
+  }
+
+  .tool{
+    margin-left:-1vw;
+  }
+
+  @media (max-width: 850px) {
+  .hidden-md-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 851px) {
+  .hidden-lg-up {
+    display: none !important;
+  }
+}
+
+ .center-logo{
+ height:3em;
+  margin: auto;
+  display: block;
+  }
+}

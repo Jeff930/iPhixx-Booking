@@ -1,0 +1,46 @@
+<ion-menu id="myMenu" 	[content]="content" class="side-menu" side="right">
+
+  <ion-content padding class="grey-bg">
+  	<ion-grid>
+  		<ion-row class="profile-row">
+  			<ion-col text-left>
+  				<div class="profile">
+  			
+  				<img src="assets/imgs/person.jpg">
+
+  				<span class="name">Admin</span>
+  				<!-- <span class="info"> Minden, NV 89423</span> -->
+  				</div>
+  			</ion-col>
+  		</ion-row>
+  		<ion-row>
+  			<ion-col>
+ 
+			    <ion-list no-lines>
+			 	
+				<button  menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+			         <ion-icon name="{{p.title=='Book A Repair'? 'ios-settings' : 'ios-people-outline' }}" item-start></ion-icon> {{p.title}}
+			      </button>
+			     <button ion-item menuClose="right" (click)="logOut()">
+
+			     	<ion-icon name="ios-log-out-outline" item-start></ion-icon> 	Logout 
+
+			     </button>
+				</ion-list>
+  			</ion-col>
+  		</ion-row>
+  	</ion-grid>
+   
+  </ion-content>
+  <ion-footer padding>
+
+  	<button ion-button menuClose icon-only float-left>
+  		<ion-icon name="ios-arrow-round-forward"></ion-icon>
+	</button>
+
+  </ion-footer>
+
+</ion-menu>
+
+<!-- <ion-nav [root]="rootPage"></ion-nav> -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

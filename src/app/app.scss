@@ -1,0 +1,188 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-menu .scroll-content{
+    overflow: auto; // or "overflow: auto;"
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+.modal_content {
+    position: absolute;
+    top: calc(50% - (10%/2));
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 10%;
+    padding: 5px;
+    z-index: 100;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;
+    background: #e8e8e8;
+    background: -moz-linear-gradient(top, #fff 0%, #e8e8e8 100%);
+    background: -webkit-linear-gradient(top, #fff 0%, #e8e8e8 100%);
+    background: linear-gradient(to bottom, #fff 0%, #e8e8e8 100%);
+    border-radius: 0px;
+    box-shadow: 0 2px 3px rgba(51, 51, 51, .35);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+  }
+
+.hidden-xs-up {
+  display: none !important;
+}
+
+@media (max-width: 500px) {
+  .hidden{
+    display: none !important;
+  }
+}
+
+@media (min-width: 501px) {
+  .hidden {
+    display: block !important;
+  }
+}
+
+
+.lightest.content-ios{
+  background-color : #F5F7F9;
+}
+
+.page-content{
+  background-color:white;
+  margin-top:8em !important;
+}
+
+.back-button-icon-ios {
+color: #488aff;
+}
+span.back-button-text.back-button-text-ios {
+color:  #488aff;
+}
+
+
+.brands-col{
+background-color: #fff;
+  border-radius: 10px;
+
+  img{
+    height:75px;
+  }
+  p{
+  	color : #b4b4b4;
+  }
+}
+
+.back span.button-inner{
+	color : #488aff;
+}
+
+.profile-row{
+	margin-bottom : 50px;
+
+	.profile{
+		text-overflow: ellipsis;
+	    white-space: nowrap;
+	    overflow: visible;
+
+		img{
+			height : 50px;
+			width : 50px;
+			border-radius : 16%;
+		}
+
+		.name{
+			color : white;
+			position: relative;
+		    top: -31px;
+		    left: 15px;
+		    font-size: 18px;
+		}
+		.info{
+			color : white;
+			position: relative;
+		    left: -54px;
+		    top: -13px;
+		}
+	}
+}
+
+.side-menu{
+	
+	.grey-bg{
+		background-color : #393939;
+	}
+
+	button.item-ios:not([detail-none]) .item-inner{
+		background-image : none;
+	}
+
+	.item{
+		background-color : #393939;
+		color: #fff;
+		padding-left : 0;
+	}
+
+	.button-ios{
+		background-color: #393939;
+	}
+
+}
+
+
+.menu-bar{
+	background : none;
+	img{
+		height: 12px;
+	}
+	
+}
+
+.logo{
+	height:40px;
+}
+
+.question{
+	font-size:2em;
+	margin-top:5vw;
+	font-weight:bolder;
+}
+
+.tip{
+	font-size:1em;
+	margin-top:0vw;
+	color:gray;
+	font-weight:lighter;
+}
+
+.deviceName{
+	margin-right:2vw;
+	font-size:0.8em;
+	color:gray;
+	font-weight:lighter;
+}
+
+.rect-button{
+	height: 8em !important;
+	border-radius: 5px !important;
+}

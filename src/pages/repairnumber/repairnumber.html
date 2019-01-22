@@ -1,0 +1,19 @@
+<header></header>
+
+<ion-content padding  class="form-content">
+  <form class="form" [formGroup]="login_form" >
+    <ion-label class="title">Enter Repair Number</ion-label>
+
+    <ion-item>
+    
+      <ion-input type="tel" formControlName="repairnum" placeholder="Ticket number" class="form-controll" required></ion-input>
+    </ion-item>
+    <p class="error-message" >{{error_message}}</p>
+    <button  (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Ok</button>
+  </form>
+
+  <img *ngIf="signatureImage" [src]="signatureImage">
+
+
+  
+</ion-content>

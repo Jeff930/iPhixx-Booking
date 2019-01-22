@@ -1,0 +1,45 @@
+<ion-header color="lightest" no-border>
+
+  <ion-toolbar color="lightest" center no-margin>
+        <img margin-left src="assets/imgs/logo.jpg" class="logo">
+   
+  <!--    <ion-buttons  end>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
+      </button>
+    </ion-buttons> -->
+
+    <p class="deviceName hidden" float-right>Device Name:<strong>"Desk 2"-LTE Shop Kiosk</strong></p>
+     <ion-buttons end>
+      <button class="menu-bar" menuToggle >
+        <img margin-right src="assets/imgs/menu-bar.png">
+      </button>
+     <!--  <button ion-button icon-only menuToggle >
+        <ion-icon color="primary" class="toolbar-icon" name="ios-menu-outline" ></ion-icon>
+      </button> -->
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="lightest">
+  <navigation col-10 no-padding center></navigation>
+  <ion-grid col-10 padding-bottom margin-horizontal center class="page-content">
+    
+    <div text-center>
+      <p class="question">Book A Repair</p>
+      <p class="tip">Pick one option below</p>
+    </div>
+    <ion-row>
+       <ion-col text-center padding  align-self-center col-xs-12 col-sm-12 col-md-6 offset-lg-2 col-lg-4 offset-xl-2 col-xl-4>
+          <img (click)="selectdevice('Phone')" src="assets/imgs/phone.png">
+          <!-- <p>{{device.title}}</p> -->
+      </ion-col>
+      <ion-col text-center padding align-self-center col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
+          <img (click)="selectdevice('Tablet')" src="assets/imgs/tablet.png">
+          <!-- <p>{{device.title}}</p> -->
+      </ion-col>
+      <ion-col col-2></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
