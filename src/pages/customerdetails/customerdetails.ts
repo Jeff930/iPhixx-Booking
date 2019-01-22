@@ -8,8 +8,8 @@ import { ConfirmationPage } from '../../pages/confirmation/confirmation'
 import { NavigationProvider } from '../../providers/navigation/navigation';
 
 import { BookingProvider } from '../../providers/booking/booking';
-import { RepairProvider } from '../../providers/repair/repair';
-import { CartProvider } from '../../providers/cart/cart';
+
+import { ModalController } from 'ionic-angular';
 
 
 
@@ -41,8 +41,7 @@ export class CustomerdetailsPage {
     public booking: BookingProvider,
 		public alertCtrl: AlertController,
 		public navigation: NavigationProvider,
-		public repair: RepairProvider,
-		public cart: CartProvider,
+		public modalCtrl : ModalController
 
 
      ) {
@@ -65,61 +64,17 @@ export class CustomerdetailsPage {
 
   login(user){
   	console.log(user.username);
-  	console.log(user.password);
+	console.log(user.password);
+	  console.log(user.password);
   	this.booking.userData.user = user;
   	console.log(this.booking.userData);
-  	let loading = this.loadingCtrl.create({
-      // content: 'Please Wait...'
-    });
-
-    loading.present();
-
-	$.ajax({
-	  type: "POST",
-	  url: 'https://admin.iphixx.com/api/v1/bookings/',
-	  data: {
-	  			fullname: user.fullname, 
-					last_name: '',
-					birthdate : user.birthdate,
-	  				email : user.email,
-					phone : user.phone,
-					status :'New',
-					device : this.booking.userData.device,
-					brand : this.booking.userData.brand,
-					model : this.booking.userData.model,
-					color : this.booking.userData.color,
-					network : this.booking.userData.network,
-					repair : JSON.stringify(this.cart.selectedRepairs),
-					repairlength: this.cart.selectedRepairs.length,
-					prices : JSON.stringify(this.cart.costs),
-					total : this.cart.Total,
-	  			ticket_problem_type : this.booking.userData.device + ' Repair',
-	  			ticket_subject : this.booking.userData.repair,
-	  			ticket_description : this.booking.userData.device+' '+this.booking.userData.brand+' '+
-	  			this.booking.userData.model+' '+this.booking.userData.color+' '+this.booking.userData.network+' '+
-	  			this.booking.userData.phoneoffer+' '+this.booking.userData.upgradeoffer1+' '+
-	  			this.booking.userData.upgradeoffer2+', Pincode: '+user.pin
-
-	  		},
-	  success: (res) => {
-	  	loading.dismiss();
-	  	console.log(res);
-	  	if(res){
-	  	  this.navCtrl.setRoot(ConfirmationPage);
-	  	}
-	  },
-	  error:(err)=>{
-	    loading.dismiss();
-	    let alert = this.alertCtrl.create({
-		    title: 'Error',
-		    subTitle: 'Invalid Credentials'+JSON.stringify(err),
-		    buttons: ['Ok']
-		});
-  		alert.present();
-	  }
-	  
-	});
+  	this.presentPrompt();
 
  
-  	}
+	  }
+	  
+	  presentPrompt() {
+		var data = { source : 'pin' };
+		var modalPage = this.modalCtrl.create('ModalPage',data,{cssClass: 'modal-content' });modalPage.present(); 
+	 }
 }
