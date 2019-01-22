@@ -2,7 +2,7 @@
 // import * as $ from "jquery";
 
 import { Injectable } from '@angular/core';
-
+import * as $ from "jquery";
 import { Http } from '@angular/http';
 
 import { HomePage } from '../../pages/home/home';
@@ -12,8 +12,11 @@ import { ColorPage } from '../../pages/color/color';
 import { NetworkPage } from '../../pages/network/network';
 import { RepairPage } from '../../pages/repair/repair';
 // import { Observable } from 'rxjs/Observable';
+import { ConfirmationPage } from '../../pages/confirmation/confirmation'
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/forkJoin';
+
 /*
   Generated class for the BookingProvider provider.
 
@@ -33,7 +36,7 @@ export class BookingProvider {
   selected;
   currentPage="Select Device";
 
-  constructor(public http: Http) {
+  constructor(public http: Http,  ) {
     console.log('Hello BookingProvider Provider');
     this.userData = [
     { 
@@ -91,45 +94,7 @@ export class BookingProvider {
     }
   }
 
-  doLogin(user){
-
-  	
-
- //  	$.ajax({
-	//   type: "POST",
-	//   url: 'https://iphixx.repairshopr.com/api/v1/sign_in',
-	//   data: {email:'ryan.margolin81@gmail.com' , password: 'Iphixx2016!'},
-	//   success: function(res){console.log(res); this.result = res; console.log( this.result)},
-	//   // dataType: dataType
-	// });
-
- //  	$.post('https://iphixx.repairshopr.com/api/v1/sign_in',
- //  		{email:'ryan.margolin81@gmail.com' , password: 'Iphixx2016!'} , function(res){
-		
-	// 	result = res;
-
-	// })
-
- //  	;
-    // return this.http.post( 'https://iphixx.repairshopr.com/api/v1/sign_in' ,{ 
-    // 	email : 'ryan.margolin81@gmail.com',
-    // 	password : 'Iphixx2016!'
-
-    // })
-
-
-    // .map(res => res.json()  );
-
-    //     return this.http.get(
-    //      'https://iphixx.repairshopr.com/api/v1/payment_methods?api_key=e15f82f8-7ebb-41e8-8946-21b90dd47ada' )
-
-
-    // .map(res => res.json()  );
-
-    
-    
-
-  }
+  
 
   
 

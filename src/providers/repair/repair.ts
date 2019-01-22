@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { BookingProvider } from '../../providers/booking/booking';
-import { CartProvider } from '../../providers/cart/cart';
 
 import { repairs } from '../../models/repair'
 import { iphonemodels } from '../../models/iphonemodels';
