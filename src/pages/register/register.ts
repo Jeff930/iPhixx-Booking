@@ -37,14 +37,10 @@ export class RegisterPage {
 
 
     this.login_form = this.formBuilder.group({
-      owner: new FormControl('', Validators.compose([
-        Validators.required
-      ])),
-      name: new FormControl('', Validators.required),
+      fullname: new FormControl('', Validators.required),
       contact: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       street: new FormControl('', Validators.required),
-      street2: new FormControl('', Validators.required),
       city: new FormControl('', Validators.required),
       state: new FormControl('', Validators.required),
       zip: new FormControl('', Validators.required),
@@ -68,14 +64,11 @@ export class RegisterPage {
     console.log(data)
    
         let form = new FormData();
-        form.append("fullname", data.owner);
-        form.append("business_name", data.name);
+        form.append("fullname", data.fullname);
         form.append("email", data.email);
         form.append("phone", data.contact);
         form.append("address", data.street);
-        form.append("username", data.email);
         form.append("password", data.password);
-        form.append("address_2", data.street2);
         form.append("city", data.city);
         form.append("state", data.state);
         form.append("zip", data.zip);
@@ -96,9 +89,7 @@ export class RegisterPage {
 
 
 
-        xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/");
-
-
+        xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/add");
         xhr.send(form);
 
   }

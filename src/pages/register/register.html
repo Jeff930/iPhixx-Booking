@@ -45,16 +45,12 @@
             <ion-input type="text" placeholder="Email Address" formControlName="username" class="form-controll" required></ion-input>
           </ion-item> -->
           <ion-item no-padding >
-            <ion-label color="dark" stacked>Business Owner (First Name, Last Name)</ion-label>
-            <ion-input type="text" formControlName="owner"  ></ion-input>
-          </ion-item>
-          <ion-item no-padding >
-            <ion-label color="dark" stacked>Business Name</ion-label>
-            <ion-input type="text" formControlName="name" ></ion-input>
+            <ion-label color="dark" stacked>Business/Owner Name</ion-label>
+            <ion-input type="text" formControlName="fullname" ></ion-input>
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>Contact Number</ion-label>
-            <ion-input type="text" formControlName="contact"  ></ion-input>
+            <ion-input type="number" formControlName="contact"  ></ion-input>
           </ion-item>
           <ion-item no-padding>
             <ion-label color="dark" stacked>E-mail</ion-label>
@@ -69,11 +65,6 @@
           <ion-item no-padding >
             <ion-label color="dark" stacked>Street Address</ion-label>
             <ion-input type="text" formControlName="street"  ></ion-input>
-          </ion-item>
-          
-          <ion-item no-padding >
-            <ion-label color="dark" stacked>Street Address Line 2</ion-label>
-            <ion-input type="text" formControlName="street2" ></ion-input>
           </ion-item>
           
           <ion-row>
@@ -95,52 +86,10 @@
           	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6>
           		<ion-item no-padding>
 		            <ion-label color="dark" stacked>Postal/Zip Code</ion-label>
-		            <ion-input type="text" formControlName="zip"  ></ion-input>
+		            <ion-input type="number" formControlName="zip"  ></ion-input>
 		        </ion-item>
           	</ion-col>
-          </ion-row>
-          
-        
-
-          <h4>Type of Business</h4>
-          <ion-row class="checkbox">
-          	<ion-col col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-          		
-				     <ion-label>Lorem Impsum</ion-label>
-				     <ion-checkbox color="dark"></ion-checkbox>
-				
-
-          	</ion-col>
-          	<ion-col col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-          		
-				     <ion-label>Lorem Impsum</ion-label>
-				     <ion-checkbox color="dark"></ion-checkbox>
-
-          	</ion-col>
-          	<ion-col col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-				     <ion-label>Lorem Impsum</ion-label>
-				     <ion-checkbox color="dark"></ion-checkbox>
-
-          	</ion-col>
-          	  	<ion-col col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-				     <ion-label>Lorem Impsum</ion-label>
-				     <ion-checkbox color="dark"></ion-checkbox>
-
-          	</ion-col>
-          	<ion-col col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-				     <ion-label>Lorem Impsum</ion-label>
-				     <ion-checkbox color="dark"></ion-checkbox>
-
-          	</ion-col>
-          	<ion-col col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-				     <ion-label>Lorem Impsum</ion-label>
-				     <ion-checkbox color="dark"></ion-checkbox>
-
-          	</ion-col>
-
-          </ion-row>
-          
-       
+          </ion-row>       
           <ion-row class="login-row">
             <ion-col text-center>
               <button round  (click)="register(login_form.value)" ion-button color="primary" [disabled]="!login_form.valid" type="submit">REGISTER</button>
