@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { repairs } from '../../models/repair'
 import { RepairProvider } from '../../providers/repair/repair';
+import { BookingProvider } from '../../providers/booking/booking';
+import { NavigationProvider } from '../../providers/navigation/navigation';
 /*
   Generated class for the CartProvider provider.
 
@@ -20,7 +22,7 @@ export class CartProvider {
 
 
 
-  constructor(public repair: RepairProvider) {
+  constructor(public repair: RepairProvider,public booking:BookingProvider,public navigation:NavigationProvider) {
     console.log('Hello CartProvider Provider');
     this.selectedRepairs=[];
     this.selectedIndex=[];
@@ -74,8 +76,12 @@ export class CartProvider {
     if (this.completeCheckout==1)
       this.goCheckout=0;
     else
-      this.goCheckout=1;
-  }
+      if (this.navigation.activePageIndex==13||this.navigation.activePageIndex==14){
+        this.goCheckout=0;
+      }else{
+        this.goCheckout=1;
+      }
+    }
   }
 
   removeIndex(repair,selectedIndex){
@@ -87,6 +93,14 @@ export class CartProvider {
           index = i;
           this.Total=this.Total - parseInt(this.costs[selectedIndex]);
         }
+    }
+    if (repair == 'Temporary Phone') {
+      this.Total=this.Total - 50;
+      console.log("true")
+    }
+    if (repair == 'Nano Technology Tempered Glass') {
+      this.Total=this.Total - 25;
+      console.log("true2")
     }
 
     var selected = document.getElementsByClassName("repair");
