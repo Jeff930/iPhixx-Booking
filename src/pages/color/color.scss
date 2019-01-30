@@ -10,12 +10,15 @@ page-color {
 		height:4.5em;
 		border-radius:5px;
 
+		.button-inner{
+     	justify-content:left;
+		}
+
 		div{
 			height: 35px;
 		    width: 35px;
 		    position: relative;
 		    border-radius: 50%;
-		    right:1em;
 		}
 
 		.Black{
@@ -34,6 +37,7 @@ page-color {
 
 		.text-button{
 			color:gray;
+			margin-left:1em;
 		}
 
 	}
