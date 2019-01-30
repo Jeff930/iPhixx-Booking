@@ -41,15 +41,23 @@ export class PhoneofferPage {
   selectOffer(choice){
   	console.log(choice);
   	if(choice == 'yes'){
-			this.booking.userData.phoneoffer = 'Temporary Phone';
-			this.cart.updateRepairs(this.booking.userData.phoneoffer,null,'50.00');
+			this.booking.userData.phoneoffer = true;
+			this.cart.updateRepairs('Temporary Phone',null,'50.00');
+			console.log(this.cart.selectedRepairs.length);
   	}
   	else{
-  		this.booking.userData.phoneoffer = false;
-	  }
-	  this.navCtrl.setRoot(CustomerdetailsPage);
+		  this.booking.userData.phoneoffer = false;
+		  console.log(this.cart.selectedRepairs.length);}
+		if (this.cart.selectedRepairs.length!=0){
+			console.log(this.cart.selectedRepairs.length);
+			this.navCtrl.setRoot(CustomerdetailsPage);
+		}
+	  	
 		this.cart.goCheckout=0;
-		this.cart.completeCheckout=1;
-  }
+		if (this.cart.selectedRepairs.length!=0)
+			this.cart.completeCheckout=1;
+		else
+			this.cart.completeCheckout=0;
+  	}
 
 }

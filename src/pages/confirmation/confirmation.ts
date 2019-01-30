@@ -454,10 +454,9 @@ export class ConfirmationPage {
     }
     receipt += commands.EOL;
     receipt += commands.EOL;
-    //receipt += commands.TEXT_FORMAT.TXT_4SQUARE;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += this.total;
+    receipt += commands.TEXT_FORMAT.TXT_4SQUARE;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_RT;
+    receipt += this.total;
     receipt += this.totalCost;
     receipt += commands.EOL;
     receipt += commands.EOL;
@@ -545,6 +544,7 @@ export class ConfirmationPage {
     this.selcost=this.cart.costs;
     console.log("costs: " + JSON.stringify(this.selcost));
     this.totalCost= this.cart.Total+".00 EUR";
+    console.log(this.totalCost);
     // this.createPdf();
     // this.downloadPdf();
     //this.createsmallPdf();
