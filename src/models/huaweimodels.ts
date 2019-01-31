@@ -1,5 +1,6 @@
 export const huaweimodels = [
-	{ model : 'Mate 9',
+	{ key: '37',
+		model : 'Mate 9',
 		modelNum: 'MHA-L09',
 		screenrep: '150.00',
 	  headphonerep:null,
@@ -18,7 +19,8 @@ export const huaweimodels = [
 	
 	},
 
-	{ model : 'P10',
+	{ key:'38',
+		model : 'P10',
 		modelNum: 'VTR-AL00',
 		screenrep: '150.00',
 	  headphonerep:null,
@@ -35,7 +37,8 @@ export const huaweimodels = [
 		backglassrep: null,
 	},
 
-	{ model : 'P10 Lite',
+	{ key:'39',
+		model : 'P10 Lite',
 		modelNum: 'WAS-LX1A',
 		screenrep: '115.00',
 	  headphonerep:null,
@@ -52,7 +55,8 @@ export const huaweimodels = [
 		backglassrep: null,
 	},
 
-	{ model : 'P9',
+	{ key:'40',
+		model : 'P9',
 		modelNum: 'EVA-L09',
 		screenrep: '125.00',
 	  headphonerep:null,
@@ -68,7 +72,8 @@ export const huaweimodels = [
 		signalrep:null,
 		backglassrep: null,},
 
-	{ model : 'P9 Lite',
+	{ key:'41',
+		model : 'P9 Lite',
 		modelNum: 'VNS-L31',
 		screenrep: '115.00',
 	  headphonerep:null,
@@ -84,7 +89,8 @@ export const huaweimodels = [
 		signalrep:null,
 		backglassrep: null,},
 
-	{ model : 'P8',
+	{ key:'42',
+		model : 'P8',
 		modelNum: 'GRA-L09',
 		screenrep: '105.00',
 	  headphonerep:null,
@@ -100,7 +106,8 @@ export const huaweimodels = [
 		signalrep:null,
 		backglassrep: null,},
 
-	{ model : 'P8 Lite (2017)',
+	{ key:'43',
+		model : 'P8 Lite (2017)',
 		modelNum: 'PRA-LA1',
 		screenrep: '115.00',
 	  headphonerep:null,
@@ -116,7 +123,8 @@ export const huaweimodels = [
 		signalrep:null,
 		backglassrep: null,},
 
-	{ model : 'P8 Lite (2016)',
+	{ key:'44',
+		model : 'P8 Lite (2016)',
 		modelNum: 'ALE-L21',
 		screenrep: '105.00',
 	  headphonerep:null,
@@ -132,7 +140,8 @@ export const huaweimodels = [
 		signalrep:null,
 		backglassrep: null,},
 
-	{ model : 'P7',
+	{ key:'45',
+		model : 'P7',
 		modelNum: 'P7-L10/P7-L00',
 		screenrep: '105.00',
 	  headphonerep:null,

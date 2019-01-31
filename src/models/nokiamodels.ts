@@ -1,5 +1,7 @@
 export const nokiamodels = [
-  { model : 'Lumia 640', 
+  { 
+		key:'54',
+		model : 'Lumia 640', 
 	modelNum : 'RM-1073',
 	screenrep: '95.00',
 	headphonerep:null,
@@ -15,7 +17,9 @@ export const nokiamodels = [
 	signalrep:null,
 	backglassrep: '75.00',},
 
-  { model : 'Lumia 820', 
+  { 
+		key:'55',
+		model : 'Lumia 820', 
 	modelNum : 'RM-824',
 	screenrep: '140.00',
 	headphonerep:null,
@@ -34,7 +38,9 @@ export const nokiamodels = [
 
 
 },
-  { model : 'Lumia 920', 
+  { 
+		key:'56',
+		model : 'Lumia 920', 
 	modelNum : 'RM-820',
 	screenrep: '125.00',
 	headphonerep:null,
@@ -52,7 +58,9 @@ export const nokiamodels = [
 
 
 },
-  { model : 'Nokia 6', 
+  { 
+		key:'57',
+		model : 'Nokia 6', 
 	modelNum : 'TA-1021',
 	screenrep: '145.00',
 	headphonerep:null,
@@ -69,7 +77,9 @@ export const nokiamodels = [
 	backglassrep: null,
 
 },
-  { model : 'Nokia 7', 
+  { 
+		key:'58',
+		model : 'Nokia 7', 
 	modelNum : 'TA-1041',
 	screenrep: '320.00',
 	headphonerep:null,
@@ -85,7 +95,9 @@ export const nokiamodels = [
 	signalrep:null,
 	backglassrep: null,},
 	
-  { model : 'Nokia 8', 
+  { 
+		key:'59',
+		model : 'Nokia 8', 
 	modelNum : 'TA-1012',
 	screenrep: '275.00',
 	headphonerep:null,

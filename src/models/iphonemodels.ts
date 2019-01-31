@@ -1,5 +1,6 @@
 export const iphonemodels = [
 	{ 
+		key:'1',
 	  model : 'X', 
 	  modelNum : 'A1865',
 	  screenrep: '500.00',
@@ -17,7 +18,9 @@ export const iphonemodels = [
 	  backglassrep: null,
 	},
 
-	{ model : '8 Plus', 
+	{ 
+		key:'2',
+		model : '8 Plus', 
 	  modelNum : 'A1864',
 	  screenrep: '125.00',
 	  headphonerep:'120.00', 
@@ -33,7 +36,8 @@ export const iphonemodels = [
 	  signalrep:'100.00',
 		backglassrep: null,},
 
-	{ model : '8',
+	{ key:'3',
+		model : '8',
 	  modelNum : ' A1863',
 	  screenrep: '120.00',
 	  headphonerep:'110.00',
@@ -49,7 +53,8 @@ export const iphonemodels = [
 	  signalrep:'95.00',
 		backglassrep: null,},
 
-	{ model : '7 Plus',
+	{ key:'4',
+		model : '7 Plus',
 	  modelNum : 'A1661',
 	  screenrep: '120.00',
 	  headphonerep:'100.00',
@@ -65,7 +70,8 @@ export const iphonemodels = [
 	  signalrep:'95.00',
 		backglassrep: null,},
 
-	{ model : '7', 
+	{ key:'5',
+		model : '7', 
 	  modelNum : 'A1660',
 	  screenrep: '100.00',
 	  headphonerep:'100.00',
@@ -81,7 +87,8 @@ export const iphonemodels = [
 	  signalrep:'85.00',
 		backglassrep: null,},
 
-	{ model : '6s Plus', 
+	{ key:'6',
+		model : '6s Plus', 
 	  modelNum : 'A1634/A1687',
 	  screenrep: '95.00',
 	  headphonerep:'80.00',
@@ -97,7 +104,8 @@ export const iphonemodels = [
 	  signalrep:'70.00',
 		backglassrep: null,},
 
-	{ model : '6s', 
+	{ key:'7',
+		model : '6s', 
 	  modelNum : 'A1634',
 	  screenrep: '90.00',
 	  headphonerep:'80.00',
@@ -113,7 +121,8 @@ export const iphonemodels = [
 	  signalrep:'70.00',
 		backglassrep: null,},
 
-	{ model : '6 Plus', 
+	{ key:'8',
+		model : '6 Plus', 
 	  modelNum : 'A1522',
 	  screenrep: '90.00',
 	  headphonerep:'80.00',
@@ -129,7 +138,8 @@ export const iphonemodels = [
 	  signalrep:'70.00',
 		backglassrep: null,},
 
-	{ model : '6', 
+	{ key:'9',
+		model : '6', 
 	  modelNum : 'A1549', 
 	  screenrep: '85.00',
 	  headphonerep:'80.00',
@@ -145,7 +155,8 @@ export const iphonemodels = [
 	  signalrep:'75.00',
 		backglassrep: null,},
 
-	{ model : 'SE',
+	{ key:'10',
+		model : 'SE',
 	  modelNum : 'A1662',
 	  screenrep: '75.00',
 	  headphonerep:'60.00',
@@ -161,7 +172,8 @@ export const iphonemodels = [
 	  signalrep:'65.00',
 		backglassrep: null,},
 
-	{ model : '5s', 
+	{ key:'11',
+		model : '5s', 
 	  modelNum : 'A1533',
 	  screenrep: '75.00',
 	  headphonerep:'60.00',
@@ -177,7 +189,8 @@ export const iphonemodels = [
 	  signalrep:'65.00',
 		backglassrep: null,},
 
-	{ model : '5c', 
+	{ key:'12',
+		model : '5c', 
 	  modelNum : 'A1532',
 	  screenrep: '75.00',
 	  headphonerep:'60.00',
@@ -193,7 +206,8 @@ export const iphonemodels = [
 	  signalrep:'65.00',
 		backglassrep: null,},
 
-	{ model : '5', 
+	{ key:'13',
+		model : '5', 
 	  modelNum : 'A1428',
 	  screenrep: '75.00',
 	  headphonerep:'60.00',

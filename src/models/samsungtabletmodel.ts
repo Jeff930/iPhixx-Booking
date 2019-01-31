@@ -1,5 +1,7 @@
 export const samsungtablet = [
-  { model: 'Galaxy Tab 7.0 (2010)',
+  { 
+    key: '71',
+    model: 'Galaxy Tab 7.0 (2010)',
 	modelNum : 'GT-P1000',
 	screenrep: '550.00',
 	headphonerep:null,
@@ -16,7 +18,8 @@ export const samsungtablet = [
 	backglassrep: '100.00',
 },
 
-  { model: ' Galaxy Tab 7.7 (2011)',
+  { key: '72',
+    model: ' Galaxy Tab 7.7 (2011)',
 	modelNum : 'GT-P1010',
 	screenrep: '550.00',
 	headphonerep:null,
@@ -33,7 +36,8 @@ export const samsungtablet = [
 	backglassrep: '100.00',
 },
 
-{ model: 'Galaxy Tab 8.9 (2011)',
+{ key: '73',
+  model: 'Galaxy Tab 8.9 (2011)',
   modelNum : 'GT-P7310',
   screenrep: '550.00',
   headphonerep:null,
@@ -51,7 +55,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab 10.1 (2011)',
+{ key: '74',
+  model: 'Galaxy Tab 10.1 (2011)',
   modelNum : 'GT-P7510',
   screenrep: '550.00',
   headphonerep:null,
@@ -69,7 +74,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab 2 7.0 inch (2012)',
+{ key: '75',
+  model: 'Galaxy Tab 2 7.0 inch (2012)',
   modelNum : 'GT-P3113',
   screenrep: '550.00',
   headphonerep:null,
@@ -87,7 +93,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab 2 10.1 inch (2012)',
+{ key: '76',
+  model: 'Galaxy Tab 2 10.1 inch (2012)',
   modelNum : 'GT-P5113',
   screenrep: '550.00',
   headphonerep:null,
@@ -105,7 +112,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab 3 (2013)',
+{ key: '77',
+  model: 'Galaxy Tab 3 (2013)',
   modelNum : 'SM-T315',
   screenrep: '550.00',
   headphonerep:null,
@@ -123,7 +131,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab 3 Lite (2014)',
+{ key: '78',
+  model: 'Galaxy Tab 3 Lite (2014)',
   modelNum : 'GT-P5210',
   screenrep: '550.00',
   headphonerep:null,
@@ -141,7 +150,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab 4 (2014)',
+{ key: '79',
+  model: 'Galaxy Tab 4 (2014)',
   modelNum : 'SM-T530',
   screenrep: '550.00',
   headphonerep:null,
@@ -159,7 +169,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab Pro (2014)',
+{ key: '80',
+  model: 'Galaxy Tab Pro (2014)',
   modelNum : 'SM-P607T',
   screenrep: '550.00',
   headphonerep:null,
@@ -177,7 +188,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab S (2014)',
+{ key: '81',
+  model: 'Galaxy Tab S (2014)',
   modelNum : 'SM-T807',
   screenrep: '550.00',
   headphonerep:null,
@@ -195,7 +207,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab A (2015)',
+{ key: '82',
+  model: 'Galaxy Tab A (2015)',
   modelNum : 'SM-T355',
   screenrep: '550.00',
   headphonerep:null,
@@ -213,7 +226,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab E (2014)',
+{ key: '83',
+  model: 'Galaxy Tab E (2014)',
   modelNum : 'SM-T561',
   screenrep: '550.00',
   headphonerep:null,
@@ -231,7 +245,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab S2 (2015)',
+{ key: '84',
+  model: 'Galaxy Tab S2 (2015)',
   modelNum : 'SM-T815x',
   screenrep: '550.00',
   headphonerep:null,
@@ -249,7 +264,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab Pro S (2016)',
+{ key: '85',
+  model: 'Galaxy Tab Pro S (2016)',
   modelNum : 'SM-W708Y',
   screenrep: '550.00',
   headphonerep:null,
@@ -267,7 +283,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab A (2016)',
+{ key: '86',
+  model: 'Galaxy Tab A (2016)',
   modelNum : 'SM-P585',
   screenrep: '550.00',
   headphonerep:null,
@@ -285,7 +302,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab S3 (2017)',
+{ key: '87',
+  model: 'Galaxy Tab S3 (2017)',
   modelNum : 'SM-T825',
   screenrep: '550.00',
   headphonerep:null,
@@ -303,7 +321,8 @@ export const samsungtablet = [
 
 },
 
-{ model: 'Galaxy Tab S4 (2018)',
+{ key: '88',
+  model: 'Galaxy Tab S4 (2018)',
   modelNum : 'SM-T835',
   screenrep: '550.00',
   headphonerep:null,

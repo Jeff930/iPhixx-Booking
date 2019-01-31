@@ -1,5 +1,6 @@
 export const samsungmodels = [
-	{ model : 'Galaxy S9', 
+	{ key:'14',
+		model : 'Galaxy S9', 
 		modelNum : 'SM-G965', 
 	  screenrep: '550.00',
 	  headphonerep:null,
@@ -16,7 +17,8 @@ export const samsungmodels = [
 		backglassrep: '100.00',
 	},
 
-	{ model : 'Galaxy S9 Plus', 
+	{ key:'15',
+		model : 'Galaxy S9 Plus', 
 	  modelNum : 'SM-G9650', 
 	  screenrep: '600.00',
 	  headphonerep:null,
@@ -34,7 +36,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy S8', 
+	{ key:'16',
+		model : 'Galaxy S8', 
 	  modelNum : 'SM-G950', 
 	  screenrep: '395.00',
 	  headphonerep:null,
@@ -51,7 +54,8 @@ export const samsungmodels = [
 		backglassrep: '85.00',
 	},
 
-	{ model : 'Galaxy S8 Plus', 
+	{ key:'17',
+		model : 'Galaxy S8 Plus', 
 	  modelNum : 'SM-G955', 
 	  screenrep: '420.00',
 	  headphonerep:null,
@@ -68,7 +72,8 @@ export const samsungmodels = [
 		backglassrep: '95.00',
 	},
 
-	{ model : 'Galaxy S7', 
+	{ key:'18',
+		model : 'Galaxy S7', 
 	  modelNum : 'SM-G930', 
 	  screenrep: '295.00',
 	  headphonerep:null,
@@ -86,7 +91,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy S6', 
+	{ key:'19',
+		model : 'Galaxy S6', 
 		modelNum : 'SM-G920', 
 		screenrep: '250.00',
 	  headphonerep:null,
@@ -104,7 +110,8 @@ export const samsungmodels = [
 
 },
 
-	{ model : 'Galaxy S5', 
+	{ key:'20',
+		model : 'Galaxy S5', 
 	  modelNum : 'SM-G900', 
 	  screenrep: '175.00',
 	  headphonerep:null,
@@ -123,7 +130,8 @@ export const samsungmodels = [
 		
 	},
 
-	{ model : 'Galaxy Note 8', 
+	{ key:'21',
+		model : 'Galaxy Note 8', 
 	  modelNum : 'SM-N950', 
 	  screenrep: '450.00',
 	  headphonerep:null,
@@ -141,7 +149,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy Note 5', 
+	{ key:'22',
+		model : 'Galaxy Note 5', 
 	  modelNum : 'SM-N920x', 
 	  screenrep: '360.00',
 	  headphonerep:null,
@@ -159,7 +168,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy A3 (2017)', 
+	{ key:'23',
+		model : 'Galaxy A3 (2017)', 
 	  modelNum : 'SM-A320', 
 	  screenrep: '195.00',
 	  headphonerep:null,
@@ -178,7 +188,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy A3 (2016)', 
+	{ key:'24',
+		model : 'Galaxy A3 (2016)', 
 	  modelNum : 'SM-A310', 
 	  screenrep: '165.00',
 	  headphonerep:null,
@@ -197,7 +208,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy A3 (2015)', 
+	{ key:'25',
+		model : 'Galaxy A3 (2015)', 
 	  modelNum : 'SM-A300', 
 	  screenrep: '155.00',
 	  headphonerep:null,
@@ -214,7 +226,8 @@ export const samsungmodels = [
 		backglassrep: '75.00',
 	},
 
-	{ model : 'Galaxy A5 (2017)', 
+	{ key:'26',
+		model : 'Galaxy A5 (2017)', 
 	  modelNum : 'SM-A520', 
 	  screenrep: '210.00',
 	  headphonerep:null,
@@ -233,7 +246,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy A5 (2016)', 
+	{ key:'27',
+		model : 'Galaxy A5 (2016)', 
 	  modelNum : 'SM-A510', 
 	  screenrep: '185.00',
 	  headphonerep:null,
@@ -251,7 +265,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy A5 (2015)', 
+	{ key:'28',
+		model : 'Galaxy A5 (2015)', 
 	  modelNum : 'SM-A500', 
 	  screenrep: '165.00',
 	  headphonerep:null,
@@ -268,7 +283,8 @@ export const samsungmodels = [
 		backglassrep: '75.00',
 	},
 
-	{ model : 'Galaxy A7 (2017)', 
+	{ key:'29',
+		model : 'Galaxy A7 (2017)', 
 	  modelNum : 'SM-A700H', 
 	  screenrep: '210.00',
 	  headphonerep:null,
@@ -286,7 +302,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy J3 (2017)', 
+	{ key:'30',
+		model : 'Galaxy J3 (2017)', 
 	  modelNum : 'SM-J3300', 
 	  screenrep: '165.00',
 	  headphonerep:null,
@@ -305,7 +322,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy J3 (2015)', 
+	{ key:'31',
+		model : 'Galaxy J3 (2015)', 
 	  modelNum : 'unknown',
 		screenrep: null,
 	  headphonerep:null,
@@ -326,7 +344,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy J5 (2017)', 
+	{ key:'32',
+		model : 'Galaxy J5 (2017)', 
 	  modelNum : 'unknown', 	
 		screenrep: '600.00',
 	  headphonerep:null,
@@ -344,7 +363,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy J5 (2016)', 
+	{ key:'33',
+		model : 'Galaxy J5 (2016)', 
 	  modelNum : 'SM-J510', 
 	 	screenrep: '165.00',
 	  headphonerep:null,
@@ -362,7 +382,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy J5 (2015)', 
+	{ key:'34',
+		model : 'Galaxy J5 (2015)', 
 	  modelNum : 'SM-J500', 
 	  screenrep: '150.00',
 	  headphonerep:null,
@@ -381,7 +402,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy J7 (2017)', 
+	{ key:'35',
+		model : 'Galaxy J7 (2017)', 
 	  modelNum : 'SM-J730', 
 	  screenrep: '250.00',
 	  headphonerep:null,
@@ -400,7 +422,8 @@ export const samsungmodels = [
 	
 	},
 
-	{ model : 'Galaxy J7 (2016)', 
+	{ key:'36',
+		model : 'Galaxy J7 (2016)', 
 	  modelNum : 'SM-J710', 
 	  screenrep: '175.00',
 	  headphonerep:null,

@@ -1,5 +1,7 @@
 export const sonymodels = [
-  { model : 'Z3',
+  { 
+		key:'46',
+		model : 'Z3',
 	modelNum: 'D6603',
 	screenrep: '115.00',
 	headphonerep:null,
@@ -17,7 +19,10 @@ export const sonymodels = [
 
 
 },
-  { model : 'Z3 Compact',
+  { 
+		
+		key:'47',
+		model : 'Z3 Compact',
 	modelNum: 'D5803',
 	screenrep: '125.00',
 	headphonerep:null,
@@ -33,7 +38,9 @@ export const sonymodels = [
 	signalrep:null,
 	backglassrep: '55.00',},
 
-  { model : 'Z4',
+  { 
+		key:'48',
+		model : 'Z4',
 	modelNum: 'unknown',
 	screenrep: null,
 	headphonerep:null,
@@ -50,7 +57,9 @@ export const sonymodels = [
 	backglassrep: null,
 },
 
-  { model : 'Z5',
+  { 
+		key:'49',
+		model : 'Z5',
 	modelNum: ' E6603',
 	screenrep: '135.00',
 	headphonerep:null,
@@ -66,7 +75,8 @@ export const sonymodels = [
 	signalrep:null,
 	backglassrep: '65.00',},
 
-  { model : 'Z5 Compact',
+  { key:'50',
+		model : 'Z5 Compact',
 	modelNum: 'E5803',
 	screenrep: '145.00',
 	headphonerep:null,
@@ -82,7 +92,9 @@ export const sonymodels = [
 	signalrep:null,
 	backglassrep: '65.00',},
 
-  { model : 'Z5 Premium',
+  { 
+		key:'51',
+		model : 'Z5 Premium',
 	modelNum: 'E6853',
 	screenrep: '150.00',
 	headphonerep:null,
@@ -98,7 +110,9 @@ export const sonymodels = [
 	signalrep:null,
 	backglassrep: '65.00',},
 
-  { model : 'X',
+  { 
+		key:'52',
+		model : 'X',
 	screenrep: null,
 	headphonerep:null,
 	earpiecerep:null,
@@ -113,7 +127,9 @@ export const sonymodels = [
 	signalrep:null,
 	backglassrep: null,},
 
-  { model : 'XA',
+  { 
+		key:'53',
+		model : 'XA',
 	screenrep: null,
 	headphonerep:null,
 	earpiecerep:null,
