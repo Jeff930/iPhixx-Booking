@@ -1,5 +1,7 @@
 export const huaweitablet = [
-  { model: 'MediaPad T5',
+  { 
+    key:'89',
+    model: 'MediaPad T5',
 	modelNum : 'AGS2-L09',
 	screenrep: '550.00',
 	headphonerep:null,
@@ -16,7 +18,9 @@ export const huaweitablet = [
 	backglassrep: '100.00',
 },
 
-  { model: 'MediaPad M3 Lite',
+  { 
+    key:'90',
+    model: 'MediaPad M3 Lite',
 	modelNum : 'CPN-AL00',
 	screenrep: '550.00',
 	headphonerep:null,
@@ -33,7 +37,8 @@ export const huaweitablet = [
 	backglassrep: '100.00',
 },
 
-{ model: 'MediaPad M3 Lite 10',
+{ key:'91',
+  model: 'MediaPad M3 Lite 10',
   modelNum : 'Bach-W01',
   screenrep: '550.00',
   headphonerep:null,
@@ -51,7 +56,8 @@ export const huaweitablet = [
 
 },
 
-{ model: 'MediaPad M3',
+{ key:'92',
+  model: 'MediaPad M3',
   modelNum : 'BTV-DL09',
   screenrep: '550.00',
   headphonerep:null,
@@ -69,7 +75,8 @@ export const huaweitablet = [
 
 },
 
-{ model: 'MediaPad T3 10',
+{ key:'93',
+  model: 'MediaPad T3 10',
   modelNum : 'AGS-L03',
   screenrep: '550.00',
   headphonerep:null,
@@ -87,25 +94,8 @@ export const huaweitablet = [
 
 },
 
-{ model: 'MediaPad T3 7 3G',
-  modelNum : 'BG2-U01',
-  screenrep: '550.00',
-  headphonerep:null,
-  earpiecerep:null,
-  powerrep:null,
-  rearcamrep:'175.00',
-  frontcamrep:'85.00',
-  homerep:null,
-  upmicrep:null,
-  chargeportrep:'120.00',
-  volumerep:null,
-  battrep:'95.00',
-  signalrep:null,
-  backglassrep: '100.00',
-
-},
-
-{ model: 'MediaPad T2 7.0',
+{ key:'94',
+  model: 'MediaPad T2 7.0',
   modelNum : 'BGO-DL09',
   screenrep: '550.00',
   headphonerep:null,
@@ -123,7 +113,8 @@ export const huaweitablet = [
 
 },
 
-{ model: 'MediaPad M5 8.4 inches',
+{ key:'95',
+  model: 'MediaPad M5 8.4 inches',
   modelNum : 'SHT-AL09',
   screenrep: '550.00',
   headphonerep:null,
@@ -141,7 +132,8 @@ export const huaweitablet = [
 
 },
 
-{ model: 'MediaPad M5 10.8 inches',
+{ key:'96',
+  model: 'MediaPad M5 10.8 inches',
   modelNum : 'CMR-AL09',
   screenrep: '550.00',
   headphonerep:null,
@@ -159,7 +151,8 @@ export const huaweitablet = [
 
 },
 
-{ model: 'MediaPad M5 Pro',
+{ key:'97',
+  model: 'MediaPad M5 Pro',
   modelNum : 'CMR-AL19',
   screenrep: '550.00',
   headphonerep:null,
@@ -177,7 +170,8 @@ export const huaweitablet = [
 
 },
 
-{ model: ' MediaPad M5 Lite',
+{ key:'98',
+  model: ' MediaPad M5 Lite',
   modelNum : 'BAH2-L09',
   screenrep: '550.00',
   headphonerep:null,
