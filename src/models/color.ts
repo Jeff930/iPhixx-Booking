@@ -1,7 +1,12 @@
 export const colors = [
-	{ color : 'Black'},
-	{ color : 'White'},
-	{ color : 'RoseGold'},
-	{ color : 'Silver'},
-	{ color : 'Other'},
+	{ 	key:'1',
+		color : 'Black'},
+	{ 	key:'2',
+		color : 'White'},
+	{ 	key:'3',
+		color : 'RoseGold'},
+	{ 	key:'4',
+		color : 'Silver'},
+	{ 	key:null,
+		color : 'Other'},
 ];
