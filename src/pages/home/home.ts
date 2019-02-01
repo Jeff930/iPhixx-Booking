@@ -3,7 +3,7 @@ import { NavController , AlertController } from 'ionic-angular';
 
 import { BookingProvider } from '../../providers/booking/booking';
 import { NavigationProvider } from '../../providers/navigation/navigation';
-import { devices } from './home-device';
+import { devices } from '../../models/devicetypes';
 
 import { ChoosebrandPage } from '../choosebrand/choosebrand';
 import { LoginPage } from '../login/login';
