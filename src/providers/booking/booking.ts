@@ -48,7 +48,6 @@ export class BookingProvider {
       selectedRepair:[''],
       phoneoffer: false,
       upgradeoffer1: false,
-      upgradeoffer2: false,
       user: {
           fullname: '',
           birthdate:'',
