@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ɵConsole } from '@angular/core';
 import { NavController , AlertController } from 'ionic-angular';
 
 import { BookingProvider } from '../../providers/booking/booking';
@@ -6,6 +6,7 @@ import { NavigationProvider } from '../../providers/navigation/navigation';
 import { devices } from '../../models/devicetypes';
 
 import { ChoosebrandPage } from '../choosebrand/choosebrand';
+import { ChoosemodelPage } from '../choosemodel/choosemodel';
 import { LoginPage } from '../login/login';
 import { ChooseactionPage } from '../chooseaction/chooseaction';
 import { OtherdevtypePage } from '../otherdevtype/otherdevtype';
@@ -24,9 +25,16 @@ export class HomePage {
   }
 
   selectdevice(device){
-  	this.navCtrl.push(ChoosebrandPage ,{}, {animate: true, direction: 'forward'});
-  	this.booking.userData.device = device;
-  	console.log('selected device is:' + this.booking.userData.device)
+    this.booking.userData.device = device;
+    console.log('selected device is:' + this.booking.userData.device)
+    if (this.booking.userData.device=='MacBook'){
+        console.log(true);
+        this.booking.userData.brand = device;
+        this.navCtrl.setRoot(ChoosemodelPage);
+    }else{
+      console.log(false);
+      this.navCtrl.push(ChoosebrandPage ,{}, {animate: true, direction: 'forward'});
+    } 	
   }
 
   otherDeviceType(){
