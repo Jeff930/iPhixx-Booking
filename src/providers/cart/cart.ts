@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { repairs } from '../../models/repair'
+import { mobilerepairs } from '../../models/mobilerepairs'
 import { RepairProvider } from '../../providers/repair/repair';
 import { BookingProvider } from '../../providers/booking/booking';
 import { NavigationProvider } from '../../providers/navigation/navigation';
@@ -17,7 +17,7 @@ export class CartProvider {
   Total;
   goCheckout;
   completeCheckout;
-  repairs = repairs;
+  repairs = mobilerepairs;
   costs=[];
 
 
