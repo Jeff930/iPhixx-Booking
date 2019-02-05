@@ -11,6 +11,7 @@ import { OtherdevicePage } from '../otherdevice/otherdevice';
 
 import { phonebrands } from '../../models/phonebrands';
 import { tabletbrands } from '../../models/tabletbrands';
+import { laptopbrands } from '../../models/laptopbrands';
 
 
 
@@ -36,15 +37,19 @@ export class ChoosebrandPage {
   constructor(public navCtrl: NavController, public navParams: NavParams , public booking : BookingProvider ,
   	public popoverCtrl: PopoverController,public cart: CartProvider,public navigation: NavigationProvider,) {
   	this.device = this.booking.userData.device;
+      console.log("brand" + this.device);
 
-    
-  	if(this.device == 'Phone'){
-  		this.brands = phonebrands;
-  	}
-  	else{
-  		this.brands = tabletbrands;
-  	}
-
+    switch (this.device){
+      case 'Phone':
+        this.brands = phonebrands;
+        break;
+      case 'Tablet':
+        this.brands = tabletbrands;
+        break;
+      case 'Laptop':
+        this.brands = laptopbrands
+        break;
+    }
   }
 
   ionViewWillEnter(){
