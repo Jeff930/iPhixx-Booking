@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { BookingProvider } from '../../providers/booking/booking';
 
-import { repairs } from '../../models/repair'
+import { mobilerepairs } from '../../models/mobilerepairs'
 import { iphonemodels } from '../../models/iphonemodels';
 import { samsungmodels } from '../../models/samsungmodels';
 import { huaweimodels } from '../../models/huaweimodels';
@@ -27,7 +27,7 @@ export class RepairProvider {
   device:string;
   other=0;
 
-  repairs = repairs;
+  repairs = mobilerepairs;
   modelrepairs =[];
 
   prices=[];
