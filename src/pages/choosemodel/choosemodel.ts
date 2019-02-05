@@ -18,7 +18,9 @@ import { nokiamodels } from '../../models/nokiamodels';
 
 import { ipadmodels } from '../../models/ipadmodels';
 import { samsungtablet } from '../../models/samsungtabletmodel';
-import { repairs } from '../../models/repair';
+import { mobilerepairs } from '../../models/mobilerepairs';
+
+import { macbookmodels } from '../../models/macbookmodels';
 
 /**
  * Generated class for the ChoosemodelPage page.
@@ -66,7 +68,7 @@ export class ChoosemodelPage {
 
 		}
 
-		else{
+		else if (this.booking.userData.device == 'Tablet'){
 			if(this.booking.userData.brand == 'iPad'){
 				this.repair.models = ipadmodels;
 			}
@@ -76,6 +78,8 @@ export class ChoosemodelPage {
 			else{
 				this.repair.models = huaweitablet;
 			}
+		} else if (this.booking.userData.device == 'MacBook'){
+			this.repair.models = macbookmodels;
 		}
 
 	}
