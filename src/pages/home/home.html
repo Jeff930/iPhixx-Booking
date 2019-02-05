@@ -11,14 +11,14 @@
             <p class="tip">Pick one option below</p>
           </div>
           <ion-row>
-            <ion-col text-center padding  align-self-center col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-                <img (click)="selectdevice('Phone')" src="assets/imgs/phone.png">
-                <p>Phone</p>
+            <ion-col text-center padding  *ngFor = "let device of devices" align-self-center col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
+                <img (click)="selectdevice(device.title)" src="{{'assets/imgs/device/'+ device.title + '.png'}}">
+                <p>{{device.title}}</p>
             </ion-col>
-            <ion-col text-center padding align-self-center col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
+            <!-- <ion-col text-center padding align-self-center col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
                 <img (click)="selectdevice('Tablet')" src="assets/imgs/tablet.png">
                 <p>Tablet</p>
-            </ion-col>
+            </ion-col> -->
             <ion-col text-center padding align-self-center col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
                 <img (click)="otherDeviceType()" class="other" center src="assets/imgs/other.png">
                 <p>Other</p>
