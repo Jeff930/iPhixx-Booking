@@ -7,4 +7,16 @@ export const devices = [
 		title: 'Tablet',
 		img: 'assets/imgs/tablet.png' 
 	},
+	{	
+		title: 'Laptop',
+		img: 'assets/imgs/tablet.png' 
+	},
+	{	
+		title: 'MacBook',
+		img: 'assets/imgs/tablet.png' 
+	},
+	{	
+		title: 'Gaming Console',
+		img: 'assets/imgs/tablet.png' 
+	},
 ]
