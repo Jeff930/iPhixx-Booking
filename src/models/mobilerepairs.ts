@@ -1,0 +1,15 @@
+export const mobilerepairs = [
+	{ repair : 'Screen Replacement'},
+	{ repair : 'Head Phone Repair'},
+	{ repair : 'Ear Piece Repair'},
+	{ repair : 'Power Button Repair'},
+	{ repair : 'Rear Camera Repair'},
+	{ repair : 'Front Camera Repair'},
+	{ repair : 'Home Button Repair'},
+	{ repair : 'Upper Microphone Repair'},
+	{ repair : 'Charging Port Repair'},
+	{ repair : 'Volume Button Repair'},
+	{ repair : 'Battery Replacement'},
+	{ repair : 'Cellular Signal Repair'},
+	{ repair : 'Back Glass Repair'},
+];
