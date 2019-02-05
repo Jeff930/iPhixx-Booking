@@ -51,6 +51,7 @@ export class CustomerdetailsPage {
 					'email':['', Validators.compose([Validators.required])],
 					'phone':['', Validators.compose([Validators.required])],
 					'phone2':['', Validators.compose([Validators.required])],
+					'notes':[],
 				});
   }
 
