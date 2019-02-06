@@ -2,17 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { BookingProvider } from '../../providers/booking/booking';
 
-import { mobilerepairs } from '../../models/mobilerepairs'
-import { iphonemodels } from '../../models/iphonemodels';
-import { samsungmodels } from '../../models/samsungmodels';
-import { huaweimodels } from '../../models/huaweimodels';
-import { huaweitablet } from '../../models/huaweitabletmodel';
-import { sonymodels } from '../../models/sonymodels';
-import { nokiamodels } from '../../models/nokiamodels';
+import { mobilerepairs } from '../../models/mobilerepairs';
+import { laptoprepairs } from '../../models/laptoprepairs'
 
-import { ipadmodels } from '../../models/ipadmodels';
-import { samsungtablet } from '../../models/samsungtabletmodel';
-import { isRightSide } from 'ionic-angular/umd/util/util';
 /*
   Generated class for the RepairProvider provider.
 
@@ -33,49 +25,30 @@ export class RepairProvider {
   prices=[];
   models = [];
 
-  constructor(public booking:BookingProvider) {}
+  constructor(public booking:BookingProvider) {
+    if (this.booking.userData.device=='Laptop'){
+      this.repairs = laptoprepairs;
+    }else{ 
+      this.repairs = mobilerepairs;
+    }
+  }
   
   updatemodelrepairs(){
-
     this.brand=this.booking.userData.brand;
     this.model=this.booking.userData.model;
     this.device=this.booking.userData.device;
     console.log("model"+this.model);
     console.log("device" + this.device);
 
-    // if(this.booking.userData.device == 'Phone'){	
-
-    //   if(this.booking.userData.brand == 'iPhone'){
-    //     this.models = iphonemodels;
-    //   }
-    //   else if(this.booking.userData.brand == 'Samsung'){
-    //     this.models = samsungmodels;
-    //   }
-    // else if(this.booking.userData.brand == 'Huawei'){
-    //       this.models = huaweimodels;
-    //       console.log("Huawei");
-    // }
-    //   else if(this.booking.userData.brand == 'Sony'){
-    //       this.models = sonymodels;
-    // }
-    // else if(this.booking.userData.brand == 'Nokia'){
-    //           this.models = nokiamodels;
-    // }
-
-  // }
-
-  // else{
-  //   if(this.booking.userData.brand == 'iPad'){
-  //     this.models = ipadmodels;
-  //   }
-  //   else if (this.booking.userData.brand == 'Samsung') {
-  //     this.models = samsungtablet;
-  //   }
-  //   else{
-  //     this.models = huaweitablet;
-  //   }
-  //}
-
+    if (this.booking.userData.device=='Laptop'){
+      this.repairs = laptoprepairs;
+      for (var i=0;i<this.repairs.length;i++){
+      this.modelrepairs.push(this.repairs[i].repair);
+      this.prices.push(this.repairs[i].price);
+      console.log("laptop"+this.modelrepairs);}
+    }else{ 
+      
+    
   for (var i=0;i<this.models.length;i++){
     if (this.booking.userData.model == this.models[i].model){
       console.log("true")
@@ -137,7 +110,8 @@ export class RepairProvider {
         this.other=1;
       }      
     }
-  }
+  }}
+  console.log(this.modelrepairs);
   }
 
   getmodelrepairs(){
