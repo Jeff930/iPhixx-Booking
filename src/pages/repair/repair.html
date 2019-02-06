@@ -16,7 +16,7 @@
           <navigation col-10 no-padding center></navigation>
           <div text-center>
             <p class="question">{{brand}} {{model}} Repair</p>
-            <p class="tip">What is happening with your phone? Pick one option below</p>
+            <p class="tip">What is happening with your {{booking.userData.device.toLowerCase()}}? Pick one option below</p>
           </div>
           <ion-row>
              <ion-col text-center  *ngFor = "let repairer of repair.modelrepairs;let i = index" col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-3>
