@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ColorPage } from '../color/color';
-
+import { RepairPage } from '../repair/repair';
 
 import { BookingProvider } from '../../providers/booking/booking';
 import { NavigationProvider } from '../../providers/navigation/navigation';
@@ -18,7 +18,6 @@ import { nokiamodels } from '../../models/nokiamodels';
 
 import { ipadmodels } from '../../models/ipadmodels';
 import { samsungtablet } from '../../models/samsungtabletmodel';
-import { mobilerepairs } from '../../models/mobilerepairs';
 
 import { macbookmodels } from '../../models/macbookmodels';
 
@@ -85,6 +84,10 @@ export class ChoosemodelPage {
 	}
 
 	ionViewWillEnter(){
+		if (this.booking.userData.device == 'Laptop'){
+			document.getElementById('mobile').style.display = 'none';
+			document.getElementById('laptop').style.display = 'block';
+		}
 		this.booking.model="selected";
 		
 		this.booking.selected=3;
@@ -116,6 +119,11 @@ export class ChoosemodelPage {
 	  this.cart.goCheckout=[];
 	  this.repair.updatemodelrepairs();
   	this.navCtrl.push(ColorPage);
+  }
+
+  goToRepair(){
+	this.repair.updatemodelrepairs();
+	  this.navCtrl.setRoot(RepairPage);
   }
 
 }
