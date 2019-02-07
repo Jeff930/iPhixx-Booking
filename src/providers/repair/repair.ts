@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { BookingProvider } from '../../providers/booking/booking';
 
 import { mobilerepairs } from '../../models/mobilerepairs';
-import { laptoprepairs } from '../../models/laptoprepairs'
+import { laptoprepairs } from '../../models/laptoprepairs';
+import { gamerepairs } from '../../models/gamerepairs';
+import { macbookrepairs } from '../../models/macbookrepairs';
 
 /*
   Generated class for the RepairProvider provider.
@@ -19,13 +21,19 @@ export class RepairProvider {
   device:string;
   other=0;
 
-  repairs = mobilerepairs;
+  repairs;
   modelrepairs =[];
 
   prices=[];
   models = [];
 
   constructor(public booking:BookingProvider) {
+    if (this.booking.userData.device=='Gaming Console'){
+      this.repairs = gamerepairs;
+    }
+    if (this.booking.userData.device=='MacBook'){
+      this.repairs = macbookrepairs;
+    }
     if (this.booking.userData.device=='Laptop'){
       this.repairs = laptoprepairs;
     }else{ 
@@ -40,6 +48,14 @@ export class RepairProvider {
     console.log("model"+this.model);
     console.log("device" + this.device);
 
+    if (this.booking.userData.device=='Gaming Console'){
+      this.repairs = gamerepairs;
+      for (var i=0;i<this.repairs.length;i++){
+      this.modelrepairs.push(this.repairs[i].repair);
+      this.prices.push(this.repairs[i].price);
+      console.log("game"+this.modelrepairs);}
+    }
+    
     if (this.booking.userData.device=='Laptop'){
       this.repairs = laptoprepairs;
       for (var i=0;i<this.repairs.length;i++){
@@ -104,6 +120,10 @@ export class RepairProvider {
       if (this.models[i].backglassrep!=null){
         this.prices.push(this.models[i].backglassrep);
         this.modelrepairs.push("Back Glass Repair");
+      }
+      if (this.models[i].trackpadrep!=null){
+        this.prices.push(this.models[i].trackpadrep);
+        this.modelrepairs.push("Trackpad Replacement");
       }
       if (this.device =="Tablet"){
         console.log("worked");
