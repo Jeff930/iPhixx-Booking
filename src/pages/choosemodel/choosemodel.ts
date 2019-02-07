@@ -105,23 +105,39 @@ export class ChoosemodelPage {
 	}
 
   selectModel(model){
-	  console.log(model);
-	  this.booking.userData.model = model;
-	  this.cart.selectedRepairs=[];
-	  this.cart.selectedIndex=[];
-	  this.cart.cartMessage="There are currently no items in your cart.";
-	  this.cart.Total=0;
-	  this.cart.costs=[];
-	  this.repair.modelrepairs=[];
-	  this.repair.other=0;
-	  this.repair.prices=[];
-	  this.cart.completeCheckout=[];
-	  this.cart.goCheckout=[];
-	  this.repair.updatemodelrepairs();
+	this.booking.userData.model = model;
+	this.cart.selectedRepairs=[];
+	this.cart.selectedIndex=[];
+	this.cart.cartMessage="There are currently no items in your cart.";
+	this.cart.Total=0;
+	this.cart.costs=[];
+	this.repair.modelrepairs=[];
+	this.repair.other=0;
+	this.repair.prices=[];
+	this.cart.completeCheckout=[];
+	this.cart.goCheckout=[];
+	this.repair.updatemodelrepairs();
+	  if (this.booking.userData.device="MacBook"){
+		this.navCtrl.push(RepairPage);
+	  }else{
+		console.log(model);
   	this.navCtrl.push(ColorPage);
+	  }
+	  
   }
 
   goToRepair(){
+	this.booking.userData.model = this.model;
+	this.cart.selectedRepairs=[];
+	this.cart.selectedIndex=[];
+	this.cart.cartMessage="There are currently no items in your cart.";
+	this.cart.Total=0;
+	this.cart.costs=[];
+	this.repair.modelrepairs=[];
+	this.repair.other=0;
+	this.repair.prices=[];
+	this.cart.completeCheckout=[];
+	this.cart.goCheckout=[];
 	this.repair.updatemodelrepairs();
 	  this.navCtrl.setRoot(RepairPage);
   }
