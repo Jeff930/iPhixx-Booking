@@ -5,14 +5,16 @@ import { IonicPage, NavController, NavParams ,PopoverController } from 'ionic-an
 import { BookingProvider } from '../../providers/booking/booking';
 import { CartProvider } from '../../providers/cart/cart';
 import { NavigationProvider } from '../../providers/navigation/navigation';
+import { RepairProvider } from '../../providers/repair/repair';
 
 import { ChoosemodelPage } from '../choosemodel/choosemodel';
+import { RepairPage } from '../repair/repair';
 import { OtherdevicePage } from '../otherdevice/otherdevice';
 
 import { phonebrands } from '../../models/phonebrands';
 import { tabletbrands } from '../../models/tabletbrands';
 import { laptopbrands } from '../../models/laptopbrands';
-
+import { gamebrands } from '../../models/gamebrands';
 
 
 
@@ -35,7 +37,7 @@ export class ChoosebrandPage {
   devWidth:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public booking : BookingProvider ,
-  	public popoverCtrl: PopoverController,public cart: CartProvider,public navigation: NavigationProvider,) {
+  	public popoverCtrl: PopoverController,public cart: CartProvider,public navigation: NavigationProvider,public repair:RepairProvider) {
   	this.device = this.booking.userData.device;
       console.log("brand" + this.device);
 
@@ -47,7 +49,10 @@ export class ChoosebrandPage {
         this.brands = tabletbrands;
         break;
       case 'Laptop':
-        this.brands = laptopbrands
+        this.brands = laptopbrands;
+        break;
+      case 'Gaming Console':
+        this.brands = gamebrands;
         break;
     }
   }
@@ -73,7 +78,12 @@ export class ChoosebrandPage {
       this.navCtrl.push(OtherdevicePage);
     }
     else{
-  	this.navCtrl.push(ChoosemodelPage , { brand: brand});
+      if (this.device == 'Gaming Console'){
+        this.repair.updatemodelrepairs();
+        this.navCtrl.setRoot(RepairPage);
+      }else{
+        this.navCtrl.push(ChoosemodelPage , { brand: brand});
+      }
   	this.booking.userData.brand = brand;
     }
   }
