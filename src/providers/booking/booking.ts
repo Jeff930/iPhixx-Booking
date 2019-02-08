@@ -5,15 +5,6 @@ import { Injectable } from '@angular/core';
 import * as $ from "jquery";
 import { Http } from '@angular/http';
 
-import { HomePage } from '../../pages/home/home';
-import { ChoosemodelPage } from '../../pages/choosemodel/choosemodel';
-import { ChoosebrandPage } from '../../pages/choosebrand/choosebrand';
-import { ColorPage } from '../../pages/color/color';
-import { NetworkPage } from '../../pages/network/network';
-import { RepairPage } from '../../pages/repair/repair';
-// import { Observable } from 'rxjs/Observable';
-import { ConfirmationPage } from '../../pages/confirmation/confirmation'
-
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/forkJoin';
 
@@ -43,6 +34,7 @@ export class BookingProvider {
       device : '',
       brand: '',
       model: '',
+      modelNum:'',
       color: '',
       network: '',
       selectedRepair:[''],
