@@ -16,12 +16,12 @@
        <ion-col id="main" col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-9>
           <navigation></navigation>
           <div text-center>
-            <p class="question">{{brand}} Repair</p>
+            <p class="question">{{brand}} Model</p>
             <p class="tip">What model do you have? Pick one option below</p>
           </div>
           <ion-row>
             <ion-col text-center  *ngFor = "let model of repair.models" col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3>
-              <div (click) ="selectModel(model.model)" class="brands-col" padding>
+              <div (click) ="selectModel(model.model, model.modelNum)" class="brands-col" padding>
               <img src="{{'assets/imgs/'+brand+'/'+model.model.replace(' ','').replace( brand , '').toLowerCase()+'.jpg'}}">
               <p>{{model.model}}</p>
               <p>{{model.modelNum}}</p>
@@ -67,7 +67,7 @@
           </div>
           <ion-row>
             <ion-col col-xs-12 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4>
-       		<ion-input placeholder="Device Model Number" [(ngModel)]="model" f></ion-input>
+       		<ion-input placeholder="Device Model Number" [(ngModel)]="model"></ion-input>
       		</ion-col>
             <!-- <ion-col text-center   col-6>
               <button  ion-button full round (click)="presentPopover($event)">Other</button>
