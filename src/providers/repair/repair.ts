@@ -5,7 +5,6 @@ import { BookingProvider } from '../../providers/booking/booking';
 import { mobilerepairs } from '../../models/mobilerepairs';
 import { laptoprepairs } from '../../models/laptoprepairs';
 import { gamerepairs } from '../../models/gamerepairs';
-import { macbookrepairs } from '../../models/macbookrepairs';
 
 /*
   Generated class for the RepairProvider provider.
@@ -30,9 +29,6 @@ export class RepairProvider {
   constructor(public booking:BookingProvider) {
     if (this.booking.userData.device=='Gaming Console'){
       this.repairs = gamerepairs;
-    }
-    if (this.booking.userData.device=='MacBook'){
-      this.repairs = macbookrepairs;
     }
     if (this.booking.userData.device=='Laptop'){
       this.repairs = laptoprepairs;
@@ -63,10 +59,15 @@ export class RepairProvider {
       this.prices.push(this.repairs[i].price);
       console.log("laptop"+this.modelrepairs);}
     }else{ 
+      if (this.booking.userData.device=='Phone'
+          ||this.booking.userData.device=='Tablet'
+          ||this.booking.userData.device=='MacBook'){
       
     
   for (var i=0;i<this.models.length;i++){
-    if (this.booking.userData.model == this.models[i].model){
+    console.log(this.models[i].model+this.booking.userData.model);
+    console.log(this.models[i].modelNum+this.booking.userData.modelNum);
+    if (this.booking.userData.model == this.models[i].model&&this.booking.userData.modelNum == this.models[i].modelNum){
       console.log("true")
       if (this.models[i].screenrep!=null){
         this.prices.push(this.models[i].screenrep);
@@ -130,7 +131,7 @@ export class RepairProvider {
         this.other=1;
       }      
     }
-  }}
+  }}}
   console.log(this.modelrepairs);
   }
 
