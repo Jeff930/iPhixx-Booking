@@ -87,6 +87,9 @@ export class ChoosemodelPage {
 		if (this.booking.userData.device == 'Laptop'){
 			document.getElementById('mobile').style.display = 'none';
 			document.getElementById('laptop').style.display = 'block';
+		}else{
+			document.getElementById('mobile').style.display = 'block';
+			document.getElementById('laptop').style.display = 'none';
 		}
 		this.booking.model="selected";
 		
@@ -104,8 +107,10 @@ export class ChoosemodelPage {
 	this.navigation.other=0;
 	}
 
-  selectModel(model){
+  selectModel(model,modelNum){
 	this.booking.userData.model = model;
+	console.log(modelNum);
+	this.booking.userData.modelNum = modelNum;
 	this.cart.selectedRepairs=[];
 	this.cart.selectedIndex=[];
 	this.cart.cartMessage="There are currently no items in your cart.";
@@ -117,7 +122,7 @@ export class ChoosemodelPage {
 	this.cart.completeCheckout=[];
 	this.cart.goCheckout=[];
 	this.repair.updatemodelrepairs();
-	  if (this.booking.userData.device="MacBook"){
+	  if (this.booking.userData.device=="MacBook"){
 		this.navCtrl.push(RepairPage);
 	  }else{
 		console.log(model);
@@ -128,6 +133,7 @@ export class ChoosemodelPage {
 
   goToRepair(){
 	this.booking.userData.model = this.model;
+	this.booking.userData.modelNum = '';
 	this.cart.selectedRepairs=[];
 	this.cart.selectedIndex=[];
 	this.cart.cartMessage="There are currently no items in your cart.";
