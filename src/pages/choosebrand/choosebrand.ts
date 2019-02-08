@@ -79,7 +79,19 @@ export class ChoosebrandPage {
     }
     else{
       if (this.device == 'Gaming Console'){
-        this.repair.updatemodelrepairs();
+        this.booking.userData.model = '';
+	      this.booking.userData.modelNum = '';
+	      this.cart.selectedRepairs=[];
+	      this.cart.selectedIndex=[];
+	      this.cart.cartMessage="There are currently no items in your cart.";
+	      this.cart.Total=0;
+	      this.cart.costs=[];
+	      this.repair.modelrepairs=[];
+	      this.repair.other=0;
+	      this.repair.prices=[];
+	      this.cart.completeCheckout=[];
+	      this.cart.goCheckout=[];
+	      this.repair.updatemodelrepairs();
         this.navCtrl.setRoot(RepairPage);
       }else{
         this.navCtrl.push(ChoosemodelPage , { brand: brand});
