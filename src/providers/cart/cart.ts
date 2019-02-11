@@ -86,13 +86,14 @@ export class CartProvider {
 
   removeIndex(repair,selectedIndex){
     console.log(selectedIndex);
+    console.log(repair);
+    console.log(this.costs[selectedIndex]);
     var index;
     console.log("model" + JSON.stringify(this.repair.modelrepairs));
     for (let i=0;i<this.repair.modelrepairs.length;i++){
-        if (this.repair.modelrepairs[i]==repair){
-          index = i;
+        //if (this.repair.modelrepairs[i]==repair){
           this.Total=this.Total - parseInt(this.costs[selectedIndex]);
-        }
+        //}
     }
     if (repair == 'Temporary Phone') {
       this.Total=this.Total - 50;
