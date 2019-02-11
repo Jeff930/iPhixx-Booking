@@ -38,36 +38,27 @@ export class NavigationComponent {
   }
 
   viewBrand(){
-  if (this.booking.selected>=2)
-    this.navCtrl.setRoot(ChoosebrandPage);
-  else
-    console.log("");
-   
+    if (this.booking.userData.device!='MacBook'){
+      if (this.booking.selected>=2)
+      this.navCtrl.setRoot(ChoosebrandPage);}
   }
 
   viewModel(){
-    if (this.booking.selected>=3)
-    this.navCtrl.setRoot(ChoosemodelPage);
-  else
-    console.log("");
-   
-   
+    if (this.booking.userData.device!='Gaming Console'){
+      if (this.booking.selected>=3)
+      this.navCtrl.setRoot(ChoosemodelPage);}
   }
 
   viewColor(){
-    if (this.booking.selected>=4)
-    this.navCtrl.setRoot(ColorPage);
-  else
-    console.log("");
-    
+    if (this.booking.userData.device=='Phone'||this.booking.userData.device=='Tablet'){
+      if (this.booking.selected>=4)
+        this.navCtrl.setRoot(ColorPage);}
   }
  
   viewNetwork(){
-    if (this.booking.selected>=5)
-    this.navCtrl.setRoot(NetworkPage);
-  else
-    console.log("");
-   
+    if (this.booking.userData.device=='Phone'||this.booking.userData.device=='Tablet'){
+      if (this.booking.selected>=5)
+        this.navCtrl.setRoot(NetworkPage);}
   }
 
   viewRepair(){
