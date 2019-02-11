@@ -15,6 +15,7 @@ import { UpgradeofferPage } from '../../pages/upgradeoffer/upgradeoffer';
 import { OtherdevtypePage } from '../../pages/otherdevtype/otherdevtype';
 import { EnterdetailPage } from '../../pages/enterdetail/enterdetail';
 import { NavigationProvider } from '../../providers/navigation/navigation';
+import { BookingProvider } from '../../providers/booking/booking';
 import { CustomerdetailsPage } from '../../pages/customerdetails/customerdetails';
 import { OtherrepairPage } from '../../pages/otherrepair/otherrepair';
 
@@ -34,7 +35,7 @@ export class HeaderComponent {
   otherDev;
   otherRepair;
 
-  constructor(public navigation:NavigationProvider, public navCtrl: NavController) {
+  constructor(public navigation:NavigationProvider, public navCtrl: NavController,public booking:BookingProvider) {
   }
 
   Back(){
@@ -68,6 +69,9 @@ export class HeaderComponent {
         this.navCtrl.setRoot(ChoosebrandPage);
         break;
       case 9://select model
+        if (this.booking.userData.device=='MacBook')
+        this.navCtrl.setRoot(HomePage);
+        else
         this.navCtrl.setRoot(ChoosebrandPage);
         break;
       case 10://select color
@@ -80,7 +84,14 @@ export class HeaderComponent {
         this.navCtrl.setRoot(ColorPage);
         break;
       case 12://select repair
-        this.navCtrl.setRoot(NetworkPage);
+        if (this.booking.userData.device=='Laptop'||this.booking.userData.device=='MacBook'){
+        this.navCtrl.setRoot(ChoosemodelPage);
+        }else{
+          if (this.booking.userData.device=='Gaming Console'){
+            this.navCtrl.setRoot(ChoosebrandPage);
+          }else{
+            this.navCtrl.setRoot(NetworkPage);
+        }}
         break;
       case 13://upsell
         this.navCtrl.setRoot(RepairPage);
