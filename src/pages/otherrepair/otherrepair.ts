@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CustomerdetailsPage} from '../customerdetails/customerdetails';
+import { RepairPage} from '../repair/repair';
 
 import { BookingProvider } from '../../providers/booking/booking';
 import { CartProvider } from '../../providers/cart/cart';
@@ -35,14 +35,12 @@ export class OtherrepairPage {
   }
 
   goToCheckout() {
-    this.navCtrl.push(CustomerdetailsPage);
-    this.cart.selectedRepairs=[];
+    this.navCtrl.push(RepairPage);
     this.cart.selectedRepairs.push(this.repairOption);
     console.log("repair option"+this.repairOption);
     console.log("repair option"+this.cart.selectedRepairs[0]);
-    this.cart.costs=[];
     this.cart.costs.push(this.repairCost+".00");
-    this.cart.Total=this.repairCost;
+    this.cart.Total=this.cart.Total+parseInt(this.repairCost);
   }
 
   ionViewDidLoad(){
