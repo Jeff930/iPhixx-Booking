@@ -37,6 +37,7 @@ import { ThankyouPage } from '../pages/thankyou/thankyou';
 import { OtherdevtypePage } from '../pages/otherdevtype/otherdevtype';
 import { EnterdetailPage } from '../pages/enterdetail/enterdetail';
 import { OtherrepairPage } from '../pages/otherrepair/otherrepair';
+import { TestInPage } from '../pages/test-in/test-in';
 
 import { SignaturePadModule } from 'angular2-signaturepad';
 
@@ -78,6 +79,7 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     OtherdevtypePage,
     EnterdetailPage,
     OtherrepairPage,
+    TestInPage,
 
 
   ],
@@ -122,6 +124,7 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     OtherdevtypePage,
     EnterdetailPage,
     OtherrepairPage,
+    TestInPage,
     
 
   ],
