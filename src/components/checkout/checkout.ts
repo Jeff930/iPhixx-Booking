@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CartProvider } from '../../providers/cart/cart';
 import { BookingProvider } from '../../providers/booking/booking';
-import { UpgradeofferPage } from '../../pages/upgradeoffer/upgradeoffer';
+import { TestInPage } from '../../pages/test-in/test-in';
 import { NavController, NavParams } from 'ionic-angular';
 import { CustomerdetailsPage } from '../../pages/customerdetails/customerdetails'
 /**
@@ -21,7 +21,7 @@ export class CheckoutComponent{
   }
 
   goCheckout(){
-    this.navCtrl.push(UpgradeofferPage);
+    this.navCtrl.push(TestInPage);
   }
 
   completeCheckout(){
