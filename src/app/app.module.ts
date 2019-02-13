@@ -8,6 +8,7 @@ import { File } from '@ionic-native/file';
 import { FileOpener } from '@ionic-native/file-opener';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
+import { AutosizeDirective} from '../directives/autosize/autosize';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -27,13 +28,10 @@ import { RepairPage } from '../pages/repair/repair';
 import { BookingpPage } from '../pages/bookingp/bookingp';
 import { PhoneofferPage } from '../pages/phoneoffer/phoneoffer';
 import { UpgradeofferPage } from '../pages/upgradeoffer/upgradeoffer';
-import { Upgradeoffer2Page } from '../pages/upgradeoffer2/upgradeoffer2';
 import { CustomerdetailsPage } from '../pages/customerdetails/customerdetails';
 import { ConfirmationPage } from '../pages/confirmation/confirmation';
 import { SignaturePage } from '../pages/signature/signature';
 import { RepairnumberinfoPage } from '../pages/repairnumberinfo/repairnumberinfo';
-import { PhoneofferdetailsPage } from '../pages/phoneofferdetails/phoneofferdetails';
-import { ThankyouPage } from '../pages/thankyou/thankyou';
 import { OtherdevtypePage } from '../pages/otherdevtype/otherdevtype';
 import { EnterdetailPage } from '../pages/enterdetail/enterdetail';
 import { OtherrepairPage } from '../pages/otherrepair/otherrepair';
@@ -67,19 +65,17 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     BookingpPage,
     PhoneofferPage,
     UpgradeofferPage,
-    Upgradeoffer2Page,
     CustomerdetailsPage,
     ConfirmationPage,
     SignaturePage,
     RepairnumberinfoPage,
-    PhoneofferdetailsPage,
-    ThankyouPage,
     RecoverPage,
     RegisterPage,
     OtherdevtypePage,
     EnterdetailPage,
     OtherrepairPage,
     TestInPage,
+    AutosizeDirective,
 
 
   ],
@@ -112,13 +108,10 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     BookingpPage,
     PhoneofferPage,
     UpgradeofferPage,
-    Upgradeoffer2Page,
     CustomerdetailsPage,
     ConfirmationPage,
     SignaturePage,
     RepairnumberinfoPage,
-    PhoneofferdetailsPage,
-    ThankyouPage,
     RecoverPage,
     RegisterPage,
     OtherdevtypePage,
