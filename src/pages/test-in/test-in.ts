@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CartProvider } from '../../providers/cart/cart';
+import { UpgradeofferPage } from '../../pages/upgradeoffer/upgradeoffer';
 
 /**
  * Generated class for the TestInPage page.
@@ -15,11 +17,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TestInPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private cart: CartProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TestInPage');
+    this.cart.goCheckout=0;
+	this.cart.completeCheckout=0;
+	//this.navigation.activePageIndex=13;
+  }
+
+  proceed(){
+    this.navCtrl.setRoot(UpgradeofferPage);
   }
 
 }
