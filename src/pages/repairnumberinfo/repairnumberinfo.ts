@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, ModalController} from 'ionic-angular';
 
 import { SignaturePage } from '../signature/signature'
-import { PhoneofferdetailsPage } from '../phoneofferdetails/phoneofferdetails';
 
 
 
@@ -55,8 +54,6 @@ export class RepairnumberinfoPage {
 			        text: 'Yes',
 			        handler: () => {
 			          console.log('Buy clicked');
-			          this.navCtrl.push(PhoneofferdetailsPage);
-
 			        }
 			      }
 		    ]

@@ -5,8 +5,7 @@ import { NavController } from 'ionic-angular';
 
 import {SignaturePad} from 'angular2-signaturepad/signature-pad';
 
-import { RepairnumberinfoPage } from '../repairnumberinfo/repairnumberinfo'
-import { ThankyouPage } from '../thankyou/thankyou'
+import { RepairnumberinfoPage } from '../repairnumberinfo/repairnumberinfo';
 
 /**
  * Generated class for the SignaturePage page.
@@ -78,9 +77,6 @@ export class SignaturePage {
       .toDataURL();
     
     console.log(this.signatureImage);
-
-    this.navCtrl.setRoot(ThankyouPage);
- 
     // this
     //   .navCtrl
     //   .push(RepairnumberinfoPage, {signatureImage: this.signatureImage});
