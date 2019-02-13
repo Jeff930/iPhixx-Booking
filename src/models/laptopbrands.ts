@@ -2,7 +2,7 @@ export const laptopbrands = [
 	{ 	key:'6',
 		brand: 'Hewlett Packard (HP)' },
 	{ 	key:'2',
-		brand: 'Levono' },
+		brand: 'Lenovo' },
 	{ 	key:'3',
 		brand: 'Dell' },
 	{ 	key:'6',
