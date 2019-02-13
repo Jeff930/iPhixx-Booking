@@ -34,16 +34,23 @@ export class ModalPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage' + this.navParams.get('source'));
     this.source=this.navParams.get('source');
-    if ( this.source =='color'){
-      this.question = "Other Color";
-      this.tip = "What color is your phone?"
-    }
-    if (this.source=='pin'){
-      this.question = "What is your PIN?";
-      this.tip = "Please input your PIN below?"
-    }else{
-      this.question = "Other Carrier Name";
-      this.tip = "What carrier do you have?"
+    console.log(this.source);
+    switch (this.source){
+
+      case 'color':
+        this.question = "Other Color";
+        this.tip = "What color is your phone?";
+      break;
+
+      case 'pin':
+        this.question = "What is your PIN?";
+        this.tip = "Please input your PIN below?";
+      break;
+
+      case 'network':
+        this.question = "Other Carrier Name";
+        this.tip = "What carrier do you have?";
+      break;
     }
   }
 
