@@ -84,13 +84,13 @@ export class ChoosemodelPage {
 	}
 
 	ionViewWillEnter(){
-		if (this.booking.userData.device == 'Laptop'){
-			document.getElementById('mobile').style.display = 'none';
-			document.getElementById('laptop').style.display = 'block';
-		}else{
-			document.getElementById('mobile').style.display = 'block';
-			document.getElementById('laptop').style.display = 'none';
-		}
+		// if (this.booking.userData.device == 'Laptop'){
+		// 	document.getElementById('mobile').style.display = 'none';
+		// 	document.getElementById('laptop').style.display = 'block';
+		// }else{
+		// 	document.getElementById('mobile').style.display = 'block';
+		// 	document.getElementById('laptop').style.display = 'none';
+		// }
 		this.booking.model="selected";
 		
 		this.booking.selected=3;
