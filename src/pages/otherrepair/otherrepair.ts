@@ -35,7 +35,7 @@ export class OtherrepairPage {
   }
 
   goToCheckout() {
-    this.navCtrl.push(RepairPage);
+    this.navCtrl.setRoot(RepairPage);
     this.cart.selectedRepairs.push(this.repairOption);
     console.log("repair option"+this.repairOption);
     console.log("repair option"+this.cart.selectedRepairs[0]);
