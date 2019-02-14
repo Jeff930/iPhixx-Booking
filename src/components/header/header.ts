@@ -18,6 +18,7 @@ import { NavigationProvider } from '../../providers/navigation/navigation';
 import { BookingProvider } from '../../providers/booking/booking';
 import { CustomerdetailsPage } from '../../pages/customerdetails/customerdetails';
 import { OtherrepairPage } from '../../pages/otherrepair/otherrepair';
+import { TestInPage } from '../../pages/test-in/test-in';
 
 /**
  * Generated class for the HeaderComponent component.
@@ -122,6 +123,9 @@ export class HeaderComponent {
         this.navCtrl.setRoot(ChooseactionPage);
         break;
       case 20://Otherrepair
+        this.navCtrl.setRoot(RepairPage);
+        break;
+      case 21://TestIn
         this.navCtrl.setRoot(RepairPage);
         break;
       
