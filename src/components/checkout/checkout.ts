@@ -3,7 +3,7 @@ import { CartProvider } from '../../providers/cart/cart';
 import { BookingProvider } from '../../providers/booking/booking';
 import { TestInPage } from '../../pages/test-in/test-in';
 import { NavController, NavParams } from 'ionic-angular';
-import { CustomerdetailsPage } from '../../pages/customerdetails/customerdetails'
+import { CustomerdetailsPage } from '../../pages/customerdetails/customerdetails';
 /**
  * Generated class for the CheckoutComponent component.
  *
@@ -21,7 +21,10 @@ export class CheckoutComponent{
   }
 
   goCheckout(){
-    this.navCtrl.push(TestInPage);
+    if (this.booking.userData.device=='Gaming Console')
+      this.navCtrl.push(CustomerdetailsPage);
+    else
+      this.navCtrl.push(TestInPage);    
   }
 
   completeCheckout(){
