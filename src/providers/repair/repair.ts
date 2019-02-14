@@ -126,10 +126,7 @@ export class RepairProvider {
         this.prices.push(this.models[i].trackpadrep);
         this.modelrepairs.push("Trackpad Replacement");
       }
-      if (this.device =="Tablet"){
-        console.log("worked");
         this.other=1;
-      }      
     }
   }}}
   console.log(this.modelrepairs);
