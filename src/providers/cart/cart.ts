@@ -19,6 +19,8 @@ export class CartProvider {
   completeCheckout;
   repairs = mobilerepairs;
   costs=[];
+  selected;
+  unselected;
 
 
 
@@ -35,8 +37,8 @@ export class CartProvider {
     this.completeCheckout=0; 
     if (this.selectedRepairs.indexOf(selectedRepair)==-1){
       if (index!=null){
-      var unselected = document.getElementsByClassName("repair");
-      unselected[index].setAttribute("style","background-color:lightgray");}
+      this.unselected = document.getElementsByClassName("repair");
+      this.unselected[index].setAttribute("style","background-color:lightgray");}
       this.selectedRepairs.push(selectedRepair);
       this.selectedIndex.push(index);
       console.log(price);
@@ -54,14 +56,18 @@ export class CartProvider {
  
 
   checkSelected(){
-    var unselected = document.getElementsByClassName("repair");
+    this.unselected = document.getElementsByClassName("repair");
+    console.log(JSON.stringify(this.selectedIndex));
+    console.log(this.unselected[this.selectedIndex[0]]);
+    console.log(this.unselected[1]);
     if (this.selectedIndex!=null){
     for (let i=0;i<=this.selectedIndex.length;i++){
       try{
-      unselected[this.selectedIndex[i]].setAttribute("style","background-color:lightgray");
+        console.log(this.unselected[this.selectedIndex[i]]);
+      this.unselected[this.selectedIndex[i]].setAttribute("style","background-color:lightgray");
       }
-      catch{
-        console.log("hello")
+      catch(e){
+        console.log(e);
       }
    }}}
 
@@ -90,24 +96,44 @@ export class CartProvider {
     console.log(this.costs[selectedIndex]);
     var index;
     console.log("model" + JSON.stringify(this.repair.modelrepairs));
-    for (let i=0;i<this.repair.modelrepairs.length;i++){
-        //if (this.repair.modelrepairs[i]==repair){
-          this.Total=this.Total - parseInt(this.costs[selectedIndex]);
-        //}
-    }
-    if (repair == 'Temporary Phone') {
-      this.Total=this.Total - 50;
-      console.log("true")
-    }
-    if (repair == 'Nano Technology Tempered Glass') {
-      this.Total=this.Total - 25;
-      console.log("true2")
-    }
 
-    var selected = document.getElementsByClassName("repair");
+    switch (repair){
+      case 'Temporary Phone':
+        this.Total=this.Total - 50;
+      break;
+
+      case 'Nano Technology Tempered Glass':
+        this.Total=this.Total - 25;
+      break;
+      
+      default:
+        if (this.repair.modelrepairs.indexOf(repair)==-1){
+          this.Total=this.Total - parseInt(this.costs[selectedIndex]);
+        }else{
+          index=this.repair.modelrepairs.indexOf(repair);
+          this.Total=this.Total - parseInt(this.costs[selectedIndex]);
+        }
+    }
+    
+    // for (let i=0;i<this.repair.modelrepairs.length;i++){
+    //     if (this.repair.modelrepairs[i]==repair){
+    //       
+    //       this.Total=this.Total - parseInt(this.costs[selectedIndex]);
+    //     }
+    // }
+    // if (repair == 'Temporary Phone') {
+    //   this.Total=this.Total - 50;
+    //   console.log("true")
+    // }
+    // if (repair == 'Nano Technology Tempered Glass') {
+    //   this.Total=this.Total - 25;
+    //   console.log("true2")
+    // }
+
+    this.selected = document.getElementsByClassName("repair");
     console.log("thissss" + JSON.stringify(index));
     try{
-    selected[index].setAttribute("style","background-color:white");
+    this.selected[index].setAttribute("style","background-color:white");
     this.selectedIndex.splice(this.selectedIndex.indexOf(index),1);
     
     console.log("indexx"+index)
