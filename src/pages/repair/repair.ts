@@ -1,6 +1,5 @@
 import { Component,ChangeDetectorRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
 import { BookingProvider } from '../../providers/booking/booking';
 import { RepairProvider } from '../../providers/repair/repair';
 import { CartProvider } from '../../providers/cart/cart';
