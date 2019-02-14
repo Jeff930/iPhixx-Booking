@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CartProvider } from '../../providers/cart/cart';
+import { BookingProvider } from '../../providers/booking/booking';
+import { NavigationProvider } from '../../providers/navigation/navigation';
 import { UpgradeofferPage } from '../../pages/upgradeoffer/upgradeoffer';
+import { CustomerdetailsPage } from '../../pages/customerdetails/customerdetails';
 
 /**
  * Generated class for the TestInPage page.
@@ -17,17 +20,31 @@ import { UpgradeofferPage } from '../../pages/upgradeoffer/upgradeoffer';
 })
 export class TestInPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private cart: CartProvider) {
+  device;
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private cart: CartProvider,
+              private booking: BookingProvider,
+              private navigation: NavigationProvider,
+              ) {
+                
+
   }
 
   ionViewDidLoad() {
     this.cart.goCheckout=0;
-	this.cart.completeCheckout=0;
-	//this.navigation.activePageIndex=13;
+  this.cart.completeCheckout=0;
+  this.device=this.booking.userData.device;
+  console.log(this.device);
+  this.navigation.activePageIndex=21;
+  console.log(this.navigation.activePageIndex);
   }
 
-  proceed(){
-    this.navCtrl.setRoot(UpgradeofferPage);
+  Proceed(){
+    if (this.device=='Phone'|| this.device=='Tablet')
+      this.navCtrl.setRoot(UpgradeofferPage);
+    else
+      this.navCtrl.setRoot(CustomerdetailsPage);
   }
 
 }
