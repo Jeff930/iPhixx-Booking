@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+//import * as $ from "jquery";
 import { Component } from '@angular/core';
 import { NavigationProvider } from '../../providers/navigation/navigation';
 import {NavController, NavParams , LoadingController} from 'ionic-angular';
