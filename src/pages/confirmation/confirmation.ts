@@ -1,15 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Platform } from 'ionic-angular';
-
-
-import pdfMake from 'pdfmake/build/pdfmake';
-import pdfFonts from 'pdfmake/build/vfs_fonts';
-
+import { NavController, NavParams } from 'ionic-angular';
 import { commands } from './../../providers/print-service/printer-commands';
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
-import { File } from '@ionic-native/file';
-import { FileOpener } from '@ionic-native/file-opener';
 import { AlertController, LoadingController, ToastController } from 'ionic-angular';
 
 import { BookingProvider } from '../../providers/booking/booking';
@@ -18,10 +10,7 @@ import { NavigationProvider } from '../../providers/navigation/navigation';
 import { RepairProvider } from '../../providers/repair/repair';
 import { PrintServiceProvider } from '../../providers/print-service/print-service';
 
-import { ChooseactionPage } from '../chooseaction/chooseaction'
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { getCurrencySymbol } from '@angular/common';
-
+import { ChooseactionPage } from '../chooseaction/chooseaction';
 
 /**
  * Generated class for the ConfirmationPage page.
@@ -37,7 +26,7 @@ import { getCurrencySymbol } from '@angular/common';
 })
 export class ConfirmationPage {
   
-  pdfObj = null;
+ // pdfObj = null;
   userData = this.booking.userData;
   count=0;
   countsmall=0;
@@ -72,7 +61,7 @@ export class ConfirmationPage {
   service="Services";
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public booking: BookingProvider,private file: File, private fileOpener: FileOpener,private plt: Platform,public cart: CartProvider,public navi: NavigationProvider,public repair: RepairProvider, public print:PrintServiceProvider,public alertCtrl:AlertController, private loadCtrl: LoadingController, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public booking: BookingProvider,public cart: CartProvider,public navi: NavigationProvider,public repair: RepairProvider, public print:PrintServiceProvider,public alertCtrl:AlertController, private loadCtrl: LoadingController, private toastCtrl: ToastController) {
   }
 
   // createPdf() {
