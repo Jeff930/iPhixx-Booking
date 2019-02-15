@@ -7,7 +7,6 @@ import { ChoosebrandPage } from '../../pages/choosebrand/choosebrand';
 import { ColorPage } from '../../pages/color/color';
 import { NetworkPage } from '../../pages/network/network';
 import { RepairPage } from '../../pages/repair/repair';
-import { Platform } from 'ionic-angular';
 
 /**
  * Generated class for the NavigationComponent component.
@@ -23,11 +22,9 @@ export class NavigationComponent {
   devWidth: any;
   text: string;
 
-  constructor(public booking : BookingProvider,public navCtrl: NavController,public platform: Platform) {
+  constructor(public booking : BookingProvider,public navCtrl: NavController) {
     console.log('Hello NavigationComponent Component');
     this.text = 'Hello World';
-    this.devWidth = this.platform.width();
-    console.log(this.devWidth)
   }
 
   viewDevice(){
