@@ -1,10 +1,8 @@
-import * as $ from "jquery";
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController  } from 'ionic-angular';
 
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
-import { ConfirmationPage } from '../../pages/confirmation/confirmation'
 import { NavigationProvider } from '../../providers/navigation/navigation';
 
 import { BookingProvider } from '../../providers/booking/booking';
