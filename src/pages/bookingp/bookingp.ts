@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 // import { Http, Headers } from '@angular/http';
 // import { Observable } from 'rxjs/Observable';
