@@ -4,7 +4,6 @@
 </ion-toolbar>
 </ion-header>
 
-
 <ion-grid padding-bottom class="checkout-content">
 	<ion-row>
 		<ion-col>
@@ -41,11 +40,6 @@
 				</ion-row>
 			</ion-col>
 	</ion-row>
-	<!-- <ion-row>
-		<ion-col col-12>
-      		<button  col-12 ion-button full><p style="font-size:0.8em">Need more than 1 repair? Click Here</p></button>
-      	</ion-col>
-	</ion-row> -->
 	<ion-row *ngIf="cart.goCheckout == 1">
 			<ion-col col-12>
 				  <button  col-12 ion-button full (click)="goCheckout()">Go to checkout</button>
