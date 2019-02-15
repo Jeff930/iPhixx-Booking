@@ -3,8 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { BookingProvider } from '../../providers/booking/booking';
 
-import { UpgradeofferPage } from '../../pages/upgradeoffer/upgradeoffer'
-
 import { CustomerdetailsPage } from '../../pages/customerdetails/customerdetails'
 import { NavigationProvider } from '../../providers/navigation/navigation';
 import { CartProvider } from '../../providers/cart/cart';
