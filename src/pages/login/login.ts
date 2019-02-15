@@ -9,7 +9,7 @@ import { PasscodePage } from '../passcode/passcode';
 
 import { BookingProvider } from '../../providers/booking/booking';
 
-import { ChooseactionPage } from '../chooseaction/chooseaction';
+//import { ChooseactionPage } from '../chooseaction/chooseaction';
 import { RecoverPage } from '../recover/recover';
 import { RegisterPage } from '../register/register';
 
