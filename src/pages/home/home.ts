@@ -1,4 +1,4 @@
-import { Component, ɵConsole } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController , AlertController } from 'ionic-angular';
 
 import { BookingProvider } from '../../providers/booking/booking';
