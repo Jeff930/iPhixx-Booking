@@ -25,12 +25,14 @@
     </div>
      <ion-row>
      <ion-col col-xs-6 offset-sm-3 col-sm-6 col-md-6 offset-lg-2 col-lg-8 col-xl-8>
-       <ion-input placeholder={{source}} [(ngModel)]="input"></ion-input>
+       <div [formGroup]="modalForm">
+       <ion-input formControlName="value"></ion-input>
+     </div>
       </ion-col>
      </ion-row>
      <ion-row>
      	<ion-col col-xs-6 offset-sm-3 col-sm-6 offset-md-3 col-md-6 offset-lg-2 col-lg-8  offset-lg-2 col-xl-8>
-      		<button  ol-xs-6 offset-sm-3 col-sm-6 col-md-6 offset-lg-2 col-lg-8 col-xl-8 class="button" ion-button full (click) ="Done()">Done</button>
+      		<button [disabled]="!modalForm.valid" ol-xs-6 offset-sm-3 col-sm-6 col-md-6 offset-lg-2 col-lg-8 col-xl-8 class="button" ion-button full (click) ="Done(modalForm.value)">Done</button>
   		</ion-col>
   	</ion-row>
   </ion-grid>
