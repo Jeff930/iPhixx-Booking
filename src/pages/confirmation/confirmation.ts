@@ -59,9 +59,11 @@ export class ConfirmationPage {
   space='';
   delivery="Delivery Service by: Nightline Group Courier";
   service="Services";
+  dev;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public booking: BookingProvider,public cart: CartProvider,public navi: NavigationProvider,public repair: RepairProvider, public print:PrintServiceProvider,public alertCtrl:AlertController, private loadCtrl: LoadingController, private toastCtrl: ToastController) {
+    this.dev=this.booking.userData.device;
   }
 
   // createPdf() {
@@ -412,10 +414,12 @@ export class ConfirmationPage {
     receipt += commands.TEXT_FORMAT.TXT_BOLD_OFF;
     receipt += commands.EOL;
     receipt += this.model;
-    receipt += commands.EOL;
-    receipt += this.color;
-    receipt += commands.EOL;
-    receipt += this.carrier;
+    if (this.dev=='Tablet'||this.dev=='Phone'){
+      receipt += commands.EOL;
+      receipt += this.color;
+      receipt += commands.EOL;
+      receipt += this.carrier;
+    }
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += commands.HORIZONTAL_LINE.HR_58MM1;
