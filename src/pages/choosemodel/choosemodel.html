@@ -61,12 +61,14 @@
           </div>
           <ion-row>
             <ion-col col-xs-12 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4>
-          <ion-input placeholder="Device Model Number" [(ngModel)]="model" f></ion-input>
+          <div [formGroup]="modelNumberForm">
+          <ion-input type="text" formControlName="model" placeholder="Device Model Number"></ion-input>
+          </div>
           </ion-col>
           </ion-row>
            <ion-row>
       <ion-col col-xs-12 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-3 col-lg-6  offset-lg-3 col-xl-6>
-          <button col-xs-6 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4 class="button" ion-button full (click) ="goToRepair()">Continue </button>
+          <button [disabled]="!modelNumberForm.valid" col-xs-6 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4 class="button" ion-button full (click) ="goToRepair(modelNumberForm.value)">Continue </button>
       </ion-col>
   </ion-row>
       </ion-col>
