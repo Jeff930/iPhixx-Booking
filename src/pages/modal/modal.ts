@@ -7,6 +7,7 @@ import { RepairPage } from '../repair/repair';
 import { ConfirmationPage } from '../../pages/confirmation/confirmation';
 import { LoadingController, AlertController } from 'ionic-angular';
 import { CartProvider } from '../../providers/cart/cart';
+import { Validators, FormBuilder} from '@angular/forms';
 import * as $ from "jquery";
 
 /**
@@ -26,9 +27,12 @@ export class ModalPage {
   tip:string;
   source:string;
   input:string;
+  modalForm;
 
 
-  constructor(public navCtrl: NavController, public viewCtrl : ViewController, public navParams: NavParams,public booking : BookingProvider,public loadingCtrl: LoadingController,public alertCtrl: AlertController,public cart:CartProvider,) {
+  constructor(public navCtrl: NavController,public formBuilder: FormBuilder, public viewCtrl : ViewController, public navParams: NavParams,public booking : BookingProvider,public loadingCtrl: LoadingController,public alertCtrl: AlertController,public cart:CartProvider,) {
+    this.modalForm = formBuilder.group({
+      'value':['', Validators.compose([Validators.required])],});
   }
 
   ionViewDidLoad() {
@@ -52,25 +56,28 @@ export class ModalPage {
         this.tip = "What carrier do you have?";
       break;
     }
+   
   }
 
   closeModal(){
     this.viewCtrl.dismiss();
   }
 
-  Done(){
+  Done(value){
     if ( this.source =='color'){
-      this.booking.userData.color = this.input;
+      this.booking.userData.color = value.value;
+      console.log(this.booking.userData.color);
       this.navCtrl.push(NetworkPage);
-    }
+    }else{
     if (this.source=='pin'){
-      this.booking.userData.user.pin = this.input;
+      this.booking.userData.user.pin = value.value;
       console.log(this.booking.userData.user.pin);
       this.doLogin();
     }else{
-      this.booking.userData.network = this.input;
+      this.booking.userData.network = value.value;
+      console.log(this.booking.userData.network);
       this.navCtrl.push(RepairPage);
-    }}
+    }}}
 
     doLogin(){
 
