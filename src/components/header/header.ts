@@ -100,12 +100,18 @@ export class HeaderComponent {
       case 14://phoneoffer
         this.navCtrl.setRoot(UpgradeofferPage);
         break;
-      case 15://booking
+      case 15://customerdetails
          if (this.otherDev==0){
-          if (this.otherRepair==0)
-            this.navCtrl.setRoot(PhoneofferPage);
-          else
-            this.navCtrl.setRoot(OtherrepairPage)
+          if (this.otherRepair==0){
+            if (this.booking.userData.device=='Gaming Console'||
+            this.booking.userData.device=='MacBook'||
+            this.booking.userData.device=='Laptop'){
+              this.navCtrl.setRoot(TestInPage);
+            }else{
+              this.navCtrl.setRoot(PhoneofferPage);
+            }
+          }else{
+            this.navCtrl.setRoot(OtherrepairPage);}
         }
         else
           this.navCtrl.setRoot(EnterdetailPage);
