@@ -21,7 +21,6 @@ import { PasscodePage } from '../pages/passcode/passcode';
 import { ChoosebrandPage } from '../pages/choosebrand/choosebrand';
 import { ChooseactionPage } from '../pages/chooseaction/chooseaction';
 import { RepairnumberPage } from '../pages/repairnumber/repairnumber';
-import { OtherPage } from '../pages/other/other';
 import { ColorPage } from '../pages/color/color';
 import { NetworkPage } from '../pages/network/network';
 import { RepairPage } from '../pages/repair/repair';
@@ -58,7 +57,6 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     ChoosebrandPage,
     ChooseactionPage,
     RepairnumberPage,
-    OtherPage,
     ColorPage,
     NetworkPage,
     RepairPage,
@@ -101,7 +99,6 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     ChoosebrandPage,
     ChooseactionPage,
     RepairnumberPage,
-    OtherPage,
     ColorPage,
     NetworkPage,
     RepairPage,
