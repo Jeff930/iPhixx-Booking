@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { ColorPage } from '../color/color';
 import { RepairPage } from '../repair/repair';
 
@@ -39,12 +39,17 @@ export class ChoosemodelPage {
   models = [];
   brand : string;
   model : string;
+  modelNumberForm;
  	  
-  constructor(public navCtrl: NavController, public navParams: NavParams, public booking : BookingProvider,public navigation: NavigationProvider,public repair:RepairProvider,public cart:CartProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public booking : BookingProvider,public navigation: NavigationProvider,public repair:RepairProvider,public cart:CartProvider,public formBuilder: FormBuilder,) {
   	this.device = this.booking.userData.device+', '+this.booking.userData.brand ;
   		console.log(this.booking.userData.device);  	
 
 	  this.brand = this.booking.userData.brand;	
+
+	  this.modelNumberForm = formBuilder.group({
+		'model':['', Validators.compose([Validators.required])],
+	});
 	  
 
   		if(this.booking.userData.device == 'Phone'){	
@@ -131,8 +136,9 @@ export class ChoosemodelPage {
 	  
   }
 
-  goToRepair(){
-	this.booking.userData.model = this.model;
+  goToRepair(model){
+	this.booking.userData.model = model.model;
+	console.log(this.booking.userData.model)
 	this.booking.userData.modelNum = '';
 	this.cart.selectedRepairs=[];
 	this.cart.selectedIndex=[];
