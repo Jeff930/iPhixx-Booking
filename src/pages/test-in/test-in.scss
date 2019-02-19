@@ -1,5 +1,6 @@
 page-test-in {
-	.my-checkbox {
+
+.my-checkbox {
     display: flex;
     align-items: center;
 }
@@ -7,6 +8,8 @@ page-test-in {
 .textarea{
 	border: 2px solid color($colors, primary, base);;
 	border-radius:10px; 
+	padding-left:1em;
+	padding-right:1em;
 }
-	
+
 }
