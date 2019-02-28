@@ -29,7 +29,6 @@ import { PhoneofferPage } from '../pages/phoneoffer/phoneoffer';
 import { UpgradeofferPage } from '../pages/upgradeoffer/upgradeoffer';
 import { CustomerdetailsPage } from '../pages/customerdetails/customerdetails';
 import { ConfirmationPage } from '../pages/confirmation/confirmation';
-import { SignaturePage } from '../pages/signature/signature';
 import { RepairnumberinfoPage } from '../pages/repairnumberinfo/repairnumberinfo';
 import { OtherdevtypePage } from '../pages/otherdevtype/otherdevtype';
 import { EnterdetailPage } from '../pages/enterdetail/enterdetail';
@@ -65,7 +64,6 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     UpgradeofferPage,
     CustomerdetailsPage,
     ConfirmationPage,
-    SignaturePage,
     RepairnumberinfoPage,
     RecoverPage,
     RegisterPage,
@@ -107,7 +105,6 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     UpgradeofferPage,
     CustomerdetailsPage,
     ConfirmationPage,
-    SignaturePage,
     RepairnumberinfoPage,
     RecoverPage,
     RegisterPage,
