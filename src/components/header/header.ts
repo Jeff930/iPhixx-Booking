@@ -95,7 +95,7 @@ export class HeaderComponent {
         }}
         break;
       case 13://upsell
-        this.navCtrl.setRoot(RepairPage);
+        this.navCtrl.setRoot(TestInPage);
         break;
       case 14://phoneoffer
         this.navCtrl.setRoot(UpgradeofferPage);
@@ -103,13 +103,15 @@ export class HeaderComponent {
       case 15://customerdetails
          if (this.otherDev==0){
           if (this.otherRepair==0){
-            if (this.booking.userData.device=='Gaming Console'||
-            this.booking.userData.device=='MacBook'||
-            this.booking.userData.device=='Laptop'){
-              this.navCtrl.setRoot(TestInPage);
+            if (this.booking.userData.device=='Gaming Console'){
+              this.navCtrl.setRoot(RepairPage);
             }else{
-              this.navCtrl.setRoot(PhoneofferPage);
-            }
+              if (this.booking.userData.device=='MacBook'||
+                  this.booking.userData.device=='Laptop'){
+                        this.navCtrl.setRoot(TestInPage);
+              }else{
+                        this.navCtrl.setRoot(PhoneofferPage);
+              }}
           }else{
             this.navCtrl.setRoot(OtherrepairPage);}
         }
