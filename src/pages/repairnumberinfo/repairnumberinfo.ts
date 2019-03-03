@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, ModalController} from 'ionic-angular';
 
-import { SignaturePage } from '../signature/signature'
 
 
 
@@ -46,8 +45,6 @@ export class RepairnumberinfoPage {
 			        role: 'cancel',
 			        handler: () => {
 			          console.log('Cancel clicked');
-			          this.navCtrl.push(SignaturePage);
-
 			        }
 			      },
 			      {
@@ -61,13 +58,13 @@ export class RepairnumberinfoPage {
   	alert.present();
   }
 
-  openSignatureModel(){
-    setTimeout(() => {
-    let modal = this.modalController.create(SignaturePage);
-    modal.present();
-    }, 200);
+  // openSignatureModel(){
+  //   setTimeout(() => {
+  //   //let modal = this.modalController.create(SignaturePage);
+  //   modal.present();
+  //   }, 200);
   
-  }
+  //}
 
 
 }
