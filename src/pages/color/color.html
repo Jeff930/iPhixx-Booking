@@ -20,7 +20,7 @@
             </div>
             <ion-row margin-horizontal>
               <ion-col  *ngFor = "let color of colors" class="color-col" col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4>
-                    <button  ion-button full class="color"  (click) ="selectColor(color.color)" >  
+                    <button  ion-button full class="color"  (click) ="selectColor(color.color, color.key)" >  
                       <div *ngIf="color.color!='Other'" class="{{color.color}}">
                       </div>
                       <div *ngIf="color.color=='Other'" class="{{color.color}}">

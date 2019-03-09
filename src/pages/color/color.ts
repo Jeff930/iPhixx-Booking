@@ -49,12 +49,13 @@ export class ColorPage {
     
   }
 
-  selectColor(color){
+  selectColor(color,key){
     console.log(JSON.stringify(color));
     if (color=='Other'){
       this.presentPrompt();
     }else{
       this.booking.userData.color = color;
+      this.booking.userData.colorKey = key;
       this.navCtrl.push(NetworkPage);
     }
   }
