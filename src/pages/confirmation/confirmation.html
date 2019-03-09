@@ -27,7 +27,7 @@
 
 	<h2 margin-top margin-horizontal>Customer Details</h2>
 	<ion-list margin-horizontal>
-	  <ion-item><p>Full Name : {{userData.user.fullname}}</p></ion-item>
+	  <ion-item><p>Full Name : {{userData.user.firstname}} {{userData.user.lastname}}</p></ion-item>
 	  <ion-item><p>Email : {{userData.user.email}}</p></ion-item>
 	  <ion-item><p>Phone Number : {{userData.user.phone}}</p></ion-item>
 	  <ion-item *ngIf="userData.user.phone2" ><p>Alternative Phone Number : {{userData.user.phone2}}</p></ion-item>
