@@ -112,10 +112,11 @@ export class ChoosemodelPage {
 	this.navigation.other=0;
 	}
 
-  selectModel(model,modelNum){
+  selectModel(model,modelNum,key){
 	this.booking.userData.model = model;
 	console.log(modelNum);
 	this.booking.userData.modelNum = modelNum;
+	this.booking.userData.modelKey = key;
 	this.cart.selectedRepairs=[];
 	this.cart.selectedIndex=[];
 	this.cart.cartMessage="There are currently no items in your cart.";
