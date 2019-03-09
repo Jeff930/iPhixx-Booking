@@ -73,7 +73,7 @@ export class ChoosebrandPage {
     this.navigation.other=0;
   }
 
-  selectBrand(brand){
+  selectBrand(brand, key){
     if(brand == 'Other'){
       this.navCtrl.push(OtherdevicePage);
     }
@@ -96,7 +96,8 @@ export class ChoosebrandPage {
       }else{
         this.navCtrl.push(ChoosemodelPage , { brand: brand});
       }
-  	this.booking.userData.brand = brand;
+    this.booking.userData.brand = brand;
+    this.booking.userData.brandKey = key;
     }
   }
 
