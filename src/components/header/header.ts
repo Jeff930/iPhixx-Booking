@@ -35,8 +35,12 @@ export class HeaderComponent {
   other;
   otherDev;
   otherRepair;
+  username;
 
   constructor(public navigation:NavigationProvider, public navCtrl: NavController,public booking:BookingProvider) {
+    this.username = JSON.parse(localStorage.getItem('authenticated'));
+    console.log(this.username);
+    console.log(this.username[0].agent_username);
   }
 
   Back(){
