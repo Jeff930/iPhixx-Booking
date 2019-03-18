@@ -42,13 +42,6 @@ export const macbookmodels = [
   screenrep: '550.00',
   trackpadrep:null,
 },
-{ 
-  key:'89',
-  model: 'Pro 15"',
-modelNum : 'A1707',
-screenrep: '550.00',
-trackpadrep:null,
-},
 
 { 
   key:'90',
