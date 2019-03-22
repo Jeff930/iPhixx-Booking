@@ -24,8 +24,9 @@ export class HomePage {
   	console.log(this.devices);
   }
 
-  selectdevice(device){
+  selectdevice(device,key){
     this.booking.userData.device = device;
+    this.booking.userData.deviceKey = key;
     console.log('selected device is:' + this.booking.userData.device)
     if (this.booking.userData.device=='MacBook'){
         console.log(true);
