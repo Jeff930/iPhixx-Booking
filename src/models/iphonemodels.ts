@@ -3,7 +3,7 @@ export const iphonemodels = [
 		key:'1',
 	  model : 'X', 
 	  modelNum : 'A1865',
-	  screenrep: '500.00',
+	  screenrep: '275.00',
 	  headphonerep:'135.00',
 	  earpiecerep:'145.00',
 	  powerrep:'165.00',
