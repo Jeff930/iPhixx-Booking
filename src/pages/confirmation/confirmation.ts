@@ -374,8 +374,6 @@ export class ConfirmationPage {
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.HORIZONTAL_LINE.HR_58MM;
     receipt += commands.EOL;
-    receipt += commands.HORIZONTAL_LINE.HR2_58MM;
-    receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += this.subheader;
     receipt += commands.EOL;
@@ -402,8 +400,6 @@ export class ConfirmationPage {
     receipt += this.email;
     receipt += commands.EOL;
     receipt += this.phone;
-    receipt += commands.EOL;
-    receipt += this.pin;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += commands.HORIZONTAL_LINE.HR_58MM1;
@@ -446,15 +442,11 @@ export class ConfirmationPage {
       receipt += commands.EOL;
     }
     receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_4SQUARE;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_RT;
     receipt += this.total;
     receipt += this.totalCost;
     receipt += commands.EOL;
     receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += this.delivery;
     receipt += commands.EOL;
@@ -472,8 +464,6 @@ export class ConfirmationPage {
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += this.footer;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
     receipt += commands.EOL;
     receipt += commands.EOL;
 
