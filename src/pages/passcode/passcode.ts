@@ -30,10 +30,14 @@ export class PasscodePage {
   loginok = false;
   form = true;
   code = [];
+  username;
 
   constructor(public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public navParams: NavParams,public navigation: NavigationProvider,) {
+      this.username = JSON.parse(localStorage.getItem('authenticated'));
+      console.log(this.username);
+     // console.log(this.username[0].agent_username);
   }
 
   ionViewDidLoad() {

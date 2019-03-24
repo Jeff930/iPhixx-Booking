@@ -9,7 +9,7 @@
       </button>
     </ion-buttons> -->
 
-    <p class="deviceName hidden" float-right>Device Name:<strong>"Desk 2"-LTE Shop Kiosk</strong></p>
+    <p class="deviceName hidden" float-right>Username:<strong> {{username.user_name}} </strong></p>
      <ion-buttons end>
       <button class="menu-bar" menuToggle >
         <img src="assets/imgs/menu-bar.png">
@@ -45,7 +45,7 @@
   </ion-toolbar>
   </ion-toolbar>
   <ion-toolbar>
-  	<p class="deviceName" margin-left>Device Name:<strong>"Desk 2"-LTE Shop Kiosk</strong></p>
+  	<p class="deviceName" margin-left>Username:<strong> {{username.user_name}}</strong></p>
   </ion-toolbar>
 </ion-header>
 
@@ -68,7 +68,7 @@
   			</ion-col>
   		</ion-row>
       <ion-row>
-      <ion-col col-xs-12 col-sm-12 offset-md-3 col-md-6 offset-lg-4 col-lg-4 offset-lg-4 col-xl-4>
+      <ion-col col-xs-12 col-sm-12 offset-md-3 col-md-6 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4>
         <button   round text-center full (click)="login()" ion-button  class="login-button" [disabled]="form" type="submit">Submit</button>
       </ion-col>
     </ion-row>  
