@@ -87,53 +87,81 @@ export class ModalPage {
       });
   
       loading.present();
-      console.log("success1" + this.booking.userData.user.fullname +
-       ''
-      + JSON.stringify(this.booking.userData.user.birthdate)
-      + this.booking.userData.user.email
-      + this.booking.userData.user.phone
-      +'New'
-      + this.booking.userData.device
-      +this.booking.userData.brand
-      + this.booking.userData.model
-      + this.booking.userData.color
-      + this.booking.userData.network
-      + JSON.stringify(this.cart.selectedRepairs)
-      + this.cart.selectedRepairs.length
-      + JSON.stringify(this.cart.costs)
-      + this.cart.Total
-      + this.booking.userData.device + ' Repair'
-      + this.booking.userData.repair
-      + this.booking.userData.device+' '+this.booking.userData.brand+' '+
-      this.booking.userData.model+' '+this.booking.userData.color+' '+this.booking.userData.network+' '+
-      this.booking.userData.phoneoffer+' '+ this.booking.userData.upgradeoffer1+' '+
-      this.booking.userData.upgradeoffer2+', Pincode: ' + this.booking.userData.user.pin
-);
+      var data= {
+        firstname: this.booking.userData.user.firstname, 
+        lastname: this.booking.userData.user.lastname,
+        birthdate : this.booking.userData.user.birthdate,
+        email : this.booking.userData.user.email,
+        phone : this.booking.userData.user.phone,
+        phone2 : this.booking.userData.user.phone2,
+        device : this.booking.userData.deviceKey,
+        brand :this.booking.userData.brandKey,
+        model : this.booking.userData.modelKey,
+        color : this.booking.userData.colorKey,
+        network : this.booking.userData.networkKey,
+        screenrep:this.booking.repairKey.screenrep_selected,
+        headrep:this.booking.repairKey.headrep_selected,
+        earrep:this.booking.repairKey.earrep_selected,
+        powerrep:this.booking.repairKey.powerrep_selected,
+        rearcamrep:this.booking.repairKey.rearcamrep_selected,
+        frontcamrep:this.booking.repairKey.frontcamrep_selected,
+        homerep:this.booking.repairKey.homerep_selected,
+        microphone:this.booking.repairKey.microphone_selected,
+        chargeport:this.booking.repairKey.chargeport_selected,
+        volumerep:this.booking.repairKey.volumerep_selected,
+        battrep:this.booking.repairKey.battrep_selected,
+        signalrep:this.booking.repairKey.screenrep_selected,
+        backglassrep:this.booking.repairKey.backglassrep_selected,
+        repairlength: this.cart.selectedRepairs.length,
+        prices : JSON.stringify(this.cart.costs),
+        total : this.cart.Total,
+        // ticket_problem_type : this.booking.userData.device + ' Repair',
+        // ticket_subject : this.booking.userData.repair,
+        // ticket_description : this.booking.userData.device+' '+this.booking.userData.brand+' '+
+        // this.booking.userData.model+' '+this.booking.userData.color+' '+this.booking.userData.network+' '+
+        // this.booking.userData.phoneoffer+' '+ this.booking.userData.upgradeoffer1+' '+
+        // this.booking.userData.upgradeoffer2+', Pincode: '+this.booking.userData.user.pin
+
+      }
+      console.log(data);
     $.ajax({
       type: "POST",
       url: 'https://admin.iphixx.com/api/v1/bookings/',
       data: {
-            fullname: this.booking.userData.user.fullname, 
-            last_name: '',
+            firstname: this.booking.userData.user.firstname, 
+            lastname: this.booking.userData.user.lastname,
             birthdate : this.booking.userData.user.birthdate,
-              email : this.booking.userData.user.email,
+            email : this.booking.userData.user.email,
             phone : this.booking.userData.user.phone,
-            status :'New',
-            device : this.booking.userData.device,
-            brand :this.booking.userData.brand,
-            model : this.booking.userData.model,
-            color : this.booking.userData.color,
-            network : this.booking.userData.network,
-            repair : JSON.stringify(this.cart.selectedRepairs),
+            phone2 : this.booking.userData.user.phone2,
+            device : this.booking.userData.deviceKey,
+            brand :this.booking.userData.brandKey,
+            model : this.booking.userData.modelKey,
+            color : this.booking.userData.colorKey,
+            network : this.booking.userData.networkKey,
+            repair : this.booking.userData.selectedRepair,
+            screenrep:this.booking.repairKey.screenrep_selected,
+            headrep:this.booking.repairKey.headrep_selected,
+            earrep:this.booking.repairKey.earrep_selected,
+            powerrep:this.booking.repairKey.powerrep_selected,
+            rearcamrep:this.booking.repairKey.rearcamrep_selected,
+            frontcamrep:this.booking.repairKey.frontcamrep_selected,
+            homerep:this.booking.repairKey.homerep_selected,
+            microphone:this.booking.repairKey.microphone_selected,
+            chargeport:this.booking.repairKey.chargeport_selected,
+            volumerep:this.booking.repairKey.volumerep_selected,
+            battrep:this.booking.repairKey.battrep_selected,
+            signalrep:this.booking.repairKey.screenrep_selected,
+            backglassrep:this.booking.repairKey.backglassrep_selected,
             repairlength: this.cart.selectedRepairs.length,
             prices : JSON.stringify(this.cart.costs),
             total : this.cart.Total,
-            ticket_problem_type : this.booking.userData.device + ' Repair',
-            ticket_subject : this.booking.userData.repair,
-            ticket_description : this.booking.userData.device+' '+this.booking.userData.brand+' '+
-            this.booking.userData.model+' '+this.booking.userData.color+' '+this.booking.userData.network+' '+
-            this.booking.userData.phoneoffer+' '+ this.booking.userData.upgradeoffer1+' '+
-            this.booking.userData.upgradeoffer2+', Pincode: '+this.booking.userData.user.pin
+            // ticket_problem_type : this.booking.userData.device + ' Repair',
+            // ticket_subject : this.booking.userData.repair,
+            // ticket_description : this.booking.userData.device+' '+this.booking.userData.brand+' '+
+            // this.booking.userData.model+' '+this.booking.userData.color+' '+this.booking.userData.network+' '+
+            // this.booking.userData.phoneoffer+' '+ this.booking.userData.upgradeoffer1+' '+
+            // this.booking.userData.upgradeoffer2+', Pincode: '+this.booking.userData.user.pin
   
           }
           ,
