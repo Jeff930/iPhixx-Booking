@@ -1,21 +1,85 @@
-<header></header>
+<!-- <header></header>
 
 <ion-content padding  class="form-content">
   <form class="form" [formGroup]="login_form" >
     <ion-label class="title">Enter Ticket Number</ion-label>
 
-    <ion-item>
+    <ion-col >
     
-      <ion-input type="tel" formControlName="repairnum" placeholder="Ticket number" class="form-controll" required></ion-input>
-    </ion-item>
+    <ion-input col-12 type="tel" formControlName="repairnum" placeholder="Ticket number" class="form-controll" required></ion-input>
+    
+	</ion-col>
     <p class="error-message" >{{error_message}}</p>
-    <button  (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Ok</button>
-  </form>
-
-  <img *ngIf="signatureImage" [src]="signatureImage">
-
-
-  
+    <button col-xs-12 col-sm-12 offset-md-3 col-md-6 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4 (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Ok</button>
+  </form> 
 </ion-content>
 
+<copyright></copyright> -->
+
+<!--
+  Generated template for the CustomerdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header></header>
+
+
+<ion-content no-padding padding-bottom class="lightest" no-margin>
+   
+   <ion-grid col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 no-padding margin-top padding-bottom center class="details-content">
+     <!--  <ion-row>
+        <ion-col class="logo">
+          <img src="assets/imgs/logo.jpg">
+        
+        </ion-col>
+      </ion-row> -->
+      <ion-row margin-horizontal class="box-shadow">
+        <ion-col>
+ <div text-center>
+            <p class="question">Please Enter your Ticket Number Below.</p>
+           
+          </div>
+          
+          
+          <!-- <ion-item class="form-input">
+             <ion-label color="primary"> <ion-icon name="ios-person-outline"></ion-icon> </ion-label>
+            <ion-input type="text" placeholder="Email Address" formControlName="username" class="form-controll" required></ion-input>
+          </ion-item> -->
+          <div [formGroup]="login_form">
+          <ion-item no-padding >
+            <ion-label color="dark" stacked>Ticket Number </ion-label>
+            <ion-input type="text" formControlName="repairnum"></ion-input>
+          </ion-item>
+          </div>
+          <ion-row class="login-row">
+            <ion-col text-center col-xs-12 col-sm-12 offset-md-3 col-md-6 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4>
+              <button round [disabled]="!login_form.valid" (click)="login(login_form.value)" ion-button full class="login-button" 
+            type="submit">Submit</button>
+  <!-- [disabled]="!login_form.valid" --> 
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+    
+    </ion-grid>
+
+   <!--  <ion-item>
+       <ion-label color="primary">Username</ion-label>
+      <ion-input type="text" formControlName="username" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <ion-item margin-top>
+      <ion-label color="primary">Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <p class="error-message" >{{error_message}}</p>
+    
+    <button (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Login</button>
+ -->
+  
+</ion-content>
 <copyright></copyright>
+

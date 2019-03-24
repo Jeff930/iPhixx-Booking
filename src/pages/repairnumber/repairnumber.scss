@@ -1,12 +1,12 @@
 page-repairnumber {
 
- /* .form-content{
+  .form-content{
     background-color: #4682B4
-  }*/
+  }
 
   .title{
     text-align: center;
-    color: #4682B4;
+    color: #FFF;
     margin: 100px 0px 50px;
     font-size: 30px;
   }
@@ -38,5 +38,9 @@ page-repairnumber {
     text-align: center;
   }
 
+  .details-content{
+  background-color:white;
+  margin-top:8em !important;
+  }
 
 }
