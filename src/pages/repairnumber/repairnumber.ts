@@ -65,7 +65,7 @@ export class RepairnumberPage {
   	console.log(repairnum);
   	let loading = this.loadingCtrl.create({
     });
-    // this.booking.gettrackinginfo(repairnum.repairnum);
+    console.log(this.booking.gettrackinginfo(repairnum.repairnum));
     loading.present();
   	this.booking.gettrackinginfo(repairnum.repairnum).subscribe(res => {
   		
@@ -86,7 +86,7 @@ export class RepairnumberPage {
        else{
                  let alert = this.alertCtrl.create({
         title: 'Error',
-        subTitle: 'Repair Number not found!',
+        subTitle: 'Ticket Number not found!',
         buttons: ['Ok']
         });
       alert.present();
