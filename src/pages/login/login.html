@@ -59,14 +59,14 @@
         <h3>Connect Your Shop to iPhixx</h3>
      <ion-item class="form-input">
             <ion-label color="primary"> <ion-icon name="ios-person-outline" color="light"></ion-icon> </ion-label>
-            <ion-input type="text" placeholder="Email Address" formControlName="username" class="form-controll" required></ion-input>
+            <ion-input type="text" placeholder="Email Address" formControlName="email" class="form-controll" required></ion-input>
       </ion-item>
 
       <ion-item class="form-input" class="form-input">
          <ion-label color="primary"> <ion-icon color="light" name="ios-lock-outline"></ion-icon> </ion-label>
         <ion-input placeholder="Password" type="password" formControlName="password" class="form-controll" required></ion-input>
       </ion-item>
-      <p class="p-grey" margin-bottom text-center (click)="recover()">Forgot your password?</p>
+      <button ion-button clear class="p-grey" text-center (click)="recover()">Forgot your password?</button>
       <button col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 class="login-button" round (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">LOGIN</button>
        <button col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 class="login-button" round (click)="register()"  ion-button full class="login-button hidden-xs-up">Be An iPhixx Partner</button>
       

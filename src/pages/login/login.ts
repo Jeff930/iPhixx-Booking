@@ -62,7 +62,7 @@ export class LoginPage {
    
 
     this.login_form = this.formBuilder.group({
-      username: new FormControl('', Validators.compose([
+      email: new FormControl('', Validators.compose([
         Validators.required
       ])),
       password: new FormControl('', Validators.required),
@@ -84,21 +84,21 @@ export class LoginPage {
     loading.present();
 
     let data = new FormData();
-    data.append("email", user.username);
+    data.append("email", user.email);
     data.append("password", user.password);
 
     let xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
+    //xhr.withCredentials = true;
 
     xhr.addEventListener("readystatechange",  () =>{
       if (xhr.readyState === 4) {
         console.log(xhr.responseText);
         let result = JSON.parse(xhr.responseText);
         console.log(result);
-          if(result.length){
+          if(result.length!=0){
             loading.dismiss();
-            localStorage.setItem('authenticated' , JSON.stringify(user));
-            this.booking.userData.customer_id = result[0].id;
+            localStorage.setItem('authenticated' , JSON.stringify(result));
+            this.booking.userData.customer_id = result.user_id;
             this.navCtrl.setRoot(PasscodePage);
           }
           else{
@@ -114,10 +114,12 @@ export class LoginPage {
   
       }
     });
+    var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/sign_in?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+user.email+"&password="+user.password;
+    console.log(JSON.stringify(url));
+    xhr.open("POST", url);
+   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 
-    xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
-
-    xhr.send(data);
+    xhr.send();
 
 
 }
