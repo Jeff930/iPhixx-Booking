@@ -40,11 +40,12 @@ export class NetworkPage {
     console.log('ionViewDidLoad NetworkPage');
   }
 
-  selectNetwork(network){
+  selectNetwork(network, key){
     if (network=='Other'){
       this.presentPrompt();
     }else{
-  	this.booking.userData.network = network;
+    this.booking.userData.network = network;
+    this.booking.userData.networkKey = key;
   	this.navCtrl.push(RepairPage);}
   }
 

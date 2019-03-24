@@ -21,7 +21,7 @@
           </div>
           <ion-row>
             <ion-col text-center  *ngFor = "let network of networks" col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3>
-              <div (click) ="selectNetwork(network.network)" class="brands-col" padding>
+              <div (click) ="selectNetwork(network.network, network.key)" class="brands-col" padding>
               <img src="{{'assets/imgs/Network/'+ network.network +'.jpg'}}">
               <p>{{network.network}}</p>
               <!-- <button  ion-button full round (click) ="selectBrand(brand.brand)" > {{brand.brand}} </button> -->
