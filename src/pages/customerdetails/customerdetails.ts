@@ -44,7 +44,8 @@ export class CustomerdetailsPage {
 
      ) {
 				this.customerDetails = formBuilder.group({
-					'fullname':['', Validators.compose([Validators.required])],
+					'firstname':['', Validators.compose([Validators.required])],
+					'lastname':['', Validators.compose([Validators.required])],
 					'birthdate':['', Validators.compose([Validators.required])],
 					'email':['', Validators.compose([Validators.required])],
 					'phone':['', Validators.compose([Validators.required])],
