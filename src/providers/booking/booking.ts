@@ -17,6 +17,7 @@ import 'rxjs/add/observable/forkJoin';
 @Injectable()
 export class BookingProvider {
   userData : any;	
+  repairKey:any;
   result;
   device:string;
   brand:string;
@@ -29,26 +30,46 @@ export class BookingProvider {
 
   constructor(public http: Http,  ) {
     console.log('Hello BookingProvider Provider');
+    this.repairKey=[{
+      screenrep_selected:null,
+      headrep_selected:null,
+      earrep_selected:null,
+      powerrep_selected:null,
+      rearcamrep_selected:null,
+      frontcamrep_selected:null,
+      homerep_selected:null,
+      microphone_selected:null,
+      chargeport_selected:null,
+      volumerep_selected:null,
+      battrep_selected:null,
+      signalrep_selected:null,
+      backglassrep_selected:null,
+    }];
     this.userData = [
     { 
       device : '',
+      deviceKey : '',
       brand: '',
+      brandKey: '',
       model: '',
+      modelKey: '',
       modelNum:'',
       color: '',
+      colorKey: '',
       network: '',
+      networkKey: '',
       selectedRepair:[''],
       phoneoffer: false,
       upgradeoffer1: false,
       user: {
-          fullname: '',
+          firstname: '',
+          lastname: '',
           birthdate:'',
           email: '',
           phone: '',
           phone2: '',
           pin : ''  
           }
-
     }
   ];
   this.device="not-selected";
@@ -90,7 +111,7 @@ export class BookingProvider {
   
 
   gettrackinginfo(id){
-  	return this.http.get('https://iphixx.repairshopr.com/api/v1/tickets/?number='+id+'&api_key=b60db6c6-2740-48c0-a0fa-34a49ecf6b3f')
+  	return this.http.get('https://iphixx.repairshopr.com/api/v1/tickets/?number='+id+'&api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670')
   	.map(res => res.json() );
   }
   getcustomer(id){
