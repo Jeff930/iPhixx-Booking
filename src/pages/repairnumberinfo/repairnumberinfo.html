@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header no-border>
+<!-- <ion-header no-border>
 
   <ion-navbar color="lightest">
     <ion-title>Repair Information</ion-title>
@@ -24,21 +24,108 @@
 	  <ion-item>Email : {{userData[1].email}}</ion-item>
 	  <ion-item>Phone Number : {{userData[1].mobile}}</ion-item>
 	  <ion-item>Business Name : {{userData[1].business_name}}</ion-item>
-	  <!-- <ion-item *ngIf="userData.customer.phone2" >Alternative Phone Number : {{userData.user.phone2}}</ion-item> -->
-	  <!-- <ion-item>Device : {{userData.device}} {{userData.brand }} {{userData.model}} {{userData.color}} {{userData.network}}</ion-item> -->
+	
 	  <ion-item>Problem : {{userData[0].problem_type}}</ion-item>
 	  <ion-item>Repair : {{userData[0].subject}}</ion-item>
 	  <ion-item>Status : {{userData[0].status}}</ion-item>
 	  <ion-item>Due-date : {{userData[0].due_date}}</ion-item>
 	  <ion-item>Resolve-date : {{userData[0].resolved_at}}</ion-item>
-	  <!-- <ion-item *ngIf="userData.phoneoffer" >Temporary Phone : YES</ion-item> -->
-	<!--   <ion-item *ngIf="userData.upgradeoffer1" >Nano Technology Tempered Glass : YES</ion-item>
-	  <ion-item *ngIf="userData.upgradeoffer2" >Charger for Lightening Connectors : YES</ion-item> -->
-
+	
 
 	</ion-list>
 </ion-content>
 
 <ion-footer>
 	<button ion-button block (click) ="next()" >Next</button>
-</ion-footer>
+</ion-footer> -->
+
+<!-- <header></header>
+
+<ion-content padding  class="form-content">
+  <form class="form" [formGroup]="login_form" >
+    <ion-label class="title">Enter Ticket Number</ion-label>
+
+    <ion-col >
+    
+    <ion-input col-12 type="tel" formControlName="repairnum" placeholder="Ticket number" class="form-controll" required></ion-input>
+    
+	</ion-col>
+    <p class="error-message" >{{error_message}}</p>
+    <button col-xs-12 col-sm-12 offset-md-3 col-md-6 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4 (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Ok</button>
+  </form> 
+</ion-content>
+
+<copyright></copyright> -->
+
+<!--
+  Generated template for the CustomerdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header></header>
+
+
+<ion-content no-padding padding-bottom class="lightest" no-margin>
+   
+   <ion-grid col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 no-padding margin-top padding-bottom center class="details-content">
+     <!--  <ion-row>
+        <ion-col class="logo">
+          <img src="assets/imgs/logo.jpg">
+        
+        </ion-col>
+      </ion-row> -->
+      <ion-row margin-horizontal class="box-shadow">
+        <ion-col>
+ <div text-center>
+            <p class="question">Ticket Number Information</p>
+           
+          </div>
+          
+          
+          <!-- <ion-item class="form-input">
+             <ion-label color="primary"> <ion-icon name="ios-person-outline"></ion-icon> </ion-label>
+            <ion-input type="text" placeholder="Email Address" formControlName="username" class="form-controll" required></ion-input>
+          </ion-item> -->
+         <ion-list >
+
+	 
+	  <ion-item>Full Name : {{userData[1].fullname}}</ion-item>
+	  <ion-item>Email : {{userData[1].email}}</ion-item>
+	  <ion-item>Phone Number : {{userData[1].mobile}}</ion-item>
+	  <ion-item>Business Name : {{userData[1].business_name}}</ion-item>
+	
+	  <ion-item>Problem : {{userData[0].problem_type}}</ion-item>
+	  <ion-item>Repair : {{userData[0].subject}}</ion-item>
+	  <ion-item>Status : {{userData[0].status}}</ion-item>
+	  <ion-item>Due-date : {{userData[0].due_date}}</ion-item>
+	  <ion-item>Resolve-date : {{userData[0].resolved_at}}</ion-item>
+	
+
+	</ion-list>
+         
+        </ion-col>
+      </ion-row>
+
+    
+    </ion-grid>
+
+   <!--  <ion-item>
+       <ion-label color="primary">Username</ion-label>
+      <ion-input type="text" formControlName="username" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <ion-item margin-top>
+      <ion-label color="primary">Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <p class="error-message" >{{error_message}}</p>
+    
+    <button (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Login</button>
+ -->
+  
+</ion-content>
+<copyright></copyright>
+
+
