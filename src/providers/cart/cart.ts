@@ -40,6 +40,45 @@ export class CartProvider {
       this.unselected = document.getElementsByClassName("repair");
       this.unselected[index].setAttribute("style","background-color:lightgray");}
       this.selectedRepairs.push(selectedRepair);
+      if (selectedRepair=="Screen Replacement"){
+        this.booking.repairKey.screenrep_selected = '1';
+      }
+      if (selectedRepair=="Headphone Repair"){
+        this.booking.repairKey.headrep_selected = '1';
+      }
+      if (selectedRepair=="Earpiece Repair"){
+        this.booking.repairKey.earrep_selected = '1';
+      }
+      if (selectedRepair=="Power Button Repair"){
+        this.booking.repairKey.powerrep_selected = '1';
+      }
+      if (selectedRepair=="Rear Camera Repair"){
+        this.booking.repairKey.rearcamrep_selected = '1';
+      }
+      if (selectedRepair=="Front Camera Repair"){
+        this.booking.repairKey.frontcamrep_selected = '1';
+      }
+      if (selectedRepair=="Home Button Repair"){
+        this.booking.repairKey.homerep_selected = '1';
+      }
+      if (selectedRepair=="Microphone Repair"){
+        this.booking.repairKey.microphone_selected = '1';
+      }
+      if (selectedRepair=="Charger Port Repair"){
+        this.booking.repairKey.chargeport_selected = '1';
+      }
+      if (selectedRepair=="Volume Button Repair"){
+        this.booking.repairKey.volumerep_selected = '1';
+      }
+      if (selectedRepair=="Battery Replacement"){
+        this.booking.repairKey.battrep_selected = '1';
+      }
+      if (selectedRepair=="Cellular Signal Repair"){
+        this.booking.repairKey.signalrep_selected = '1';
+      }
+      if (selectedRepair=="Back Glass Repair"){
+        this.booking.repairKey.backglassrep_selected = '1';
+      }
       this.selectedIndex.push(index);
       console.log(price);
       console.log(index);
@@ -148,6 +187,45 @@ export class CartProvider {
     if (index !== -1) {
       this.selectedRepairs.splice(index, 1);
       this.costs.splice(index,1);
+      if (this.selectedRepairs[index]=="Screen Replacement"){
+        this.booking.repairKey.screenrep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Headphone Repair"){
+        this.booking.repairKey.headrep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Earpiece Repair"){
+        this.booking.repairKey.earrep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Power Button Repair"){
+        this.booking.repairKey.powerrep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Rear Camera Repair"){
+        this.booking.repairKey.rearcamrep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Front Camera Repair"){
+        this.booking.repairKey.frontcamrep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Home Button Repair"){
+        this.booking.repairKey.homerep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Microphone Repair"){
+        this.booking.repairKey.microphone_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Charger Port Repair"){
+        this.booking.repairKey.chargeport_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Volume Button Repair"){
+        this.booking.repairKey.volumerep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Battery Replacement"){
+        this.booking.repairKey.battrep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Cellular Signal Repair"){
+        this.booking.repairKey.signalrep_selected = null;
+      }
+      if (this.selectedRepairs[index]=="Back Glass Repair"){
+        this.booking.repairKey.backglassrep_selected = null;
+      }
   }       
   this.checkMessage(); 
   }
