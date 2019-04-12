@@ -28,7 +28,11 @@ export class CheckoutComponent{
   }
 
   completeCheckout(){
+    console.log(this.booking.userData.selectedRepair);
+    console.log(this.cart.selectedRepairs);
     this.booking.userData.selectedRepair = this.cart.selectedRepairs;
+    console.log(this.booking.userData.selectedRepair);
+    console.log(this.cart.selectedRepairs);
     this.navCtrl.push(CustomerdetailsPage);
   }
 }
