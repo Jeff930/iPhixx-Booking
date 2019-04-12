@@ -9,7 +9,7 @@ import { FileOpener } from '@ionic-native/file-opener';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 import { AutosizeDirective} from '../directives/autosize/autosize';
-
+import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -79,6 +79,7 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     BrowserModule,
     SignaturePadModule,
     HttpModule,
+    HttpClientModule,
     ComponentsModule,  
     IonicModule.forRoot(MyApp,{
          mode: 'ios'
