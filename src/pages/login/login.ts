@@ -3,6 +3,7 @@ import { Component  } from '@angular/core';
 import {  NavController, NavParams , LoadingController , AlertController, MenuController , Platform  } from 'ionic-angular';
 
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { HttpClient, HttpErrorResponse , HttpParams} from '@angular/common/http';
 
 // import { ChooseactionPage } from '../chooseaction/chooseaction';
 import { PasscodePage } from '../passcode/passcode';
@@ -24,6 +25,7 @@ export class LoginPage {
   error_message: string;
   src;
   loginok = false;
+  data=[];
 
   constructor(
   	public navCtrl: NavController,
@@ -34,6 +36,7 @@ export class LoginPage {
     public alertCtrl : AlertController,
     public menuCtrl : MenuController,
     public platform : Platform,
+    public http : HttpClient
      ) {
 
      this.menuCtrl.enable(false, 'myMenu');     
@@ -75,18 +78,40 @@ export class LoginPage {
     this.navCtrl.setRoot(RecoverPage);
   }
 
+  // login(user){
+  //   console.log(user);
+ 
+  // 	let loading = this.loadingCtrl.create({
+  //      //content: 'Logging in please wait...'
+  //   });
+  //   loading.present();
+
+  //   this.doLogin(user).subscribe((data:any)=>{this.data=data
+  //     console.log(this.data);
+  //   },(error:any)=>{console.log(error)});
+  // }
+
   login(user){
-  	console.log(user);
+    console.log(user);
  
   	let loading = this.loadingCtrl.create({
        //content: 'Logging in please wait...'
     });
     loading.present();
+  	
+    // let body = new HttpParams()
+    //  .set('email',user.email)
+    //  .set('password',user.password)
+
+    // console.log(body);
+  
+    // return this.http.post('https://heroku-app.com/https://iphixx.repairshopr.com/api/v1/sign_in?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670',
+    //   body.toString(), { headers : { 'Content-Type' : 'application/json',
+    //                         } ,params : {  } })
 
     let data = new FormData();
     data.append("email", user.email);
     data.append("password", user.password);
-
     let xhr = new XMLHttpRequest();
     //xhr.withCredentials = true;
 
@@ -94,8 +119,8 @@ export class LoginPage {
       if (xhr.readyState === 4) {
         console.log(xhr.responseText);
         let result = JSON.parse(xhr.responseText);
-        console.log(result);
-          if(result.length!=0){
+        console.log(result.user_token);
+          if(result.user_token!=null){
             loading.dismiss();
             localStorage.setItem('authenticated' , JSON.stringify(result));
             this.booking.userData.customer_id = result.user_id;
