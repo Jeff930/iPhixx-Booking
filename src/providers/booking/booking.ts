@@ -27,9 +27,14 @@ export class BookingProvider {
   repair:string;
   selected;
   currentPage="Select Device";
+  agentName='';
+  note='';
+  mobileTest:any;
+  nonMobileTest:any;
+
 
   constructor(public http: Http,  ) {
-    console.log('Hello BookingProvider Provider');
+    console.log('Hello BookingProvider Provider')
     this.repairKey=[{
       screenrep_selected:null,
       headrep_selected:null,
