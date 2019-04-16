@@ -324,7 +324,7 @@ export const samsungmodels = [
 
 	{ key:'31',
 		model : 'Galaxy J3 (2015)', 
-	  modelNum : 'unknown',
+	  modelNum : 'SM-J3109',
 		screenrep: null,
 	  headphonerep:null,
 	  earpiecerep:null,
@@ -346,7 +346,7 @@ export const samsungmodels = [
 
 	{ key:'32',
 		model : 'Galaxy J5 (2017)', 
-	  modelNum : 'unknown', 	
+	  modelNum : 'SM-J530F', 	
 		screenrep: '600.00',
 	  headphonerep:null,
 	  earpiecerep:null,
