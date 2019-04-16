@@ -89,31 +89,28 @@ export class CustomerdetailsPage {
 			console.log(xhr.responseText);
 			let result = JSON.parse(xhr.responseText);
 			console.log(result);
-			  //if(result.user_token!=null){
+			  if(result.id!=null){
 				loading.dismiss();
 				localStorage.setItem('authenticated' , JSON.stringify(result));
 				this.booking.userData.customer_id = result.user_id;
-				this.navCtrl.setRoot(ConfirmationPage);
-			//  }
-			//   else{
-			// 	loading.dismiss();
-			// 	let alert = this.alertCtrl.create({
-			// 	  title: 'Error',
-			// 	  subTitle: 'Invalid Credentials',
-			// 	  buttons: ['Ok']
-			// 	});
-			// 	alert.present();
+				this.createTicket(user);
+				//this.navCtrl.setRoot(ConfirmationPage);
+			 }
+			  else{
+				loading.dismiss();
+				let alert = this.alertCtrl.create({
+				  title: 'Error',
+				  subTitle: 'Lead not created',
+				  buttons: ['Ok']
+				});
+				alert.present();
 	
-			//  }
-	  
+			 }
 		  }
 		});
 		console.log(JSON.stringify(this.booking.userData));
 		var userData = JSON.stringify(this.booking.userData);
 		userData = userData.substring(1,userData.length-1);
-		console.log(userData);
-		console.log(userData);
-		console.log(userData);
 		console.log(userData);
 		var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/leads?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
 			user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
@@ -123,8 +120,120 @@ export class CustomerdetailsPage {
 	   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 	
 		xhr.send();
-	  }
-  
+		}
+		
+		createLead(user){
+			console.log(user.username);
+		console.log(user.password);
+			console.log(user.password);
+			this.booking.userData.user = user;
+			console.log(this.booking.userData);
+		 // this.presentPrompt();
+			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
+			let loading = this.loadingCtrl.create({
+			//content: 'Logging in please wait...'
+		 });
+		 loading.present();
+	
+		 let data = new FormData();
+			data.append("email", user.email);
+			data.append("password", user.password);
+			let xhr = new XMLHttpRequest();
+			//xhr.withCredentials = true;
+		
+			xhr.addEventListener("readystatechange",  () =>{
+				if (xhr.readyState === 4) {
+				console.log(xhr.responseText);
+				let result = JSON.parse(xhr.responseText);
+				console.log(result);
+					if(result.id!=null){
+					loading.dismiss();
+					localStorage.setItem('authenticated' , JSON.stringify(result));
+					this.booking.userData.customer_id = result.user_id;
+					this.createTicket(user);
+					//this.navCtrl.setRoot(ConfirmationPage);
+				 }
+					else{
+					loading.dismiss();
+					let alert = this.alertCtrl.create({
+						title: 'Error',
+						subTitle: 'Lead not created',
+						buttons: ['Ok']
+					});
+					alert.present();
+		
+				 }
+				}
+			});
+			console.log(JSON.stringify(this.booking.userData));
+			var userData = JSON.stringify(this.booking.userData);
+			userData = userData.substring(1,userData.length-1);
+			console.log(userData);
+			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/leads?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+				user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
+				//+"&properties="+userData;
+			console.log(url);
+			xhr.open("POST", url);
+			 // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+		
+			xhr.send();
+			}
+	
+		createTicket(user){
+			console.log(user.username);
+		console.log(user.password);
+			console.log(user.password);
+			this.booking.userData.user = user;
+			console.log(this.booking.userData);
+		 // this.presentPrompt();
+			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
+			let loading = this.loadingCtrl.create({
+			//content: 'Logging in please wait...'
+		 });
+		 loading.present();
+	
+		 let data = new FormData();
+			data.append("email", user.email);
+			data.append("password", user.password);
+			let xhr = new XMLHttpRequest();
+			//xhr.withCredentials = true;
+		
+			xhr.addEventListener("readystatechange",  () =>{
+				if (xhr.readyState === 4) {
+				console.log(xhr.responseText);
+				let result = JSON.parse(xhr.responseText);
+				console.log(result);
+					if(result.id!=null){
+					loading.dismiss();
+					localStorage.setItem('authenticated' , JSON.stringify(result));
+					this.booking.userData.customer_id = result.user_id;
+					this.navCtrl.setRoot(ConfirmationPage);
+				 }
+					else{
+					loading.dismiss();
+					let alert = this.alertCtrl.create({
+						title: 'Error',
+						subTitle: 'Lead not created',
+						buttons: ['Ok']
+					});
+					alert.present();
+		
+				 }
+				}
+			});
+			console.log(JSON.stringify(this.booking.userData));
+			var userData = JSON.stringify(this.booking.userData);
+			userData = userData.substring(1,userData.length-1);
+			console.log(userData);
+			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+				user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
+				//+"&properties="+userData;
+			console.log(url);
+			xhr.open("POST", url);
+			 // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+		
+			xhr.send();
+			}
 	presentPrompt() {
 		var data = { source : 'pin' };
 		var modalPage = this.modalCtrl.create('ModalPage',data,{cssClass: 'modal-content' });modalPage.present(); 
