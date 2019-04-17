@@ -26,11 +26,15 @@ import { ConfirmationPage } from '../../pages/confirmation/confirmation';
   templateUrl: 'customerdetails.html',
 })
 export class CustomerdetailsPage {
-	customerDetails: FormGroup;
+  customerDetails: FormGroup;
   error_message: string;
   ishidden=true;
   src;
   loginok = false;
+  smsService;
+  consentStore;
+  consentBusiness;
+
 
 
 
@@ -53,6 +57,15 @@ export class CustomerdetailsPage {
 					'email':['', Validators.compose([Validators.required])],
 					'phone':['', Validators.compose([Validators.required])],
 					'phone2':['', Validators.compose([Validators.required])],
+					'smsService':[],
+					'consentStore':[],
+					'consentStoreSource':[],
+					'consentBusiness':[],
+					'consentBusinessSource':[],
+					'consentMarketing':[],
+					'consentMarketingSource':[],
+					'portalInvite':[],
+					'portalInviteSource':[],
 					'pin':['', Validators.compose([Validators.required])],
 				});
   }
@@ -66,21 +79,15 @@ export class CustomerdetailsPage {
   }
 
   login(user){
-  	console.log(user.username);
-	console.log(user.password);
-	  console.log(user.password);
-  	this.booking.userData.user = user;
-  	console.log(this.booking.userData);
-	 // this.presentPrompt();
-	  this.booking.userData.selectedRepair = this.cart.selectedRepairs;
+	console.log(user);
+  	
 	  let loading = this.loadingCtrl.create({
 		//content: 'Logging in please wait...'
 	 });
 	 loading.present();
 
 	 let data = new FormData();
-		data.append("email", user.email);
-		data.append("password", user.password);
+	
 		let xhr = new XMLHttpRequest();
 		//xhr.withCredentials = true;
 	
@@ -100,7 +107,7 @@ export class CustomerdetailsPage {
 				loading.dismiss();
 				let alert = this.alertCtrl.create({
 				  title: 'Error',
-				  subTitle: 'Lead not created',
+				  subTitle: 'Customer not created',
 				  buttons: ['Ok']
 				});
 				alert.present();
@@ -112,7 +119,7 @@ export class CustomerdetailsPage {
 		var userData = JSON.stringify(this.booking.userData);
 		userData = userData.substring(1,userData.length-1);
 		console.log(userData);
-		var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/leads?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+		var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
 			user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
 			//+"&properties="+userData;
 		console.log(url);
