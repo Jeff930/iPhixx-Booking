@@ -86,8 +86,6 @@ export class CustomerdetailsPage {
 	 });
 	 loading.present();
 
-	 let data = new FormData();
-	
 		let xhr = new XMLHttpRequest();
 		//xhr.withCredentials = true;
 	
@@ -96,18 +94,19 @@ export class CustomerdetailsPage {
 			console.log(xhr.responseText);
 			let result = JSON.parse(xhr.responseText);
 			console.log(result);
-			  if(result.id!=null){
+			//console.log("id",result.customer.id);
+			  if(result.customer.id!=undefined){
 				loading.dismiss();
 				localStorage.setItem('authenticated' , JSON.stringify(result));
 				this.booking.userData.customer_id = result.user_id;
-				this.createTicket(user);
+				this.createLead(user);
 				//this.navCtrl.setRoot(ConfirmationPage);
 			 }
 			  else{
 				loading.dismiss();
 				let alert = this.alertCtrl.create({
-				  title: 'Error',
-				  subTitle: 'Customer not created',
+				  title: 'Error: Customer Not Created',
+				  subTitle: result.message,
 				  buttons: ['Ok']
 				});
 				alert.present();
@@ -120,7 +119,7 @@ export class CustomerdetailsPage {
 		userData = userData.substring(1,userData.length-1);
 		console.log(userData);
 		var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
-			user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
+			user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone2;
 			//+"&properties="+userData;
 		console.log(url);
 		xhr.open("POST", url);
@@ -153,12 +152,12 @@ export class CustomerdetailsPage {
 				console.log(xhr.responseText);
 				let result = JSON.parse(xhr.responseText);
 				console.log(result);
-					if(result.id!=null){
+					if(result.lead.id!=undefined){
 					loading.dismiss();
 					localStorage.setItem('authenticated' , JSON.stringify(result));
 					this.booking.userData.customer_id = result.user_id;
-					this.createTicket(user);
-					//this.navCtrl.setRoot(ConfirmationPage);
+					//this.createTicket(user);
+					this.navCtrl.setRoot(ConfirmationPage);
 				 }
 					else{
 					loading.dismiss();
