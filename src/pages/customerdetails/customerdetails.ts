@@ -79,7 +79,23 @@ export class CustomerdetailsPage {
   }
 
   login(user){
+	  console.log(user);
+	  if(user.consentStore){
+		this.createCustomer(user);
+	  }else{
+		let alert = this.alertCtrl.create({
+			title: 'Required Consent for Storing Data',
+			subTitle: 'Please check the Consent to Store Data checkbox',
+			buttons: ['Ok']
+		  });
+		  alert.present();
+	  }
+  }
+
+  createCustomer(user){
 	console.log(user);
+	var properties = {birthdate:Date}
+	properties.birthdate = user.birthdate;
   	
 	  let loading = this.loadingCtrl.create({
 		//content: 'Logging in please wait...'
@@ -95,9 +111,9 @@ export class CustomerdetailsPage {
 			let result = JSON.parse(xhr.responseText);
 			console.log(result);
 			//console.log("id",result.customer.id);
-			  if(result.customer.id!=undefined){
+			  if(result.customer!=undefined){
 				loading.dismiss();
-				localStorage.setItem('authenticated' , JSON.stringify(result));
+				//localStorage.setItem('authenticated' , JSON.stringify(result));
 				this.booking.userData.customer_id = result.user_id;
 				this.createLead(user);
 				//this.navCtrl.setRoot(ConfirmationPage);
@@ -118,9 +134,11 @@ export class CustomerdetailsPage {
 		var userData = JSON.stringify(this.booking.userData);
 		userData = userData.substring(1,userData.length-1);
 		console.log(userData);
-		var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
-			user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone2;
+		// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
 			//+"&properties="+userData;
+			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&email="+
+			user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties[Birthdate]="+user.birthdate+"&consent[store_date]=1";
 		console.log(url);
 		xhr.open("POST", url);
 	   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
@@ -130,7 +148,7 @@ export class CustomerdetailsPage {
 		
 		createLead(user){
 			console.log(user.username);
-		console.log(user.password);
+			console.log(user.password);
 			console.log(user.password);
 			this.booking.userData.user = user;
 			console.log(this.booking.userData);
@@ -175,7 +193,7 @@ export class CustomerdetailsPage {
 			var userData = JSON.stringify(this.booking.userData);
 			userData = userData.substring(1,userData.length-1);
 			console.log(userData);
-			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/leads?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/leads?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&email="+
 				user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
 				//+"&properties="+userData;
 			console.log(url);
