@@ -25,6 +25,7 @@ export class TestInPage {
   device;
   testMobileForm;
   testNonMobileForm;
+  note='';
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -87,39 +88,54 @@ export class TestInPage {
   Confirm() {
     const confirm = this.alertCtrl.create({
       title: 'No Information Added!',
-      message: 'Atleast 1 field is empty, proceed anyway?',
-      buttons: [
-        {
-          text: 'Yes',
-          handler: () => {
-            if (this.device=='Phone'|| this.device=='Tablet')
-              this.navCtrl.setRoot(UpgradeofferPage);
-            else
-              this.navCtrl.setRoot(CustomerdetailsPage);
-          }
-        },
-        {
-          text: 'No',
-          handler: () => {
-            console.log('Agree clicked');
-          }
-        }
-      ]
+      message: 'Atleast 1 field is empty',
+      // buttons: [
+      //   {
+      //     text: 'Yes',
+      //     handler: () => {
+      //       if (this.device=='Phone'|| this.device=='Tablet')
+      //         this.navCtrl.setRoot(UpgradeofferPage);
+      //       else
+      //         this.navCtrl.setRoot(CustomerdetailsPage);
+      //     }
+      //   },
+      //   {
+      //     text: 'No',
+      //     handler: () => {
+      //       console.log('Agree clicked');
+      //     }
+      //   }
+      // ]
     });
     confirm.present();
   }
 
   Proceed(){
     if (this.device=='Phone'|| this.device=='Tablet'){
-      if (this.testMobileForm.valid)
+      if (this.testMobileForm.valid){
+        console.log(this.testMobileForm.value); 
+        this.booking.mobileTest = this.testMobileForm.value;
+        console.log(this.booking.mobileTest);
         this.navCtrl.setRoot(UpgradeofferPage);
-      else
+      }else{
         this.Confirm();
+      }
+        
+      
     }else{
-      if (this.testNonMobileForm.valid)
-        this.navCtrl.setRoot(CustomerdetailsPage);
-      else
+      if (this.testNonMobileForm.valid){
+      console.log(this.testNonMobileForm.value); 
+      this.booking.nonMobileTest = this.testNonMobileForm.value;
+      console.log(this.booking.nonMobileTest);
+      this.navCtrl.setRoot(CustomerdetailsPage);
+      }else{
         this.Confirm();
-    }}
+      }
+    }
+    console.log(this.note);
+    if (this.note === '')
+      this.note ="No Information Added";
+    this.booking.note = this.note;
+  }
 
 }
