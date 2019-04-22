@@ -81,7 +81,16 @@ export class CustomerdetailsPage {
   login(user){
 	  console.log(user);
 	  if(user.consentStore){
-		this.createCustomer(user);
+		if(user.consentMarketing){
+			this.createCustomer(user);
+		  }else{
+			let alert = this.alertCtrl.create({
+				title: 'Required Consent for Marketing',
+				subTitle: 'Please check the Consent to Email for Marketing',
+				buttons: ['Ok']
+			  });
+			  alert.present();
+		  }
 	  }else{
 		let alert = this.alertCtrl.create({
 			title: 'Required Consent for Storing Data',
@@ -94,8 +103,6 @@ export class CustomerdetailsPage {
 
   createCustomer(user){
 	console.log(user);
-	var properties = {birthdate:Date}
-	properties.birthdate = user.birthdate;
   	
 	  let loading = this.loadingCtrl.create({
 		//content: 'Logging in please wait...'
@@ -120,13 +127,16 @@ export class CustomerdetailsPage {
 			 }
 			  else{
 				loading.dismiss();
+				if (result.message == 'Email has already been taken'){
+					this.createLead(user);
+				}else{
 				let alert = this.alertCtrl.create({
 				  title: 'Error: Customer Not Created',
 				  subTitle: result.message,
 				  buttons: ['Ok']
 				});
 				alert.present();
-	
+				}
 			 }
 		  }
 		});
@@ -138,7 +148,7 @@ export class CustomerdetailsPage {
 		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
 			//+"&properties="+userData;
 			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&email="+
-			user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties[Birthdate]="+user.birthdate+"&consent[store_date]=1";
+			user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties[Birthdate]="+user.birthdate+"&consent[store_data]=1"+"&consent[marketing]=1";
 		console.log(url);
 		xhr.open("POST", url);
 	   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
@@ -172,8 +182,7 @@ export class CustomerdetailsPage {
 				console.log(result);
 					if(result.lead.id!=undefined){
 					loading.dismiss();
-					localStorage.setItem('authenticated' , JSON.stringify(result));
-					this.booking.userData.customer_id = result.user_id;
+					
 					//this.createTicket(user);
 					this.navCtrl.setRoot(ConfirmationPage);
 				 }
