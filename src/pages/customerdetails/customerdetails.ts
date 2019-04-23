@@ -28,12 +28,80 @@ import { ConfirmationPage } from '../../pages/confirmation/confirmation';
 export class CustomerdetailsPage {
   customerDetails: FormGroup;
   error_message: string;
-  ishidden=true;
-  src;
-  loginok = false;
   smsService;
   consentStore;
   consentBusiness;
+  device;
+  brand;
+  model;
+  color;
+  carrier;
+  pin;
+  screenProtect;
+  tempPhone;
+  notes;
+  screenRep;
+  trackpadRep;
+  earPieceRep;
+  powerRep;
+  headRep;
+  rearCamRep;
+  frontCamRep;
+  homeRep;
+  micRep;
+  chargePortRep;
+  backGlassRep;
+  volumeRep;
+  battRep;
+  harddriveRep;
+  birthdate;
+  signalRep;
+  hdmiRep;
+  keyboardRep;
+  fanRep;
+  webCamRep;
+  speakerRep;
+  dataRecovery;
+  virusRemoval;
+  SSD500GBOS;
+  SSD1TBOS;
+  HDD500GBOS;
+  HDD1TBOS;
+  SSD500GBOSDT;
+  SSD1TBOSDT;
+  HDD500GBOSDT;
+  HDD1TBOSDT;
+  lockTest;
+  sdTest;
+  frontCamTest;
+  rearCamTest;
+  homeTest;
+  volumeTest;
+  earpieceTest;
+  headphoneTest;
+  vibrateTest;
+  lightSensorTest;
+  speakerTest;
+  micTest;
+  moistureTest;
+  powerTest;
+  wifiTest;
+  barredTest;
+  displayTest;
+  systemBootTest;
+  audioTest;
+  keyboardTest;
+  touchpadtest;
+  portTest;
+  battTest;
+  harddriveTest;
+
+
+
+
+
+
+
 
 
 
@@ -82,7 +150,8 @@ export class CustomerdetailsPage {
 	  console.log(user);
 	  if(user.consentStore){
 		if(user.consentMarketing){
-			this.createCustomer(user);
+			//this.createCustomer(user);
+			this.prepareData(user);
 		  }else{
 			let alert = this.alertCtrl.create({
 				title: 'Required Consent for Marketing',
@@ -101,11 +170,91 @@ export class CustomerdetailsPage {
 	  }
   }
 
+  prepareData(user){
+  	
+	let loading = this.loadingCtrl.create({
+	  content: 'Preparing Data...'
+   });
+   loading.present();
+   this.device=this.booking.userData.device;
+   this.brand=this.booking.userData.brand;
+   this.model=this.booking.userData.model;
+   this.color=this.booking.userData.color;
+   this.carrier=this.booking.userData.carrier;
+   this.pin=user.pin;
+   this.screenProtect=this.booking.userData.screenoffer;
+   this.tempPhone=this.booking.userData.phoneoffer;
+   this.notes=this.booking.note;
+
+
+//    screenRep;
+//   trackpadRep;
+//   this.earPieceRep;
+//   powerRep;
+//   headRep;
+//   rearCamRep;
+//   this.frontCamRep;
+//   homeRep;
+//   micRep;
+//   this.chargePortRep;
+//   this.backGlassRep;
+//   volumeRep;
+//   this.battRep;
+//   this.harddriveRep;
+//   this.birthdate;
+//   signalRep;
+//   this.hdmiRep;
+//   keyboardRep;
+//   this.fanRep;
+//   webCamRep;
+//   speakerRep;
+//   this.dataRecovery;
+//   virusRemoval;
+//   SSD500GBOS;
+//   SSD1TBOS;
+//   this.HDD500GBOS;
+//   this.HDD1TBOS;
+//   SSD500GBOSDT;
+//   SSD1TBOSDT;
+//   this.HDD500GBOSDT;
+//   this.HDD1TBOSDT;
+//   lockTest;
+//   sdTest;
+//   this.frontCamTest;
+//   rearCamTest;
+//   homeTest;
+//   volumeTest;
+//   this.earpieceTest;
+//   headphoneTest;
+//   vibrateTest;
+//   lightSensorTest;
+//   speakerTest;
+//   micTest;
+//   moistureTest;
+//   powerTest;
+//   wifiTest;
+//   this.barredTest;
+//   this.displayTest;
+//   systemBootTest;
+//   this.audioTest;
+//   keyboardTest;
+//   touchpadtest;
+//   portTest;
+//   this.battTest;
+//   this.harddriveTest;
+
+   
+
+	 
+	 
+
+  }
+
   createCustomer(user){
 	console.log(user);
   	
 	  let loading = this.loadingCtrl.create({
-		//content: 'Logging in please wait...'
+		content: 'Creating Customer...'
 	 });
 	 loading.present();
 
@@ -122,13 +271,13 @@ export class CustomerdetailsPage {
 				loading.dismiss();
 				//localStorage.setItem('authenticated' , JSON.stringify(result));
 				this.booking.userData.customer_id = result.user_id;
-				this.createLead(user);
+				this.createTicket(user);
 				//this.navCtrl.setRoot(ConfirmationPage);
 			 }
 			  else{
 				loading.dismiss();
 				if (result.message == 'Email has already been taken'){
-					this.createLead(user);
+					this.createTicket(user);
 				}else{
 				let alert = this.alertCtrl.create({
 				  title: 'Error: Customer Not Created',
@@ -156,61 +305,61 @@ export class CustomerdetailsPage {
 		xhr.send();
 		}
 		
-		createLead(user){
-			console.log(user.username);
-			console.log(user.password);
-			console.log(user.password);
-			this.booking.userData.user = user;
-			console.log(this.booking.userData);
-		 // this.presentPrompt();
-			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
-			let loading = this.loadingCtrl.create({
-			//content: 'Logging in please wait...'
-		 });
-		 loading.present();
+		// createLead(user){
+		// 	console.log(user.username);
+		// 	console.log(user.password);
+		// 	console.log(user.password);
+		// 	this.booking.userData.user = user;
+		// 	console.log(this.booking.userData);
+		//  // this.presentPrompt();
+		// 	this.booking.userData.selectedRepair = this.cart.selectedRepairs;
+		// 	let loading = this.loadingCtrl.create({
+		// 	//content: 'Logging in please wait...'
+		//  });
+		//  loading.present();
 	
-		 let data = new FormData();
-			data.append("email", user.email);
-			data.append("password", user.password);
-			let xhr = new XMLHttpRequest();
-			//xhr.withCredentials = true;
+		//  let data = new FormData();
+		// 	data.append("email", user.email);
+		// 	data.append("password", user.password);
+		// 	let xhr = new XMLHttpRequest();
+		// 	//xhr.withCredentials = true;
 		
-			xhr.addEventListener("readystatechange",  () =>{
-				if (xhr.readyState === 4) {
-				console.log(xhr.responseText);
-				let result = JSON.parse(xhr.responseText);
-				console.log(result);
-					if(result.lead.id!=undefined){
-					loading.dismiss();
+		// 	xhr.addEventListener("readystatechange",  () =>{
+		// 		if (xhr.readyState === 4) {
+		// 		console.log(xhr.responseText);
+		// 		let result = JSON.parse(xhr.responseText);
+		// 		console.log(result);
+		// 			if(result.lead.id!=undefined){
+		// 			loading.dismiss();
 					
-					//this.createTicket(user);
-					this.navCtrl.setRoot(ConfirmationPage);
-				 }
-					else{
-					loading.dismiss();
-					let alert = this.alertCtrl.create({
-						title: 'Error',
-						subTitle: 'Lead not created',
-						buttons: ['Ok']
-					});
-					alert.present();
+		// 			//this.createTicket(user);
+		// 			this.navCtrl.setRoot(ConfirmationPage);
+		// 		 }
+		// 			else{
+		// 			loading.dismiss();
+		// 			let alert = this.alertCtrl.create({
+		// 				title: 'Error',
+		// 				subTitle: 'Lead not created',
+		// 				buttons: ['Ok']
+		// 			});
+		// 			alert.present();
 		
-				 }
-				}
-			});
-			console.log(JSON.stringify(this.booking.userData));
-			var userData = JSON.stringify(this.booking.userData);
-			userData = userData.substring(1,userData.length-1);
-			console.log(userData);
-			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/leads?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&email="+
-				user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
-				//+"&properties="+userData;
-			console.log(url);
-			xhr.open("POST", url);
-			 // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+		// 		 }
+		// 		}
+		// 	});
+		// 	console.log(JSON.stringify(this.booking.userData));
+		// 	var userData = JSON.stringify(this.booking.userData);
+		// 	userData = userData.substring(1,userData.length-1);
+		// 	console.log(userData);
+		// 	var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/leads?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&email="+
+		// 		user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
+		// 		//+"&properties="+userData;
+		// 	console.log(url);
+		// 	xhr.open("POST", url);
+		// 	 // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 		
-			xhr.send();
-			}
+		// 	xhr.send();
+		// 	}
 	
 		createTicket(user){
 			console.log(user.username);
