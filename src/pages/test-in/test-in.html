@@ -22,25 +22,25 @@
       		 		<p>Additional Details</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 col-lg-8 col-xl-10>
-      		 		<ion-textarea class="textarea" autosize placeholder="Please keep it as short as possible."></ion-textarea>
+      		 		<ion-textarea [(ngModel)]="note" class="textarea" autosize placeholder="Please keep it as short as possible."></ion-textarea>
   				</ion-col>
           </ion-row>
           <ion-col *ngIf="this.device == 'Phone' || this.device == 'Tablet'">
           <div [formGroup]="testMobileForm">
           <ion-row radio-group padding-top formControlName="SD">
-              <ion-col offset-xs-1 col-xs-10 offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-2 col-lg-2 offset-xl-2 col-xl-2>
+            <ion-col offset-xs-1 col-xs-10 offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-2 col-lg-2 offset-xl-2 col-xl-2>
       		 		<p>SD Card</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
   			
@@ -50,15 +50,15 @@
       		 		<p>Front Camera</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -67,15 +67,15 @@
       		 		<p>Rear Camera</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -84,15 +84,15 @@
       		 		<p>Home Button</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -101,15 +101,15 @@
       		 		<p>V/B Up/Down</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -118,15 +118,15 @@
       		 		<p>Vibrate</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -135,15 +135,15 @@
       		 		<p>Lock Button</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -152,15 +152,15 @@
       		 		<p>Light Prox Sensor</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -169,15 +169,15 @@
       		 		<p>Earpiece</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -186,15 +186,15 @@
       		 		<p>Loud Speaker</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -203,15 +203,15 @@
       		 		<p>Microphone</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -220,15 +220,15 @@
       		 		<p>Headphone Jack</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -237,15 +237,15 @@
       		 		<p>Moisture Tabs</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -254,15 +254,15 @@
       		 		<p>Wifi</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -271,15 +271,15 @@
       		 		<p>Barred</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -292,15 +292,15 @@
       		 		<p>Power On</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -309,15 +309,15 @@
       		 		<p>Display</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -326,15 +326,15 @@
       		 		<p>Boots to System</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -343,15 +343,15 @@
       		 		<p>Audio</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -360,15 +360,15 @@
       		 		<p>Keyboard</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -377,15 +377,15 @@
       		 		<p>Touchpad</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -394,15 +394,15 @@
       		 		<p>WiFi</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -411,15 +411,15 @@
       		 		<p>All Ports</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -428,15 +428,15 @@
       		 		<p>Web Camera</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -445,15 +445,15 @@
       		 		<p>Battery Test</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
@@ -462,32 +462,34 @@
       		 		<p>HDD Test</p>
       		 	</ion-col>
       		 	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-      		 		<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+      		 		<ion-radio mode="md" value='Yes' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>Yes</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 class="my-checkbox">
-  					<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
+  					<ion-radio mode="md" value='No' offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-4 col-xl-4></ion-radio>
     				<p float-right>No</p>
   				</ion-col>
   				<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 class="my-checkbox">
-    				<ion-radio mode="md" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
+    				<ion-radio mode="md" value="Can't Test" offset-xs-2 col-xs-1 offset-sm-2 col-sm-1 offset-md-2 col-md-1 col-lg-3 col-xl-3></ion-radio>
     				<p float-right>Can't Test</p>
   				</ion-col>
           </ion-row>
            </div>
       </ion-col>
 
-           <ion-row *ngIf="this.device == 'Phone' || this.device == 'Tablet'">
+           <ion-row *ngIf="this.booking.userData.device == 'Phone' || this.booking.userData.device == 'Tablet'">
                <ion-col text-center align-self-center col-xs-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4>
-          			<button ion-button full (click) ="Proceed()" >Proceed</button>
+          			<button [disabled]="!testMobileForm.valid" ion-button full (click) ="Proceed()" >Proceed</button>
       			</ion-col>
           </ion-row>
 
           <ion-row *ngIf="this.booking.userData.device != 'Phone' && this.booking.userData.device != 'Tablet'">
                <ion-col text-center align-self-center col-xs-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4>
-                <button ion-button full (click) ="Proceed()" >Proceed</button>
+                <button [disabled]="!testNonMobileForm.valid" ion-button full (click) ="Proceed()" >Proceed</button>
             </ion-col>
           </ion-row>
+
+         
           
    	</ion-col>
       <ion-col col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-3>
