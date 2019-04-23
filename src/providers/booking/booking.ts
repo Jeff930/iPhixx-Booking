@@ -64,8 +64,8 @@ export class BookingProvider {
       network: '',
       networkKey: '',
       selectedRepair:[''],
-      phoneoffer: false,
-      upgradeoffer1: false,
+      phoneoffer: 'No',
+      screenoffer: 'No',
       user: {
           firstname: '',
           lastname: '',
