@@ -40,7 +40,7 @@ export class HeaderComponent {
   constructor(public navigation:NavigationProvider, public navCtrl: NavController,public booking:BookingProvider) {
     this.username = localStorage.getItem('authenticated');
     console.log(this.username);
-    //this.booking.agentName = this.username;
+    this.booking.agentName = this.username;
     // console.log(this.username[0].agent_username);
     // console.log(this.username.user_name);
     // this.booking.agentName = this.username.user_name;
