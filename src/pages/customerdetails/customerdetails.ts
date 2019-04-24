@@ -40,71 +40,65 @@ export class CustomerdetailsPage {
   screenProtect;
   tempPhone;
   notes;
-  screenRep;
-  trackpadRep;
-  earPieceRep;
-  powerRep;
-  headRep;
-  rearCamRep;
-  frontCamRep;
-  homeRep;
-  micRep;
-  chargePortRep;
-  backGlassRep;
-  volumeRep;
-  battRep;
-  harddriveRep;
-  birthdate;
-  signalRep;
-  hdmiRep;
-  keyboardRep;
-  fanRep;
-  webCamRep;
-  speakerRep;
-  dataRecovery;
-  virusRemoval;
-  SSD500GBOS;
-  SSD1TBOS;
-  HDD500GBOS;
-  HDD1TBOS;
-  SSD500GBOSDT;
-  SSD1TBOSDT;
-  HDD500GBOSDT;
-  HDD1TBOSDT;
-  lockTest;
-  sdTest;
-  frontCamTest;
-  rearCamTest;
-  homeTest;
-  volumeTest;
-  earpieceTest;
-  headphoneTest;
-  vibrateTest;
-  lightSensorTest;
-  speakerTest;
-  micTest;
-  moistureTest;
-  powerTest;
-  wifiTest;
-  barredTest;
-  displayTest;
-  systemBootTest;
-  audioTest;
-  keyboardTest;
-  touchpadtest;
-  portTest;
-  battTest;
-  harddriveTest;
 
+  screenRep="No";
+  trackpadRep="No";
+  earPieceRep="No";
+  powerRep="No";
+  headRep="No";
+  rearCamRep="No";
+  frontCamRep="No";
+  homeRep="No";
+  micRep="No";
+  chargePortRep="No";
+  backGlassRep="No";
+  volumeRep="No";
+  battRep="No";
+  harddriveRep="No";
+  birthdate="No";
+  signalRep="No";
+  hdmiRep="No";
+  keyboardRep="No";
+  fanRep="No";
+  webCamRep="No";
+  speakerRep="No";
+  dataRecovery="No";
+  virusRemoval="No";
+  SSD500GBOS="No";
+  SSD1TBOS="No";
+  HDD500GBOS="No";
+  HDD1TBOS="No";
+  SSD500GBOSDT="No";
+  SSD1TBOSDT="No";
+  HDD500GBOSDT="No";
+  HDD1TBOSDT="No";
 
+  lockTest="Can't Test";
+  sdTest="Can't Test";
+  frontCamTest="Can't Test";
+  rearCamTest="Can't Test";
+  homeTest="Can't Test";
+  volumeTest="Can't Test";
+  earpieceTest="Can't Test";
+  headphoneTest="Can't Test";
+  vibrateTest="Can't Test";
+  lightSensorTest="Can't Test";
+  speakerTest="Can't Test";
+  micTest="Can't Test";
+  moistureTest="Can't Test";
+  powerTest="Can't Test";
+  wifiTest="Can't Test";
+  barredTest="Can't Test";
+  displayTest="Can't Test";
+  systemBootTest="Can't Test";
+  audioTest="Can't Test";
+  keyboardTest="Can't Test";
+  touchpadtest="Can't Test";
+  portTest="Can't Test";
+  battTest="Can't Test";
+  harddriveTest="Can't Test";
 
-
-
-
-
-
-
-
+  selectedRepairs = this.cart.selectedRepairs;
 
   constructor(public navCtrl: NavController,
     public loadingCtrl: LoadingController,
@@ -172,22 +166,32 @@ export class CustomerdetailsPage {
 
   prepareData(user){
   	
-	let loading = this.loadingCtrl.create({
-	  content: 'Preparing Data...'
-   });
-   loading.present();
-   this.device=this.booking.userData.device;
-   this.brand=this.booking.userData.brand;
-   this.model=this.booking.userData.model;
-   this.color=this.booking.userData.color;
-   this.carrier=this.booking.userData.carrier;
-   this.pin=user.pin;
-   this.screenProtect=this.booking.userData.screenoffer;
-   this.tempPhone=this.booking.userData.phoneoffer;
-   this.notes=this.booking.note;
+	// let loading = this.loadingCtrl.create({
+	//   //content: 'Preparing Data...'
+   	// });
+   	// loading.present();
+   	this.device=this.booking.userData.device;
+   	this.brand=this.booking.userData.brand;
+   	this.model=this.booking.userData.model;
+   	this.color=this.booking.userData.color;
+   	this.carrier=this.booking.userData.network;
+   	this.pin=user.pin;
+   	this.screenProtect=this.booking.userData.screenoffer;
+   	this.tempPhone=this.booking.userData.phoneoffer;
+   	this.notes=this.booking.note;
 
+   	console.log(this.device);
+   	console.log(this.brand);
+   	console.log(this.model);
+   	console.log(this.color);
+   	console.log(this.carrier);
+   	console.log(this.pin);
+	console.log(this.screenProtect);
+	console.log(this.tempPhone);
+	console.log(this.notes);
+	console.log(this.selectedRepairs);
 
-  	this.screenRep;
+	this.screenRep;
   	this.trackpadRep;
   	this.earPieceRep;
   	this.powerRep;
@@ -217,7 +221,9 @@ export class CustomerdetailsPage {
   	this.SSD500GBOSDT;
   	this.SSD1TBOSDT;
   	this.HDD500GBOSDT;
-  	this.HDD1TBOSDT;
+	this.HDD1TBOSDT;
+	  
+
   	this.lockTest;
   	this.sdTest;
   	this.frontCamTest;
@@ -241,12 +247,72 @@ export class CustomerdetailsPage {
   	this.touchpadtest;
   	this.portTest;
   	this.battTest;
-  	this.harddriveTest;
+	this.harddriveTest;
+	  
+	for (var i=0;i<this.selectedRepairs.length;i++){
+		switch (this.selectedRepairs[i]){
+			case "Screen Replacement":
+				this.screenRep = "Yes";
+				break;
+
+			case "Headphone Repair":
+				this.headRep = "Yes";
+				break;
+
+			case "Earpiece Repair":
+				this.earPieceRep = "Yes";
+				break;
+
+			case "Power Button Repair":
+				this.powerRep = "Yes";
+				break;
+
+			case "Rear Camera Repair":
+				this.rearCamRep = "Yes";
+				break;
+			
+			case "Front Camera Repair":
+				this.frontCamRep = "Yes";
+				break;
+		}
+
+		  if (this.models[i].homerep!=null){
+			this.prices.push(this.models[i].homerep);
+			this.modelrepairs.push("Home Button Repair");
+		  }
+		  if (this.models[i].upmicrep!=null){
+			this.prices.push(this.models[i].upmicrep);
+			this.modelrepairs.push("Microphone Repair");
+		  }
+		  if (this.models[i].chargeportrep!=null){
+			this.prices.push(this.models[i].chargeportrep);
+			this.modelrepairs.push("Charger Port Repair");
+		  }
+		  if (this.models[i].volumerep!=null){
+			this.prices.push(this.models[i].volumerep);
+			this.modelrepairs.push("Volume Button Repair");
+		  }
+		  if (this.models[i].battrep!=null){
+			this.prices.push(this.models[i].battrep);
+			this.modelrepairs.push("Battery Replacement");
+		  }
+		  if (this.models[i].signalrep!=null){
+			this.prices.push(this.models[i].signalrep);
+			this.modelrepairs.push("Cellular Signal Repair");
+		  }
+		  if (this.models[i].backglassrep!=null){
+			this.prices.push(this.models[i].backglassrep);
+			this.modelrepairs.push("Back Glass Repair");
+		  }
+		  if (this.models[i].trackpadrep!=null){
+			this.prices.push(this.models[i].trackpadrep);
+			this.modelrepairs.push("Trackpad Replacement");
+		  }
 
    
 
 	 
-	 
+	}
 
   }
 
