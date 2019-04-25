@@ -418,8 +418,17 @@ export class CustomerdetailsPage {
 			var userData = JSON.stringify(this.booking.userData);
 			userData = userData.substring(1,userData.length-1);
 			console.log(userData);
+			var issue = this.device + " issue";
 			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&customer_id="+
-				id+"&subject="+this.device+" issue&location_id=2069&properties['Device Type']="+this.device;
+				id+"&subject="+issue+"&location_id=2069&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
+				this.brand+"&properties[Model]="+this.model+"&properties[Carrier]="+this.carrier+"&properties[Temporary Phone]="+this.tempPhone+"&properties[Screen Protector]="+this.screenProtect
+				+"&properties[Additional Details]="+this.notes+"&properties[Screen Replacement]="+this.screenRep+"&properties[Trackpad Replacement]="+this.trackpadRep+"&properties[Ear Piece Repair]="+this.earPieceRep
+				+"&properties[Power Button Repair]="+this.powerRep+"&properties[Head Phone Repair]="+this.headRep+"&properties[Rear Camera Repair]="+this.rearCamRep+"&properties[Front Camera Repair]="+this.frontCamRep+"&properties[Home Button Repair]="+this.homeRep
+				+"&properties[Upper Microphone Repair]="+this.micRep+"&properties[Charging Port Repair]="+this.chargePortRep+"&properties[Back Glass Repair]="+this.backGlassRep+"&properties[PIN]="+this.pin+"&properties[Volume Button Repair]="+this.volumeRep
+				+"&properties[Battery Replacement]="+this.battRep+"&properties[Hard Drive Repairs]="+this.harddriveRep+"&properties[Cellular Signal Repair]="+this.signalRep+"&properties[HDMI Port Replacement]="+this.hdmiRep+"&properties[Keyboard Replacement]="+this.keyboardRep
+				+"&properties[Fan Replacement]="+this.fanRep+"&properties[Web Camera Repair]="+this.webCamRep+"&properties[Speaker Repair]="+this.speakerRep+"&properties[Data Recovery]="+this.dataRecovery+"&properties[Virus Removal]="+this.virusRemoval
+				+"&properties[SSD Replacement (500GB with OS and Data Transfer)]="+this.SSD500GBOSDT+"&properties[HDD Replacement (1TB with OS)]="+this.HDD1TBOS+"&properties[SSD Replacement (500GB with OS)]="+this.SSD500GBOS+"&properties[HDD Replacement (500GB with OS and Data Transfer)]="+this.HDD500GBOSDT+"&properties[HDD Replacement (1TB with OS and Data Transfer)]="+this.HDD1TBOSDT
+				+"&properties[SSD Replacement (1TB with OS and Data Transfer)]="+this.SSD1TBOSDT+"&properties[HDD Replacement (500GB with OS)]="+this.HDD500GBOS+"&properties[SSD Replacement (1TB with OS)]="+this.SSD1TBOS+"&properties[HDD Replacement (1TB with OS and Data Transfer)]="+this.HDD1TBOSDT;
 				//+"&properties="+userData;
 			console.log(url);
 			xhr.open("POST", url);
