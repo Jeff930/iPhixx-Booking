@@ -166,10 +166,10 @@ export class CustomerdetailsPage {
 
   prepareData(user){
   	
-	// let loading = this.loadingCtrl.create({
-	//   //content: 'Preparing Data...'
-   	// });
-   	// loading.present();
+	let loading = this.loadingCtrl.create({
+	  //content: 'Preparing Data...'
+   	});
+   	loading.present();
    	this.device=this.booking.userData.device;
    	this.brand=this.booking.userData.brand;
    	this.model=this.booking.userData.model;
@@ -274,53 +274,57 @@ export class CustomerdetailsPage {
 			case "Front Camera Repair":
 				this.frontCamRep = "Yes";
 				break;
+
+			case "Home Button Repair":
+				this.homeRep = "Yes";
+				break;
+
+			case "Microphone Repair":
+				this.micRep = "Yes";
+				break;
+
+			case "Charger Port Repair":
+				this.chargePortRep = "Yes";
+				break;
+
+			case "Power Button Repair":
+				this.powerRep = "Yes";
+				break;
+
+			case "Volume Button Repair":
+				this.volumeRep = "Yes";
+				break;
+			
+			case "Battery Replacement":
+				this.battRep = "Yes";
+				break;
+
+			case "Cellular Signal Repair":
+				this.signalRep = "Yes";
+				break;
+
+			case "Back Glass Repair":
+				this.backGlassRep = "Yes";
+				break;
+			
+			case "Trackpad Replacement":
+				this.trackpadRep = "Yes";
+				break;
+			
 		}
-
-		  if (this.models[i].homerep!=null){
-			this.prices.push(this.models[i].homerep);
-			this.modelrepairs.push("Home Button Repair");
-		  }
-		  if (this.models[i].upmicrep!=null){
-			this.prices.push(this.models[i].upmicrep);
-			this.modelrepairs.push("Microphone Repair");
-		  }
-		  if (this.models[i].chargeportrep!=null){
-			this.prices.push(this.models[i].chargeportrep);
-			this.modelrepairs.push("Charger Port Repair");
-		  }
-		  if (this.models[i].volumerep!=null){
-			this.prices.push(this.models[i].volumerep);
-			this.modelrepairs.push("Volume Button Repair");
-		  }
-		  if (this.models[i].battrep!=null){
-			this.prices.push(this.models[i].battrep);
-			this.modelrepairs.push("Battery Replacement");
-		  }
-		  if (this.models[i].signalrep!=null){
-			this.prices.push(this.models[i].signalrep);
-			this.modelrepairs.push("Cellular Signal Repair");
-		  }
-		  if (this.models[i].backglassrep!=null){
-			this.prices.push(this.models[i].backglassrep);
-			this.modelrepairs.push("Back Glass Repair");
-		  }
-		  if (this.models[i].trackpadrep!=null){
-			this.prices.push(this.models[i].trackpadrep);
-			this.modelrepairs.push("Trackpad Replacement");
-		  }
-
-   
-
-	 
 	}
 
+		
+	loading.dismiss();
+	this.createCustomer(user);
   }
 
   createCustomer(user){
 	console.log(user);
+	
   	
 	  let loading = this.loadingCtrl.create({
-		content: 'Creating Customer...'
+		//content: 'Creating Customer...'
 	 });
 	 loading.present();
 
@@ -336,22 +340,19 @@ export class CustomerdetailsPage {
 			  if(result.customer!=undefined){
 				loading.dismiss();
 				//localStorage.setItem('authenticated' , JSON.stringify(result));
-				this.booking.userData.customer_id = result.user_id;
-				this.createTicket(user);
+				//this.booking.userData.customer_id = result.user_id;
+				console.log(result.customer.id);
+				this.createTicket(user,result.customer.id);
 				//this.navCtrl.setRoot(ConfirmationPage);
 			 }
 			  else{
-				loading.dismiss();
-				if (result.message == 'Email has already been taken'){
-					this.createTicket(user);
-				}else{
+				
 				let alert = this.alertCtrl.create({
 				  title: 'Error: Customer Not Created',
 				  subTitle: result.message,
 				  buttons: ['Ok']
 				});
 				alert.present();
-				}
 			 }
 		  }
 		});
@@ -370,64 +371,8 @@ export class CustomerdetailsPage {
 	
 		xhr.send();
 		}
-		
-		// createLead(user){
-		// 	console.log(user.username);
-		// 	console.log(user.password);
-		// 	console.log(user.password);
-		// 	this.booking.userData.user = user;
-		// 	console.log(this.booking.userData);
-		//  // this.presentPrompt();
-		// 	this.booking.userData.selectedRepair = this.cart.selectedRepairs;
-		// 	let loading = this.loadingCtrl.create({
-		// 	//content: 'Logging in please wait...'
-		//  });
-		//  loading.present();
 	
-		//  let data = new FormData();
-		// 	data.append("email", user.email);
-		// 	data.append("password", user.password);
-		// 	let xhr = new XMLHttpRequest();
-		// 	//xhr.withCredentials = true;
-		
-		// 	xhr.addEventListener("readystatechange",  () =>{
-		// 		if (xhr.readyState === 4) {
-		// 		console.log(xhr.responseText);
-		// 		let result = JSON.parse(xhr.responseText);
-		// 		console.log(result);
-		// 			if(result.lead.id!=undefined){
-		// 			loading.dismiss();
-					
-		// 			//this.createTicket(user);
-		// 			this.navCtrl.setRoot(ConfirmationPage);
-		// 		 }
-		// 			else{
-		// 			loading.dismiss();
-		// 			let alert = this.alertCtrl.create({
-		// 				title: 'Error',
-		// 				subTitle: 'Lead not created',
-		// 				buttons: ['Ok']
-		// 			});
-		// 			alert.present();
-		
-		// 		 }
-		// 		}
-		// 	});
-		// 	console.log(JSON.stringify(this.booking.userData));
-		// 	var userData = JSON.stringify(this.booking.userData);
-		// 	userData = userData.substring(1,userData.length-1);
-		// 	console.log(userData);
-		// 	var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/leads?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&email="+
-		// 		user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
-		// 		//+"&properties="+userData;
-		// 	console.log(url);
-		// 	xhr.open("POST", url);
-		// 	 // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
-		
-		// 	xhr.send();
-		// 	}
-	
-		createTicket(user){
+		createTicket(user,id){
 			console.log(user.username);
 		console.log(user.password);
 			console.log(user.password);
@@ -441,8 +386,8 @@ export class CustomerdetailsPage {
 		 loading.present();
 	
 		 let data = new FormData();
-			data.append("email", user.email);
-			data.append("password", user.password);
+			// data.append("email", user.email);
+			// data.append("password", user.password);
 			let xhr = new XMLHttpRequest();
 			//xhr.withCredentials = true;
 		
@@ -451,17 +396,17 @@ export class CustomerdetailsPage {
 				console.log(xhr.responseText);
 				let result = JSON.parse(xhr.responseText);
 				console.log(result);
-					if(result.id!=null){
+					if(result.ticket!=null){
 					loading.dismiss();
-					localStorage.setItem('authenticated' , JSON.stringify(result));
-					this.booking.userData.customer_id = result.user_id;
+					//localStorage.setItem('authenticated' , JSON.stringify(result));
+					//this.booking.userData.customer_id = result.user_id;
 					this.navCtrl.setRoot(ConfirmationPage);
 				 }
 					else{
 					loading.dismiss();
 					let alert = this.alertCtrl.create({
 						title: 'Error',
-						subTitle: 'Lead not created',
+						subTitle: 'Ticket not created',
 						buttons: ['Ok']
 					});
 					alert.present();
@@ -473,8 +418,8 @@ export class CustomerdetailsPage {
 			var userData = JSON.stringify(this.booking.userData);
 			userData = userData.substring(1,userData.length-1);
 			console.log(userData);
-			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
-				user.email+"&phone="+this.booking.userData.user.phone+"&last_name="+this.booking.userData.user.lastname+"&first_name="+this.booking.userData.user.firstname;
+			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&customer_id="+
+				id+"&subject="+this.device+" issue&location_id=2069&properties['Device Type']="+this.device;
 				//+"&properties="+userData;
 			console.log(url);
 			xhr.open("POST", url);
@@ -482,6 +427,7 @@ export class CustomerdetailsPage {
 		
 			xhr.send();
 			}
+
 	presentPrompt() {
 		var data = { source : 'pin' };
 		var modalPage = this.modalCtrl.create('ModalPage',data,{cssClass: 'modal-content' });modalPage.present(); 
