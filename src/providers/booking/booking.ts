@@ -116,11 +116,11 @@ export class BookingProvider {
   
 
   gettrackinginfo(id){
-  	return this.http.get('https://iphixx.repairshopr.com/api/v1/tickets/?number='+id+'&api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670')
+  	return this.http.get('https://iphixx.repairshopr.com/api/v1/tickets/?number='+id+'&api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc')
   	.map(res => res.json() );
   }
   getcustomer(id){
-    return this.http.get('https://iphixx.repairshopr.com/api/v1/customers/'+id+'?api_key=b60db6c6-2740-48c0-a0fa-34a49ecf6b3f')
+    return this.http.get('https://iphixx.repairshopr.com/api/v1/customers/'+id+'?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc')
     .map(res => res.json() );
   }
 
