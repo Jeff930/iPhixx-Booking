@@ -101,6 +101,7 @@ export class CustomerdetailsPage {
 
   locations;
   selectedRepairs = this.cart.selectedRepairs;
+  action="Create Customer";
 
   constructor(public navCtrl: NavController,
     public loadingCtrl: LoadingController,
@@ -114,6 +115,8 @@ export class CustomerdetailsPage {
 
 
      ) {
+
+		this.action="Create Customer";
 				this.customerDetails = formBuilder.group({
 					'firstname':['', Validators.compose([Validators.required])],
 					'lastname':['', Validators.compose([Validators.required])],
@@ -147,6 +150,14 @@ export class CustomerdetailsPage {
   }
 
   ionViewWillLoad() {
+  }
+
+  selectCustomer(){
+	this.action = "Select Customer";
+  }
+
+  newCustomer(){
+	this.action = "Create Customer";
   }
 
   login(user){
