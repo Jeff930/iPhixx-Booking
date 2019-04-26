@@ -99,6 +99,7 @@ export class CustomerdetailsPage {
   battTest="Can't Test";
   harddriveTest="Can't Test";
 
+  locations;
   selectedRepairs = this.cart.selectedRepairs;
 
   constructor(public navCtrl: NavController,
@@ -120,6 +121,7 @@ export class CustomerdetailsPage {
 					'email':['', Validators.compose([Validators.required])],
 					'phone':['', Validators.compose([Validators.required])],
 					'phone2':['', Validators.compose([Validators.required])],
+					'location':['', Validators.compose([Validators.required])],
 					'smsService':[],
 					'consentStore':[],
 					'consentStoreSource':[],
@@ -131,6 +133,12 @@ export class CustomerdetailsPage {
 					'portalInviteSource':[],
 					'pin':['', Validators.compose([Validators.required])],
 				});
+
+				this.locations=JSON.parse(localStorage.getItem('locations'));
+				//console.log(JSON.parse(this.locations));
+				console.log([this.locations]);
+
+
   }
 
   ionViewDidLoad() {
@@ -455,7 +463,7 @@ export class CustomerdetailsPage {
 			console.log(userData);
 			var issue = this.device + " issue";
 			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&customer_id="+
-				id+"&subject="+issue+"&location_id=2069&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
+				id+"&subject="+issue+"&location_id="+user.location+"&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
 				this.brand+"&properties[Model]="+this.model+"&properties[Carrier]="+this.carrier+"&properties[Temporary Phone]="+this.tempPhone+"&properties[Screen Protector]="+this.screenProtect
 				+"&properties[Additional Details]="+this.notes+"&properties[Screen Replacement]="+this.screenRep+"&properties[Trackpad Replacement]="+this.trackpadRep+"&properties[Ear Piece Repair]="+this.earPieceRep
 				+"&properties[Power Button Repair]="+this.powerRep+"&properties[Head Phone Repair]="+this.headRep+"&properties[Rear Camera Repair]="+this.rearCamRep+"&properties[Front Camera Repair]="+this.frontCamRep+"&properties[Home Button Repair]="+this.homeRep
