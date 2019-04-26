@@ -16,9 +16,18 @@
         
         </ion-col>
       </ion-row> -->
+      <ion-row>
+        <ion-col col-2>
+          <button ion-button (click)="createCustomer()">Create Customer</button>
+        </ion-col>
+        <ion-col col-2>
+          <button ion-button color="gray" (click)="selectCustomer()">Select Customer</button>
+        </ion-col>
+      </ion-row>
       <ion-row margin-horizontal class="box-shadow">
+
         <ion-col>
- <div text-center>
+        <div text-center>
             <p class="question">Please Enter the Details Below.</p>
            
           </div>
@@ -53,9 +62,15 @@
             <ion-label color="dark" stacked>Alternative Phone Number</ion-label>
             <ion-input type="number" formControlName="phone2" placeholder="123456789"></ion-input>
           </ion-item>
-           <ion-item no-padding >
+          <ion-item no-padding >
             <ion-label color="dark" stacked>PIN</ion-label>
             <ion-input type="number" formControlName="pin" placeholder="1234"></ion-input>
+          </ion-item>
+          <ion-item no-padding >
+            <ion-label color="dark" stacked>Location</ion-label>
+            <ion-select formControlName="location">
+              <ion-option *ngFor="let location of locations" [value]="location.id">{{location.name}}</ion-option>
+            </ion-select>
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark">SMS Service Enabled</ion-label>
