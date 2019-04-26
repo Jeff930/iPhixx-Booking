@@ -95,6 +95,7 @@ export class CustomerdetailsPage {
   keyboardTest="Can't Test";
   touchpadtest="Can't Test";
   portTest="Can't Test";
+  webCamTest="Can't Test";
   battTest="Can't Test";
   harddriveTest="Can't Test";
 
@@ -245,7 +246,8 @@ export class CustomerdetailsPage {
   	this.audioTest;
   	this.keyboardTest;
   	this.touchpadtest;
-  	this.portTest;
+	  this.portTest;
+	  this.webCamTest;
   	this.battTest;
 	this.harddriveTest;
 	  
@@ -309,8 +311,29 @@ export class CustomerdetailsPage {
 			
 			case "Trackpad Replacement":
 				this.trackpadRep = "Yes";
-				break;
-			
+				break;		
+		}
+		if (this.device == 'Phone'||this.device =='Tablet'){
+			var testForm=this.booking.mobileTest;
+			console.log(testForm);
+			this.lockTest;
+  	this.sdTest=testForm.SD;
+  	this.frontCamTest=testForm.frontCam;
+  	this.rearCamTest=testForm.rearCam;
+  	this.homeTest=testForm.home;
+  	this.volumeTest=testForm.volume;
+  	this.earpieceTest=testForm.earpiece;
+  	this.headphoneTest;
+  	this.vibrateTest;
+  	this.lightSensorTest;
+  	this.speakerTest;
+  	this.micTest;
+  	this.moistureTest;
+  	this.powerTest;
+
+		}else{
+			var testForm=this.booking.nonMobileTest;
+			console.log(testForm);
 		}
 	}
 
@@ -428,7 +451,12 @@ export class CustomerdetailsPage {
 				+"&properties[Battery Replacement]="+this.battRep+"&properties[Hard Drive Repairs]="+this.harddriveRep+"&properties[Cellular Signal Repair]="+this.signalRep+"&properties[HDMI Port Replacement]="+this.hdmiRep+"&properties[Keyboard Replacement]="+this.keyboardRep
 				+"&properties[Fan Replacement]="+this.fanRep+"&properties[Web Camera Repair]="+this.webCamRep+"&properties[Speaker Repair]="+this.speakerRep+"&properties[Data Recovery]="+this.dataRecovery+"&properties[Virus Removal]="+this.virusRemoval
 				+"&properties[SSD Replacement (500GB with OS and Data Transfer)]="+this.SSD500GBOSDT+"&properties[HDD Replacement (1TB with OS)]="+this.HDD1TBOS+"&properties[SSD Replacement (500GB with OS)]="+this.SSD500GBOS+"&properties[HDD Replacement (500GB with OS and Data Transfer)]="+this.HDD500GBOSDT+"&properties[HDD Replacement (1TB with OS and Data Transfer)]="+this.HDD1TBOSDT
-				+"&properties[SSD Replacement (1TB with OS and Data Transfer)]="+this.SSD1TBOSDT+"&properties[HDD Replacement (500GB with OS)]="+this.HDD500GBOS+"&properties[SSD Replacement (1TB with OS)]="+this.SSD1TBOS+"&properties[HDD Replacement (1TB with OS and Data Transfer)]="+this.HDD1TBOSDT;
+				+"&properties[SSD Replacement (1TB with OS and Data Transfer)]="+this.SSD1TBOSDT+"&properties[HDD Replacement (500GB with OS)]="+this.HDD500GBOS+"&properties[SSD Replacement (1TB with OS)]="+this.SSD1TBOS+"&properties[HDD Replacement (1TB with OS and Data Transfer)]="+this.HDD1TBOSDT+"&properties[Lock Button Test]="+this.lockTest+"&properties[Web Camera Test]="+this.webCamTest+"&properties[SD Card Test]="+this.sdTest
+				+"&properties[Front Camera Test]="+this.frontCamTest+"&properties[Rear Camera Test]="+this.rearCamTest+"&properties[Home Button Test]="+this.homeTest+"&properties[Volume Button Test]="+this.volumeTest+"&properties[Ear Piece Test]="+this.earpieceTest
+				+"&properties[Headphone Test]="+this.headphoneTest+"&properties[Vibration Test]="+this.vibrateTest+"&properties[Light Sensor Test]="+this.lightSensorTest+"&properties[Speaker Test]="+this.speakerTest+"&properties[Microphone Test]="+this.micTest
+				+"&properties[Moisture Tabs Test]="+this.moistureTest+"&properties[Power Button Test]="+this.powerTest+"&properties[Wifi Test]="+this.wifiTest+"&properties[Barred Test]="+this.barredTest+"&properties[Display Test]="+this.displayTest
+				+"&properties[System Boot Test]="+this.systemBootTest+"&properties[Audio Test]="+this.audioTest+"&properties[Keyboard Test]="+this.keyboardTest+"&properties[Touchpad Test]="+this.touchpadtest+"&properties[Port Test]="+this.portTest
+				+"&properties[Battery Test]="+this.battTest+"&properties[Hard Drive Test]="+this.harddriveTest;
 				//+"&properties="+userData;
 			console.log(url);
 			xhr.open("POST", url);
