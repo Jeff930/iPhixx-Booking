@@ -225,31 +225,32 @@ export class CustomerdetailsPage {
 	this.HDD1TBOSDT;
 	  
 
-  	this.lockTest;
-  	this.sdTest;
-  	this.frontCamTest;
-  	this.rearCamTest;
-  	this.homeTest;
-  	this.volumeTest;
-  	this.earpieceTest;
-  	this.headphoneTest;
-  	this.vibrateTest;
-  	this.lightSensorTest;
-  	this.speakerTest;
-  	this.micTest;
-  	this.moistureTest;
-  	this.powerTest;
-  	this.wifiTest;
-  	this.barredTest;
-  	this.displayTest;
-  	this.systemBootTest;
-  	this.audioTest;
-  	this.keyboardTest;
-  	this.touchpadtest;
-	  this.portTest;
-	  this.webCamTest;
-  	this.battTest;
-	this.harddriveTest;
+  	console.log(this.lockTest);
+		console.log(this.sdTest);
+			console.log(this.frontCamTest);
+				console.log(this.rearCamTest);
+					console.log(this.homeTest);
+						console.log(this.volumeTest);
+							console.log(this.earpieceTest);
+								console.log(this.headphoneTest);
+									console.log(this.vibrateTest);
+										console.log(this.lightSensorTest);
+	  
+											console.log(this.speakerTest);
+												console.log(this.micTest);
+													console.log(this.moistureTest);
+														console.log(this.powerTest);
+															console.log(this.wifiTest);
+																console.log(this.barredTest);
+																	console.log(this.displayTest);
+																		console.log(this.systemBootTest);
+																			console.log(this.audioTest);
+																				console.log(this.keyboardTest);
+																					console.log(this.touchpadtest);
+																						console.log(this.portTest);
+																							console.log(this.webCamTest);
+																								console.log(this.battTest);
+																									console.log(this.harddriveTest);
 	  
 	for (var i=0;i<this.selectedRepairs.length;i++){
 		switch (this.selectedRepairs[i]){
@@ -316,24 +317,35 @@ export class CustomerdetailsPage {
 		if (this.device == 'Phone'||this.device =='Tablet'){
 			var testForm=this.booking.mobileTest;
 			console.log(testForm);
-			this.lockTest;
-  	this.sdTest=testForm.SD;
-  	this.frontCamTest=testForm.frontCam;
-  	this.rearCamTest=testForm.rearCam;
-  	this.homeTest=testForm.home;
-  	this.volumeTest=testForm.volume;
-  	this.earpieceTest=testForm.earpiece;
-  	this.headphoneTest;
-  	this.vibrateTest;
-  	this.lightSensorTest;
-  	this.speakerTest;
-  	this.micTest;
-  	this.moistureTest;
-  	this.powerTest;
-
+  			this.sdTest=testForm.SD;
+  			this.frontCamTest=testForm.frontCam;
+  			this.rearCamTest=testForm.rearCam;
+  			this.homeTest=testForm.home;
+  			this.volumeTest=testForm.volume;
+			this.vibrateTest=testForm.vibrate;
+			this.lockTest=testForm.lock;
+			this.lightSensorTest=testForm.vibrate;
+			this.earpieceTest=testForm.earpiece;
+			this.speakerTest=testForm.speaker;
+			this.micTest=testForm.microphone;
+			this.headphoneTest=testForm.headphone;
+			this.moistureTest=testForm.moisture;
+			this.wifiTest=testForm.wifi;			
+  			this.barredTest=testForm.barred;
 		}else{
 			var testForm=this.booking.nonMobileTest;
 			console.log(testForm);
+			this.powerTest=testForm.power;
+			this.displayTest=testForm.display;
+  			this.systemBootTest=testForm.systemBoot;
+  			this.audioTest=testForm.audio;
+  			this.keyboardTest=testForm.keyboard;
+			this.touchpadtest=testForm.touchpad;
+			this.wifiTest=testForm.wifi;
+			this.portTest=testForm.port;
+			this.webCamTest=testForm.webcam;
+  			this.battTest=testForm.battery;
+			this.harddriveTest=testForm.HDD;
 		}
 	}
 
