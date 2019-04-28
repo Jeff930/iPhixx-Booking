@@ -21,7 +21,7 @@
 
 	<ion-row>
 		<ion-col col-xs-6 offset-sm-1 col-sm-10 offset-md-3 col-md-6 offset-lg-4 col-lg-4 col-xl-4>
-			<button class="button" ion-button full (click)="prepareToPrint()">Reprint Receipt</button>
+			<button class="button" ion-button full (click)="downloadPdf()">Reprint Receipt</button>
 		</ion-col>
 	</ion-row>
 
@@ -40,6 +40,11 @@
 	  <ion-item><p>Model: {{userData.model}}</p></ion-item>
 	  <ion-item *ngIf="this.dev=='Tablet'||this.dev=='Phone'"><p>Color: {{userData.color}}</p></ion-item>
 	  <ion-item *ngIf="this.dev=='Tablet'||this.dev=='Phone'"><p>Carrier: {{userData.network}}</p></ion-item>
+	</ion-list>
+
+	<h2 margin-horizontal>Additional Details</h2>
+	<ion-list margin-horizontal>
+	  <ion-item><p>{{note}}</p></ion-item>
 	</ion-list>
 
 	<h2 margin-horizontal>Repair Details</h2>
