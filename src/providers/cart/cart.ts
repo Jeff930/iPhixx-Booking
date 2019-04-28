@@ -139,10 +139,12 @@ export class CartProvider {
     switch (repair){
       case 'Temporary Phone':
         this.Total=this.Total - 50;
+        this.booking.userData.phoneoffer=false;
       break;
 
       case 'Nano Technology Tempered Glass':
         this.Total=this.Total - 25;
+        this.booking.userData.screenoffer=false;
       break;
       
       default:
