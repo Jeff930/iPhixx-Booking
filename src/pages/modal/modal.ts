@@ -81,12 +81,17 @@ export class ModalPage {
 
     doLogin(){
 
-  	
-      let loading = this.loadingCtrl.create({
-        // content: 'Please Wait...'
-      });
+      console.log(this.booking.userData.selectedRepair);
+      console.log(this.cart.selectedRepairs);
+      this.booking.userData.selectedRepair = this.cart.selectedRepairs;
+      console.log(this.booking.userData.selectedRepair);
+      console.log(this.cart.selectedRepairs);
+    
+      // let loading = this.loadingCtrl.create({
+      //   // content: 'Please Wait...'
+      // });
   
-      loading.present();
+      // loading.present();
       var data= {
         firstname: this.booking.userData.user.firstname, 
         lastname: this.booking.userData.user.lastname,
@@ -124,66 +129,66 @@ export class ModalPage {
 
       }
       console.log(data);
-    $.ajax({
-      type: "POST",
-      url: 'https://admin.iphixx.com/api/v1/bookings/',
-      data: {
-            firstname: this.booking.userData.user.firstname, 
-            lastname: this.booking.userData.user.lastname,
-            birthdate : this.booking.userData.user.birthdate,
-            email : this.booking.userData.user.email,
-            phone : this.booking.userData.user.phone,
-            phone2 : this.booking.userData.user.phone2,
-            device : this.booking.userData.deviceKey,
-            brand :this.booking.userData.brandKey,
-            model : this.booking.userData.modelKey,
-            color : this.booking.userData.colorKey,
-            network : this.booking.userData.networkKey,
-            repair : this.booking.userData.selectedRepair,
-            screenrep:this.booking.repairKey.screenrep_selected,
-            headrep:this.booking.repairKey.headrep_selected,
-            earrep:this.booking.repairKey.earrep_selected,
-            powerrep:this.booking.repairKey.powerrep_selected,
-            rearcamrep:this.booking.repairKey.rearcamrep_selected,
-            frontcamrep:this.booking.repairKey.frontcamrep_selected,
-            homerep:this.booking.repairKey.homerep_selected,
-            microphone:this.booking.repairKey.microphone_selected,
-            chargeport:this.booking.repairKey.chargeport_selected,
-            volumerep:this.booking.repairKey.volumerep_selected,
-            battrep:this.booking.repairKey.battrep_selected,
-            signalrep:this.booking.repairKey.screenrep_selected,
-            backglassrep:this.booking.repairKey.backglassrep_selected,
-            repairlength: this.cart.selectedRepairs.length,
-            prices : JSON.stringify(this.cart.costs),
-            total : this.cart.Total,
-            // ticket_problem_type : this.booking.userData.device + ' Repair',
-            // ticket_subject : this.booking.userData.repair,
-            // ticket_description : this.booking.userData.device+' '+this.booking.userData.brand+' '+
-            // this.booking.userData.model+' '+this.booking.userData.color+' '+this.booking.userData.network+' '+
-            // this.booking.userData.phoneoffer+' '+ this.booking.userData.upgradeoffer1+' '+
-            // this.booking.userData.upgradeoffer2+', Pincode: '+this.booking.userData.user.pin
+    // $.ajax({
+    //   type: "POST",
+    //   url: 'https://admin.iphixx.com/api/v1/bookings/',
+    //   data: {
+    //         firstname: this.booking.userData.user.firstname, 
+    //         lastname: this.booking.userData.user.lastname,
+    //         birthdate : this.booking.userData.user.birthdate,
+    //         email : this.booking.userData.user.email,
+    //         phone : this.booking.userData.user.phone,
+    //         phone2 : this.booking.userData.user.phone2,
+    //         device : this.booking.userData.deviceKey,
+    //         brand :this.booking.userData.brandKey,
+    //         model : this.booking.userData.modelKey,
+    //         color : this.booking.userData.colorKey,
+    //         network : this.booking.userData.networkKey,
+    //         repair : this.booking.userData.selectedRepair,
+    //         screenrep:this.booking.repairKey.screenrep_selected,
+    //         headrep:this.booking.repairKey.headrep_selected,
+    //         earrep:this.booking.repairKey.earrep_selected,
+    //         powerrep:this.booking.repairKey.powerrep_selected,
+    //         rearcamrep:this.booking.repairKey.rearcamrep_selected,
+    //         frontcamrep:this.booking.repairKey.frontcamrep_selected,
+    //         homerep:this.booking.repairKey.homerep_selected,
+    //         microphone:this.booking.repairKey.microphone_selected,
+    //         chargeport:this.booking.repairKey.chargeport_selected,
+    //         volumerep:this.booking.repairKey.volumerep_selected,
+    //         battrep:this.booking.repairKey.battrep_selected,
+    //         signalrep:this.booking.repairKey.screenrep_selected,
+    //         backglassrep:this.booking.repairKey.backglassrep_selected,
+    //         repairlength: this.cart.selectedRepairs.length,
+    //         prices : JSON.stringify(this.cart.costs),
+    //         total : this.cart.Total,
+    //         // ticket_problem_type : this.booking.userData.device + ' Repair',
+    //         // ticket_subject : this.booking.userData.repair,
+    //         // ticket_description : this.booking.userData.device+' '+this.booking.userData.brand+' '+
+    //         // this.booking.userData.model+' '+this.booking.userData.color+' '+this.booking.userData.network+' '+
+    //         // this.booking.userData.phoneoffer+' '+ this.booking.userData.upgradeoffer1+' '+
+    //         // this.booking.userData.upgradeoffer2+', Pincode: '+this.booking.userData.user.pin
   
-          }
-          ,
-      success: (res) => {
-        loading.dismiss();
-        console.log("success: " +res);
-        if(res){
-          this.navCtrl.setRoot(ConfirmationPage);
-        }
-      },
-      error:(err)=>{
-        loading.dismiss();
-        let alert = this.alertCtrl.create({
-          title: 'Error',
-          subTitle: 'Invalid Credentials'+JSON.stringify(err),
-          buttons: ['Ok']
-      });
-        alert.present();
-      }
+    //       }
+    //       ,
+    //   success: (res) => {
+    //     loading.dismiss();
+    //     console.log("success: " +res);
+    //     if(res){
+    //       this.navCtrl.setRoot(ConfirmationPage);
+    //     }
+    //   },
+    //   error:(err)=>{
+    //     loading.dismiss();
+    //     let alert = this.alertCtrl.create({
+    //       title: 'Error',
+    //       subTitle: 'Invalid Credentials'+JSON.stringify(err),
+    //       buttons: ['Ok']
+    //   });
+    //     alert.present();
+    //   }
       
-    });
-  
+    // });
+    this.navCtrl.setRoot(ConfirmationPage);
       
       
   
