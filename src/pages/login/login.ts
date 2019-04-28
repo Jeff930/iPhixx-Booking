@@ -122,7 +122,11 @@ export class LoginPage {
         console.log(result.user_token);
           if(result.user_token!=null){
             loading.dismiss();
-            localStorage.setItem('authenticated' , JSON.stringify(result));
+            localStorage.setItem('authenticated' , result.user_name);
+            var locations = JSON.stringify(result.locations_allowed).substring(1);
+            localStorage.setItem('locations',JSON.stringify(result.locations_allowed));
+            
+            console.log(result.user_name);
             this.booking.userData.customer_id = result.user_id;
             this.navCtrl.setRoot(PasscodePage);
           }
@@ -139,7 +143,7 @@ export class LoginPage {
   
       }
     });
-    var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/sign_in?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+user.email+"&password="+user.password;
+    var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/sign_in?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc=&email="+user.email+"&password="+user.password;
     console.log(JSON.stringify(url));
     xhr.open("POST", url);
    // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
