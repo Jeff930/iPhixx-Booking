@@ -10,6 +10,11 @@ page-customerdetails {
     font-size: 30px;
   }
 
+  .table-responsive {
+  overflow-x: unset;
+}
+
+
   .skip-login{
     text-align: center;
     font-size: 16px;
@@ -40,5 +45,9 @@ page-customerdetails {
   .details-content{
   background-color:white;
   margin-top:8em !important;
+  }
+
+  th{
+    font-size:2vw;
   }
 }
