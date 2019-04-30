@@ -18,10 +18,10 @@
       </ion-row> -->
       <div *ngIf="this.action =='Create Customer'">
       <ion-row>
-        <ion-col col-2>
+        <ion-col col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2>
           <button ion-button (click)="newCustomer()">Create Customer</button>
         </ion-col>
-        <ion-col col-2>
+        <ion-col col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2>
           <button ion-button color="gray" (click)="selectCustomer()">Select Customer</button>
         </ion-col>
       </ion-row>
@@ -128,10 +128,10 @@
 
        <div *ngIf="action==='Select Customer'">
          <ion-row>
-        <ion-col col-2>
+        <ion-col col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2>
           <button ion-button color="gray" (click)="newCustomer()">Create Customer</button>
         </ion-col>
-        <ion-col col-2>
+        <ion-col col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2>
           <button ion-button  (click)="selectCustomer()">Select Customer</button>
         </ion-col>
       </ion-row>
