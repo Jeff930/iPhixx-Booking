@@ -103,6 +103,12 @@ export class CustomerdetailsPage {
   selectedRepairs = this.cart.selectedRepairs;
   action="Create Customer";
 
+  customers;
+  selectedCustomer=[{
+	location:null,
+	birthdate:null,
+}]
+
   constructor(public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder,
@@ -154,10 +160,62 @@ export class CustomerdetailsPage {
 
   selectCustomer(){
 	this.action = "Select Customer";
+	this.getCustomerList(1);
+  }
+
+  getCustomerList(page){
+	let loading = this.loadingCtrl.create({
+		//content: 'Creating Customer...'
+	 });
+	 loading.present();
+	 let xhr = new XMLHttpRequest();
+	 //xhr.withCredentials = true;
+ 
+	 xhr.addEventListener("readystatechange",  () =>{
+	   if (xhr.readyState === 4) {
+		 console.log(xhr.responseText);
+		 let result = JSON.parse(xhr.responseText);
+		 this.customers =result.customers;
+		 console.log(this.customers);
+		 //console.log("id",result.customer.id);
+		   if(this.customers!=undefined){
+			 loading.dismiss();
+			 //localStorage.setItem('authenticated' , JSON.stringify(result));
+			 //this.booking.userData.customer_id = result.user_id;
+			 //console.log(result.customer.id);
+			 //this.createTicket(user,result.customer.id);
+			 //this.navCtrl.setRoot(ConfirmationPage);
+		  }
+		   else{
+			loading.dismiss();
+			 let alert = this.alertCtrl.create({
+			   title: 'Error: Customers Details Not Received',
+			   subTitle: this.customers.message,
+			   buttons: ['Ok']
+			 });
+			 alert.present();
+		  }
+	   }
+	 });
+	 console.log(JSON.stringify(this.booking.userData));
+	 var userData = JSON.stringify(this.booking.userData);
+	 userData = userData.substring(1,userData.length-1);
+	 console.log(userData);
+	 // var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+	 // 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
+		 //+"&properties="+userData;
+		 var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&page="+page;
+	 console.log(url);
+	 xhr.open("GET", url);
+	// xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+ 
+	 xhr.send();
   }
 
   newCustomer(){
 	this.action = "Create Customer";
+	
+	 
   }
 
   login(user){
@@ -194,83 +252,15 @@ export class CustomerdetailsPage {
    	this.brand=this.booking.userData.brand;
    	this.model=this.booking.userData.model;
    	this.color=this.booking.userData.color;
-   	this.carrier=this.booking.userData.network;
-   	this.pin=user.pin;
+	this.carrier=this.booking.userData.network;
+	if (this.action=="Create Customer"){
+		this.pin=user.pin;
+	}
    	this.screenProtect=this.booking.userData.screenoffer;
    	this.tempPhone=this.booking.userData.phoneoffer;
    	this.notes=this.booking.note;
 
-   	console.log(this.device);
-   	console.log(this.brand);
-   	console.log(this.model);
-   	console.log(this.color);
-   	console.log(this.carrier);
-   	console.log(this.pin);
-	console.log(this.screenProtect);
-	console.log(this.tempPhone);
-	console.log(this.notes);
-	console.log(this.selectedRepairs);
-
-	this.screenRep;
-  	this.trackpadRep;
-  	this.earPieceRep;
-  	this.powerRep;
-  	this.headRep;
-  	this.rearCamRep;
-  	this.frontCamRep;
-  	this.homeRep;
-  	this.micRep;
-  	this.chargePortRep;
-  	this.backGlassRep;
-  	this.volumeRep;
-  	this.battRep;
-  	this.harddriveRep;
-  	this.birthdate;
-  	this.signalRep;
-  	this.hdmiRep;
-	this.keyboardRep;
-  	this.fanRep;
-  	this.webCamRep;
-  	this.speakerRep;
-  	this.dataRecovery;
-  	this.virusRemoval;
-  	this.SSD500GBOS;
-  	this.SSD1TBOS;
-  	this.HDD500GBOS;
-  	this.HDD1TBOS;
-  	this.SSD500GBOSDT;
-  	this.SSD1TBOSDT;
-  	this.HDD500GBOSDT;
-	this.HDD1TBOSDT;
-	  
-
-  	console.log(this.lockTest);
-		console.log(this.sdTest);
-			console.log(this.frontCamTest);
-				console.log(this.rearCamTest);
-					console.log(this.homeTest);
-						console.log(this.volumeTest);
-							console.log(this.earpieceTest);
-								console.log(this.headphoneTest);
-									console.log(this.vibrateTest);
-										console.log(this.lightSensorTest);
-	  
-											console.log(this.speakerTest);
-												console.log(this.micTest);
-													console.log(this.moistureTest);
-														console.log(this.powerTest);
-															console.log(this.wifiTest);
-																console.log(this.barredTest);
-																	console.log(this.displayTest);
-																		console.log(this.systemBootTest);
-																			console.log(this.audioTest);
-																				console.log(this.keyboardTest);
-																					console.log(this.touchpadtest);
-																						console.log(this.portTest);
-																							console.log(this.webCamTest);
-																								console.log(this.battTest);
-																									console.log(this.harddriveTest);
-	  
+   	
 	for (var i=0;i<this.selectedRepairs.length;i++){
 		switch (this.selectedRepairs[i]){
 			case "Screen Replacement":
@@ -370,7 +360,14 @@ export class CustomerdetailsPage {
 
 		
 	loading.dismiss();
-	this.createCustomer(user);
+	if (this.action=="Create Customer"){
+		this.createCustomer(user);
+	}else{
+		this.assignCustomer(user);
+	}
+
+	
+	
   }
 
   createCustomer(user){
@@ -499,5 +496,13 @@ export class CustomerdetailsPage {
 	presentPrompt() {
 		var data = { source : 'pin' };
 		var modalPage = this.modalCtrl.create('ModalPage',data,{cssClass: 'modal-content' });modalPage.present(); 
+	}
+
+	assignCustomer(customer){
+		console.log(customer);
+		this.selectedCustomer[0].location=2072;
+		this.selectedCustomer[0].birthdate=customer.properties.Birthdate;
+		console.log(this.selectedCustomer);
+		this.createTicket(this.selectedCustomer[0],customer.id);
 	}
 }
