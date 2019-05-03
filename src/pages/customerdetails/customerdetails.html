@@ -136,12 +136,18 @@
         </ion-col>
       </ion-row>
       <ion-row margin-horizontal class="box-shadow">
-
+      <ion-col>
+        <div text-center>
+            <p class="question">Please Select the Customer From the List Below.</p>
+           
+          </div>
       <table col-12 class="table table-hover">
                     <thead>
                       <tr>
-                        <th col-6>Customer Name</th>
-                        <th col-5>Email</th>
+                        <th col-1></th>
+                        <th col-4>Customer ID</th>
+                        <th col-4>Customer Name</th>
+                        <th col-2>Email</th>
                         <!-- <th col-3>Phone</th>
                         <th col-3>Alt. Phone</th>
                         <th col-3>Birthdate</th> -->
@@ -150,37 +156,18 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- <tr *ngFor="let customer of customers ; let i = index"> -->
-                        <tr  text-center>
-                        
-                        <td>Sample</td>
-                        <td>Sample</td>
-                        <td></td>
+                      <tr *ngFor="let customer of customers; let i = index" text-center>
+                        <!-- <tr  text-center> -->
+                        <td><button round ion-button full class="login-button" (click)="prepareData(customer)">Select</button></td>
+                        <td>{{customer.id}}</td>
+                        <td>{{customer.fullname}}</td>
+                        <td>{{customer.email}}</td>
                         
                        
               
                       
                       </tr>
 
-                      <tr>
-                        
-                        <td>Sample</td>
-                        <td>Sample</td>
-                        <td></td>
-                       
-              
-                      
-                      </tr>
-
-                       <tr>
-                        
-                        <td>Sample</td>
-                        <td>Sample</td>
-                        <td></td>
-                       
-              
-                      
-                      </tr>
                       
                     </tbody>
                       <tfoot>
@@ -189,6 +176,15 @@
                       </tr>
                       </tfoot>
                   </table>
+                  <table>
+                    <tr>
+                      <th col-3><button ion-button full (click)="getCustomerList(1)">1</button></th>
+                       <th col-3><button ion-button full (click)="getCustomerList(2)">2</button></th>
+                        <th col-3><button ion-button full (click)="getCustomerList(3)">3</button></th>
+                         <th col-3><button ion-button full (click)="getCustomerList(4)">4</button></th>
+                    </tr>
+                  </table>
+                </ion-col>
                 </ion-row>
 
        </div>
