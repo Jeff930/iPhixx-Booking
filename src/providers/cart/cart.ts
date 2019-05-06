@@ -21,6 +21,7 @@ export class CartProvider {
   costs=[];
   selected;
   unselected;
+  otherRepairSelected=false;
 
 
 
@@ -38,6 +39,7 @@ export class CartProvider {
     if (this.selectedRepairs.indexOf(selectedRepair)==-1){
       if (index!=null){
       this.unselected = document.getElementsByClassName("repair");
+      console.log(this.unselected);
       this.unselected[index].setAttribute("style","background-color:lightgray");}
       this.selectedRepairs.push(selectedRepair);
       if (selectedRepair=="Screen Replacement"){
@@ -90,6 +92,12 @@ export class CartProvider {
     }
       this.checkMessage();
 
+  }
+
+  otherRepair(option,cost){
+    console.log(cost);
+    this.unselected = document.getElementsByClassName("repair");
+    this.updateRepairs(option,this.unselected.length-1,cost);
   }
 
  
