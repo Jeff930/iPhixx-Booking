@@ -5,6 +5,7 @@ import { RepairProvider } from '../../providers/repair/repair';
 import { CartProvider } from '../../providers/cart/cart';
 import { NavigationProvider } from '../../providers/navigation/navigation';
 import { OtherrepairPage} from '../otherrepair/otherrepair';
+
 /**
  * Generated class for the RepairPage page.
  *
@@ -23,6 +24,7 @@ export class RepairPage {
   device:string;
   brand:string;
   model:string;
+  unselected;
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public booking : BookingProvider,private cart: CartProvider,public navigation: NavigationProvider,public repair: RepairProvider) {
   	this.device =  this.booking.userData.device+', '+this.booking.userData.brand+', '+
@@ -53,6 +55,11 @@ export class RepairPage {
 
 
   enterRepair() {
-    this.navCtrl.push(OtherrepairPage);
+    console.log(this.cart.otherRepairSelected)
+    if (this.cart.otherRepairSelected==false){
+      this.navCtrl.push(OtherrepairPage);
+    }else{
+      console.log("Already selected");
+    }
   }
 }
