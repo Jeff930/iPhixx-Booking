@@ -35,12 +35,20 @@ export class OtherrepairPage {
   }
 
   goToCheckout() {
+   
     this.navCtrl.setRoot(RepairPage);
-    this.cart.selectedRepairs.push(this.repairOption);
+    console.log(this.cart.otherRepairSelected);
+    this.cart.otherRepairSelected=true;
+   
+    //this.cart.costs.push(this.repairCost+".00");
+    //this.cart.Total=this.cart.Total+parseInt(this.repairCost);
+    //this.cart.selectedRepairs.push(this.repairOption);
+    this.cart.otherRepair(this.repairOption,this.repairCost+'.00');
+   
     console.log("repair option"+this.repairOption);
     console.log("repair option"+this.cart.selectedRepairs[0]);
-    this.cart.costs.push(this.repairCost+".00");
-    this.cart.Total=this.cart.Total+parseInt(this.repairCost);
+ 
+    
   }
 
   ionViewDidLoad(){
