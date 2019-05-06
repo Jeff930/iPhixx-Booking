@@ -143,6 +143,7 @@ export class CartProvider {
     console.log(this.costs[selectedIndex]);
     var index;
     console.log("model" + JSON.stringify(this.repair.modelrepairs));
+    this.selected = document.getElementsByClassName("repair");
 
     switch (repair){
       case 'Temporary Phone':
@@ -157,29 +158,19 @@ export class CartProvider {
       
       default:
         if (this.repair.modelrepairs.indexOf(repair)==-1){
+          if (this.otherRepairSelected==true){
+            this.otherRepairSelected=false;
+            index = this.selected.length-1;
+          }
           this.Total=this.Total - parseInt(this.costs[selectedIndex]);
         }else{
           index=this.repair.modelrepairs.indexOf(repair);
           this.Total=this.Total - parseInt(this.costs[selectedIndex]);
         }
     }
-    
-    // for (let i=0;i<this.repair.modelrepairs.length;i++){
-    //     if (this.repair.modelrepairs[i]==repair){
-    //       
-    //       this.Total=this.Total - parseInt(this.costs[selectedIndex]);
-    //     }
-    // }
-    // if (repair == 'Temporary Phone') {
-    //   this.Total=this.Total - 50;
-    //   console.log("true")
-    // }
-    // if (repair == 'Nano Technology Tempered Glass') {
-    //   this.Total=this.Total - 25;
-    //   console.log("true2")
-    // }
 
-    this.selected = document.getElementsByClassName("repair");
+    console.log(index);
+    console.log(this.selected);
     console.log("thissss" + JSON.stringify(index));
     try{
     this.selected[index].setAttribute("style","background-color:white");
