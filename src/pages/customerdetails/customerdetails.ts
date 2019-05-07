@@ -98,6 +98,8 @@ export class CustomerdetailsPage {
   webCamTest="Can't Test";
   battTest="Can't Test";
   harddriveTest="Can't Test";
+  customRepair="";
+  customRepairPrice;
 
   locations;
   selectedRepairs = this.cart.selectedRepairs;
