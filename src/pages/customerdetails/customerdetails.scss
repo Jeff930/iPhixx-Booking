@@ -35,6 +35,10 @@ page-customerdetails {
     font-weight: 500;
   }
 
+  .select-button{
+    font-weight: 500;
+  }
+
   .error-message{
     color: #FFF;
     padding: 2px;
@@ -54,6 +58,18 @@ page-customerdetails {
    td{
     font-size:1.2vw;
     border-bottom: 1px solid rgba(200,200,200,0.8);
-    height:3vw;
+    height:7vw;
   }
+
+  .search{
+  border: 2px solid color($colors, primary, base);;
+  border-radius:10px; 
+  padding-left:1em;
+  padding-right:1em;
+  margin-top:5px;
+}
+
+.table{
+  margin-top:50px;
+}
 }
