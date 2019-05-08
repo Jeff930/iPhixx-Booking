@@ -89,23 +89,6 @@ export class TestInPage {
     const confirm = this.alertCtrl.create({
       title: 'No Information Added!',
       message: 'Atleast 1 field is empty',
-      // buttons: [
-      //   {
-      //     text: 'Yes',
-      //     handler: () => {
-      //       if (this.device=='Phone'|| this.device=='Tablet')
-      //         this.navCtrl.setRoot(UpgradeofferPage);
-      //       else
-      //         this.navCtrl.setRoot(CustomerdetailsPage);
-      //     }
-      //   },
-      //   {
-      //     text: 'No',
-      //     handler: () => {
-      //       console.log('Agree clicked');
-      //     }
-      //   }
-      // ]
     });
     confirm.present();
   }
