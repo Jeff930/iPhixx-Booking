@@ -141,6 +141,20 @@
             <p class="question">Please Select the Customer From the List Below.</p>
            
           </div>
+
+      <ion-row>
+        <ion-col col-4>
+            <ion-input class="search" placeholder="Search here..." [(ngModel)]="searchInput"></ion-input>
+        </ion-col>
+        <ion-col col-3>
+            <button [disabled]="searchInput.length<3" round ion-button full class="select-button" (click)="Search()">Search</button>
+        </ion-col>
+        <ion-col col-3>
+            <button [disabled]="filter==false" color="gray" round ion-button full class="select-button" (click)="getCustomerList(1)">Clear Search</button>
+        </ion-col>
+           
+          </ion-row>
+
       <table col-12 class="table table-hover">
                     <thead>
                       <tr>
@@ -158,7 +172,7 @@
                     <tbody>
                       <tr *ngFor="let customer of customers; let i = index" text-center>
                         <!-- <tr  text-center> -->
-                        <td><button round ion-button full class="login-button" (click)="prepareData(customer)">Select</button></td>
+                        <td><button round ion-button full class="select-button" (click)="prepareData(customer)">Select</button></td>
                         <td>{{customer.id}}</td>
                         <td>{{customer.fullname}}</td>
                         <td>{{customer.email}}</td>
