@@ -150,6 +150,7 @@ export class CustomerdetailsPage {
 				this.locations=JSON.parse(localStorage.getItem('locations'));
 				//console.log(JSON.parse(this.locations));
 				console.log([this.locations]);
+				
 
 
   }
@@ -174,9 +175,17 @@ export class CustomerdetailsPage {
 		 let result = JSON.parse(xhr.responseText);
 		 this.customers =result.customers;
 		 console.log(this.customers);
+		 console.log(this.customers.length);
 		 //console.log("id",result.customer.id);
 		   if(this.customers!=undefined){
 			 loading.dismiss();
+			 if (this.customers.length==0){
+				document.getElementById("emptyResult").style.display="block";
+				document.getElementById("result").style.display="none";
+			 }else{
+				document.getElementById("emptyResult").style.display="none";
+				document.getElementById("result").style.display="block";
+			 }
 			 //localStorage.setItem('authenticated' , JSON.stringify(result));
 			 //this.booking.userData.customer_id = result.user_id;
 			 //console.log(result.customer.id);
@@ -230,9 +239,12 @@ export class CustomerdetailsPage {
 		 let result = JSON.parse(xhr.responseText);
 		 this.customers =result.customers;
 		 console.log(this.customers);
+		 console.log(this.customers.length);
 		 //console.log("id",result.customer.id);
 		   if(this.customers!=undefined){
 			 loading.dismiss();
+			 document.getElementById("emptyResult").style.display="none";
+			 document.getElementById("result").style.display="block";
 			 //localStorage.setItem('authenticated' , JSON.stringify(result));
 			 //this.booking.userData.customer_id = result.user_id;
 			 //console.log(result.customer.id);
