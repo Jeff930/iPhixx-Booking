@@ -460,12 +460,16 @@ export class CustomerdetailsPage {
 				console.log(result.customer.id);
 				this.createTicket(user,result.customer.id);
 				//this.navCtrl.setRoot(ConfirmationPage);
-			 }
-			  else{
-				
+			 }else{
+				loading.dismiss();
+				let message = result.message;
+				if (result.message=="Email has already been taken")
+					message = "Customer Creation failed due to Duplicate Email";
+				console.log(result.message);
+				console.log(message);
 				let alert = this.alertCtrl.create({
 				  title: 'Error: Customer Not Created',
-				  subTitle: result.message,
+				  subTitle: message,
 				  buttons: ['Ok']
 				});
 				alert.present();
