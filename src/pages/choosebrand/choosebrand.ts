@@ -96,9 +96,9 @@ export class ChoosebrandPage {
       }else{
         this.navCtrl.push(ChoosemodelPage , { brand: brand});
       }
+    }
     this.booking.userData.brand = brand;
     this.booking.userData.brandKey = key;
-    }
   }
 
   
