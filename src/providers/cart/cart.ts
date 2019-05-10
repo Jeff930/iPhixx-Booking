@@ -22,6 +22,8 @@ export class CartProvider {
   selected;
   unselected;
   otherRepairSelected=false;
+  customRepair="";
+  customRepairPrice='';
 
 
 
@@ -97,6 +99,8 @@ export class CartProvider {
   otherRepair(option,cost){
     console.log(cost);
     this.unselected = document.getElementsByClassName("repair");
+    this.customRepair=option;
+    this.customRepairPrice=cost;
     this.updateRepairs(option,this.unselected.length-1,cost);
   }
 
@@ -160,6 +164,8 @@ export class CartProvider {
         if (this.repair.modelrepairs.indexOf(repair)==-1){
           if (this.otherRepairSelected==true){
             this.otherRepairSelected=false;
+            this.customRepair="";
+            this.customRepairPrice='';
             index = this.selected.length-1;
           }
           this.Total=this.Total - parseInt(this.costs[selectedIndex]);
