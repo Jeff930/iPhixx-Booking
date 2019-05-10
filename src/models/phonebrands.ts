@@ -9,7 +9,7 @@ export const phonebrands = [
 		brand: 'Sony' },
 	{ 	key:'5',
 		brand: 'Nokia' },
-	{	key:null, 
+	{	key:'7', 
 		brand: 'Other' },
 	// { brand: 'Other' }
 ]
