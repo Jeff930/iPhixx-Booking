@@ -98,7 +98,7 @@ export class CustomerdetailsPage {
   battTest="Can't Test";
   harddriveTest="Can't Test";
   customRepair="";
-  customRepairPrice;
+  customRepairPrice='';
 
   searchInput="";
   filter=false;
@@ -323,7 +323,12 @@ export class CustomerdetailsPage {
 	}
    	this.screenProtect=this.booking.userData.screenoffer;
    	this.tempPhone=this.booking.userData.phoneoffer;
-   	this.notes=this.booking.note;
+	this.notes=this.booking.note;
+	   
+	if (this.cart.otherRepairSelected==true){
+		this.customRepair=this.cart.customRepair;
+		this.customRepairPrice=this.cart.customRepairPrice;
+	}
 
    	
 	for (var i=0;i<this.selectedRepairs.length;i++){
@@ -541,7 +546,7 @@ export class CustomerdetailsPage {
 			var issue = this.device + " issue";
 			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&customer_id="+
 				id+"&subject="+issue+"&location_id="+user.location+"&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
-				this.brand+"&properties[Model]="+this.model+"&properties[Carrier]="+this.carrier+"&properties[Temporary Phone]="+this.tempPhone+"&properties[Screen Protector]="+this.screenProtect
+				this.brand+"&properties[Model]="+this.model+"&properties[Color]="+this.color+"&properties[Custom Repair]="+this.customRepair+"&properties[Custom Repair Price]="+this.customRepairPrice+"&properties[Carrier]="+this.carrier+"&properties[Temporary Phone]="+this.tempPhone+"&properties[Screen Protector]="+this.screenProtect
 				+"&properties[Additional Details]="+this.notes+"&properties[Screen Replacement]="+this.screenRep+"&properties[Trackpad Replacement]="+this.trackpadRep+"&properties[Ear Piece Repair]="+this.earPieceRep
 				+"&properties[Power Button Repair]="+this.powerRep+"&properties[Head Phone Repair]="+this.headRep+"&properties[Rear Camera Repair]="+this.rearCamRep+"&properties[Front Camera Repair]="+this.frontCamRep+"&properties[Home Button Repair]="+this.homeRep
 				+"&properties[Upper Microphone Repair]="+this.micRep+"&properties[Charging Port Repair]="+this.chargePortRep+"&properties[Back Glass Repair]="+this.backGlassRep+"&properties[PIN]="+this.pin+"&properties[Volume Button Repair]="+this.volumeRep
@@ -569,6 +574,13 @@ export class CustomerdetailsPage {
 
 	assignCustomer(customer){
 		console.log(customer);
+		this.booking.userData.user.firstname=customer.firstname;
+		this.booking.userData.user.lastname=customer.lastname;
+		this.booking.userData.user.birthdate=customer.properties.Birthdate;
+		this.booking.userData.user.email=customer.properties.email;
+		this.booking.userData.user.phone=customer.properties.phone;
+		this.booking.userData.user.phone2=customer.properties.mobile;
+		this.booking.userData.user.phone=customer.properties.phone;
 		this.selectedCustomer[0].location=2072;
 		this.selectedCustomer[0].birthdate=customer.properties.Birthdate;
 		console.log(this.selectedCustomer);
