@@ -5,7 +5,7 @@ export const tabletbrands = [
 		brand: 'Samsung' },
 	{ 	key:'3',
 		brand: 'Huawei' },
-	{ 	key:null,
+	{ 	key:'7',
 		brand: 'Other' },
 
 ]
