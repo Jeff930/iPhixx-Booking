@@ -117,7 +117,7 @@
          </div>
           <ion-row class="login-row">
             <ion-col text-center>
-              <button round [disabled]="!customerDetails.valid" (click)="prepareData(customerDetails.value)" ion-button full class="login-button" 
+              <button round [disabled]="!customerDetails.valid" (click)="prepareData(customerDetails.value,'')" ion-button full class="login-button" 
             type="submit">Book</button>
   <!-- [disabled]="!login_form.valid" --> 
             </ion-col>
@@ -138,11 +138,23 @@
       <ion-row margin-horizontal class="box-shadow">
       <ion-col>
         <div text-center>
-            <p class="question">Please Select the Customer From the List Below.</p>
-           
+            <p class="question">Please Enter Details and Select the Customer From the List Below.</p>
+            <p class="Tip">Please enter your PIN and location before selecting a customer.</p>
           </div>
+         <div [formGroup]="assignCustomerForm">
+          <ion-item no-padding >
+            <ion-label color="dark" stacked>PIN</ion-label>
+            <ion-input type="number" formControlName="pin" placeholder="1234"></ion-input>
+          </ion-item>
+          <ion-item no-padding >
+            <ion-label color="dark" stacked>Location</ion-label>
+            <ion-select formControlName="location">
+              <ion-option *ngFor="let location of locations" [value]="location.id">{{location.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+         </div>
 
-      <ion-row>
+      <ion-row class="searchBar">
         <ion-col col-4>
             <ion-input class="search" placeholder="Search here..." [(ngModel)]="searchInput"></ion-input>
         </ion-col>
@@ -176,7 +188,7 @@
                     <tbody>
                       <tr *ngFor="let customer of customers; let i = index" text-center>
                         <!-- <tr  text-center> -->
-                        <td><button round ion-button full class="select-button" (click)="prepareData(customer)">Select</button></td>
+                        <td><button [disabled]="!assignCustomerForm.valid" round ion-button full class="select-button" (click)="prepareData(customer,assignCustomerForm.value)">Select</button></td>
                         <td>{{customer.id}}</td>
                         <td>{{customer.fullname}}</td>
                         <td>{{customer.email}}</td>
