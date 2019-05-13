@@ -26,6 +26,7 @@ import { ConfirmationPage } from '../../pages/confirmation/confirmation';
 })
 export class CustomerdetailsPage {
   customerDetails: FormGroup;
+  assignCustomerForm: FormGroup;
   error_message: string;
   smsService;
   consentStore;
@@ -146,7 +147,10 @@ export class CustomerdetailsPage {
 					'portalInviteSource':[],
 					'pin':['', Validators.compose([Validators.required])],
 				});
-
+				this.assignCustomerForm = formBuilder.group({
+					'location':['', Validators.compose([Validators.required])],
+					'pin':['', Validators.compose([Validators.required])],
+				});
 				this.locations=JSON.parse(localStorage.getItem('locations'));
 				//console.log(JSON.parse(this.locations));
 				console.log([this.locations]);
@@ -288,7 +292,7 @@ export class CustomerdetailsPage {
 	  if(user.consentStore){
 		if(user.consentMarketing){
 			//this.createCustomer(user);
-			this.prepareData(user);
+			this.prepareData(user,'');
 		  }else{
 			let alert = this.alertCtrl.create({
 				title: 'Required Consent for Marketing',
@@ -307,7 +311,7 @@ export class CustomerdetailsPage {
 	  }
   }
 
-  prepareData(user){
+  prepareData(user,addData){
   	
 	let loading = this.loadingCtrl.create({
 	  //content: 'Preparing Data...'
@@ -320,7 +324,10 @@ export class CustomerdetailsPage {
 	this.carrier=this.booking.userData.network;
 	if (this.action=="Create Customer"){
 		this.pin=user.pin;
+	}else{
+		this.pin=addData.pin;
 	}
+
    	this.screenProtect=this.booking.userData.screenoffer;
    	this.tempPhone=this.booking.userData.phoneoffer;
 	this.notes=this.booking.note;
@@ -433,7 +440,7 @@ export class CustomerdetailsPage {
 	if (this.action=="Create Customer"){
 		this.createCustomer(user);
 	}else{
-		this.assignCustomer(user);
+		this.assignCustomer(user,addData);
 	}
 
 	
@@ -442,8 +449,6 @@ export class CustomerdetailsPage {
 
   createCustomer(user){
 	console.log(user);
-	
-  	
 	  let loading = this.loadingCtrl.create({
 		//content: 'Creating Customer...'
 	 });
@@ -572,18 +577,35 @@ export class CustomerdetailsPage {
 		var modalPage = this.modalCtrl.create('ModalPage',data,{cssClass: 'modal-content' });modalPage.present(); 
 	}
 
-	assignCustomer(customer){
+	assignCustomer(customer,addData){
+		let userDetails= {
+			firstname: '',
+			lastname: '',
+			birthdate:'',
+			email: '',
+			phone: '',
+			phone2: '',
+			pin : '',
+			location:'',  
+			}
+		userDetails.firstname=customer.firstname;
+		userDetails.lastname=customer.lastname;
+		userDetails.birthdate=customer.properties.Birthdate;
+		userDetails.email=customer.email;
+		userDetails.phone=customer.phone;
+		userDetails.phone2=customer.mobile;
+		userDetails.pin=addData.pin;
+		userDetails.location=addData.location;
+		//this.booking.userData.user=userDetails;
+		console.log(this.booking.userData.user);
 		console.log(customer);
-		this.booking.userData.user.firstname=customer.firstname;
-		this.booking.userData.user.lastname=customer.lastname;
-		this.booking.userData.user.birthdate=customer.properties.Birthdate;
-		this.booking.userData.user.email=customer.properties.email;
-		this.booking.userData.user.phone=customer.properties.phone;
-		this.booking.userData.user.phone2=customer.properties.mobile;
-		this.booking.userData.user.phone=customer.properties.phone;
-		this.selectedCustomer[0].location=2072;
-		this.selectedCustomer[0].birthdate=customer.properties.Birthdate;
-		console.log(this.selectedCustomer);
-		this.createTicket(this.selectedCustomer[0],customer.id);
+		console.log(customer.firstname);
+		
+		
+		// this.selectedCustomer[0].location=addData.location;
+		// console.log(this.selectedCustomer[0].location);
+		// this.selectedCustomer[0].birthdate=customer.properties.Birthdate;
+		//console.log(this.selectedCustomer);
+		this.createTicket(userDetails,customer.id);
 	}
 }
