@@ -73,7 +73,8 @@ export class BookingProvider {
           email: '',
           phone: '',
           phone2: '',
-          pin : ''  
+          pin : '',
+          location:'',  
           }
     }
   ];
