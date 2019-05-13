@@ -32,7 +32,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class ConfirmationPage {
   
   pdfObj = null;
-  userData = this.booking.userData;
+  userData;
   count=0;
   countsmall=0;
   smallpdfObj = null;
@@ -72,6 +72,8 @@ export class ConfirmationPage {
   varNonMobileTest=['power','display','systemBoot','audio','keyboard','touchpad','wifi','port','webCam','battery','HDD'];
   constructor(private plt: Platform, private file: File, private fileOpener: FileOpener,public navCtrl: NavController, public navParams: NavParams, public booking: BookingProvider,public cart: CartProvider,public navi: NavigationProvider,public repair: RepairProvider, public print:PrintServiceProvider,public alertCtrl:AlertController, private loadCtrl: LoadingController, private toastCtrl: ToastController) {
     this.dev=this.booking.userData.device;
+    this.userData = this.booking.userData;
+    console.log(this.userData);
   }
 
   createMobilePdf() {
