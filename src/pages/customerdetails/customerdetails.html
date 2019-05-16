@@ -70,7 +70,7 @@
           <ion-item no-padding >
             <ion-label color="dark" stacked>Location</ion-label>
             <ion-select formControlName="location">
-              <ion-option *ngFor="let location of locations" [value]="location.id">{{location.name}}</ion-option>
+              <ion-option *ngFor="let location of locations" [value]="location">{{location.name}}</ion-option>
             </ion-select>
           </ion-item>
           <ion-item no-padding >
@@ -149,7 +149,7 @@
           <ion-item no-padding >
             <ion-label color="dark" stacked>Location</ion-label>
             <ion-select formControlName="location">
-              <ion-option *ngFor="let location of locations" [value]="location.id">{{location.name}}</ion-option>
+              <ion-option *ngFor="let location of locations" [value]="location">{{location.name}}</ion-option>
             </ion-select>
           </ion-item>
          </div>
