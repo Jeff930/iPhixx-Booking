@@ -448,6 +448,7 @@ export class CustomerdetailsPage {
   }
 
   createCustomer(user){
+	this.booking.locationName = user.location.name;
 	console.log(user);
 	  let loading = this.loadingCtrl.create({
 		//content: 'Creating Customer...'
@@ -528,6 +529,8 @@ export class CustomerdetailsPage {
 				console.log(result);
 					if(result.ticket!=null){
 					loading.dismiss();
+					this.booking.ticketNumber = result.ticket.id;
+					console.log(this.booking.ticketNumber);
 					//localStorage.setItem('authenticated' , JSON.stringify(result));
 					//this.booking.userData.customer_id = result.user_id;
 					this.navCtrl.setRoot(ConfirmationPage);
@@ -550,7 +553,7 @@ export class CustomerdetailsPage {
 			console.log(userData);
 			var issue = this.device + " issue";
 			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&customer_id="+
-				id+"&subject="+issue+"&location_id="+user.location+"&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
+				id+"&subject="+issue+"&location_id="+user.location.id+"&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
 				this.brand+"&properties[Model]="+this.model+"&properties[Color]="+this.color+"&properties[Custom Repair]="+this.customRepair+"&properties[Custom Repair Price]="+this.customRepairPrice+"&properties[Carrier]="+this.carrier+"&properties[Temporary Phone]="+this.tempPhone+"&properties[Screen Protector]="+this.screenProtect
 				+"&properties[Additional Details]="+this.notes+"&properties[Screen Replacement]="+this.screenRep+"&properties[Trackpad Replacement]="+this.trackpadRep+"&properties[Ear Piece Repair]="+this.earPieceRep
 				+"&properties[Power Button Repair]="+this.powerRep+"&properties[Head Phone Repair]="+this.headRep+"&properties[Rear Camera Repair]="+this.rearCamRep+"&properties[Front Camera Repair]="+this.frontCamRep+"&properties[Home Button Repair]="+this.homeRep
@@ -578,6 +581,7 @@ export class CustomerdetailsPage {
 	}
 
 	assignCustomer(customer,addData){
+		this.booking.locationName = addData.location.name;
 		let userDetails= {
 			firstname: '',
 			lastname: '',
@@ -595,7 +599,7 @@ export class CustomerdetailsPage {
 		userDetails.phone=customer.phone;
 		userDetails.phone2=customer.mobile;
 		userDetails.pin=addData.pin;
-		userDetails.location=addData.location;
+		userDetails.location=addData.location.id;
 		//this.booking.userData.user=userDetails;
 		console.log(this.booking.userData.user);
 		console.log(customer);
