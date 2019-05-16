@@ -207,9 +207,9 @@ export class ConfirmationPage {
       ],
 
       content: [
-        { text: 'Invoice', style: 'maxheader', alignment: 'right' },
+        { text: 'Booking Confirmation', style: 'maxheader', alignment: 'right' },
 
-        { text: 'Iphixx', style: 'header' },
+        { text: 'Store Details', style: 'subheader' },
         { text: 'Name of Store: ' + ' Walmart', style: 'plain'},
         { text: 'Name of Agent: ' + this.booking.agentName, style: 'plain'},
         { text: 'Repair Number Confirmation: ' + ' 0123456789', style: 'plain'},
