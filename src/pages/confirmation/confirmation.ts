@@ -38,7 +38,7 @@ export class ConfirmationPage {
   smallpdfObj = null;
   header="Invoice";
   subheader="iPhixx";
-  store="Name of Store: Walmart";
+  store="Name of Store: ";
   agent="Name of Agent: Ryan Margolin";
   repairno="Invoice Number: 1234567890";
   custheader="CUSTOMER DETAILS";
@@ -111,7 +111,7 @@ export class ConfirmationPage {
         { text: 'Invoice', style: 'maxheader', alignment: 'right' },
 
         { text: 'Iphixx', style: 'header' },
-        { text: 'Name of Store: ' + ' Walmart', style: 'plain'},
+        { text: 'Name of Store: ' + this.booking.locationName, style: 'plain'},
         { text: 'Name of Agent: ' + this.booking.agentName, style: 'plain'},
         { text: 'Repair Number Confirmation: ' + ' 0123456789', style: 'plain'},
 
