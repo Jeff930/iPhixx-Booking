@@ -32,9 +32,9 @@ import { TestInPage } from '../../pages/test-in/test-in';
 })
 export class HeaderComponent {
   index;
-  other;
-  otherDev;
-  otherRepair;
+  other=0;
+  otherDev=0;
+  otherRepair=0;
   username;
 
   constructor(public navigation:NavigationProvider, public navCtrl: NavController,public booking:BookingProvider) {
@@ -110,7 +110,7 @@ export class HeaderComponent {
         break;
       case 15://customerdetails
          if (this.otherDev==0){
-          if (this.otherRepair==0){
+          //if (this.otherRepair==0){
             if (this.booking.userData.device=='Gaming Console'){
               this.navCtrl.setRoot(RepairPage);
             }else{
@@ -120,8 +120,8 @@ export class HeaderComponent {
               }else{
                         this.navCtrl.setRoot(PhoneofferPage);
               }}
-          }else{
-            this.navCtrl.setRoot(OtherrepairPage);}
+          // }else{
+          //   this.navCtrl.setRoot(OtherrepairPage);}
         }
         else
           this.navCtrl.setRoot(EnterdetailPage);
