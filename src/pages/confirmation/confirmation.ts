@@ -108,9 +108,17 @@ export class ConfirmationPage {
       ],
 
       content: [
-        { text: 'Invoice', style: 'maxheader', alignment: 'right' },
+        { text: 'Booking Confirmation', style: 'header', alignment: 'right' },
 
-        { text: 'Iphixx', style: 'header' },
+        { text: 'iPhixx', style: 'subheader' },
+        { text: "Saint Martins Road", style: 'plain'},
+        { text: "Rosslare Harbour", style: 'plain'},
+        { text: "Wexford", style: 'plain'},
+        { text: "Y35 C434", style: 'plain'},
+        { text: "Phone: 1.800.938.825", style: 'plain'},
+        { text: "Email: info@iphixx.com", style: 'plain'},  
+
+        { text: 'Store Details', style: 'subheader' },
         { text: 'Name of Store: ' + this.booking.locationName, style: 'plain'},
         { text: 'Name of Agent: ' + this.booking.agentName, style: 'plain'},
         { text: 'Repair Number Confirmation: ' + this.booking.ticketNumber, style: 'plain'},
@@ -207,7 +215,7 @@ export class ConfirmationPage {
       ],
 
       content: [
-        { text: 'Booking Confirmation', style: 'maxheader', alignment: 'right' },
+        { text: 'Booking Confirmation', style: 'header', alignment: 'right' },
 
         { text: 'Store Details', style: 'subheader' },
         { text: 'Name of Store: ' + ' Walmart', style: 'plain'},
