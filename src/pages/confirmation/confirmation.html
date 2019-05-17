@@ -25,6 +25,13 @@
 		</ion-col>
 	</ion-row>
 
+	<h2 margin-top margin-horizontal>Ticket Details</h2>
+	<ion-list margin-horizontal>
+	  <ion-item><p>Repair Number : {{this.booking.ticketNumber}}</p></ion-item>
+	  <ion-item><p>Date of Booking : {{this.timestamp}}</p></ion-item>
+	  
+	</ion-list>
+
 	<h2 margin-top margin-horizontal>Customer Details</h2>
 	<ion-list margin-horizontal>
 	  <ion-item><p>Full Name : {{userData.user.firstname}} {{userData.user.lastname}}</p></ion-item>
@@ -32,6 +39,7 @@
 	  <ion-item><p>Phone Number : {{userData.user.phone}}</p></ion-item>
 	  <ion-item *ngIf="userData.user.phone2" ><p>Alternative Phone Number : {{userData.user.phone2}}</p></ion-item>
 	  <ion-item><p>Pin : {{userData.user.pin}}</p></ion-item>
+
 	</ion-list>
 
 	<h2 margin-horizontal>Device Details</h2>
