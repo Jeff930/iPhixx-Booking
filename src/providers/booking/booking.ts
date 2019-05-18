@@ -33,6 +33,9 @@ export class BookingProvider {
   nonMobileTest:any;
   locationName='';
   ticketNumber='';
+  phone='';
+  mobile='';
+  created:any;
 
 
   constructor(public http: Http,  ) {
