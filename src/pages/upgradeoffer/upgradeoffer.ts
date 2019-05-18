@@ -48,7 +48,7 @@ export class UpgradeofferPage {
   	console.log(choice);
   	if(choice == 'yes'){
 			this.booking.userData.screenoffer = true;
-			this.cart.updateRepairs('Nano Technology Tempered Glass',null,'25.00');
+			this.cart.updateRepairs('Nano Technology Tempered Glass',null,'15.00');
   	}
   	else{
   		this.booking.userData.screenoffer = false;
