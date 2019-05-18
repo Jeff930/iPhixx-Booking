@@ -156,7 +156,7 @@ export class CartProvider {
       break;
 
       case 'Nano Technology Tempered Glass':
-        this.Total=this.Total - 25;
+        this.Total=this.Total - 15;
         this.booking.userData.screenoffer=false;
       break;
       
