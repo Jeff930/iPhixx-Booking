@@ -150,6 +150,7 @@ export class CustomerdetailsPage {
 				this.assignCustomerForm = formBuilder.group({
 					'location':['', Validators.compose([Validators.required])],
 					'pin':['', Validators.compose([Validators.required])],
+					'smsService':[],
 				});
 				this.locations=JSON.parse(localStorage.getItem('locations'));
 				//console.log(JSON.parse(this.locations));
@@ -449,6 +450,8 @@ export class CustomerdetailsPage {
   }
 
   createCustomer(user){
+	this.booking.phone=user.phone;
+	this.booking.mobile=user.phone2;
 	this.booking.locationName = user.location.name;
 	console.log(user);
 	  let loading = this.loadingCtrl.create({
@@ -505,7 +508,7 @@ export class CustomerdetailsPage {
 		}
 	
 		createTicket(user,id){
-			console.log(user.username);
+			console.log(user);
 		console.log(user.password);
 			console.log(user.password);
 			this.booking.userData.user = user;
@@ -531,7 +534,9 @@ export class CustomerdetailsPage {
 					if(result.ticket!=null){
 					loading.dismiss();
 					this.booking.ticketNumber = result.ticket.number;
+					this.booking.created = result.ticket.created_at;
 					console.log(this.booking.ticketNumber);
+					console.log(this.booking.created);
 					//localStorage.setItem('authenticated' , JSON.stringify(result));
 					//this.booking.userData.customer_id = result.user_id;
 					this.navCtrl.setRoot(ConfirmationPage);
@@ -593,17 +598,23 @@ export class CustomerdetailsPage {
 			pin : '',
 			location:'',  
 			}
+		console.log(customer);
+		console.log(this.booking.userData.user);
 		userDetails.firstname=customer.firstname;
 		userDetails.lastname=customer.lastname;
 		userDetails.birthdate=customer.properties.Birthdate;
 		userDetails.email=customer.email;
 		userDetails.phone=customer.phone;
 		userDetails.phone2=customer.mobile;
+		this.booking.phone=customer.phone;
+		this.booking.mobile=customer.mobile;
 		userDetails.pin=addData.pin;
 		console.log(addData.location)
 		userDetails.location=addData.location.id;
+
 		//this.booking.userData.user=userDetails;
 		console.log(this.booking.userData.user);
+
 		console.log(customer);
 		console.log(customer.firstname);
 		
