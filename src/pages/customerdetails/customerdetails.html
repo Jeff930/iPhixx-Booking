@@ -152,6 +152,10 @@
               <ion-option *ngFor="let location of locations" [value]="location">{{location.name}}</ion-option>
             </ion-select>
           </ion-item>
+          <ion-item no-padding >
+            <ion-label color="dark">SMS Service Enabled</ion-label>
+            <ion-checkbox formControlName="smsService" ></ion-checkbox>
+          </ion-item>
          </div>
 
       <ion-row class="searchBar">
