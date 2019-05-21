@@ -558,8 +558,9 @@ export class CustomerdetailsPage {
 			userData = userData.substring(1,userData.length-1);
 			console.log(userData);
 			var issue = this.device + " issue";
+			var subject = this.brand + " " + this.model+ " repair";
 			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&customer_id="+
-				id+"&subject="+issue+"&location_id="+user.location+"&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
+				id+"&subject="+subject+"&problem_type="+issue+"&location_id="+user.location+"&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
 				this.brand+"&properties[Model]="+this.model+"&properties[Color]="+this.color+"&properties[Custom Repair]="+this.customRepair+"&properties[Custom Repair Price]="+this.customRepairPrice+"&properties[Carrier]="+this.carrier+"&properties[Temporary Phone]="+this.tempPhone+"&properties[Screen Protector]="+this.screenProtect
 				+"&properties[Additional Details]="+this.notes+"&properties[Screen Replacement]="+this.screenRep+"&properties[Trackpad Replacement]="+this.trackpadRep+"&properties[Ear Piece Repair]="+this.earPieceRep
 				+"&properties[Power Button Repair]="+this.powerRep+"&properties[Head Phone Repair]="+this.headRep+"&properties[Rear Camera Repair]="+this.rearCamRep+"&properties[Front Camera Repair]="+this.frontCamRep+"&properties[Home Button Repair]="+this.homeRep
