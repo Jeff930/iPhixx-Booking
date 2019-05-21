@@ -107,13 +107,11 @@
              <ion-item>Birthdate :  {{userData[1].properties.Birthdate}}</ion-item>
            </ion-list>
 
-           <h2 margin-top>Device Details</h2>
+          <h2 margin-top>Device Details</h2>
           <ion-list >
-             <ion-item>Full Name : {{userData[0].fullname}}</ion-item>
-             <ion-item>Email : {{userData[1].email}}</ion-item>
-             <ion-item>Phone Number : {{userData[1].mobile}}</ion-item>
-             <ion-item>Alternative Phone : {{userData[1].phone}}</ion-item>
-             <ion-item>Birthdate :</ion-item>
+             <ion-item>Device Model : {{userData[0].properties.Brand}} {{userData[0].properties.Model}}</ion-item>
+             <ion-item>Device Color : {{userData[0].properties.Color}}</ion-item>
+             <ion-item>Device Carrier : {{userData[0].properties.Carrier}}</ion-item>
            </ion-list>
          
         </ion-col>
