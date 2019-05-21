@@ -87,22 +87,34 @@
              <ion-label color="primary"> <ion-icon name="ios-person-outline"></ion-icon> </ion-label>
             <ion-input type="text" placeholder="Email Address" formControlName="username" class="form-controll" required></ion-input>
           </ion-item> -->
-         <ion-list >
+          <h2 margin-top>Ticket Details</h2>
+          <ion-list >
+             <ion-item>Ticket Number : {{userData[0].number}}</ion-item>
+             <ion-item>Ticket ID : {{userData[0].id}}</ion-item>
+             <ion-item>Status : {{userData[0].status}}</ion-item>
+             <ion-item>Created At : {{userData[0].created_at}}</ion-item>
+             <ion-item>Due-date : {{userData[0].due_date}}</ion-item>
+             <ion-item>Updated At : {{userData[0].updated_at}}</ion-item>
+             <ion-item>Resolve-date : {{userData[0].resolved_at}}</ion-item>
+	         </ion-list>
 
-	 
-	  <ion-item>Full Name : {{userData[1].fullname}}</ion-item>
-	  <ion-item>Email : {{userData[1].email}}</ion-item>
-	  <ion-item>Phone Number : {{userData[1].mobile}}</ion-item>
-	  <ion-item>Business Name : {{userData[1].business_name}}</ion-item>
-	
-	  <ion-item>Problem : {{userData[0].problem_type}}</ion-item>
-	  <ion-item>Repair : {{userData[0].subject}}</ion-item>
-	  <ion-item>Status : {{userData[0].status}}</ion-item>
-	  <ion-item>Due-date : {{userData[0].due_date}}</ion-item>
-	  <ion-item>Resolve-date : {{userData[0].resolved_at}}</ion-item>
-	
+          <h2 margin-top>Customer Details</h2>
+          <ion-list >
+             <ion-item>Full Name : {{userData[1].fullname}}</ion-item>
+             <ion-item>Email : {{userData[1].email}}</ion-item>
+             <ion-item>Phone Number : {{userData[1].mobile}}</ion-item>
+             <ion-item>Alternative Phone : {{userData[1].phone}}</ion-item>
+             <ion-item>Birthdate :  {{userData[1].properties.Birthdate}}</ion-item>
+           </ion-list>
 
-	</ion-list>
+           <h2 margin-top>Device Details</h2>
+          <ion-list >
+             <ion-item>Full Name : {{userData[0].fullname}}</ion-item>
+             <ion-item>Email : {{userData[1].email}}</ion-item>
+             <ion-item>Phone Number : {{userData[1].mobile}}</ion-item>
+             <ion-item>Alternative Phone : {{userData[1].phone}}</ion-item>
+             <ion-item>Birthdate :</ion-item>
+           </ion-list>
          
         </ion-col>
       </ion-row>
