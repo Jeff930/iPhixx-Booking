@@ -50,7 +50,6 @@ export class OtherrepairPage {
  
     
   }
-
   ionViewDidLoad(){
     this.navigation.activePageIndex=20;
     this.navigation.otherRepair=1;
