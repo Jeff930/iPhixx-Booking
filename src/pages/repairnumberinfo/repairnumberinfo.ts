@@ -19,13 +19,20 @@ import { NavController, NavParams, AlertController, ModalController} from 'ionic
 })
 export class RepairnumberinfoPage {
 
-  userData : any;
+	userData : any;
+	backGlassRepair;
+	batteryReplacement;
+	cellularSignalRepair;
+	chargingPortRepair;
+	dataRecovery;
+
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
   	public alertCtrl : AlertController, public modalController:ModalController ) {
 
-  	this.userData = this.navParams.get('repairinfo');
+		this.userData = this.navParams.get('repairinfo');
+		
   	  	console.log(this.userData);
   }
 
