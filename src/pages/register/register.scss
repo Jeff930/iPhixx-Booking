@@ -30,7 +30,7 @@ page-register {
   .toolbar {
 
     .row[start]{
-      padding: 0 5vw;
+      padding: 0 13vw;
    
     }
 
@@ -65,10 +65,37 @@ page-register {
   }
 
   .register-content{
+          margin: auto;
+          max-width: 720px;
   background-color:white;
   margin-top:5% !important;
 }
 
+@media (max-width: 1440px) {
+   .toolbar {
 
+    .row[start]{
+      padding: 0 23vw;
+   
+    }
+  }
+}
+@media (max-width: 1024px) {
+   .toolbar {
+
+    .row[start]{
+      padding: 0 13vw;
+   
+    }
+  }
+}
+@media (max-width: 850px) {
+   .toolbar {
+    .row[start]{
+      padding: 0 7vw;
+   
+    }
+  }
+}
  
 }

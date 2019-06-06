@@ -22,6 +22,7 @@ page-passcode {
   }
    p.p-grey{
     color : #b4b4b4;
+
   }
 
   input[type="tel"]{
@@ -40,21 +41,52 @@ page-passcode {
     margin-left:-1vw;
   }
 
-  @media (max-width: 850px) {
+  .back{
+    color:#488aff;
+    margin-left: 5px;
+	}
+  .backBtn {
+    margin-left: 20px
+  }
+  .back-button{
+    margin-left:5vw;
+  }
+  .arrow-back {
+    margin-left: 7vw;
+  }
+	.tool{
+		margin-left:0vw;
+	}
+
+	@media (max-width: 850px) {
   .hidden-md-down {
     display: none !important;
   }
+  
 }
 
 @media (min-width: 851px) {
   .hidden-lg-up {
     display: none !important;
   }
+.logo {
+    margin-left: 35vw !important;
+  }
+}
+@media (min-width: 1200px) {
+.logo {
+    margin-left: 37vw !important;
+  }
 }
 
  .center-logo{
- height:3em;
+  height:3em;
   margin: auto;
   display: block;
   }
+
+  .left{
+    margin-left:-2vw !important;
+  }
+
 }

@@ -51,18 +51,14 @@ page-login {
 
 
 .login-form{
-
   margin-top: 10em;
   h3,p{
       color : #fff;
 
   }
-
   .login-button{
     margin-top: 2em;
   }
-
-
   p[margin-bottom]{
       margin-bottom : 50px;
   }
@@ -80,7 +76,10 @@ button[color="light"]{
     }
   
 }
-
+.login {
+  max-width: 360px;
+  margin: 0 auto;
+}
 .hidden-xs-up{
      display: none !important;
 }
@@ -92,7 +91,11 @@ button[color="light"]{
 .hidden-sm-down{
      display: block !important;
 }
-
+@media (max-width: 1440px) {
+  .login-form {
+    max-width: 980px !important;
+  }
+}
 @media (max-width: 751px) {
   .hidden-md-up {
     display: block !important;

@@ -10,7 +10,7 @@ page-recover {
   .toolbar {
 
     .row[start]{
-      padding: 0 5vw;
+      padding: 0 13vw;
    
     }
 
@@ -24,6 +24,8 @@ page-recover {
     margin: 3vw 8vw;
 
         .col[padding]{
+          margin: auto;
+          max-width: 720px;
           padding: 5vw 8vw;
           background-color: #fff;
         }
@@ -58,7 +60,32 @@ page-recover {
     }
   }
 
+@media (max-width: 1440px) {
+   .toolbar {
 
+    .row[start]{
+      padding: 0 23vw;
+   
+    }
+  }
+}
+@media (max-width: 1024px) {
+   .toolbar {
+
+    .row[start]{
+      padding: 0 13vw;
+   
+    }
+  }
+}
+@media (max-width: 850px) {
+   .toolbar {
+    .row[start]{
+      padding: 0 7vw;
+   
+    }
+  }
+}
 
  
 }
