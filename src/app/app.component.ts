@@ -7,7 +7,7 @@ import { ChooseactionPage } from '../pages/chooseaction/chooseaction';
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { RepairnumberPage } from '../pages/repairnumber/repairnumber'
-
+import { RegisterPage } from '../pages/register/register';
 
 
 @Component({
@@ -18,7 +18,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage:any;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
+  loginPages: Array<{ title: string, component: any }>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     splashScreen.show();
@@ -41,6 +42,10 @@ export class MyApp {
       { title: 'Customer Collection', component: RepairnumberPage },
 
     ];
+    this.loginPages = [ 
+      { title: 'Login', component: LoginPage },
+      { title: 'Be an Iphixx Partner', component: RegisterPage },
+    ]
   }
 
   openPage(page) {

@@ -54,7 +54,7 @@ page-login {
   margin-top: 10em;
   h3,p{
       color : #fff;
-
+      
   }
   .login-button{
     margin-top: 2em;
@@ -76,6 +76,7 @@ button[color="light"]{
     }
   
 }
+
 .login {
   max-width: 360px;
   margin: 0 auto;
@@ -83,7 +84,9 @@ button[color="light"]{
 .hidden-xs-up{
      display: none !important;
 }
-
+.form-controll {
+  padding: 0px 5px 0px 10px;
+}
 .hidden-md-up{
      display: none !important;
 }
@@ -95,12 +98,18 @@ button[color="light"]{
   .login-form {
     max-width: 980px !important;
   }
+  .loginNavbar {
+    display: none !important;
+  }
 }
 @media (max-width: 751px) {
   .hidden-md-up {
     display: block !important;
   }
   .hidden-sm-down {
+    display: none !important;
+  }
+  .loginNavbar {
     display: none !important;
   }
 }
@@ -112,9 +121,15 @@ button[color="light"]{
   .hidden-md-up {
     display: block !important;
   }
+  .loginNavbar {
+    display: none !important;
+  }
 }
 
 @media (max-width: 500px){
+  .loginNavbar {
+    display: block !important;
+  }
   .hidden-sm-down {
     display: none !important;
   }
@@ -122,13 +137,25 @@ button[color="light"]{
     display: none !important;
   }
   .login-form{
-  margin-top: 3em;
+  margin-top: 10em;
   .hidden-xs-up{
      display: block !important;
   }
 }}
 
-
+.loginNavbar {
+  ion-navbar {
+   background-color: rgba(45, 52, 54,1.0) !important;
+   button {
+     color: white;
+   }
+   ion-title {
+     img {
+       
+     }
+   }
+  }
+}
 
 
 }

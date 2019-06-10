@@ -39,7 +39,8 @@ export class LoginPage {
     public http : HttpClient
      ) {
 
-     this.menuCtrl.enable(false, 'myMenu');     
+    this.menuCtrl.enable(true, 'loginMenu');
+    this.menuCtrl.enable(false, 'myMenu');  
   }
 
   ionViewDidLoad() {
@@ -149,6 +150,9 @@ export class LoginPage {
    // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 
     xhr.send();
+
+
+    // this.navCtrl.setRoot(PasscodePage);
 }
 
 register(){

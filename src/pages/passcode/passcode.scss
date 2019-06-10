@@ -62,7 +62,12 @@ page-passcode {
   .hidden-md-down {
     display: none !important;
   }
-  
+}
+  	@media (max-width: 768px) {
+  input[type="tel"] {
+    text-align: center;
+    font-size: 2em;
+  }
 }
 
 @media (min-width: 851px) {

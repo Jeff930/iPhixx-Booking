@@ -104,7 +104,7 @@ background-color: #fff;
 		text-overflow: ellipsis;
 	    white-space: nowrap;
 	    overflow: visible;
-
+		text-align: center;
 		img{
 			height : 50px;
 			width : 50px;
@@ -123,6 +123,12 @@ background-color: #fff;
 			position: relative;
 		    left: -54px;
 		    top: -13px;
+		}
+		hr {
+			width: 50%;
+			background-color: white;
+			height: .5vw;
+			border-radius: 20px
 		}
 	}
 }
@@ -186,3 +192,8 @@ background-color: #fff;
 	height: 8em !important;
 	border-radius: 5px !important;
 }
+.imgProfile {
+	width: 80% !important;
+	height: 100% !important;
+}
+

@@ -97,5 +97,71 @@ page-register {
     }
   }
 }
+@media (max-width: 1440px) {
+  .loginNavbar {
+    display: none !important;
+  }
+}
+@media (max-width: 751px) {
+  .hidden-md-up {
+    display: block !important;
+  }
+  .loginNavbar {
+    display: none !important;
+  }
+}
+
+@media (min-width: 201px) and (max-width: 750px){
+  .hidden-md-up {
+    display: block !important;
+  }
+  .loginNavbar {
+    display: none !important;
+  }
+}
+@media (max-width: 500px){
+  .register-content {
+    margin-top: 5% !important;
+  }
+  ion-header {
+  .toolbar {
+    position: absolute;
+    min-height: 100px;
+    padding: 0 5%;
+
+    button[color="light"]{
+      border:none;
+    }
+      img{
+        height : 60px;
+      }
+      .toolbar-background {
+        background: transparent;
+      }
+     
+    }
+  }
+  .loginNavbar {
+    display: block !important;
+  }
+  .hidden-md-up {
+    display: none !important;
+  }}
+
+.loginNavbar {
+  ion-navbar {
+   background-color: rgba($color: #000000, $alpha: .85) !important;
+   button {
+     color: white;
+   }
+   ion-title {
+     img {
+       
+     }
+   }
+  }
+}
+
+
  
 }

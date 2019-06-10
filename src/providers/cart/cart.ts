@@ -90,7 +90,16 @@ export class CartProvider {
       this.Total=this.Total + parseInt(price);
 
     }else{
-      console.log("already selected");
+      let a;
+      let indexRepair;
+      for (let b = 0; b<this.selectedRepairs.length; b++) {
+        if (selectedRepair==this.selectedRepairs[b]) {
+          a=this.selectedRepairs[b];
+          indexRepair = b;
+        }
+      }
+      console.log(a);
+      this.removeIndex(a, indexRepair);
     }
       this.checkMessage();
 

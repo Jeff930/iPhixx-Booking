@@ -7,6 +7,7 @@
         </ion-col>
         <ion-col offset-md-2 col-md-3 offset-lg-4 col-lg-2 offset-xl-7 col-xl-1>
             <div float-right>
+              
               <button outline margin-left ion-button round color="light" >
                  Become An iPhixx Partner
               </button >
@@ -45,6 +46,20 @@
   </ion-navbar>
 </ion-header>
 
+<ion-header class="loginNavbar">
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      <img src="assets/imgs/logo.png">
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
 <ion-content padding  class="login-cover"  >
   
 
@@ -57,6 +72,7 @@
  
     <ion-col col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center  class="login" >
         <h3>Connect Your Shop to iPhixx</h3>
+        
      <ion-item class="form-input">
             <ion-label color="primary"> <ion-icon name="ios-person-outline" color="light"></ion-icon> </ion-label>
             <ion-input type="text" placeholder="Email Address" formControlName="email" class="form-controll" required></ion-input>
@@ -68,7 +84,7 @@
       </ion-item>
       <button ion-button clear class="p-grey" text-center (click)="recover()">Forgot your password?</button>
       <button col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 class="login-button" round (click)="login(login_form.value)" ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">LOGIN</button>
-       <button col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 class="login-button" round (click)="register()"  ion-button full class="login-button hidden-xs-up">Be An iPhixx Partner</button>
+       <!-- <button col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 class="login-button" round (click)="register()"  ion-button full class="login-button hidden-xs-up">Be An iPhixx Partner</button> -->
       
 
     </ion-col>

@@ -42,5 +42,39 @@
 
 </ion-menu>
 
+<ion-menu id="loginMenu" [content]="content" class="side-menu" side="left">
+
+	<ion-content padding class="grey-bg">
+		<ion-grid>
+			<ion-row class="profile-row">
+				<ion-col text-left>
+					<div class="profile">
+
+						<img class="imgProfile" src="assets/imgs/logo.png">
+						<!-- <span class="info"> Minden, NV 89423</span> -->
+						<hr>
+					</div>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+
+					<ion-list no-lines>
+
+						<button menuClose ion-item *ngFor="let p of loginPages" (click)="openPage(p)">
+							<ion-icon name="{{p.title=='Book A Repair'? 'ios-settings' : 'ios-people-outline' }}" item-start></ion-icon> {{p.title}}
+						</button>
+					
+					</ion-list>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+	</ion-content>
+	
+
+</ion-menu>
+
+
 <!-- <ion-nav [root]="rootPage"></ion-nav> -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
