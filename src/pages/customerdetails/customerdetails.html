@@ -17,11 +17,11 @@
         </ion-col>
       </ion-row> -->
       <div *ngIf="this.action =='Create Customer'">
-      <ion-row>
-        <ion-col col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2>
+      <ion-row >
+        <ion-col  class="customerBtns" col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
           <button ion-button (click)="newCustomer()">Create Customer</button>
         </ion-col>
-        <ion-col col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2>
+        <ion-col  class="customerBtns" col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
           <button ion-button color="gray" (click)="selectCustomer()">Select Customer</button>
         </ion-col>
       </ion-row>
@@ -57,15 +57,15 @@
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>Phone Number</ion-label>
-            <ion-input type="number" formControlName="phone" placeholder="123456789"></ion-input>
+            <ion-input type="tel" maxlength=11 onkeypress='return event.charCode >= 48 && event.charCode <=57 ' formControlName="phone" placeholder="123456789"  pattern="^[0-9]*$"></ion-input>
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>Alternative Phone Number</ion-label>
-            <ion-input type="number" formControlName="phone2" placeholder="123456789"></ion-input>
+            <ion-input type="tel" maxlength=11 onkeypress='return event.charCode >= 48 && event.charCode <=57 ' formControlName="phone2" placeholder="123456789"  pattern="^[0-9]*$"></ion-input>
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>PIN</ion-label>
-            <ion-input type="number" formControlName="pin" placeholder="1234"></ion-input>
+            <ion-input type="tel" maxlength=4  onkeypress='return event.charCode >= 48 && event.charCode <=57 ' formControlName="pin" placeholder="1234"  pattern="^[0-9]*$"></ion-input>
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>Location</ion-label>
@@ -128,10 +128,10 @@
 
        <div *ngIf="action==='Select Customer'">
          <ion-row>
-        <ion-col col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2>
+        <ion-col  class="customerBtns" col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
           <button ion-button color="gray" (click)="newCustomer()">Create Customer</button>
         </ion-col>
-        <ion-col col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2>
+        <ion-col  class="customerBtns" col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
           <button ion-button  (click)="selectCustomer()">Select Customer</button>
         </ion-col>
       </ion-row>
@@ -144,7 +144,7 @@
          <div [formGroup]="assignCustomerForm">
           <ion-item no-padding >
             <ion-label color="dark" stacked>PIN</ion-label>
-            <ion-input type="number" formControlName="pin" placeholder="1234"></ion-input>
+            <ion-input type="tel"  maxlength=4 onkeypress='return event.charCode >= 48 && event.charCode <=57 ' formControlName="pin" placeholder="1234"></ion-input>
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>Location</ion-label>

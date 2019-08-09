@@ -21,15 +21,16 @@ import { LoginPage } from '../login/login';
 export class RegisterPage {
 
  login_form: FormGroup;
-
+  password;
+  confirmPassword;
   constructor(public navCtrl: NavController, public navParams: NavParams ,  public formBuilder: FormBuilder,
     public booking : BookingProvider , public loading : LoadingController, public alert : AlertController,public navigation: NavigationProvider,) {
-
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+    this.navigation.activePageIndex = 3;
   }
 
   ionViewWillLoad() {

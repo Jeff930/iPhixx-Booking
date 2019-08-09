@@ -3,6 +3,7 @@ overflow-y: visible !important;
 
 .checkout-content{
 	margin-top:2.5em;
+	margin-bottom: 2rem;
 }
 
  .scroll-content {
@@ -26,7 +27,7 @@ overflow-y: visible !important;
   }
  }
  .totalPrice {
-	 border-bottom: 1px solid red;
+	 border-bottom: 2px solid red;
 	 margin-bottom: -10vw !important;
  }
  .totalDiv {
@@ -39,6 +40,11 @@ overflow-y: visible !important;
  .total{
  	font-size:25px !important;
  	font-weight:bold;
+ }
+ .cardP {
+	 font-size: 2em;
+	 font-weight: 500;
+	 font-family: Helvetica;
  }
 
 }

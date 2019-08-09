@@ -1,4 +1,4 @@
-<ion-header no-border>
+<ion-header no-border class="hidden-md-up">
 
   <ion-toolbar color="dark">
     <!-- <ion-title ><p>iPhixx</p></ion-title> -->
@@ -20,10 +20,21 @@
   </ion-toolbar>
 
 </ion-header>
+<ion-header class="loginNavbar">
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      <img src="assets/imgs/logo.png">
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
 
 <ion-content no-padding class="lightest" no-margin>
-  
-
 
 <form  [formGroup]="login_form" >
    
@@ -50,7 +61,7 @@
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>Contact Number</ion-label>
-            <ion-input type="number" formControlName="contact"  ></ion-input>
+            <ion-input type="tel" onkeypress='return event.charCode >= 48 && event.charCode <=57 ' maxlength=11 formControlName="contact" placeholder="09XXXXXXXXX"  pattern="^[0-9]*$"></ion-input>
           </ion-item>
           <ion-item no-padding>
             <ion-label color="dark" stacked>E-mail</ion-label>
@@ -58,10 +69,15 @@
           </ion-item>
           <ion-item no-padding>
             <ion-label color="dark" stacked>Password</ion-label>
-            <ion-input type="password" formControlName="password" ></ion-input>
+            <ion-input type="password" [(ngModel)]="password" formControlName="password"></ion-input>
           </ion-item>
+          <ion-item no-padding>
+            <ion-label color="dark" stacked>Confirm Password </ion-label>
+            <ion-input type="password" [(ngModel)]="confirmPassword" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-icon float-right class="check iconValidate" *ngIf="password==confirmPassword && password && confirmPassword" ios="ios-checkmark" md="md-checkmark"></ion-icon>
+          <ion-icon float-right *ngIf="password!=confirmPassword && password && confirmPassword" class="close iconValidate" ios="ios-close" md="md-close"></ion-icon>
           <h4> Address </h4>
-          
           <ion-item no-padding >
             <ion-label color="dark" stacked>Street Address</ion-label>
             <ion-input type="text" formControlName="street"  ></ion-input>
@@ -86,13 +102,13 @@
           	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6>
           		<ion-item no-padding>
 		            <ion-label color="dark" stacked>Postal/Zip Code</ion-label>
-		            <ion-input type="number" formControlName="zip"  ></ion-input>
+		            <ion-input type="tel" onkeypress='return event.charCode >= 48 && event.charCode <=57 ' maxlength=4 formControlName="zip" pattern="^[0-9]*$" ></ion-input>
 		        </ion-item>
           	</ion-col>
           </ion-row>       
           <ion-row class="login-row">
             <ion-col text-center>
-              <button round  (click)="register(login_form.value)" ion-button color="primary" [disabled]="!login_form.valid" type="submit">REGISTER</button>
+              <button round  (click)="register(login_form.value)" ion-button color="primary" [disabled]="!(login_form.valid && password==confirmPassword && password != '')" type="submit">REGISTER</button>
               <!-- <p text-center>terms and condition</p> -->
 
             </ion-col>

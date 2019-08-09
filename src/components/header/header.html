@@ -1,7 +1,7 @@
 <ion-header color="lightest" no-border no-margin class="hidden-md-down">
   <ion-toolbar color="lightest" center  no-margin>
-  	<ion-buttons start col-1 >
-      <button ion-button full no-button (click)="Back()" *ngIf="navigation.index!=4">
+  	<ion-buttons start col-1  >
+      <button *ngIf="navigation.index!=4 && navigation.activePageIndex!=5" ion-button full no-button (click)="Back()" >
         <ion-icon color="primary" name="arrow-back" class="arrow-back" float-left large></ion-icon>
         <p class="back" > Back</p>
       </button>
@@ -29,23 +29,23 @@
 </ion-header>
 
 <ion-header color="lightest" no-border no-margin class="hidden-lg-up">
-  <ion-toolbar color="lightest" center  no-margin>
+  <ion-toolbar color="lightest"  >
   	
-      <ion-toolbar col-10 class="tool" center margin-horizontal>
+      <ion-toolbar col-12 class="tool" >
       	<ion-buttons start col-1>
-      <button ion-button full no-button (click)="Back()" class="left">
-        <ion-icon color="primary" name="arrow-back" float-left large></ion-icon>
+      <button ion-button full no-button (click)="Back()"  *ngIf="navigation.index!=4 && navigation.activePageIndex!=5" class="left">
+        <ion-icon color="primary" name="arrow-back" class="mobileArrow" float-left large></ion-icon>
         <p class="back"> Back</p>
       </button>
     </ion-buttons>
-        <img src="assets/imgs/logo.jpg" class="center-logo">
+        <img  src="assets/imgs/logo.jpg" class="center-logo">
    
   <!--    <ion-buttons  end>
       <button ion-button icon-only (click)="logOut()">
         <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
       </button>
     </ion-buttons> -->
-     <ion-buttons end>
+     <ion-buttons class="end" end>
       <button class="menu-bar" menuToggle >
         <img src="assets/imgs/menu-bar.png">
       </button>

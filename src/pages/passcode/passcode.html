@@ -75,10 +75,15 @@
 		      <ion-input type="tel" maxlength="4" formControlName="password" class="form-controll" required></ion-input>
 		    </ion-item> -->
 
-          <input type="tel" [(ngModel)]="code[0]" placeholder = "0" (keyup)="onEnterCode($event)" maxlength=1   />
-          <input type="tel" [(ngModel)]="code[1]" placeholder = "0" (keyup)="onEnterCode($event)" maxlength=1   />
-          <input type="tel" [(ngModel)]="code[2]" placeholder = "0" (keyup)="onEnterCode($event)" maxlength=1   />
-          <input type="tel" [(ngModel)]="code[3]" placeholder = "0" (keyup)="onEnterCode($event)" maxlength=1  />
+          <!-- <input type="tel" [(ngModel)]="code[0]" placeholder = "0" onkeypress='return event.charCode >= 48 && event.charCode <= 57' (keyup)="onEnterCode($event, 0)" maxlength=1  pattern="^[0-9]*$" />
+          <input type="tel" [(ngModel)]="code[1]" placeholder = "0" onkeypress='return event.charCode >= 48 && event.charCode <= 57' (keyup)="onEnterCode($event, 1)" maxlength=1  pattern="^[0-9]*$"  />
+          <input type="tel" [(ngModel)]="code[2]" placeholder = "0" onkeypress='return event.charCode >= 48 && event.charCode <= 57' (keyup)="onEnterCode($event, 2)" maxlength=1  pattern="^[0-9]*$" />
+          <input type="tel" [(ngModel)]="code[3]" placeholder = "0" onkeypress='return event.charCode >= 48 && event.charCode <= 57' (keyup)="onEnterCode($event, 3)" maxlength=1  pattern="^[0-9]*$" /> -->
+
+           <input type="tel" [(ngModel)]="code[0]" placeholder = "0"  (keyup)="onEnterCode($event, 0)" maxlength=1/>
+          <input type="tel" [(ngModel)]="code[1]" placeholder = "0"  (keyup)="onEnterCode($event, 1)" maxlength=1/>
+          <input type="tel" [(ngModel)]="code[2]" placeholder = "0"  (keyup)="onEnterCode($event, 2)" maxlength=1/>
+          <input type="tel" [(ngModel)]="code[3]" placeholder = "0"  (keyup)="onEnterCode($event, 3)" maxlength=1 />
 
   			</ion-col>
   		</ion-row>

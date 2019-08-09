@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController, Platform } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { BookingProvider } from '../../providers/booking/booking'
 import { NavigationProvider } from '../../providers/navigation/navigation';
@@ -25,13 +25,13 @@ export class RecoverPage {
  login_form: FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,  public formBuilder: FormBuilder,
-    public booking : BookingProvider , public loading : LoadingController, public alert : AlertController,public navigation: NavigationProvider,) {
-
+    public booking : BookingProvider , public loading : LoadingController, public alert : AlertController,public navigation: NavigationProvider, public plt: Platform) {
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+    this.navigation.activePageIndex = 2;
   }
 
   ionViewWillLoad() {
@@ -59,6 +59,15 @@ export class RecoverPage {
     this.navCtrl.setRoot(LoginPage);
   }
 
+  onEnterCode(event, i) {
+    // if (this.plt.is('android')) {
+    //   console.log("inputted " + event.target.value);
+    //   let a = event.target.value.replace(/[^0-9]/gi, '');
+    //   console.log("afer replace " + a);
+    //   this.code[i] = a;
+    // }
+  }
+  
   verify(data){
     console.log(data);
   }

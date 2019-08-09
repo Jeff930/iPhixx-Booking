@@ -55,12 +55,12 @@
 </ion-header>
 
 <ion-header color="lightest" no-border no-margin class="hidden-lg-up">
-  <ion-toolbar color="lightest" center no-margin>
+  <ion-toolbar color="lightest">
 
-    <ion-toolbar col-10 class="tool" center margin-horizontal>
+    <ion-toolbar col-12 class="tool">
       <ion-buttons start col-1>
         <button ion-button full no-button (click)="Back()" class="left">
-          <ion-icon color="primary" name="arrow-back" float-left large></ion-icon>
+          <ion-icon color="primary" name="arrow-back" class="mobileArrow" float-left large></ion-icon>
           <p class="back"> Back</p>
         </button>
       </ion-buttons>
@@ -71,7 +71,7 @@
         <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
       </button>
     </ion-buttons> -->
-      <ion-buttons end>
+      <ion-buttons class="end" end>
         <button class="menu-bar" menuToggle>
           <img src="assets/imgs/menu-bar.png">
         </button>
@@ -87,7 +87,6 @@
     </p>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content no-padding padding-bottom class="lightest" no-margin>
    

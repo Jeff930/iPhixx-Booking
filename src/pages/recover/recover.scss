@@ -78,6 +78,15 @@ page-recover {
     }
   }
 }
+@media (max-width: 500px ) {
+  input[type="tel"]{    
+    width: 2rem;
+    padding-left: 0px;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+}
 @media (max-width: 850px) {
    .toolbar {
     .row[start]{

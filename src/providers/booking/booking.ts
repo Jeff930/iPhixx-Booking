@@ -7,6 +7,7 @@ import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/forkJoin';
+import { Header } from 'ionic-angular/umd';
 
 /*
   Generated class for the BookingProvider provider.
@@ -36,7 +37,7 @@ export class BookingProvider {
   phone='';
   mobile='';
   created:any;
-
+  apiUrl = 'https://api.sendinblue.com/v3/contacts';
 
   constructor(public http: Http,  ) {
     console.log('Hello BookingProvider Provider')
@@ -129,5 +130,5 @@ export class BookingProvider {
     return this.http.get('https://iphixx.repairshopr.com/api/v1/customers/'+id+'?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc')
     .map(res => res.json() );
   }
-
+  
 }

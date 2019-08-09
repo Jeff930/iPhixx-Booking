@@ -53,11 +53,19 @@
           <p class="verfication-text" ><strong>Verification Code</strong> <span float-right>Send Again</span></p>
 
            <!--  <ion-label color="dark" stacked><span>Verfication Code</span><span float-right>Send Again</span></ion-label> -->
-              <input type="tel" formControlName="code1" maxlength=1   />
-              <input type="tel" formControlName="code2" maxlength=1  />
-              <input type="tel" formControlName="code3" maxlength=1   />
-              <input type="tel" formControlName="code4" maxlength=1  />
-              <input type="tel" formControlName="code5" maxlength=1  />
+              <!-- <input type="tel" [(ngModel)]="code[0]" onkeypress='return event.charCode >= 48 && event.charCode <= 57' formControlName="code1"  (keyup)="onEnterCode($event, 0)" maxlength=1  pattern="[0-9]*"   />
+              <input type="tel" [(ngModel)]="code[1]" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  formControlName="code2" (keyup)="onEnterCode($event, 1)"  maxlength=1  pattern="[0-9]*"  />
+              <input type="tel" [(ngModel)]="code[2]" onkeypress='return event.charCode >= 48 && event.charCode <= 57' formControlName="code3"  (keyup)="onEnterCode($event, 2)" maxlength=1   pattern="[0-9]*"  />
+              <input type="tel" [(ngModel)]="code[3]" onkeypress='return event.charCode >= 48 && event.charCode <= 57' formControlName="code4" (keyup)="onEnterCode($event, 3)"  maxlength=1  pattern="[0-9]*" />
+              <input type="tel" formControlName="code5"  maxlength=1  pattern="[0-9]*"  /> -->
+
+
+                  <input type="tel" [(ngModel)]="code[0]"  formControlName="code1"  (keyup)="onEnterCode($event, 0)" maxlength=1    />
+              <input type="tel" [(ngModel)]="code[1]"   formControlName="code2" (keyup)="onEnterCode($event, 1)"  maxlength=1   />
+              <input type="tel" [(ngModel)]="code[2]"  formControlName="code3"  (keyup)="onEnterCode($event, 2)" maxlength=1    />
+              <input type="tel" [(ngModel)]="code[3]"  formControlName="code4" (keyup)="onEnterCode($event, 3)"  maxlength=1  />
+              <input type="tel" formControlName="code5"  maxlength=1   />
+
 
 
 

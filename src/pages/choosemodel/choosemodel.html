@@ -21,7 +21,9 @@
           <ion-row>
             <ion-col text-center  *ngFor = "let model of repair.models" col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3>
               <div (click) ="selectModel(model.model,model.modelNum, model.key)" class="brands-col" padding>
-              <img src="{{'assets/imgs/'+brand+'/'+model.model.replace(' ','').replace( brand , '').toLowerCase() +'.jpg'}}">
+              <img *ngIf = "model.model == 'Pro Retina 13-inches - Early'" src="{{'assets/imgs/MacBook/proretina 13-inches - early (2).jpg'}}">
+              <img *ngIf="model.model == 'Air 11-inches - Early'" src="{{'assets/imgs/MacBook/air11-inches - early (2).jpg'}}">
+              <img *ngIf = "!(model.model == 'Pro Retina 13-inches - Early' || model.model == 'Air 11-inches - Early' ) "src="{{'assets/imgs/'+brand+'/'+model.model.replace(' ','').replace( brand , '').toLowerCase()+'.jpg'}}">
               <p>{{model.model}}</p>
               <p>{{model.modelNum}}</p>
               <!-- <button  ion-button full round (click) ="selectBrand(brand.brand)" > {{brand.brand}} </button> -->

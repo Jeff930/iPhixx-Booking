@@ -155,4 +155,8 @@ export class ChoosemodelPage {
 	  this.navCtrl.setRoot(RepairPage);
   }
 
+	ionViewDidLoad() {
+
+		this.navigation.activePageIndex = 9;
+	}
 }

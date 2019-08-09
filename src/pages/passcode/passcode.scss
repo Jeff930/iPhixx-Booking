@@ -31,6 +31,7 @@ page-passcode {
     margin: 0.1em;
     border: none;
     border-bottom: solid 1px #b4b4b4;
+    text-align: center;
   }
 
   .transparent{
@@ -43,7 +44,8 @@ page-passcode {
 
   .back{
     color:#488aff;
-    margin-left: 5px;
+    margin-left: 2px;
+    font-size: 1.2em;
 	}
   .backBtn {
     margin-left: 20px
@@ -62,7 +64,12 @@ page-passcode {
   .hidden-md-down {
     display: none !important;
   }
-  
+}
+  	@media (max-width: 768px) {
+  input[type="tel"] {
+    text-align: center;
+    font-size: 2em;
+  }
 }
 
 @media (min-width: 851px) {

@@ -1,2 +1,18 @@
 page-otherdevtype {
+    @media (max-width: 768px) {
+        .question {
+            padding: 15px !important;
+        }
+    }
+    @media (max-width: 400px) {
+        .button {
+            font-size: 1em !important;
+        }
+    }
+      @media (max-width: 320px) {
+        .button {
+            font-size: .8em !important;
+        }
+
+    }
 }

@@ -49,4 +49,7 @@ export class OtherdevicePage {
     this.navCtrl.push(ColorPage);
   }
 
+  ionViewDidLoad() {
+    this.navigation.activePageIndex = 8;
+  }
 }
