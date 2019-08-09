@@ -22,7 +22,7 @@ export class RepairProvider {
 
   repairs;
   modelrepairs =[];
-
+  deposit = [];
   prices=[];
   models = [];
 
@@ -57,6 +57,7 @@ export class RepairProvider {
       for (var i=0;i<this.repairs.length;i++){
       this.modelrepairs.push(this.repairs[i].repair);
       this.prices.push(this.repairs[i].price);
+      this.deposit.push(this.repairs[i].deposit);
       console.log("laptop"+this.modelrepairs);}
     }else{ 
       if (this.booking.userData.device=='Phone'

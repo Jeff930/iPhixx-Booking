@@ -88,7 +88,7 @@ trackpadrep:null,
 },
 
 { key:'102',
-model: 'Air 11-inches - Early',
+  model: 'Air 11-inches - Early',
 modelNum : 'A1465',
 screenrep: '500.00',
 trackpadrep:null,

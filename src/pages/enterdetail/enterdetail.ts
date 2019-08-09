@@ -62,4 +62,8 @@ export class EnterdetailPage {
     this.navCtrl.push(CustomerdetailsPage);
   }
 
+  ionViewDidLoad() {
+
+    this.navigation.activePageIndex = 17;
+  }
 }

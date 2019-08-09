@@ -87,5 +87,8 @@ export class HomePage {
     this.booking.updateCurrentPage();
     this.navigation.activePageIndex=6;
 }
+  ionViewDidLoad() {
+    this.navigation.activePageIndex = 6;
+  }
 
 }

@@ -1,7 +1,7 @@
 //import * as $ from "jquery";
 import { Component } from '@angular/core';
 import { NavigationProvider } from '../../providers/navigation/navigation';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, Platform, MenuController } from 'ionic-angular';
 // import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 // import { HomePage } from '../home/home';
@@ -51,27 +51,32 @@ export class PasscodePage {
   other = 0;
   otherDev = 0;
   otherRepair = 0;
+  stat;
+  access = 'T';
 
   constructor(public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public navParams: NavParams,
     public navigation: NavigationProvider,
     public booking: BookingProvider,
+    public plt: Platform,
+    public menuCtrl: MenuController
    ) {
       this.username = localStorage.getItem('authenticated');
       console.log(this.username);
      // console.log(this.username[0].agent_username);
+    this.menuCtrl.enable(false, 'loginMenu');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PasscodePage');
-    this.navigation.activePageIndex=4;
+    this.navigation.activePageIndex=2;
   }
 
    
 
   login(){
-
+    localStorage.setItem('access' , this.access );
   	console.log(this.code);
   	let loading = this.loadingCtrl.create({
        //content: 'Logging in please wait...'
@@ -81,17 +86,33 @@ export class PasscodePage {
   	loading.dismiss();
   	}
 
-  onEnterCode(event ){
- 
+  onEnterCode(event, i){
+    console.log(this.plt.is('cordova'));
+    // if (this.plt.is('android')) {
+    //   console.log("inputted " + event.target.value);
+    //   let a = event.target.value.replace(/[^0-9]/gi, '');
+    //   console.log("afer replace " + a);
+    //   this.code[i] = a;
+    // }
+   console.log(this.code.length);
     event.target.value.length && event.target.nextElementSibling ?  event.target.nextElementSibling.focus() : '';
 
-    if(event.key == 'Backspace') event.target.previousElementSibling.focus();
+    if (event.key == 'Backspace') {
+      console.log( 'backspace'+ this.code.length);
+      event.target.previousElementSibling.focus();
+      if (this.code.length >= 1) this.code.length -= 1; 
+      if (this.code.length === 4) this.form = false;
+      else this.form = true;
+    }
     console.log(this.code.length);
-
-    if(this.code.length == 4) this.form = false;
+    
+    if(this.code.length === 4) this.form = false;
     else this.form = true;
-      
+    
 
+  }
+  validateCode(event) {
+    console.log("keyCode" + event);
   }
   
   Back() {

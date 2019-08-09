@@ -782,4 +782,7 @@ export class ConfirmationPage {
 
   }
 
+  sendEmail() {
+    
+  }
 }

@@ -101,7 +101,11 @@ export class ChoosebrandPage {
     this.booking.userData.brandKey = key;
   }
 
-  
+  ionViewDidLoad() {
+    
+    this.navigation.activePageIndex = 7;
+  }
+
 
   // presentPopover(myEvent) {
   //   let popover = this.popoverCtrl.create(OtherPage);

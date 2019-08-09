@@ -62,7 +62,9 @@ export class RepairnumberPage {
     public alertCtrl : AlertController,
     public navigation: NavigationProvider
   	) {
-
+    this.username = localStorage.getItem('authenticated');
+    console.log(this.username);
+    this.booking.agentName = this.username;
   	// this.signatureImage = navParams.get('signatureImage');
   }
 

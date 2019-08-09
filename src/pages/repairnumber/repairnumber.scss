@@ -42,7 +42,7 @@ page-repairnumber {
     max-width: 720px !important;
     margin: auto;
   background-color:white;
-  margin-top:8em !important; 
+  // margin-top:8em !important; 
   padding: 2em !important; 
   }
 
@@ -52,7 +52,8 @@ page-repairnumber {
   }
   .back{
     color:#488aff;
-    margin-left: 5px;
+    margin-left: 2px;
+    font-size: 1.2em;
 	}
   .backBtn {
     margin-left: 20px
@@ -91,6 +92,40 @@ page-repairnumber {
   }
 }
 
+@media (min-width: 1200px) {
+.logo {
+    margin-left: 37vw !important;
+  }
+}
+
+ .mobileArrow {
+    font-size: 1em !important;
+    font-weight: 900;
+    margin-bottom: .14vh;
+  }
+  .rem {
+    margin-right: 0vw !important;
+  }
+  // .end {
+  //   margin-right: -5vw;
+  // }
+	@media (max-width: 748px) { 
+    .lightest {
+      margin-top: 15vw !important;
+    }
+  }
+	@media (max-width: 850px) {
+  .hidden-md-down {
+    display: none !important;
+  }
+  .arrow-back {
+    font-size: 1.2em !important;
+  }
+  // .lightest {
+  //   margin-top: 20vw
+  // }
+}
+
 @media (min-width: 851px) {
   .hidden-lg-up {
     display: none !important;
@@ -98,7 +133,6 @@ page-repairnumber {
 .logo {
     margin-left: 35vw !important;
   }
-  
 }
 @media (min-width: 1200px) {
 .logo {

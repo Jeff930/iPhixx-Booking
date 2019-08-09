@@ -34,6 +34,8 @@ import { OtherdevtypePage } from '../pages/otherdevtype/otherdevtype';
 import { EnterdetailPage } from '../pages/enterdetail/enterdetail';
 import { OtherrepairPage } from '../pages/otherrepair/otherrepair';
 import { TestInPage } from '../pages/test-in/test-in';
+import { PrivacyPage } from '../pages/privacy/privacy';
+import { TermsPage } from '../pages/terms/terms';
 
 import { SignaturePadModule } from 'angular2-signaturepad';
 
@@ -44,6 +46,7 @@ import { NavigationProvider } from '../providers/navigation/navigation';
 import { RepairProvider } from '../providers/repair/repair';
 import { PrintServiceProvider } from '../providers/print-service/print-service';
 
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,8 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     OtherrepairPage,
     TestInPage,
     AutosizeDirective,
-
+    PrivacyPage,
+    TermsPage
 
   ],
   imports: [
@@ -84,6 +88,7 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     IonicModule.forRoot(MyApp,{
          mode: 'ios'
     })
+    
   
     
   ],
@@ -113,6 +118,9 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     EnterdetailPage,
     OtherrepairPage,
     TestInPage,
+    PrivacyPage,
+    TermsPage
+
     
 
   ],
@@ -129,6 +137,7 @@ import { PrintServiceProvider } from '../providers/print-service/print-service';
     EmailComposer,
     PrintServiceProvider,
     BluetoothSerial,
+    InAppBrowser
   ]
 })
 export class AppModule {}

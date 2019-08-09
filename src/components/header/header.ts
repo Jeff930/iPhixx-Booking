@@ -36,7 +36,7 @@ export class HeaderComponent {
   otherDev=0;
   otherRepair=0;
   username;
-
+  showback;
   constructor(public navigation:NavigationProvider, public navCtrl: NavController,public booking:BookingProvider) {
     this.username = localStorage.getItem('authenticated');
     console.log(this.username);
@@ -45,6 +45,8 @@ export class HeaderComponent {
     // console.log(this.username.user_name);
     // this.booking.agentName = this.username.user_name;
     // console.log(this.booking.agentName);
+
+    this.showback = this.navigation.showBack;
   }
 
   Back(){

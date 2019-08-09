@@ -12,7 +12,7 @@ export class NavigationProvider {
   other=0;
   otherDev=0;
   otherRepair=0;
-
+  showBack= true;
   constructor() {
     console.log('Hello NavigationProvider Provider');
   }

@@ -14,6 +14,10 @@ import { BookingProvider } from '../../providers/booking/booking';
 import { RecoverPage } from '../recover/recover';
 import { RegisterPage } from '../register/register';
 
+import { PrivacyPage } from '../privacy/privacy';
+import { TermsPage } from '../terms/terms';
+import { NavigationProvider } from '../../providers/navigation/navigation';
+
 // @IonicPage()
 @Component({
   selector: 'page-login',
@@ -26,7 +30,7 @@ export class LoginPage {
   src;
   loginok = false;
   data=[];
-
+  
   constructor(
   	public navCtrl: NavController,
     public loadingCtrl: LoadingController,
@@ -36,11 +40,20 @@ export class LoginPage {
     public alertCtrl : AlertController,
     public menuCtrl : MenuController,
     public platform : Platform,
-    public http : HttpClient
+    public http : HttpClient,
+    public navigation: NavigationProvider
      ) {
 
-    this.menuCtrl.enable(true, 'loginMenu');
+    console.log("cordova " + this.platform.is('cordova'));
+    console.log("android " + this.platform.is('android'));
+    if (this.platform.is('android') && this.platform.is('cordova')) {
+      console.log("Nav enabled");
+        this.menuCtrl.enable(true, 'loginMenu');
+      } else {
+      this.menuCtrl.enable(false, 'loginMenu');
+      }
     this.menuCtrl.enable(false, 'myMenu');  
+    this.navigation.activePageIndex = 1;
   }
 
   ionViewDidLoad() {
@@ -151,13 +164,20 @@ export class LoginPage {
 
     xhr.send();
 
-
     // this.navCtrl.setRoot(PasscodePage);
 }
 
 register(){
   this.navCtrl.push(RegisterPage);
 }
+  openPage(component) {
+    if (component=='1') {
+      this.navCtrl.push(TermsPage);
+  } else {
+      this.navCtrl.push(PrivacyPage);
+  }
+  }
+  sendEmail() {
 
-
+  }
 }

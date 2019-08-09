@@ -2,7 +2,11 @@ page-otherrepair {
 	ion-input {
 		border-bottom: 2px solid lightblue;
   		}
-  	
+  	  @media (max-width: 768px) {
+        .question {
+            padding: 15px !important;
+        }
+    }
 
   	.button{
   		

@@ -29,12 +29,10 @@ export class ChooseactionPage {
       public menuCtrl : MenuController,
       public navigation: NavigationProvider,
       ) {
+      console.log(this.navigation.activePageIndex);
+    this.menuCtrl.enable(true, 'myMenu');
 
-      platform.registerBackButtonAction(() => {
-      console.log("backPressed 1");
-    },1);
-
-      this.menuCtrl.enable(true, 'myMenu');
+    this.menuCtrl.enable(false, 'loginMenu');
   }
 
   ionViewDidLoad() {
@@ -84,6 +82,5 @@ export class ChooseactionPage {
 
   }
 
-
-
+  
 }

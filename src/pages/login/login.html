@@ -2,20 +2,36 @@
   <ion-navbar>
     <ion-grid>
       <ion-row start>
-        <ion-col col-md-3 col-lg-3 col-xl-2>
+        <ion-col  col-md-3 col-lg-3 col-xl-5>
            <img src="assets/imgs/logo.png"> 
         </ion-col>
-        <ion-col offset-md-2 col-md-3 offset-lg-4 col-lg-2 offset-xl-7 col-xl-1>
-            <div float-right>
+        <ion-col class="terms cols" col-md-3 col-lg-2 col-xl-0>
+          <div >
+        
+            <button outline ion-button round color="light" (click)="openPage(1)">
+              Terms of Service
+            </button>
+          </div>
+        </ion-col>
+
+        <ion-col class="prviacy cols" col-md-4 col-lg-2 col-xl-0 >
+          <div>
+            <button outline ion-button round color="light" (click)="openPage(2)">
+             All Policies
+            </button>
+          </div>
+        </ion-col>
+        <ion-col  col-md-3 col-lg-2 col-xl-0 offset-xl-0 >
+            <div class="partner">
               
-              <button outline margin-left ion-button round color="light" >
+              <button outline ion-button round color="light" >
                  Become An iPhixx Partner
               </button >
             </div>
         </ion-col >
-        <ion-col float-right offset-md-1 col-md-3 offset-lg-1 col-lg-2 col-xl-1>
-          <div  float-right>
-              <button round ion-button color="primary" (click)="register()" >
+        <ion-col col-md-3 col-lg-2 offset-lg-1 col-xl-0 offset-xl-0>
+          <div >
+              <button class="sbmtBtn" round ion-button color="primary" (click)="register()" >
                   Submit An Application
               </button>
             </div>

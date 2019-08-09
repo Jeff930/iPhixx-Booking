@@ -1,13 +1,12 @@
-page-register {
-	
-	 .login-row{
+page-privacy {
+.login-row{
     margin: 80px 0;
     button{
       width: 75%;
     }
   }
   h4{
-  	text-decoration : underline;
+  	text-decoration : none;
   }
 
   .checkbox{
@@ -54,7 +53,7 @@ page-register {
   }
 
   h4{
-    margin-top:20px;
+    margin-top:40px;
     margin-bottom:20px;
   }
 
@@ -66,7 +65,7 @@ page-register {
 
   .register-content{
           margin: auto;
-          max-width: 720px;
+          max-width: 1040px;
   background-color:white;
   margin-top:5% !important;
 }
@@ -79,6 +78,9 @@ page-register {
    
     }
   }
+  .separator {
+      height: 2px !important;
+  }
 }
 @media (max-width: 1024px) {
    .toolbar {
@@ -88,11 +90,10 @@ page-register {
    
     }
   }
-// .iconValidate {
-//     margin-top: -.8vw !important;
-//   }
+  .separator {
+      height: 2px !important;
+  }
 }
-
 @media (max-width: 850px) {
    .toolbar {
     .row[start]{
@@ -105,17 +106,7 @@ page-register {
   .loginNavbar {
     display: none !important;
   }
-  // .iconValidate {
-  //   margin-top: -.6vw !important;
-  // }
 }
-@media (max-width: 2560px) {
-  // .iconValidate {
-  //   margin-top: -.2vw !important;
-  //   margin-left: 0vw !important;
-  // }
-}
-
 @media (max-width: 751px) {
   .hidden-md-up {
     display: block !important;
@@ -124,7 +115,21 @@ page-register {
     display: none !important;
   }
 }
-
+@media (min-width: 769px) {
+  .loginNavbar {
+    display: none !important;
+  }
+  
+  .hidden-sm-down {
+    display: block !important;
+  }
+  .hidden-md-up {
+    display: block !important;
+  }
+  .separator {
+      height: 5px !important;
+  }
+}
 @media (min-width: 201px) and (max-width: 750px){
   .hidden-md-up {
     display: block !important;
@@ -132,16 +137,6 @@ page-register {
   .loginNavbar {
     display: none !important;
   }
-}
-@media (min-width: 501px) {
-  .loginNavbar {
-    display: none !important;
-  }
-}
-@media (max-width: 768px){
-  // .iconValidate {
-  //   margin-top: -1vw !important;
-  // }
 }
 @media (max-width: 500px){
   .register-content {
@@ -170,12 +165,7 @@ page-register {
   }
   .hidden-md-up {
     display: none !important;
-  }
-  // .iconValidate {
-  // font-size: 2.4em !important;
-  //   margin-top: -1.3vw !important;
-  // }
-}
+  }}
 
 .loginNavbar {
   ion-navbar {
@@ -190,19 +180,38 @@ page-register {
    }
   }
 }
-.iconValidate {
-  font-size: 3em;
-  font-weight: 700;
-  margin-left: 1vw !important;
-  margin-top: -40px !important;
-  position: relative;
-}
-.check {
-  color: green;
-}
-.close {
-  color: red;
-}
 
- 
+.parContent {
+    text-align: justify;
+    font-family: helvetica;
+}
+.separator {
+    background: black;
+    height: .8vw;
+    width: 30% !important;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+.parGContent {
+  text-indent: 15px; 
+  margin-bottom: 10px;
+}
+.links:hover {
+  cursor: pointer;
+}
+.heads { font-weight: bold; }
+.lists li {
+  list-style-type: none;
+
+}
+.listsNum li {
+  list-style-type: none;
+}
+.noIndent {
+  margin-left: 0vw !important;
+}
+.buttonSH {
+  margin-bottom: 20px;
+  text-align: center;
+}
 }

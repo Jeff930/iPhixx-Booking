@@ -101,16 +101,21 @@ button[color="light"]{
   .loginNavbar {
     display: none !important;
   }
+  .sbmtBtn {
+  margin-left: 2vw !important;
+    padding: 1vw !important;
+}
+
 }
 @media (max-width: 751px) {
   .hidden-md-up {
-    display: block !important;
+    display: none !important;
   }
   .hidden-sm-down {
     display: none !important;
   }
   .loginNavbar {
-    display: none !important;
+    display: block !important;
   }
 }
 
@@ -119,13 +124,36 @@ button[color="light"]{
     display: none !important;
   }
   .hidden-md-up {
-    display: block !important;
+    display: none !important;
   }
   .loginNavbar {
+    display: block !important;
+  }
+}
+@media (max-width: 768px) {
+  .loginNavbar {
+    display: block !important;
+  }
+  
+  .hidden-sm-down {
+    display: none !important;
+  }
+  .hidden-md-up {
     display: none !important;
   }
 }
-
+@media (min-width: 769px) {
+  .loginNavbar {
+    display: none !important;
+  }
+  
+  .hidden-sm-down {
+    display: block !important;
+  }
+  .hidden-md-up {
+    display: none !important;
+  }
+}
 @media (max-width: 500px){
   .loginNavbar {
     display: block !important;
@@ -142,7 +170,21 @@ button[color="light"]{
      display: block !important;
   }
 }}
-
+@media (max-width: 1024px) {
+  .sbmtBtn {
+  margin-left: -1vw;
+  padding: 2vw;
+}
+}
+@media (min-width: 1300px) {
+  .sbmtBtn {
+  margin-left: -3vw;
+  padding: 1vw;
+}
+.cols {
+ margin-right: -4vw;
+}
+}
 .loginNavbar {
   ion-navbar {
    background-color: rgba(45, 52, 54,1.0) !important;

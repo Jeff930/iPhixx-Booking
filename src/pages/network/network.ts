@@ -38,6 +38,7 @@ export class NetworkPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NetworkPage');
+      this.navigation.activePageIndex = 11;
   }
 
   selectNetwork(network, key){

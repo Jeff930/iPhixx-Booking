@@ -69,4 +69,9 @@ export class ColorPage {
     this.booking.userData.color = color;
     this.navCtrl.push(NetworkPage);
   }
+
+  ionViewDidLoad() {
+
+    this.navigation.activePageIndex = 10;
+  }
 }

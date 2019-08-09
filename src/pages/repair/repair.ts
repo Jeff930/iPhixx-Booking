@@ -24,6 +24,7 @@ export class RepairPage {
   device:string;
   brand:string;
   model:string;
+  devices;
   unselected;
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public booking : BookingProvider,private cart: CartProvider,public navigation: NavigationProvider,public repair: RepairProvider) {
@@ -32,7 +33,9 @@ export class RepairPage {
 
     this.brand=this.booking.userData.brand;
     this.model=this.booking.userData.model;
+    this.devices = this.booking.userData.device.toLowerCase();
     console.log("try"+this.model);
+    console.log(this,repair);
   }
 
   ionViewWillEnter(){
@@ -61,5 +64,10 @@ export class RepairPage {
     }else{
       console.log("Already selected");
     }
+  }
+
+  ionViewDidLoad() {
+
+    this.navigation.activePageIndex = 12;
   }
 }
