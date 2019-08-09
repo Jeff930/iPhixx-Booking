@@ -149,8 +149,6 @@ export class LoginPage {
    // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 
     xhr.send();
-
-
 }
 
 register(){

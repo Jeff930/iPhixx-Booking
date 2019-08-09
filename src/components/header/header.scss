@@ -1,31 +1,44 @@
 header {
 	.back{
-		color:#488aff;
+    color:#488aff;
+    margin-left: 5px;
 	}
-
-  .back-button{
-    margin-left:0vw;
+  .backBtn {
+    margin-left: 20px
   }
-
+  .back-button{
+    margin-left:5vw;
+  }
+  .arrow-back {
+    margin-left: 7vw;
+  }
 	.tool{
-		margin-left:-1vw;
+		margin-left:0vw;
 	}
 
 	@media (max-width: 850px) {
   .hidden-md-down {
     display: none !important;
   }
+  
 }
 
 @media (min-width: 851px) {
   .hidden-lg-up {
     display: none !important;
   }
-
+.logo {
+    margin-left: 35vw !important;
+  }
+}
+@media (min-width: 1200px) {
+.logo {
+    margin-left: 37vw !important;
+  }
 }
 
  .center-logo{
- height:3em;
+  height:3em;
   margin: auto;
   display: block;
   }

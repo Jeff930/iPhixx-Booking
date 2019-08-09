@@ -39,8 +39,81 @@ page-repairnumber {
   }
 
   .details-content{
+    max-width: 720px !important;
+    margin: auto;
   background-color:white;
   margin-top:8em !important;
   }
 
+  .box-shadow {  
+    max-width: 360px !important;
+    margin: 0 auto !important;
+  }
+  .back{
+    color:#488aff;
+    margin-left: 5px;
+	}
+  .backBtn {
+    margin-left: 20px
+  }
+  .back-button{
+    margin-left:5vw;
+  }
+  .arrow-back {
+    margin-left: 11vw;
+  }
+	.tool{
+		margin-left:0vw;
+	}
+  	@media (max-width: 1024px) {
+          .arrow-back {
+        margin-left: 14vw !important;
+      }
+      .menu-bar {
+       margin-right: 6vw !important;
+    }
+  }
+	@media (min-width: 1440px) {
+    .arrow-back {
+       margin-left: 24vw;
+    }
+     .menu-bar {
+       margin-right: 16vw !important;
+    }
 }
+@media (max-width: 940px) {
+ .arrow-back {
+    margin-left: 10vw;
+  }
+  .menu-bar {
+       margin-right: 1vw !important;
+  }
+}
+
+@media (min-width: 851px) {
+  .hidden-lg-up {
+    display: none !important;
+  }
+.logo {
+    margin-left: 35vw !important;
+  }
+  
+}
+@media (min-width: 1200px) {
+.logo {
+    margin-left: 37vw !important;
+  }
+}
+
+ .center-logo{
+  height:3em;
+  margin: auto;
+  display: block;
+  }
+
+  .left{
+    margin-left:-2vw !important;
+  }
+
+}
+

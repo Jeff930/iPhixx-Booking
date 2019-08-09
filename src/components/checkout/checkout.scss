@@ -13,20 +13,31 @@ overflow-y: visible !important;
  padding:0vw !important;}
  
 .card{
-	background-color:#efefef;
+	// background-color:#efefef;
 	margin:2px 0px 0px 0px;
 }
 
  .close{
  top-margin:5vw;
  background-color:transparent;
+  .icon {
+	  font-size: 2.5rem;
+	  margin-top: -3px;
+  }
+ }
+ .totalPrice {
+	 border-bottom: 1px solid red;
+	 margin-bottom: -10vw !important;
+ }
+ .totalDiv {
+	 border-bottom: 1px solid gray;
  }
  .toolbar{
  height:40px;
  }
 
  .total{
- 	font-size:18px !important;
+ 	font-size:25px !important;
  	font-weight:bold;
  }
 

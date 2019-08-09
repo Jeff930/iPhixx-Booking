@@ -54,8 +54,6 @@ export class HomePage {
               role: 'cancel',
               handler: () => {
                 console.log('Cancel clicked');
-              
-
               }
             },
             {

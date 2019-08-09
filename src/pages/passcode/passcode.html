@@ -1,54 +1,69 @@
+
 <ion-header color="lightest" no-border no-margin class="hidden-md-down">
-  <ion-toolbar color="lightest" center  no-margin>
-      <ion-toolbar col-10 center margin-horizontal>
-        <img src="assets/imgs/logo.jpg" class="logo">
-   
-  <!--    <ion-buttons  end>
+  <ion-toolbar color="lightest" center no-margin>
+    <ion-buttons start col-1>
+      <button ion-button full no-button (click)="Back()" *ngIf="navigation.index!=4">
+        <ion-icon color="primary" name="arrow-back" class="arrow-back" float-left large></ion-icon>
+        <p class="back"> Back</p>
+      </button>
+    </ion-buttons>
+    <ion-toolbar col-11 class="tool" center margin-right>
+      <img src="assets/imgs/logo.jpg" class="logo">
+
+      <!--    <ion-buttons  end>
       <button ion-button icon-only (click)="logOut()">
         <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
       </button>
     </ion-buttons> -->
 
-    <p class="deviceName hidden" float-right>Username:<strong> {{username}} </strong></p>
-     <ion-buttons end>
-      <button class="menu-bar" menuToggle >
-        <img src="assets/imgs/menu-bar.png">
-      </button>
-     <!--  <button ion-button icon-only menuToggle >
+      <p class="deviceName hidden" style="display: none !important"float-right>Username:
+        <strong> {{username}} </strong>
+      </p>
+      <ion-buttons style="display: none" end>
+        <button class="menu-bar" menuToggle>
+          <img src="assets/imgs/menu-bar.png">
+        </button>
+        <!--  <button ion-button icon-only menuToggle >
         <ion-icon color="primary" class="toolbar-icon" name="ios-menu-outline" ></ion-icon>
       </button> -->
-    </ion-buttons>
-  </ion-toolbar>
+      </ion-buttons>
+    </ion-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-header color="lightest" no-border no-margin class="hidden-lg-up">
-  <ion-toolbar color="lightest" center  no-margin>
-  		<ion-col col-2></ion-col>
-      <ion-toolbar col-10 center margin-horizontal>
-      	
-        <img src="assets/imgs/logo.jpg" class="center-logo">
-   
-  <!--    <ion-buttons  end>
+  <ion-toolbar color="lightest" center no-margin>
+
+    <ion-toolbar col-10 class="tool" center margin-horizontal>
+      <ion-buttons start col-1>
+        <button ion-button full no-button (click)="Back()" class="left">
+          <ion-icon color="primary" name="arrow-back" float-left large></ion-icon>
+          <p class="back"> Back</p>
+        </button>
+      </ion-buttons>
+      <img src="assets/imgs/logo.jpg" class="center-logo">
+
+      <!--    <ion-buttons  end>
       <button ion-button icon-only (click)="logOut()">
         <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
       </button>
     </ion-buttons> -->
-     <ion-buttons end>
-      <button class="menu-bar" menuToggle >
-        <img src="assets/imgs/menu-bar.png">
-      </button>
-     <!--  <button ion-button icon-only menuToggle >
+      <ion-buttons end>
+        <button class="menu-bar" style="display: none !important" menuToggle>
+          <img src="assets/imgs/menu-bar.png">
+        </button>
+        <!--  <button ion-button icon-only menuToggle >
         <ion-icon color="primary" class="toolbar-icon" name="ios-menu-outline" ></ion-icon>
       </button> -->
-    </ion-buttons>
-  </ion-toolbar>
+      </ion-buttons>
+    </ion-toolbar>
   </ion-toolbar>
   <ion-toolbar>
-  	<p class="deviceName" margin-left>Username:<strong> {{username}}</strong></p>
+    <p class="deviceName" style="display: hidden" margin-left>Username:
+      <strong> {{username}} </strong>
+    </p>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content class="lightest">
   	<ion-grid col-10 class="passcode page-content" margin-horizontal>
