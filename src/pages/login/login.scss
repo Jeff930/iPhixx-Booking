@@ -101,10 +101,7 @@ button[color="light"]{
   .loginNavbar {
     display: none !important;
   }
-  .sbmtBtn {
-  margin-left: 2vw !important;
-    padding: 1vw !important;
-}
+  
 
 }
 @media (max-width: 751px) {
@@ -171,19 +168,10 @@ button[color="light"]{
   }
 }}
 @media (max-width: 1024px) {
-  .sbmtBtn {
-  margin-left: -1vw;
-  padding: 2vw;
-}
+  
 }
 @media (min-width: 1300px) {
-  .sbmtBtn {
-  margin-left: -3vw;
-  padding: 1vw;
-}
-.cols {
- margin-right: -4vw;
-}
+
 }
 .loginNavbar {
   ion-navbar {
