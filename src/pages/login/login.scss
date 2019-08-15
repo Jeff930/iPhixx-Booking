@@ -102,16 +102,7 @@ button[color="light"]{
 .loginNavbar {
     display: block !important;
   }
-  .hidden-md-down{
-    display: none !important;
-  }
   .hidden-sm-down {
-    display: none !important;
-  }
-  .hidden-md-up {
-    display: none !important;
-  }
-  .hidden-lg-up {
     display: none !important;
   }
 }
@@ -124,17 +115,8 @@ button[color="light"]{
   .hidden-sm-down {
     display: block !important;
   }
-  .hidden-md-up {
-    display: block !important;
-  }
-  .hidden-md-down {
-    display: block !important;
-  }
-  .hidden-lg-up {
-    display: none !important;
-  }
-
 }
+
 .loginNavbar {
   ion-navbar {
    background-color: rgba(45, 52, 54,1.0) !important;
