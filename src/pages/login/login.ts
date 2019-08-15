@@ -58,33 +58,14 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-
-    // history.pushState(null, null, location.href);
-    // window.onpopstate = function () {
-    //     history.go(1);
-      
-    
-    // };
-    
-  //     $(window).load(function(){
-  //   $('body').backDetect(()=>{
-  //     // Callback function
-  //     alert("Look forward to the future, not the past!");
-  //   });
-  // }, 1000)
   }
 
   ionViewWillLoad() {
-
-   
-
     this.login_form = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
         Validators.required
       ])),
       password: new FormControl('', Validators.required),
-     
-
     });
   }
 
@@ -109,7 +90,6 @@ export class LoginPage {
     console.log(user);
  
   	let loading = this.loadingCtrl.create({
-       //content: 'Logging in please wait...'
     });
     loading.present();
   	
@@ -157,14 +137,14 @@ export class LoginPage {
   
       }
     });
-    var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/sign_in?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc=&email="+user.email+"&password="+user.password;
-    console.log(JSON.stringify(url));
-    xhr.open("POST", url);
-   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+    // var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/sign_in?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc=&email="+user.email+"&password="+user.password;
+    // console.log(JSON.stringify(url));
+    // xhr.open("POST", url);
+    xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 
     xhr.send();
 
-    // this.navCtrl.setRoot(PasscodePage);
+    this.navCtrl.setRoot(PasscodePage);
 }
 
 register(){
