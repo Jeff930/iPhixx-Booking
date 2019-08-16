@@ -51,22 +51,27 @@
             <ion-label color="dark" stacked>Birthdate (required if repair ticket is lost)</ion-label>
             <ion-datetime formControlName="birthdate" displayFormat="MMM DD, YYYY" placeholder="MMM DD, YYYY"></ion-datetime>
           </ion-item>
+          
             <ion-item no-padding>
             <ion-label color="dark" stacked>E-mail</ion-label>
             <ion-input type="email" formControlName="email" placeholder="user@mail.com"></ion-input>
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>Phone Number</ion-label>
-            <ion-input type="tel" maxlength=11 onkeypress='return event.charCode >= 48 && event.charCode <=57 ' formControlName="phone" placeholder="123456789"  pattern="^[0-9]*$"></ion-input>
+            <ion-input type="number" maxlength=11  formControlName="phone" placeholder="123456789"  pattern="^[0-9]*$"></ion-input>
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>Alternative Phone Number</ion-label>
-            <ion-input type="tel" maxlength=11 onkeypress='return event.charCode >= 48 && event.charCode <=57 ' formControlName="phone2" placeholder="123456789"  pattern="^[0-9]*$"></ion-input>
+            <ion-input type="number" maxlength=11 formControlName="phone2" placeholder="123456789"  pattern="^[0-9]*$"></ion-input>
           </ion-item>
           <ion-item no-padding >
             <ion-label color="dark" stacked>PIN</ion-label>
-            <ion-input type="tel" maxlength=4  onkeypress='return event.charCode >= 48 && event.charCode <=57 ' formControlName="pin" placeholder="1234"  pattern="^[0-9]*$"></ion-input>
+            <ion-input type="number" formControlName="pin" placeholder="1234"></ion-input>
           </ion-item>
+          <!-- <ion-item no-padding >
+            <ion-label color="dark" stacked>PIN</ion-label>
+            <ion-input type="tel" maxlength=4  onkeypress='return event.charCode >= 48 && event.charCode <=57 ' formControlName="pin" placeholder="1234"  pattern="^[0-9]*$"></ion-input>
+          </ion-item> -->
           <!-- <ion-item no-padding >
             <ion-label color="dark" stacked>Location</ion-label>
             <ion-select formControlName="location">
@@ -110,10 +115,7 @@
               <ion-input formControlName="portalInviteSource" placeholder="verbal, external email, etc."></ion-input>
           </ion-item>  -->
          
-          <!-- <ion-item no-padding >
-            <ion-label color="dark" stacked>PIN</ion-label>
-            <ion-input type="number" formControlName="pin" placeholder="1234"></ion-input>
-          </ion-item> -->
+          
          </div>
           <ion-row class="login-row">
             <ion-col text-center>

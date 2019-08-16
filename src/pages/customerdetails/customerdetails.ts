@@ -138,13 +138,13 @@ export class CustomerdetailsPage {
 					//'location':['', Validators.compose([Validators.required])],
 					'smsService':[],
 					'consentStore':[],
-					//'consentStoreSource':[],
+					// //'consentStoreSource':[],
 					'consentBusiness':[],
-					//'consentBusinessSource':[],
+					// //'consentBusinessSource':[],
 					'consentMarketing':[],
-					//'consentMarketingSource':[],
-					// 'portalInvite':[],
-					// 'portalInviteSource':[],
+					// //'consentMarketingSource':[],
+					// // 'portalInvite':[],
+					// // 'portalInviteSource':[],
 					'pin':['', Validators.compose([Validators.required])],
 				});
 				this.assignCustomerForm = formBuilder.group({
@@ -152,9 +152,9 @@ export class CustomerdetailsPage {
 					'pin':['', Validators.compose([Validators.required])],
 					'smsService':[],
 				});
-				this.locations=JSON.parse(localStorage.getItem('locations'));
+				//this.locations=JSON.parse(localStorage.getItem('locations'));
 				//console.log(JSON.parse(this.locations));
-				console.log([this.locations]);
+				//console.log([this.locations]);
 				
 
 
