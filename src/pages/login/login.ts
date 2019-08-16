@@ -111,9 +111,7 @@ export class LoginPage {
 
     xhr.addEventListener("readystatechange",  () =>{
       if (xhr.readyState === 4) {
-        console.log(xhr.responseText);
         let result = JSON.parse(xhr.responseText);
-        console.log(result.agent[0]);
           if(result.agent[0]!=undefined){
             loading.dismiss();
             localStorage.setItem('authenticated' , result.user_name);            
