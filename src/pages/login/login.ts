@@ -113,18 +113,13 @@ export class LoginPage {
       if (xhr.readyState === 4) {
         console.log(xhr.responseText);
         let result = JSON.parse(xhr.responseText);
-        console.log(result.agent[0].agent_username);
-          if(result.user_token!=null){
+          if(result.agent[0].agent_id!=null){
             loading.dismiss();
-            localStorage.setItem('authenticated' , result.user_name);
-            var locations = JSON.stringify(result.locations_allowed).substring(1);
-            localStorage.setItem('locations',JSON.stringify(result.locations_allowed));
-            
-            console.log(result.user_name);
-            this.booking.userData.customer_id = result.user_id;
+            localStorage.setItem('authenticated' , result.user_name);            
+            // console.log(result.user_name);
+            // this.booking.userData.customer_id = result.user_id;
             this.navCtrl.setRoot(PasscodePage);
-          }
-          else{
+          }else{
             loading.dismiss();
             let alert = this.alertCtrl.create({
               title: 'Error',
