@@ -114,7 +114,7 @@ export class LoginPage {
         let result = JSON.parse(xhr.responseText);
           if(result.agent[0]!=undefined){
             loading.dismiss();
-            localStorage.setItem('authenticated' , result.user_name);            
+            localStorage.setItem('authenticated' , JSON.stringify(result.agent[0]));            
             // console.log(result.user_name);
             // this.booking.userData.customer_id = result.user_id;
             this.navCtrl.setRoot(PasscodePage);
