@@ -29,11 +29,9 @@ export class HomePage {
     this.booking.userData.deviceKey = key;
     console.log('selected device is:' + this.booking.userData.device)
     if (this.booking.userData.device=='MacBook'){
-        console.log(true);
         this.booking.userData.brand = device;
         this.navCtrl.setRoot(ChoosemodelPage);
     }else{
-      console.log(false);
       this.navCtrl.push(ChoosebrandPage ,{}, {animate: true, direction: 'forward'});
     } 	
   }
