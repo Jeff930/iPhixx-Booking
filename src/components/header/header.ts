@@ -39,6 +39,7 @@ export class HeaderComponent {
   showback;
   constructor(public navigation:NavigationProvider, public navCtrl: NavController,public booking:BookingProvider) {
     this.username = JSON.parse(localStorage.getItem('authenticated')).agent_username;
+    console.log(JSON.parse(localStorage.getItem('authenticated')).agent_username)
     console.log(this.username);
     this.booking.agentName = this.username;
     // console.log(this.username[0].agent_username);

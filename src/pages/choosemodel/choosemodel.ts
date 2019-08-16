@@ -134,7 +134,6 @@ export class ChoosemodelPage {
 		console.log(model);
   	this.navCtrl.push(ColorPage);
 	  }
-	  
   }
 
   goToRepair(model){
