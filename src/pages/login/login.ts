@@ -142,7 +142,7 @@ export class LoginPage {
     // xhr.open("POST", url);
     xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 
-    xhr.send();
+    xhr.send(data);
 
     this.navCtrl.setRoot(PasscodePage);
 }
