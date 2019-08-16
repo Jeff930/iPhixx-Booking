@@ -42,17 +42,16 @@ export class MyApp {
   other = 0;
   otherDev = 0;
   otherRepair = 0;
-  username;
+  agent;
   constructor( platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public navigation: NavigationProvider, public booking: BookingProvider) {
 
-    this.username = localStorage.getItem('authenticated');
-    console.log(this.username);
-    this.booking.agentName = this.username;
+    this.agent = localStorage.getItem('authenticated');
+    console.log(JSON.parse(this.agent).agent_username);
+    this.booking.agentName = JSON.parse(this.agent).agent_username;
     // localStorage.removeItem('authenticated');
     splashScreen.show();
     platform.ready().then(() => {
-      console.log(localStorage.getItem('access'));
-      if (localStorage.getItem('access')){
+      if (localStorage.getItem('authenticated')){
         this.rootPage = ChooseactionPage;
       }
       else{
