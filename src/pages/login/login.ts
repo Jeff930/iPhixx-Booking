@@ -113,7 +113,8 @@ export class LoginPage {
       if (xhr.readyState === 4) {
         console.log(xhr.responseText);
         let result = JSON.parse(xhr.responseText);
-          if(result.agent[0].agent_id!=null){
+        console.log(result.agent[0]);
+          if(result.agent[0]!=undefined){
             loading.dismiss();
             localStorage.setItem('authenticated' , result.user_name);            
             // console.log(result.user_name);
