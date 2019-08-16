@@ -113,7 +113,7 @@ export class LoginPage {
       if (xhr.readyState === 4) {
         console.log(xhr.responseText);
         let result = JSON.parse(xhr.responseText);
-        console.log(result.user_token);
+        console.log(result.agent[0].agent_username);
           if(result.user_token!=null){
             loading.dismiss();
             localStorage.setItem('authenticated' , result.user_name);
@@ -144,7 +144,7 @@ export class LoginPage {
 
     xhr.send(data);
 
-    this.navCtrl.setRoot(PasscodePage);
+   
 }
 
 register(){
