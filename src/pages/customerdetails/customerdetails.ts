@@ -458,17 +458,19 @@ export class CustomerdetailsPage {
 	data.append("mobile", user.phone);
 	data.append("phone", user.phone2);
 	console.log(data);
-	  let loading = this.loadingCtrl.create({
-		//content: 'Creating Customer...'
-	 });
-	 loading.present();
-
+	//   let loading = this.loadingCtrl.create({
+	// 	//content: 'Creating Customer...'
+	//  });
+	//  loading.present();
+	//  loading.dismiss();
 		let xhr = new XMLHttpRequest();
 		//xhr.withCredentials = true;
 	
 		xhr.addEventListener("readystatechange",  () =>{
+			
 		  if (xhr.readyState === 4) {
 			console.log(xhr.responseText);
+			
 			// let result = JSON.parse(xhr.responseText);
 			// console.log(result);
 			//console.log("id",result.customer.id);
