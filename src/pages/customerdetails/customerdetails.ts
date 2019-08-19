@@ -333,7 +333,7 @@ export class CustomerdetailsPage {
    	this.screenProtect=this.booking.userData.screenoffer;
    	this.tempPhone=this.booking.userData.phoneoffer;
 	this.notes=this.booking.note;
-	   
+	
 	if (this.cart.otherRepairSelected==true){
 		this.customRepair=this.cart.customRepair;
 		this.customRepairPrice=this.cart.customRepairPrice;
@@ -453,7 +453,9 @@ export class CustomerdetailsPage {
 	this.booking.phone=user.phone;
 	this.booking.mobile=user.phone2;
 	
-	console.log(user);
+	let data = new FormData();
+	data = user;
+	console.log(data);
 	  let loading = this.loadingCtrl.create({
 		//content: 'Creating Customer...'
 	 });
@@ -473,7 +475,7 @@ export class CustomerdetailsPage {
 				//localStorage.setItem('authenticated' , JSON.stringify(result));
 				//this.booking.userData.customer_id = result.user_id;
 				console.log(result.customer.id);
-				this.createTicket(user,result.customer.id);
+				//this.createTicket(user,result.customer.id);
 				//this.navCtrl.setRoot(ConfirmationPage);
 			 }else{
 				loading.dismiss();
@@ -498,13 +500,11 @@ export class CustomerdetailsPage {
 		// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
 		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
 			//+"&properties="+userData;
-			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&email="+
-			user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties[Birthdate]="+user.birthdate+"&consent[store_data]=1"+"&consent[marketing]=1";
-		console.log(url);
-		xhr.open("POST", url);
+			var url = "https://admin.iphixx.com/api/v1/customers/";
+			xhr.open("POST", url);
 	   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 	
-		xhr.send();
+		xhr.send(data);
 		}
 	
 		createTicket(user,id){
@@ -579,7 +579,7 @@ export class CustomerdetailsPage {
 			xhr.open("POST", url);
 			 // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 		
-			xhr.send();
+			xhr.send(data);
 			}
 
 	presentPrompt() {
