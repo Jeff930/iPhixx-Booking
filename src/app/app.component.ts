@@ -45,13 +45,14 @@ export class MyApp {
   agent;
   constructor( platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public navigation: NavigationProvider, public booking: BookingProvider) {
 
-    this.agent = localStorage.getItem('authenticated');
-    console.log(JSON.parse(this.agent).agent_username);
-    this.booking.agentName = JSON.parse(this.agent).agent_username;
+    
     // localStorage.removeItem('authenticated');
     splashScreen.show();
     platform.ready().then(() => {
       if (localStorage.getItem('authenticated')){
+        this.agent = localStorage.getItem('authenticated');
+        console.log(JSON.parse(this.agent).agent_username);
+        this.booking.agentName = JSON.parse(this.agent).agent_username;
         this.rootPage = ChooseactionPage;
       }
       else{
