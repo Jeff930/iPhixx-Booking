@@ -288,7 +288,7 @@ export class CustomerdetailsPage {
 	 
   }
 
-  login(user){
+  check(user){
 	  console.log(user);
 	  if(user.consentStore){
 		if(user.consentMarketing){
@@ -452,7 +452,7 @@ export class CustomerdetailsPage {
   createCustomer(user){
 	this.booking.phone=user.phone;
 	this.booking.mobile=user.phone2;
-	this.booking.locationName = user.location.name;
+	
 	console.log(user);
 	  let loading = this.loadingCtrl.create({
 		//content: 'Creating Customer...'

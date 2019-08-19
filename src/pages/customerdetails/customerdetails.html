@@ -119,7 +119,7 @@
          </div>
           <ion-row class="login-row">
             <ion-col text-center>
-              <button round [disabled]="!customerDetails.valid" (click)="prepareData(customerDetails.value,'')" ion-button full class="login-button" 
+              <button round [disabled]="!customerDetails.valid" (click)="check(customerDetails.value)" ion-button full class="login-button" 
             type="submit">Book</button>
   <!-- [disabled]="!login_form.valid" --> 
             </ion-col>
