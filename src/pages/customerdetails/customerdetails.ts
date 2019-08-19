@@ -452,8 +452,16 @@ export class CustomerdetailsPage {
   createCustomer(user){
 	this.booking.phone=user.phone;
 	this.booking.mobile=user.phone2;
-	
+	// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
+			//+"&properties="+userData;
 	let data = new FormData();
+	data.append("email", user.email);
+	data.append("lastName", user.lastname);
+	data.append("firstName", user.firstname);
+	data.append("birthdate", user.birthdate);
+	data.append("mobile", user.phone);
+	data.append("phone", user.phone2);
 	data = user;
 	console.log(data);
 	  let loading = this.loadingCtrl.create({
