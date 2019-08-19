@@ -442,9 +442,6 @@ export class CustomerdetailsPage {
 	}else{
 		this.assignCustomer(user,addData);
 	}
-
-	
-	
   }
 
   createCustomer(user){
@@ -460,7 +457,6 @@ export class CustomerdetailsPage {
 	data.append("birthdate", user.birthdate);
 	data.append("mobile", user.phone);
 	data.append("phone", user.phone2);
-	data = user;
 	console.log(data);
 	  let loading = this.loadingCtrl.create({
 		//content: 'Creating Customer...'
