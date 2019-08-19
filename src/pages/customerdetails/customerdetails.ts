@@ -473,8 +473,8 @@ export class CustomerdetailsPage {
 		xhr.addEventListener("readystatechange",  () =>{
 		  if (xhr.readyState === 4) {
 			console.log(xhr.responseText);
-			let result = JSON.parse(xhr.responseText);
-			console.log(result);
+			// let result = JSON.parse(xhr.responseText);
+			// console.log(result);
 			//console.log("id",result.customer.id);
 			//   if(result.customer!=undefined){
 			// 	loading.dismiss();
