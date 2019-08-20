@@ -508,78 +508,76 @@ export class CustomerdetailsPage {
 		}
 	
 		createBooking(id){
-			console.log(user);
-		console.log(user.password);
-			console.log(user.password);
 		
 			console.log(this.booking.userData);
+			console.log(this.cart.Total);
 		 // this.presentPrompt();
-			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
-			let loading = this.loadingCtrl.create({
-			//content: 'Logging in please wait...'
-		 });
-		 loading.present();
+		// 	this.booking.userData.selectedRepair = this.cart.selectedRepairs;
+		// 	let loading = this.loadingCtrl.create({
+		// 	//content: 'Logging in please wait...'
+		//  });
+		//  loading.present();
 	
-		 let data = new FormData();
-			// data.append("email", user.email);
-			// data.append("password", user.password);
-			let xhr = new XMLHttpRequest();
-			//xhr.withCredentials = true;
+		//  let data = new FormData();
+		// 	// data.append("email", user.email);
+		// 	// data.append("password", user.password);
+		// 	let xhr = new XMLHttpRequest();
+		// 	//xhr.withCredentials = true;
 		
-			xhr.addEventListener("readystatechange",  () =>{
-				if (xhr.readyState === 4) {
-				console.log(xhr.responseText);
-				let result = JSON.parse(xhr.responseText);
-				console.log(result);
-					if(result.ticket!=null){
-					loading.dismiss();
-					this.booking.ticketNumber = result.ticket.number;
-					this.booking.created = result.ticket.created_at;
-					console.log(this.booking.ticketNumber);
-					console.log(this.booking.created);
-					//localStorage.setItem('authenticated' , JSON.stringify(result));
-					//this.booking.userData.customer_id = result.user_id;
-					this.navCtrl.setRoot(ConfirmationPage);
-				 }
-					else{
-					loading.dismiss();
-					let alert = this.alertCtrl.create({
-						title: 'Error',
-						subTitle: 'Ticket not created',
-						buttons: ['Ok']
-					});
-					alert.present();
+		// 	xhr.addEventListener("readystatechange",  () =>{
+		// 		if (xhr.readyState === 4) {
+		// 		console.log(xhr.responseText);
+		// 		let result = JSON.parse(xhr.responseText);
+		// 		console.log(result);
+		// 			if(result.ticket!=null){
+		// 			loading.dismiss();
+		// 			this.booking.ticketNumber = result.ticket.number;
+		// 			this.booking.created = result.ticket.created_at;
+		// 			console.log(this.booking.ticketNumber);
+		// 			console.log(this.booking.created);
+		// 			//localStorage.setItem('authenticated' , JSON.stringify(result));
+		// 			//this.booking.userData.customer_id = result.user_id;
+		// 			this.navCtrl.setRoot(ConfirmationPage);
+		// 		 }
+		// 			else{
+		// 			loading.dismiss();
+		// 			let alert = this.alertCtrl.create({
+		// 				title: 'Error',
+		// 				subTitle: 'Ticket not created',
+		// 				buttons: ['Ok']
+		// 			});
+		// 			alert.present();
 		
-				 }
-				}
-			});
-			console.log(JSON.stringify(this.booking.userData));
-			var userData = JSON.stringify(this.booking.userData);
-			userData = userData.substring(1,userData.length-1);
-			console.log(userData);
-			var issue = this.device + " issue";
-			var subject = this.brand + " " + this.model+ " repair";
-			var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&customer_id="+
-				id+"&subject="+subject+"&problem_type="+issue+"&location_id="+user.location+"&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
-				this.brand+"&properties[Model]="+this.model+"&properties[Color]="+this.color+"&properties[Custom Repair]="+this.customRepair+"&properties[Custom Repair Price]="+this.customRepairPrice+"&properties[Carrier]="+this.carrier+"&properties[Temporary Phone]="+this.tempPhone+"&properties[Screen Protector]="+this.screenProtect
-				+"&properties[Additional Details]="+this.notes+"&properties[Screen Replacement]="+this.screenRep+"&properties[Trackpad Replacement]="+this.trackpadRep+"&properties[Ear Piece Repair]="+this.earPieceRep
-				+"&properties[Power Button Repair]="+this.powerRep+"&properties[Head Phone Repair]="+this.headRep+"&properties[Rear Camera Repair]="+this.rearCamRep+"&properties[Front Camera Repair]="+this.frontCamRep+"&properties[Home Button Repair]="+this.homeRep
-				+"&properties[Upper Microphone Repair]="+this.micRep+"&properties[Charging Port Repair]="+this.chargePortRep+"&properties[Back Glass Repair]="+this.backGlassRep+"&properties[PIN]="+this.pin+"&properties[Volume Button Repair]="+this.volumeRep
-				+"&properties[Battery Replacement]="+this.battRep+"&properties[Hard Drive Repairs]="+this.harddriveRep+"&properties[Cellular Signal Repair]="+this.signalRep+"&properties[HDMI Port Replacement]="+this.hdmiRep+"&properties[Keyboard Replacement]="+this.keyboardRep
-				+"&properties[Fan Replacement]="+this.fanRep+"&properties[Web Camera Repair]="+this.webCamRep+"&properties[Speaker Repair]="+this.speakerRep+"&properties[Data Recovery]="+this.dataRecovery+"&properties[Virus Removal]="+this.virusRemoval
-				+"&properties[SSD Replacement (500GB with OS and Data Transfer)]="+this.SSD500GBOSDT+"&properties[HDD Replacement (1TB with OS)]="+this.HDD1TBOS+"&properties[SSD Replacement (500GB with OS)]="+this.SSD500GBOS+"&properties[HDD Replacement (500GB with OS and Data Transfer)]="+this.HDD500GBOSDT+"&properties[HDD Replacement (1TB with OS and Data Transfer)]="+this.HDD1TBOSDT
-				+"&properties[SSD Replacement (1TB with OS and Data Transfer)]="+this.SSD1TBOSDT+"&properties[HDD Replacement (500GB with OS)]="+this.HDD500GBOS+"&properties[SSD Replacement (1TB with OS)]="+this.SSD1TBOS+"&properties[HDD Replacement (1TB with OS and Data Transfer)]="+this.HDD1TBOSDT+"&properties[Lock Button Test]="+this.lockTest+"&properties[Web Camera Test]="+this.webCamTest+"&properties[SD Card Test]="+this.sdTest
-				+"&properties[Front Camera Test]="+this.frontCamTest+"&properties[Rear Camera Test]="+this.rearCamTest+"&properties[Home Button Test]="+this.homeTest+"&properties[Volume Button Test]="+this.volumeTest+"&properties[Ear Piece Test]="+this.earpieceTest
-				+"&properties[Headphone Test]="+this.headphoneTest+"&properties[Vibration Test]="+this.vibrateTest+"&properties[Light Sensor Test]="+this.lightSensorTest+"&properties[Speaker Test]="+this.speakerTest+"&properties[Microphone Test]="+this.micTest
-				+"&properties[Moisture Tabs Test]="+this.moistureTest+"&properties[Power Button Test]="+this.powerTest+"&properties[Wifi Test]="+this.wifiTest+"&properties[Barred Test]="+this.barredTest+"&properties[Display Test]="+this.displayTest
-				+"&properties[System Boot Test]="+this.systemBootTest+"&properties[Audio Test]="+this.audioTest+"&properties[Keyboard Test]="+this.keyboardTest+"&properties[Touchpad Test]="+this.touchpadtest+"&properties[Port Test]="+this.portTest
-				+"&properties[Battery Test]="+this.battTest+"&properties[Hard Drive Test]="+this.harddriveTest;
-				//+"&properties="+userData;
-			console.log(url);
-			xhr.open("POST", url);
-			 // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+		// 		 }
+		// 		}
+		// 	});
+		// 	console.log(JSON.stringify(this.booking.userData));
+		// 	var userData = JSON.stringify(this.booking.userData);
+		// 	userData = userData.substring(1,userData.length-1);
+		// 	console.log(userData);
+		// 	var issue = this.device + " issue";
+		// 	var subject = this.brand + " " + this.model+ " repair";
+		// 	var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/tickets?api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc&customer_id="+
+		// 		id+"&subject="+subject+"&problem_type="+issue+"&location_id="+user.location+"&properties[Device Type]="+this.device+"&properties[Birthdate]="+user.birthdate+"&properties[Brand]="+
+		// 		this.brand+"&properties[Model]="+this.model+"&properties[Color]="+this.color+"&properties[Custom Repair]="+this.customRepair+"&properties[Custom Repair Price]="+this.customRepairPrice+"&properties[Carrier]="+this.carrier+"&properties[Temporary Phone]="+this.tempPhone+"&properties[Screen Protector]="+this.screenProtect
+		// 		+"&properties[Additional Details]="+this.notes+"&properties[Screen Replacement]="+this.screenRep+"&properties[Trackpad Replacement]="+this.trackpadRep+"&properties[Ear Piece Repair]="+this.earPieceRep
+		// 		+"&properties[Power Button Repair]="+this.powerRep+"&properties[Head Phone Repair]="+this.headRep+"&properties[Rear Camera Repair]="+this.rearCamRep+"&properties[Front Camera Repair]="+this.frontCamRep+"&properties[Home Button Repair]="+this.homeRep
+		// 		+"&properties[Upper Microphone Repair]="+this.micRep+"&properties[Charging Port Repair]="+this.chargePortRep+"&properties[Back Glass Repair]="+this.backGlassRep+"&properties[PIN]="+this.pin+"&properties[Volume Button Repair]="+this.volumeRep
+		// 		+"&properties[Battery Replacement]="+this.battRep+"&properties[Hard Drive Repairs]="+this.harddriveRep+"&properties[Cellular Signal Repair]="+this.signalRep+"&properties[HDMI Port Replacement]="+this.hdmiRep+"&properties[Keyboard Replacement]="+this.keyboardRep
+		// 		+"&properties[Fan Replacement]="+this.fanRep+"&properties[Web Camera Repair]="+this.webCamRep+"&properties[Speaker Repair]="+this.speakerRep+"&properties[Data Recovery]="+this.dataRecovery+"&properties[Virus Removal]="+this.virusRemoval
+		// 		+"&properties[SSD Replacement (500GB with OS and Data Transfer)]="+this.SSD500GBOSDT+"&properties[HDD Replacement (1TB with OS)]="+this.HDD1TBOS+"&properties[SSD Replacement (500GB with OS)]="+this.SSD500GBOS+"&properties[HDD Replacement (500GB with OS and Data Transfer)]="+this.HDD500GBOSDT+"&properties[HDD Replacement (1TB with OS and Data Transfer)]="+this.HDD1TBOSDT
+		// 		+"&properties[SSD Replacement (1TB with OS and Data Transfer)]="+this.SSD1TBOSDT+"&properties[HDD Replacement (500GB with OS)]="+this.HDD500GBOS+"&properties[SSD Replacement (1TB with OS)]="+this.SSD1TBOS+"&properties[HDD Replacement (1TB with OS and Data Transfer)]="+this.HDD1TBOSDT+"&properties[Lock Button Test]="+this.lockTest+"&properties[Web Camera Test]="+this.webCamTest+"&properties[SD Card Test]="+this.sdTest
+		// 		+"&properties[Front Camera Test]="+this.frontCamTest+"&properties[Rear Camera Test]="+this.rearCamTest+"&properties[Home Button Test]="+this.homeTest+"&properties[Volume Button Test]="+this.volumeTest+"&properties[Ear Piece Test]="+this.earpieceTest
+		// 		+"&properties[Headphone Test]="+this.headphoneTest+"&properties[Vibration Test]="+this.vibrateTest+"&properties[Light Sensor Test]="+this.lightSensorTest+"&properties[Speaker Test]="+this.speakerTest+"&properties[Microphone Test]="+this.micTest
+		// 		+"&properties[Moisture Tabs Test]="+this.moistureTest+"&properties[Power Button Test]="+this.powerTest+"&properties[Wifi Test]="+this.wifiTest+"&properties[Barred Test]="+this.barredTest+"&properties[Display Test]="+this.displayTest
+		// 		+"&properties[System Boot Test]="+this.systemBootTest+"&properties[Audio Test]="+this.audioTest+"&properties[Keyboard Test]="+this.keyboardTest+"&properties[Touchpad Test]="+this.touchpadtest+"&properties[Port Test]="+this.portTest
+		// 		+"&properties[Battery Test]="+this.battTest+"&properties[Hard Drive Test]="+this.harddriveTest;
+		// 		//+"&properties="+userData;
+		// 	console.log(url);
+		// 	xhr.open("POST", url);
+		// 	 // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 		
-			xhr.send(data);
+		// 	xhr.send(data);
 			}
 
 	presentPrompt() {
