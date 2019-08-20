@@ -447,6 +447,7 @@ export class CustomerdetailsPage {
   createCustomer(user){
 	this.booking.phone=user.phone;
 	this.booking.mobile=user.phone2;
+	this.booking.userData.user = user;
 	// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
 		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
 			//+"&properties="+userData;
@@ -458,10 +459,10 @@ export class CustomerdetailsPage {
 	data.append("mobile", user.phone);
 	data.append("phone", user.phone2);
 	console.log(data);
-	//   let loading = this.loadingCtrl.create({
-	// 	//content: 'Creating Customer...'
-	//  });
-	//  loading.present();
+	  let loading = this.loadingCtrl.create({
+		//content: 'Creating Customer...'
+	 });
+	 loading.present();
 
 		let xhr = new XMLHttpRequest();
 		//xhr.withCredentials = true;
@@ -478,7 +479,7 @@ export class CustomerdetailsPage {
 				//localStorage.setItem('authenticated' , JSON.stringify(result));
 				//this.booking.userData.customer_id = result.user_id;
 				console.log(result.id);
-				//this.createTicket(user,result.customer.id);
+				this.createBooking(result.id);
 				//this.navCtrl.setRoot(ConfirmationPage);
 			 }else{
 				//loading.dismiss();
@@ -506,11 +507,11 @@ export class CustomerdetailsPage {
 		xhr.send(data);
 		}
 	
-		createTicket(user,id){
+		createBooking(id){
 			console.log(user);
 		console.log(user.password);
 			console.log(user.password);
-			this.booking.userData.user = user;
+		
 			console.log(this.booking.userData);
 		 // this.presentPrompt();
 			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
@@ -623,6 +624,6 @@ export class CustomerdetailsPage {
 		// console.log(this.selectedCustomer[0].location);
 		// this.selectedCustomer[0].birthdate=customer.properties.Birthdate;
 		//console.log(this.selectedCustomer);
-		this.createTicket(userDetails,customer.id);
+		//this.createTicket(userDetails,customer.id);
 	}
 }
