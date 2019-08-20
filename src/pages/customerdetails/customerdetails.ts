@@ -477,18 +477,15 @@ export class CustomerdetailsPage {
 				//loading.dismiss();
 				//localStorage.setItem('authenticated' , JSON.stringify(result));
 				//this.booking.userData.customer_id = result.user_id;
-				console.log(result.customer.id);
+				console.log(result.id);
 				//this.createTicket(user,result.customer.id);
 				//this.navCtrl.setRoot(ConfirmationPage);
 			 }else{
 				//loading.dismiss();
-				let message = result.message;
-				if (result.message=="Email has already been taken")
-					message = "Customer Creation failed due to Duplicate Email";
 				console.log(result);
 				let alert = this.alertCtrl.create({
 				  title: 'Error: Customer Not Created',
-				  subTitle: message,
+				  subTitle: 'An error has been encountered.',
 				  buttons: ['Ok']
 				});
 				alert.present();
