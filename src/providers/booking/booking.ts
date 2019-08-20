@@ -70,8 +70,8 @@ export class BookingProvider {
       network: '',
       networkKey: '',
       selectedRepair:[''],
-      phoneoffer: 'No',
-      screenoffer: 'No',
+      phoneoffer: 0,
+      screenoffer: 0,
       user: {
           firstname: '',
           lastname: '',
