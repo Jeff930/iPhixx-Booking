@@ -510,7 +510,6 @@ export class CustomerdetailsPage {
 		createBooking(id){
 			console.log(this.booking.userData);
 			console.log(this.cart.Total);
-		 
 			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
 			console.log(this.booking.userData.selectedRepair);
 			let loading = this.loadingCtrl.create({
@@ -520,7 +519,14 @@ export class CustomerdetailsPage {
 	
 		 let data = new FormData();
 			data.append("customer_id", id);
+			data.append("device", this.booking.userData[0].deviceKey);
+			data.append("brand", this.booking.userData[0].brandKey);
+			data.append("model", this.booking.userData[0].modelKey);
+			data.append("network", this.booking.userData[0].networkKey);
+			data.append("color", this.booking.userData[0].colorKey);
 			data.append("total", this.cart.Total);
+
+
 			let xhr = new XMLHttpRequest();
 			//xhr.withCredentials = true;
 		
