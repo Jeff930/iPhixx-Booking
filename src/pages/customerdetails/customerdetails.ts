@@ -527,7 +527,8 @@ export class CustomerdetailsPage {
 			data.append("color", this.booking.userData[0].colorKey);
 			data.append("total", this.cart.Total);
 			data.append("selectedRepair",this.booking.repairKey);
-			
+			data.append("screenOffer", this.booking.userData[0].screenoffer);
+			data.append("phoneOffer", this.booking.userData[0].phoneoffer);
 
 
 			let xhr = new XMLHttpRequest();
