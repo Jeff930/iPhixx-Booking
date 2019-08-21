@@ -417,7 +417,7 @@ export class CustomerdetailsPage {
 			this.headphoneTest=testForm.headphone;
 			this.moistureTest=testForm.moisture;
 			this.wifiTest=testForm.wifi;			
-  			this.barredTest=testForm.barred;
+			this.barredTest=testForm.barred;  
 		}else{
 			var testForm=this.booking.nonMobileTest;
 			console.log(testForm);
@@ -485,8 +485,8 @@ export class CustomerdetailsPage {
 				//loading.dismiss();
 				console.log(result);
 				let alert = this.alertCtrl.create({
-				  title: 'Error: Customer Not Created',
-				  subTitle: 'An error has been encountered.',
+				  title: 'Error',
+				  subTitle: 'Customer Not Created',
 				  buttons: ['Ok']
 				});
 				alert.present();
@@ -529,6 +529,10 @@ export class CustomerdetailsPage {
 			data.append("selectedRepair",this.booking.repairKey);
 			data.append("screenOffer", this.booking.userData[0].screenoffer);
 			data.append("phoneOffer", this.booking.userData[0].phoneoffer);
+			if (this.device == 'Phone'||this.device =='Tablet')
+				data.append("test",this.booking.mobileTest);
+			else
+				data.append("test",this.booking.nonMobileTest);
 
 
 			let xhr = new XMLHttpRequest();
@@ -553,7 +557,7 @@ export class CustomerdetailsPage {
 					loading.dismiss();
 					let alert = this.alertCtrl.create({
 						title: 'Error',
-						subTitle: 'Ticket not created',
+						subTitle: 'Booking not created',
 						buttons: ['Ok']
 					});
 					alert.present();
