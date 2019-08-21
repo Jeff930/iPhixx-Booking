@@ -511,6 +511,7 @@ export class CustomerdetailsPage {
 			console.log(this.booking.userData);
 			console.log(this.cart.Total);
 			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
+			console.log(this.booking.repairKey);
 			console.log(this.booking.userData.selectedRepair);
 			let loading = this.loadingCtrl.create({
 			//content: 'Logging in please wait...'
