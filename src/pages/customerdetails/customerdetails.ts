@@ -526,6 +526,8 @@ export class CustomerdetailsPage {
 			data.append("network", this.booking.userData[0].networkKey);
 			data.append("color", this.booking.userData[0].colorKey);
 			data.append("total", this.cart.Total);
+			data.append("selectedRepair",this.booking.repairKey);
+			
 
 
 			let xhr = new XMLHttpRequest();
