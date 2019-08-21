@@ -520,13 +520,13 @@ export class CustomerdetailsPage {
 	
 		 let data = new FormData();
 			data.append("customer_id", id);
-			data.append("device", this.booking.userData[0].deviceKey);
+			data.append("device", this.booking.userData.deviceKey);
 			data.append("brand", this.booking.userData[0].brandKey);
 			data.append("model", this.booking.userData[0].modelKey);
 			data.append("network", this.booking.userData[0].networkKey);
 			data.append("color", this.booking.userData[0].colorKey);
 			data.append("total", this.cart.Total);
-			data.append("selectedRepair",this.booking.repairKey);
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey));
 			data.append("screenOffer", this.booking.userData[0].screenoffer);
 			data.append("phoneOffer", this.booking.userData[0].phoneoffer);
 			if (this.device == 'Phone'||this.device =='Tablet')
