@@ -510,11 +510,12 @@ export class CustomerdetailsPage {
 		}
 	
 		createBooking(id){
+			console.log(this.cart.repairKey);
+			console.log(this.booking.repairKey);
 			console.log(this.booking.userData);
 			console.log(this.cart.Total);
 			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
 			console.log(this.booking.repairKey);
-			console.log(this.booking.userData.selectedRepair);
 			let loading = this.loadingCtrl.create({
 			//content: 'Logging in please wait...'
 		 });
@@ -535,7 +536,6 @@ export class CustomerdetailsPage {
 				data.append("test","["+JSON.stringify(this.booking.mobileTest)+"]");
 			else
 				data.append("test","["+JSON.stringify(this.booking.nonMobileTest)+"]");
-
 			console.log(data);
 
 			let xhr = new XMLHttpRequest();
@@ -591,7 +591,7 @@ export class CustomerdetailsPage {
 			// 	+"&properties[Battery Test]="+this.battTest+"&properties[Hard Drive Test]="+this.harddriveTest;
 			// 	//+"&properties="+userData;
 			console.log(data);
-			// xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+			xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/sample");
 			//  // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 		
 			xhr.send(data);

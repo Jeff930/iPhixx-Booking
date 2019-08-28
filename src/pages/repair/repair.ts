@@ -67,7 +67,6 @@ export class RepairPage {
   }
 
   ionViewDidLoad() {
-
     this.navigation.activePageIndex = 12;
   }
 }
