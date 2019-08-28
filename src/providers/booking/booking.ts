@@ -41,21 +41,6 @@ export class BookingProvider {
 
   constructor(public http: Http,  ) {
     console.log('Hello BookingProvider Provider')
-    this.repairKey={
-      screenrep_selected:null,
-      headrep_selected:null,
-      earrep_selected:null,
-      powerrep_selected:null,
-      rearcamrep_selected:null,
-      frontcamrep_selected:null,
-      homerep_selected:null,
-      microphone_selected:null,
-      chargeport_selected:null,
-      volumerep_selected:null,
-      battrep_selected:null,
-      signalrep_selected:null,
-      backglassrep_selected:null,
-    };
     this.userData = [
     { 
       device : '',

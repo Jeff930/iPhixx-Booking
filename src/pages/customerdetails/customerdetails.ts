@@ -510,8 +510,9 @@ export class CustomerdetailsPage {
 		}
 	
 		createBooking(id){
-			console.log(this.cart.repairKey);
 			console.log(this.booking.repairKey);
+			console.log(this.booking.repairKey);
+			console.log(this.booking.userData.selectedRepair);
 			console.log(this.booking.userData);
 			console.log(this.cart.Total);
 			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
