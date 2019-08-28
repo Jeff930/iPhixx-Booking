@@ -532,9 +532,9 @@ export class CustomerdetailsPage {
 			data.append("screenOffer", this.booking.userData.screenoffer);
 			data.append("phoneOffer", this.booking.userData.phoneoffer);
 			if (this.device == 'Phone'||this.device =='Tablet')
-				data.append("test",JSON.stringify(this.booking.mobileTest));
+				data.append("test","["+JSON.stringify(this.booking.mobileTest)+"]");
 			else
-				data.append("test",JSON.stringify(this.booking.nonMobileTest));
+				data.append("test","["+JSON.stringify(this.booking.nonMobileTest)+"]");
 
 			console.log(data);
 
@@ -591,7 +591,7 @@ export class CustomerdetailsPage {
 			// 	+"&properties[Battery Test]="+this.battTest+"&properties[Hard Drive Test]="+this.harddriveTest;
 			// 	//+"&properties="+userData;
 			console.log(data);
-			 xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+			// xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 			//  // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 		
 			xhr.send(data);
