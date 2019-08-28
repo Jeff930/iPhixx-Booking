@@ -400,39 +400,41 @@ export class CustomerdetailsPage {
 				this.trackpadRep = "Yes";
 				break;		
 		}
-		if (this.device == 'Phone'||this.device =='Tablet'){
-			var testForm=this.booking.mobileTest;
-			console.log(testForm);
-  			this.sdTest=testForm.SD;
-  			this.frontCamTest=testForm.frontCam;
-  			this.rearCamTest=testForm.rearCam;
-  			this.homeTest=testForm.home;
-  			this.volumeTest=testForm.volume;
-			this.vibrateTest=testForm.vibrate;
-			this.lockTest=testForm.lock;
-			this.lightSensorTest=testForm.vibrate;
-			this.earpieceTest=testForm.earpiece;
-			this.speakerTest=testForm.speaker;
-			this.micTest=testForm.microphone;
-			this.headphoneTest=testForm.headphone;
-			this.moistureTest=testForm.moisture;
-			this.wifiTest=testForm.wifi;			
-			this.barredTest=testForm.barred;  
-		}else{
-			var testForm=this.booking.nonMobileTest;
-			console.log(testForm);
-			this.powerTest=testForm.power;
-			this.displayTest=testForm.display;
-  			this.systemBootTest=testForm.systemBoot;
-  			this.audioTest=testForm.audio;
-  			this.keyboardTest=testForm.keyboard;
-			this.touchpadtest=testForm.touchpad;
-			this.wifiTest=testForm.wifi;
-			this.portTest=testForm.port;
-			this.webCamTest=testForm.webcam;
-  			this.battTest=testForm.battery;
-			this.harddriveTest=testForm.HDD;
-		}
+		
+	}
+
+	if (this.device == 'Phone'||this.device =='Tablet'){
+		var testForm=this.booking.mobileTest;
+		console.log(testForm);
+		  this.sdTest=testForm.SD;
+		  this.frontCamTest=testForm.frontCam;
+		  this.rearCamTest=testForm.rearCam;
+		  this.homeTest=testForm.home;
+		  this.volumeTest=testForm.volume;
+		this.vibrateTest=testForm.vibrate;
+		this.lockTest=testForm.lock;
+		this.lightSensorTest=testForm.vibrate;
+		this.earpieceTest=testForm.earpiece;
+		this.speakerTest=testForm.speaker;
+		this.micTest=testForm.microphone;
+		this.headphoneTest=testForm.headphone;
+		this.moistureTest=testForm.moisture;
+		this.wifiTest=testForm.wifi;			
+		this.barredTest=testForm.barred;  
+	}else{
+		var testForm=this.booking.nonMobileTest;
+		console.log(testForm);
+		this.powerTest=testForm.power;
+		this.displayTest=testForm.display;
+		  this.systemBootTest=testForm.systemBoot;
+		  this.audioTest=testForm.audio;
+		  this.keyboardTest=testForm.keyboard;
+		this.touchpadtest=testForm.touchpad;
+		this.wifiTest=testForm.wifi;
+		this.portTest=testForm.port;
+		this.webCamTest=testForm.webcam;
+		  this.battTest=testForm.battery;
+		this.harddriveTest=testForm.HDD;
 	}
 
 		
