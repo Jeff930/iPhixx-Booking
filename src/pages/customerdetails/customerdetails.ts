@@ -592,7 +592,7 @@ export class CustomerdetailsPage {
 			// 	+"&properties[Battery Test]="+this.battTest+"&properties[Hard Drive Test]="+this.harddriveTest;
 			// 	//+"&properties="+userData;
 			console.log(data);
-			xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/sample");
+			xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/");
 			//  // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 		
 			xhr.send(data);
