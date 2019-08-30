@@ -167,10 +167,10 @@ export class CustomerdetailsPage {
 
   Search(){
 	this.filter=true;
-	let loading = this.loadingCtrl.create({
-		//content: 'Creating Customer...'
-	 });
-	 loading.present();
+	// let loading = this.loadingCtrl.create({
+	// 	//content: 'Creating Customer...'
+	//  });
+	//  loading.present();
 	 let xhr = new XMLHttpRequest();
 	 //xhr.withCredentials = true;
  
@@ -183,7 +183,7 @@ export class CustomerdetailsPage {
 		 console.log(this.customers.length);
 		 //console.log("id",result.customer.id);
 		   if(this.customers!=undefined){
-			 loading.dismiss();
+			 //loading.dismiss();
 			 if (this.customers.length==0){
 				document.getElementById("emptyResult").style.display="block";
 				document.getElementById("result").style.display="none";
@@ -198,7 +198,7 @@ export class CustomerdetailsPage {
 			 //this.navCtrl.setRoot(ConfirmationPage);
 		  }
 		   else{
-			loading.dismiss();
+			//loading.dismiss();
 			 let alert = this.alertCtrl.create({
 			   title: 'Error: Customers Details Not Received',
 			   subTitle: this.customers.message,
@@ -231,10 +231,10 @@ export class CustomerdetailsPage {
 
   getCustomerList(page){
 	this.filter=false;
-	let loading = this.loadingCtrl.create({
-		//content: 'Creating Customer...'
-	 });
-	 loading.present();
+	// let loading = this.loadingCtrl.create({
+	// 	//content: 'Creating Customer...'
+	//  });
+	//  loading.present();
 	 let xhr = new XMLHttpRequest();
 	 //xhr.withCredentials = true;
  
@@ -247,7 +247,7 @@ export class CustomerdetailsPage {
 		 console.log(this.customers.length);
 		 //console.log("id",result.customer.id);
 		   if(this.customers!=undefined){
-			 loading.dismiss();
+			 //loading.dismiss();
 			 document.getElementById("emptyResult").style.display="none";
 			 document.getElementById("result").style.display="block";
 			 //localStorage.setItem('authenticated' , JSON.stringify(result));
@@ -257,7 +257,7 @@ export class CustomerdetailsPage {
 			 //this.navCtrl.setRoot(ConfirmationPage);
 		  }
 		   else{
-			loading.dismiss();
+			//loading.dismiss();
 			 let alert = this.alertCtrl.create({
 			   title: 'Error: Customers Details Not Received',
 			   subTitle: this.customers.message,
@@ -313,10 +313,10 @@ export class CustomerdetailsPage {
   prepareData(user,addData){
 	  console.log(user);
 	  console.log(addData);
-	let loading = this.loadingCtrl.create({
-	  //content: 'Preparing Data...'
-   	});
-   	loading.present();
+	// let loading = this.loadingCtrl.create({
+	//   //content: 'Preparing Data...'
+   	// });
+   	// loading.present();
    	this.device=this.booking.userData.device;
    	this.brand=this.booking.userData.brand;
    	this.model=this.booking.userData.model;
@@ -438,7 +438,7 @@ export class CustomerdetailsPage {
 	}
 
 		
-	loading.dismiss();
+	//loading.dismiss();
 	if (this.action=="Create Customer"){
 		this.createCustomer(user);
 	}else{
@@ -461,10 +461,10 @@ export class CustomerdetailsPage {
 	data.append("mobile", user.phone);
 	data.append("phone", user.phone2);
 	console.log(data);
-	  let loading = this.loadingCtrl.create({
-		//content: 'Creating Customer...'
-	 });
-	 loading.present();
+	//   let loading = this.loadingCtrl.create({
+	// 	//content: 'Creating Customer...'
+	//  });
+	//  loading.present();
 
 		let xhr = new XMLHttpRequest();
 		//xhr.withCredentials = true;
@@ -477,7 +477,7 @@ export class CustomerdetailsPage {
 			console.log(result);
 			console.log(result.id);
 			  if(result.id!=undefined){
-				loading.dismiss();
+				//loading.dismiss();
 				//localStorage.setItem('authenticated' , JSON.stringify(result));
 				//this.booking.userData.customer_id = result.user_id;
 				console.log(result.id);
@@ -517,10 +517,10 @@ export class CustomerdetailsPage {
 			console.log(this.cart.Total);
 			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
 			console.log(this.booking.repairKey);
-			let loading = this.loadingCtrl.create({
-			//content: 'Logging in please wait...'
-		 });
-		 loading.present();
+		// 	let loading = this.loadingCtrl.create({
+		// 	//content: 'Logging in please wait...'
+		//  });
+		//  loading.present();
 	
 		 let data = new FormData();
 			data.append("customer_id", id);
@@ -530,13 +530,26 @@ export class CustomerdetailsPage {
 			data.append("network", this.booking.userData.networkKey);
 			data.append("color", this.booking.userData.colorKey);
 			data.append("total", this.cart.Total);
-			data.append("selectedRepair",JSON.stringify(this.booking.repairKey));
+			data.append('screenrep_selected',this.booking.repairKey[0].screenrep_selected);
+			data.append("headrep_selected",this.booking.repairKey[0].headrep_selected);
+			data.append("earrep_selected",this.booking.repairKey[0].earrep_selected);
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			data.append("selectedRepair",JSON.stringify(this.booking.repairKey[0]));
+			
 			data.append("screenOffer", this.booking.userData.screenoffer);
 			data.append("phoneOffer", this.booking.userData.phoneoffer);
 			if (this.device == 'Phone'||this.device =='Tablet')
-				data.append("test","["+JSON.stringify(this.booking.mobileTest)+"]");
+				data.append("test",JSON.stringify(this.booking.mobileTest));
 			else
-				data.append("test","["+JSON.stringify(this.booking.nonMobileTest)+"]");
+				data.append("test",JSON.stringify(this.booking.nonMobileTest));
 			console.log(data);
 
 			let xhr = new XMLHttpRequest();
@@ -547,6 +560,7 @@ export class CustomerdetailsPage {
 				console.log(xhr.responseText);
 				let result = JSON.parse(xhr.responseText);
 				console.log(result);
+				console.log(result['selectedRepair']);
 				// 	if(result.ticket!=null){
 				// 	loading.dismiss();
 				// 	this.booking.ticketNumber = result.ticket.number;

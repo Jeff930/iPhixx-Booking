@@ -162,7 +162,7 @@ export class CartProvider {
         this.goCheckout=1;
       }
     }
-    this.booking.repairKey=[{
+    this.booking.repairKey={
       'screenrep_selected':this.screenrep_selected,
       'headrep_selected':this.headrep_selected,
       'earrep_selected':this.earrep_selected,
@@ -176,7 +176,7 @@ export class CartProvider {
       'battrep_selected':this.battrep_selected,
       'signalrep_selected':this.signalrep_selected,
       'backglassrep_selected':this.backglassrep_selected,
-    }]
+    }
     console.log(this.booking.repairKey);
   }
 
