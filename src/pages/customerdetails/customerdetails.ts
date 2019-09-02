@@ -521,8 +521,9 @@ export class CustomerdetailsPage {
 		// 	//content: 'Logging in please wait...'
 		//  });
 		//  loading.present();
-	
+			
 		 let data = new FormData();
+		 	data.append("agent_id", JSON.parse(localStorage.getItem("authenticated")).agent_id);
 			data.append("customer_id", id);
 			data.append("device", this.booking.userData.deviceKey);
 			data.append("brand", this.booking.userData.brandKey);
