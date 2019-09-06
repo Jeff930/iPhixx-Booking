@@ -134,7 +134,7 @@ export class CustomerdetailsPage {
 					'birthdate':['', Validators.compose([Validators.required])],
 					'email':['', Validators.compose([Validators.required])],
 					'phone':['', Validators.compose([Validators.required])],
-					'phone2':['', Validators.compose([Validators.required])],
+					'phone2':[],
 					'location':['', Validators.compose([Validators.required])],
 					'smsService':[],
 					'consentStore':[],
