@@ -1,8 +1,8 @@
 <ion-header color="lightest" no-border no-margin class="hidden-md-down">
   <ion-toolbar color="lightest" center  no-margin>
-  	<ion-buttons start col-1  >
-      <button *ngIf="navigation.index!=4 && navigation.activePageIndex!=5" ion-button full no-button (click)="Back()" >
-        <ion-icon color="primary" name="arrow-back" class="arrow-back" float-left large></ion-icon>
+  	<ion-buttons start >
+      <button *ngIf="navigation.index!=4 && navigation.activePageIndex!=5" ion-button no-button (click)="Back()" class="blue" >
+        <ion-icon color="white" name="arrow-back" class="arrow-back" float-left large></ion-icon>
         <p class="back" > Back</p>
       </button>
     </ion-buttons>
@@ -33,8 +33,8 @@
   	
       <ion-toolbar col-12 class="tool" >
       	<ion-buttons start col-1>
-      <button ion-button full no-button (click)="Back()"  *ngIf="navigation.index!=4 && navigation.activePageIndex!=5" class="left">
-        <ion-icon color="primary" name="arrow-back" class="mobileArrow" float-left large></ion-icon>
+      <button ion-button full no-button (click)="Back()"  *ngIf="navigation.index!=4 && navigation.activePageIndex!=5" class="left blue">
+        <ion-icon color="white" name="arrow-back" class="mobileArrow" float-left large></ion-icon>
         <p class="back"> Back</p>
       </button>
     </ion-buttons>

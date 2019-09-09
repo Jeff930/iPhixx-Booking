@@ -1,6 +1,6 @@
 header {
 	.back{
-    color:#488aff;
+    color:#ffffff;
     margin-left: 2px;
     font-size: 1.2em;
 	}
@@ -11,7 +11,6 @@ header {
     margin-left:5vw;
   }
   .arrow-back {
-    margin-left: 7vw;
     font-size: 1.2em !important;
   }
 	.tool{
@@ -60,6 +59,12 @@ header {
 
   .left{
     margin-left:-2vw !important;
+  }
+
+  .blue{
+    margin-left: 7vw;
+    padding:15px;
+    background-color: #488aff; 
   }
 
 }
