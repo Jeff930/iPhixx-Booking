@@ -51,7 +51,6 @@ export class MyApp {
     platform.ready().then(() => {
       if (localStorage.getItem('authenticated')){
         this.agent = localStorage.getItem('authenticated');
-        console.log(JSON.parse(this.agent).agent_username);
         this.booking.agentName = JSON.parse(this.agent).agent_username;
         this.rootPage = ChooseactionPage;
       }
