@@ -517,10 +517,10 @@ export class CustomerdetailsPage {
 			console.log(this.cart.Total);
 			this.booking.userData.selectedRepair = this.cart.selectedRepairs;
 			console.log(this.booking.repairKey);
-		// 	let loading = this.loadingCtrl.create({
-		// 	//content: 'Logging in please wait...'
-		//  });
-		//  loading.present();
+			let loading = this.loadingCtrl.create({
+			//content: 'Logging in please wait...'
+		 });
+		 loading.present();
 			
 		 let data = new FormData();
 		 	data.append("agent_id", JSON.parse(localStorage.getItem("authenticated")).agent_id);
@@ -561,27 +561,26 @@ export class CustomerdetailsPage {
 				console.log(xhr.responseText);
 				let result = JSON.parse(xhr.responseText);
 				console.log(result);
-				console.log(result['selectedRepair']);
-				// 	if(result.ticket!=null){
-				// 	loading.dismiss();
-				// 	this.booking.ticketNumber = result.ticket.number;
-				// 	this.booking.created = result.ticket.created_at;
-				// 	console.log(this.booking.ticketNumber);
-				// 	console.log(this.booking.created);
-				// 	//localStorage.setItem('authenticated' , JSON.stringify(result));
-				// 	//this.booking.userData.customer_id = result.user_id;
-				// 	this.navCtrl.setRoot(ConfirmationPage);
-				//  }
-				// 	else{
-				// 	loading.dismiss();
-				// 	let alert = this.alertCtrl.create({
-				// 		title: 'Error',
-				// 		subTitle: 'Booking not created',
-				// 		buttons: ['Ok']
-				// 	});
-				// 	alert.present();
+					if(result.id!=null){
+					loading.dismiss();
+					this.booking.ticketNumber = result.ticket.number;
+					this.booking.created = result.ticket.created_at;
+					console.log(this.booking.ticketNumber);
+					console.log(this.booking.created);
+					//localStorage.setItem('authenticated' , JSON.stringify(result));
+					//this.booking.userData.customer_id = result.user_id;
+					this.navCtrl.setRoot(ConfirmationPage);
+				 }
+					else{
+					loading.dismiss();
+					let alert = this.alertCtrl.create({
+						title: 'Error',
+						subTitle: 'Booking not created',
+						buttons: ['Ok']
+					});
+					alert.present();
 		
-				//  }
+				 }
 				}
 			});
 			console.log(JSON.stringify(this.booking.userData));
