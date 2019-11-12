@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { ColorPage } from '../color/color';
 import { RepairPage } from '../repair/repair';
@@ -41,7 +41,8 @@ export class ChoosemodelPage {
   model : string;
   modelNumberForm;
  	  
-  constructor(public navCtrl: NavController, public navParams: NavParams, public booking : BookingProvider,public navigation: NavigationProvider,public repair:RepairProvider,public cart:CartProvider,public formBuilder: FormBuilder,) {
+  constructor(public navCtrl: NavController, 
+    public loadingCtrl: LoadingController, public navParams: NavParams, public booking : BookingProvider,public navigation: NavigationProvider,public repair:RepairProvider,public cart:CartProvider,public formBuilder: FormBuilder,) {
   	this.device = this.booking.userData.device+', '+this.booking.userData.brand ;
   		console.log(this.booking.userData.device);  	
 
@@ -52,39 +53,63 @@ export class ChoosemodelPage {
 	});
 	  
 
-  		if(this.booking.userData.device == 'Phone'){	
+  		// if(this.booking.userData.device == 'Phone'){	
 
-		  	if(this.booking.userData.brand == 'iPhone'){
-				  this.repair.models = iphonemodels;
-		  	}
-		  	else if(this.booking.userData.brand == 'Samsung'){
-		  		this.repair.models = samsungmodels;
-		  	}
-			else if(this.booking.userData.brand == 'Huawei'){
-			  		this.repair.models = huaweimodels;
-			}
-	  		else if(this.booking.userData.brand == 'Sony'){
-			  		this.repair.models = sonymodels;
-			}
-			else if(this.booking.userData.brand == 'Nokia'){
-					  		this.repair.models = nokiamodels;
-			}
+		//   	if(this.booking.userData.brand == 'iPhone'){
+		// 		  this.repair.models = iphonemodels;
+		//   	}
+		//   	else if(this.booking.userData.brand == 'Samsung'){
+		//   		this.repair.models = samsungmodels;
+		//   	}
+		// 	else if(this.booking.userData.brand == 'Huawei'){
+		// 	  		this.repair.models = huaweimodels;
+		// 	}
+	  	// 	else if(this.booking.userData.brand == 'Sony'){
+		// 	  		this.repair.models = sonymodels;
+		// 	}
+		// 	else if(this.booking.userData.brand == 'Nokia'){
+		// 			  		this.repair.models = nokiamodels;
+		// 	}
 
-		}
+		// }
 
-		else if (this.booking.userData.device == 'Tablet'){
-			if(this.booking.userData.brand == 'iPad'){
-				this.repair.models = ipadmodels;
-			}
-			else if (this.booking.userData.brand == 'Samsung') {
-				this.repair.models = samsungtablet;
-			}
-			else{
-				this.repair.models = huaweitablet;
-			}
-		} else if (this.booking.userData.device == 'MacBook'){
-			this.repair.models = macbookmodels;
-		}
+		// else if (this.booking.userData.device == 'Tablet'){
+		// 	if(this.booking.userData.brand == 'iPad'){
+		// 		this.repair.models = ipadmodels;
+		// 	}
+		// 	else if (this.booking.userData.brand == 'Samsung') {
+		// 		this.repair.models = samsungtablet;
+		// 	}
+		// 	else{
+		// 		this.repair.models = huaweitablet;
+		// 	}
+		// } else if (this.booking.userData.device == 'MacBook'){
+		// 	this.repair.models = macbookmodels;
+		// }
+
+		let loading = this.loadingCtrl.create({
+			//content: 'Logging in please wait...'
+		 });
+		 loading.present();
+			
+		 let data = new FormData();
+		 	data.append("devtype_id", this.booking.userData.deviceKey);
+			data.append("phonebrand_id", this.booking.userData.brandKey);
+		
+			let xhr = new XMLHttpRequest();
+			//xhr.withCredentials = true;
+		
+			xhr.addEventListener("readystatechange",  () =>{
+				if (xhr.readyState === 4) {
+				console.log(xhr.responseText);
+				let result = JSON.parse(xhr.responseText);
+				console.log(result);
+				}
+			});
+		
+			xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/devices/");
+		
+			xhr.send(data);
 
 	}
 
