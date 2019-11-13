@@ -107,7 +107,7 @@ export class ChoosemodelPage {
 				}
 			});
 		
-			xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/devices/");
+			xhr.open("GET", "https://admin.iphixx.com/api/v1/bookings/devices/");
 		
 			xhr.send(data);
 
