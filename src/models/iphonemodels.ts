@@ -1,6 +1,6 @@
 export const iphonemodels = [
 	{ 
-		key:'1',
+	  key:'1',
 	  model : 'X', 
 	  modelNum : 'A1865',
 	  screenrep: '230.00',
