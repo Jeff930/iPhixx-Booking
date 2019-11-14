@@ -101,16 +101,19 @@ export class ChoosemodelPage {
 		
 			xhr.addEventListener("readystatechange",  () =>{
 				if (xhr.readyState === 4) {
-				console.log(xhr.responseText);
-				let result = JSON.parse(xhr.responseText);
-				console.log(result);
+					console.log(xhr.responseText);
+					let result = JSON.parse(xhr.responseText);
+					console.log(result.result.length);
+					loading.dismiss();
+					if (result.result.length != 0){
+						this.repair.models = result.result;
+						this.models = result.result;
+					}
+					
 				}
 			});
-		
-			xhr.open("GET", "https://admin.iphixx.com/api/v1/bookings/devices/");
-		
+			xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/devices/");
 			xhr.send(data);
-
 	}
 
 	ionViewWillEnter(){
@@ -159,6 +162,40 @@ export class ChoosemodelPage {
 		console.log(model);
   	this.navCtrl.push(ColorPage);
 	  }
+  }
+
+  getBrand(id){
+	  console.log(id);
+	if (id == 1)
+	  return "iPhone";
+	if (id == 2)
+	  return "Samsung";
+	if (id == 3)
+	  return "Huawei";
+	if (id == 4)
+	  return "Sony";	  
+	if (id == 5)
+	  return "Nokia";
+	if (id == 6)
+	  return "iPad";
+	if (id = 7)
+	  return "Hewlett Packard(HP)";
+	if (id = 8)
+	  return "Lenovo";
+	if (id = 9)
+	  return "Dell";
+	if (id = 10)
+	  return "Asus";	  
+	if (id = 11)
+	  return "Acer";
+	if (id = 12)
+	  return "Microsoft";
+	if (id = 13)
+	  return "Chromebook";
+	if (id = 14)
+	  return "Toshiba";
+	if (id = 15)
+	  return "MacBook";
   }
 
   goToRepair(model){
