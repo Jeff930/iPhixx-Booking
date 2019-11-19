@@ -217,7 +217,6 @@ export class ChoosemodelPage {
   }
 
 	ionViewDidLoad() {
-
 		this.navigation.activePageIndex = 9;
 	}
 }
