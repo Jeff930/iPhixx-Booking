@@ -71,60 +71,60 @@ export class RepairProvider {
     if (this.booking.userData.model == this.models[i].model_name&&this.booking.userData.modelNum == this.models[i].model_number){
       console.log("true")
       if (this.models[i].screenrep_price!=null){
-        this.prices.push(this.models[i].screenrep);
+        this.prices.push(this.models[i].screenrep_price);
         this.modelrepairs.push("Screen Replacement");
         console.log("Screen Rep");
       }
       if (this.models[i].headrep_price!=null){
-        this.prices.push(this.models[i].headphonerep);
+        this.prices.push(this.models[i].headrep_price);
         this.modelrepairs.push("Headphone Repair");
       }
       if (this.models[i].earrep_price!=null){
-        this.prices.push(this.models[i].earpiecerep);
+        this.prices.push(this.models[i].earrep_price);
         this.modelrepairs.push("Earpiece Repair");
       }
 	    if (this.models[i].powerrep_price!=null){
-        this.prices.push(this.models[i].powerrep);
+        this.prices.push(this.models[i].powerrep_price);
         this.modelrepairs.push("Power Button Repair");
       }
       if (this.models[i].rearcamrep_price!=null){
-        this.prices.push(this.models[i].rearcamrep);
+        this.prices.push(this.models[i].rearcamrep_price);
         this.modelrepairs.push("Rear Camera Repair");
       }
       if (this.models[i].frontcamrep_price!=null){
-        this.prices.push(this.models[i].frontcamrep);
+        this.prices.push(this.models[i].frontcamrep_price);
         this.modelrepairs.push("Front Camera Repair");
       }
       if (this.models[i].homerep_price!=null){
-        this.prices.push(this.models[i].homerep);
+        this.prices.push(this.models[i].homerep_price);
         this.modelrepairs.push("Home Button Repair");
       }
       if (this.models[i].microphone_price!=null){
-        this.prices.push(this.models[i].upmicrep);
+        this.prices.push(this.models[i].microphone_price);
         this.modelrepairs.push("Microphone Repair");
       }
       if (this.models[i].chargeport_price!=null){
-        this.prices.push(this.models[i].chargeportrep);
+        this.prices.push(this.models[i].chargeport_price);
         this.modelrepairs.push("Charger Port Repair");
       }
       if (this.models[i].volumerep_price!=null){
-        this.prices.push(this.models[i].volumerep);
+        this.prices.push(this.models[i].volumerep_price);
         this.modelrepairs.push("Volume Button Repair");
       }
       if (this.models[i].battrep_price!=null){
-        this.prices.push(this.models[i].battrep);
+        this.prices.push(this.models[i].battrep_price);
         this.modelrepairs.push("Battery Replacement");
       }
       if (this.models[i].signalrep_price!=null){
-        this.prices.push(this.models[i].signalrep);
+        this.prices.push(this.models[i].signalrep_price);
         this.modelrepairs.push("Cellular Signal Repair");
       }
       if (this.models[i].backglassrep_price!=null){
-        this.prices.push(this.models[i].backglassrep);
+        this.prices.push(this.models[i].backglassrep_price);
         this.modelrepairs.push("Back Glass Repair");
       }
       if (this.models[i].trackpadrep_price!=null){
-        this.prices.push(this.models[i].trackpadrep);
+        this.prices.push(this.models[i].trackpadrep_price);
         this.modelrepairs.push("Trackpad Replacement");
       }
         this.other=1;
