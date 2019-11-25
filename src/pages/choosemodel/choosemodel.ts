@@ -178,23 +178,23 @@ export class ChoosemodelPage {
 	  return "Nokia";
 	if (id == 6)
 	  return "iPad";
-	if (id = 7)
+	if (id == 7)
 	  return "Hewlett Packard(HP)";
-	if (id = 8)
+	if (id == 8)
 	  return "Lenovo";
-	if (id = 9)
+	if (id == 9)
 	  return "Dell";
-	if (id = 10)
+	if (id == 10)
 	  return "Asus";	  
-	if (id = 11)
+	if (id == 11)
 	  return "Acer";
-	if (id = 12)
+	if (id == 12)
 	  return "Microsoft";
-	if (id = 13)
+	if (id == 13)
 	  return "Chromebook";
-	if (id = 14)
+	if (id == 14)
 	  return "Toshiba";
-	if (id = 15)
+	if (id == 15)
 	  return "MacBook";
   }
 
