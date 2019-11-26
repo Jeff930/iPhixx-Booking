@@ -89,6 +89,13 @@ export class RepairProvider {
       this.prices.push(this.rawPrice.laptopbatteryrep_price);
       this.prices.push(this.rawPrice.virusremoval_withsoftware);
       this.prices.push(this.rawPrice.HDDHalfTera);
+      this.prices.push(this.rawPrice.HDDTera);
+      this.prices.push(this.rawPrice.SSDHalfTera);
+      this.prices.push(this.rawPrice.SSDTera);
+      this.prices.push(this.rawPrice.HDDHalfTeraWithDataTransfer);
+      this.prices.push(this.rawPrice.HDDTeraWithDataTransfer);
+      this.prices.push(this.rawPrice.SSDHalfTeraWithDataTransfer);
+      this.prices.push(this.rawPrice.SSDTeraWithDataTransfer);
       
 
 
