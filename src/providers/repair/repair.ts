@@ -25,15 +25,15 @@ export class RepairProvider {
   deposit = [];
   prices=[];
   models = [];
+  rawPrice;
 
   constructor(public booking:BookingProvider) {
+    console.log('selected device is:' + this.booking.userData.device);
     if (this.booking.userData.device=='Gaming Console'){
       this.repairs = gamerepairs;
     }
     if (this.booking.userData.device=='Laptop'){
-      
-        
-
+      this.repairs = laptoprepairs;      
     }else{ 
       this.repairs = mobilerepairs;
     }
@@ -55,6 +55,7 @@ export class RepairProvider {
     }
     
     if (this.booking.userData.device=='Laptop'){
+      this.repairs = laptoprepairs;      
       let xhr = new XMLHttpRequest();
         //xhr.withCredentials = true;
       
@@ -62,21 +63,67 @@ export class RepairProvider {
           if (xhr.readyState === 4) {
             console.log(xhr.responseText);
             let result = JSON.parse(xhr.responseText);
-            console.log(result.result.length);
-            // if (result.result.length != 0){
-            //   this.repair.models = result.result;
-            //   this.models = result.result;
-            // }
+            console.log(result.result[0]);
+            if (result.result.length != 0){
+              this.rawPrice = result.result[0];
+              console.log(this.rawPrice.laptopscreenrep_price);
+            }
             
           }
         });
         xhr.open("GET", "https://admin.iphixx.com/api/v1/bookings/laptop-prices");
         xhr.send();
+
       for (var i=0;i<this.repairs.length;i++){
       this.modelrepairs.push(this.repairs[i].repair);
-      this.prices.push(this.repairs[i].price);
-      this.deposit.push(this.repairs[i].deposit);
-      console.log("laptop"+this.modelrepairs);}
+      this.deposit.push(this.repairs[i].deposit);}
+
+      //this.prices.push(this.rawPrice)
+      // if (this.models[i].screenrep_price!=null){
+      //   this.prices.push(this.models[i].screenrep_price);
+      // }
+      // if (this.models[i].headrep_price!=null){
+      //   this.prices.push(this.models[i].headrep_price);
+      // }
+      // if (this.models[i].earrep_price!=null){
+      //   this.prices.push(this.models[i].earrep_price);
+      // }
+	    // if (this.models[i].powerrep_price!=null){
+      //   this.prices.push(this.models[i].powerrep_price);
+      // }
+      // if (this.models[i].rearcamrep_price!=null){
+      //   this.prices.push(this.models[i].rearcamrep_price);
+      // }
+      // if (this.models[i].frontcamrep_price!=null){
+      //   this.prices.push(this.models[i].frontcamrep_price);
+      // }
+      // if (this.models[i].homerep_price!=null){
+      //   this.prices.push(this.models[i].homerep_price);
+      // }
+      // if (this.models[i].microphone_price!=null){
+      //   this.prices.push(this.models[i].microphone_price);
+      // }
+      // if (this.models[i].chargeport_price!=null){
+      //   this.prices.push(this.models[i].chargeport_price);
+      // }
+      // if (this.models[i].volumerep_price!=null){
+      //   this.prices.push(this.models[i].volumerep_price);
+      // }
+      // if (this.models[i].battrep_price!=null){
+      //   this.prices.push(this.models[i].battrep_price);
+      // }
+      // if (this.models[i].signalrep_price!=null){
+      //   this.prices.push(this.models[i].signalrep_price);
+      // }
+      // if (this.models[i].backglassrep_price!=null){
+      //   this.prices.push(this.models[i].backglassrep_price);
+      // }
+      // if (this.models[i].trackpadrep_price!=null){
+      //   this.prices.push(this.models[i].trackpadrep_price);
+      // }
+
+
+     
     }else{ 
       if (this.booking.userData.device=='Phone'
           ||this.booking.userData.device=='Tablet'
@@ -147,7 +194,7 @@ export class RepairProvider {
       }
         this.other=1;
     }
-  }}}
+  }}console.log("not mobile");}
   console.log(this.modelrepairs);
   }
 
