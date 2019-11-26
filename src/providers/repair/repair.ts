@@ -31,7 +31,9 @@ export class RepairProvider {
       this.repairs = gamerepairs;
     }
     if (this.booking.userData.device=='Laptop'){
-      this.repairs = laptoprepairs;
+      
+        
+
     }else{ 
       this.repairs = mobilerepairs;
     }
@@ -53,7 +55,23 @@ export class RepairProvider {
     }
     
     if (this.booking.userData.device=='Laptop'){
-      this.repairs = laptoprepairs;
+      let xhr = new XMLHttpRequest();
+        //xhr.withCredentials = true;
+      
+        xhr.addEventListener("readystatechange",  () =>{
+          if (xhr.readyState === 4) {
+            console.log(xhr.responseText);
+            let result = JSON.parse(xhr.responseText);
+            console.log(result.result.length);
+            // if (result.result.length != 0){
+            //   this.repair.models = result.result;
+            //   this.models = result.result;
+            // }
+            
+          }
+        });
+        xhr.open("GET", "https://admin.iphixx.com/api/v1/bookings/laptop-prices");
+        xhr.send();
       for (var i=0;i<this.repairs.length;i++){
       this.modelrepairs.push(this.repairs[i].repair);
       this.prices.push(this.repairs[i].price);
