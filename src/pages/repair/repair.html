@@ -22,11 +22,7 @@
              <ion-col text-center  *ngFor = "let repairer of repair.modelrepairs;let i = index" col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-3>
               <!-- <button  class="custom-button" ion-button full round (click) ="selectRepair(repair.repair)" > {{repair.repair}} </button> -->
               <div (click)="(cart.updateRepairs(repairer,i,repair.prices[i]))" class="repair">
-              <img  *ngIf="repairer != 'Hard Drive Replacement - 500GB SSD (Operating System Reinstall)' && repairer != 'Hard Drive Replacement - 500GB HDD (Operating System Reinstall)' && repairer != 'Hard Drive Replacement - 500GB HDD (Operating System & Data Transfer)'
-              && repairer != 'Hard Drive Replacement - 500GB SSD (Operating System & Data Transfer)'" src="{{'assets/imgs/Repair/'+booking.userData.device+'/'+repairer+'.png'}} ">
-
-              <img *ngIf="repairer == 'Hard Drive Replacement - 500GB SSD (Operating System Reinstall)' || repairer == 'Hard Drive Replacement - 500GB HDD (Operating System Reinstall)' || repairer == 'Hard Drive Replacement - 500GB HDD (Operating System & Data Transfer)'
-              ||repairer == 'Hard Drive Replacement - 500GB SSD (Operating System & Data Transfer)'" src="{{'assets/imgs/Repair/Laptop/one.png'}} ">
+              <img src="{{'assets/imgs/Repair/'+booking.userData.device+'/'+repairer+'.png'}} ">
 
              <p>{{repairer}}
               <p class="" *ngIf="devices == 'laptop'">{{repair.deposit[i]}}</p>
