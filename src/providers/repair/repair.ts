@@ -78,49 +78,18 @@ export class RepairProvider {
       this.modelrepairs.push(this.repairs[i].repair);
       this.deposit.push(this.repairs[i].deposit);}
 
-      //this.prices.push(this.rawPrice)
-      // if (this.models[i].screenrep_price!=null){
-      //   this.prices.push(this.models[i].screenrep_price);
-      // }
-      // if (this.models[i].headrep_price!=null){
-      //   this.prices.push(this.models[i].headrep_price);
-      // }
-      // if (this.models[i].earrep_price!=null){
-      //   this.prices.push(this.models[i].earrep_price);
-      // }
-	    // if (this.models[i].powerrep_price!=null){
-      //   this.prices.push(this.models[i].powerrep_price);
-      // }
-      // if (this.models[i].rearcamrep_price!=null){
-      //   this.prices.push(this.models[i].rearcamrep_price);
-      // }
-      // if (this.models[i].frontcamrep_price!=null){
-      //   this.prices.push(this.models[i].frontcamrep_price);
-      // }
-      // if (this.models[i].homerep_price!=null){
-      //   this.prices.push(this.models[i].homerep_price);
-      // }
-      // if (this.models[i].microphone_price!=null){
-      //   this.prices.push(this.models[i].microphone_price);
-      // }
-      // if (this.models[i].chargeport_price!=null){
-      //   this.prices.push(this.models[i].chargeport_price);
-      // }
-      // if (this.models[i].volumerep_price!=null){
-      //   this.prices.push(this.models[i].volumerep_price);
-      // }
-      // if (this.models[i].battrep_price!=null){
-      //   this.prices.push(this.models[i].battrep_price);
-      // }
-      // if (this.models[i].signalrep_price!=null){
-      //   this.prices.push(this.models[i].signalrep_price);
-      // }
-      // if (this.models[i].backglassrep_price!=null){
-      //   this.prices.push(this.models[i].backglassrep_price);
-      // }
-      // if (this.models[i].trackpadrep_price!=null){
-      //   this.prices.push(this.models[i].trackpadrep_price);
-      // }
+      this.prices.push(this.rawPrice.laptopscreenrep_price);
+      this.prices.push(this.rawPrice.keyboardrep_price);
+      this.prices.push(this.rawPrice.fanrep_price);
+      this.prices.push(this.rawPrice.laptopcamrep_price);
+      this.prices.push(this.rawPrice.laptopspeakerrep_price);
+      this.prices.push(this.rawPrice.laptopchargerep_price);
+      this.prices.push(this.rawPrice.datarecovery);
+      this.prices.push(this.rawPrice.laptopspeakerrep_price);
+      this.prices.push(this.rawPrice.laptopbatteryrep_price);
+      this.prices.push(this.rawPrice.virusremoval_withsoftware);
+      this.prices.push(this.rawPrice.HDDHalfTera);
+      
 
 
      
