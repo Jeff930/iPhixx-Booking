@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams ,PopoverController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController,PopoverController } from 'ionic-angular';
 
 
 import { BookingProvider } from '../../providers/booking/booking';
@@ -37,7 +37,7 @@ export class ChoosebrandPage {
   devWidth:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public booking : BookingProvider ,
-  	public popoverCtrl: PopoverController,public cart: CartProvider,public navigation: NavigationProvider,public repair:RepairProvider) {
+  	public popoverCtrl: PopoverController, public loadingCtrl: LoadingController,public cart: CartProvider,public navigation: NavigationProvider,public repair:RepairProvider) {
   	this.device = this.booking.userData.device;
       console.log("brand" + this.device);
 
@@ -54,6 +54,34 @@ export class ChoosebrandPage {
       case 'Gaming Console':
         this.brands = gamebrands;
         break;
+    }
+
+    if (this.booking.userData.deviceKey=='5'){
+      let loading = this.loadingCtrl.create({
+			  //content: 'Logging in please wait...'
+		  });
+		  loading.present();
+			
+		  let data = new FormData();
+		 	  data.append("devtype_id", '5');
+		
+			  let xhr = new XMLHttpRequest();
+			  //xhr.withCredentials = true;
+		
+			  xhr.addEventListener("readystatechange",  () =>{
+				  if (xhr.readyState === 4) {
+					  console.log(xhr.responseText);
+					  let result = JSON.parse(xhr.responseText);
+					  console.log(result.result.length);
+					  loading.dismiss();
+					  if (result.result.length != 0){
+						  this.repair.models = result.result;
+						  this.brands = result.result;
+					  }	
+				  }
+			  });
+			  xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/consoles/");
+        xhr.send(data);
     }
   }
 
