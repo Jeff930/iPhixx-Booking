@@ -39,41 +39,6 @@ export class ChoosemodelPage {
 	  this.modelNumberForm = formBuilder.group({
 		'model':['', Validators.compose([Validators.required])],
 	});
-	  
-
-  		// if(this.booking.userData.device == 'Phone'){	
-
-		//   	if(this.booking.userData.brand == 'iPhone'){
-		// 		  this.repair.models = iphonemodels;
-		//   	}
-		//   	else if(this.booking.userData.brand == 'Samsung'){
-		//   		this.repair.models = samsungmodels;
-		//   	}
-		// 	else if(this.booking.userData.brand == 'Huawei'){
-		// 	  		this.repair.models = huaweimodels;
-		// 	}
-	  	// 	else if(this.booking.userData.brand == 'Sony'){
-		// 	  		this.repair.models = sonymodels;
-		// 	}
-		// 	else if(this.booking.userData.brand == 'Nokia'){
-		// 			  		this.repair.models = nokiamodels;
-		// 	}
-
-		// }
-
-		// else if (this.booking.userData.device == 'Tablet'){
-		// 	if(this.booking.userData.brand == 'iPad'){
-		// 		this.repair.models = ipadmodels;
-		// 	}
-		// 	else if (this.booking.userData.brand == 'Samsung') {
-		// 		this.repair.models = samsungtablet;
-		// 	}
-		// 	else{
-		// 		this.repair.models = huaweitablet;
-		// 	}
-		// } else if (this.booking.userData.device == 'MacBook'){
-		// 	this.repair.models = macbookmodels;
-		// }
 
 		let loading = this.loadingCtrl.create({
 			//content: 'Logging in please wait...'
