@@ -9,18 +9,6 @@ import { NavigationProvider } from '../../providers/navigation/navigation';
 import { RepairProvider } from '../../providers/repair/repair';
 import { CartProvider } from '../../providers/cart/cart';
 
-import { iphonemodels } from '../../models/iphonemodels';
-import { samsungmodels } from '../../models/samsungmodels';
-import { huaweimodels } from '../../models/huaweimodels';
-import { huaweitablet } from '../../models/huaweitabletmodel';
-import { sonymodels } from '../../models/sonymodels';
-import { nokiamodels } from '../../models/nokiamodels';
-
-import { ipadmodels } from '../../models/ipadmodels';
-import { samsungtablet } from '../../models/samsungtabletmodel';
-
-import { macbookmodels } from '../../models/macbookmodels';
-
 /**
  * Generated class for the ChoosemodelPage page.
  *
