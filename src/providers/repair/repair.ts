@@ -96,10 +96,6 @@ export class RepairProvider {
       this.prices.push(this.rawPrice.HDDTeraWithDataTransfer);
       this.prices.push(this.rawPrice.SSDHalfTeraWithDataTransfer);
       this.prices.push(this.rawPrice.SSDTeraWithDataTransfer);
-      
-
-
-     
     }else{ 
       if (this.booking.userData.device=='Phone'
           ||this.booking.userData.device=='Tablet'
