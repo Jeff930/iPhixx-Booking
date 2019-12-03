@@ -129,6 +129,27 @@ export class ChoosebrandPage {
     this.booking.userData.brandKey = key;
   }
 
+  selectConsole(model,brandKey,modelKey,modelNum){
+    this.booking.userData.model = model;
+    console.log(modelNum);
+    this.booking.userData.modelNum = modelNum;
+    this.booking.userData.modelKey = modelKey;
+    this.booking.userData.brandKey = brandKey;
+    console.log(this.booking.userData);
+    this.cart.selectedRepairs=[];
+    this.cart.selectedIndex=[];
+    this.cart.cartMessage="There are currently no items in your cart.";
+    this.cart.Total=0;
+    this.cart.costs=[];
+    this.repair.modelrepairs=[];
+    this.repair.other=0;
+    this.repair.prices=[];
+    this.cart.completeCheckout=[];
+    this.cart.goCheckout=[];
+    this.repair.updatemodelrepairs();
+    this.navCtrl.push(RepairPage);
+    }
+
   ionViewDidLoad() {
     
     this.navigation.activePageIndex = 7;
