@@ -35,7 +35,7 @@
            <ion-row *ngIf = "this.booking.userData.deviceKey=='5'">
 
               <ion-col text-center   *ngFor = "let brand of brands" col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3>
-              <div (click) ="selectConsole(brand.brand, brand.key)" class="brands-col" padding>
+              <div (click) ="selectConsole(brand.model_name,brand.devicebrand_id,brand.devicemodel_id,brand.model_number)" class="brands-col" padding>
               <img src="{{'assets/imgs/'+device+'/'+brand.model_name+'.jpg'}}">
               <p>{{brand.model_name}}</p>
               <!-- <button  ion-button full round (click) ="selectBrand(brand.brand)" > {{brand.brand}} </button> -->
