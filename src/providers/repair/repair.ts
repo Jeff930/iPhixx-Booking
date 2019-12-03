@@ -48,10 +48,11 @@ export class RepairProvider {
 
     if (this.booking.userData.device=='Gaming Console'){
       this.repairs = gamerepairs;
-      for (var i=0;i<this.repairs.length;i++){
-      this.modelrepairs.push(this.repairs[i].repair);
-      this.prices.push(this.repairs[i].price);
-      console.log("game"+this.modelrepairs);}
+      
+      // for (var i=0;i<this.repairs.length;i++){
+      // this.modelrepairs.push(this.repairs[i].repair);
+      // this.prices.push(this.repairs[i].price);
+      // console.log("game"+this.modelrepairs);}
     }
     
     if (this.booking.userData.device=='Laptop'){
@@ -99,7 +100,8 @@ export class RepairProvider {
     }else{ 
       if (this.booking.userData.device=='Phone'
           ||this.booking.userData.device=='Tablet'
-          ||this.booking.userData.device=='MacBook'){
+          ||this.booking.userData.device=='MacBook'
+          ||this.booking.userData.device== 'Gaming Console'){
       
     
   for (var i=0;i<this.models.length;i++){
@@ -163,6 +165,14 @@ export class RepairProvider {
       if (this.models[i].trackpadrep_price!=null){
         this.prices.push(this.models[i].trackpadrep_price);
         this.modelrepairs.push("Trackpad Replacement");
+      }
+      if (this.models[i].harddrive_rep!=null){
+        this.prices.push(this.models[i].harddrive_rep);
+        this.modelrepairs.push("Hard Drive Repair");
+      }
+      if (this.models[i].hdmirep_price!=null){
+        this.prices.push(this.models[i].hdmirep_price);
+        this.modelrepairs.push("HDMI Port Replacement");
       }
         this.other=1;
     }
