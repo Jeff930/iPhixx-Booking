@@ -531,6 +531,8 @@ export class CustomerdetailsPage {
 			data.append("network", this.booking.userData.networkKey);
 			data.append("color", this.booking.userData.colorKey);
 			data.append("total", this.cart.Total);
+
+			//mobile
 			data.append('screenrep_selected',this.booking.repairKey.screenrep_selected);
 			data.append("headrep_selected",this.booking.repairKey.headrep_selected);
 			data.append("earrep_selected",this.booking.repairKey.earrep_selected);
@@ -544,9 +546,30 @@ export class CustomerdetailsPage {
 			data.append("battrep_selected",this.booking.repairKey.battrep_selected);
 			data.append("signalrep_selected",this.booking.repairKey.signalrep_selected);
 			data.append("backglassrep_selected",this.booking.repairKey.backglassrep_selected);
-			
 			data.append("screenOffer", this.booking.userData.screenoffer);
 			data.append("phoneOffer", this.booking.userData.phoneoffer);
+
+			//Laptop
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopcamrep_selected',this.booking.repairKey.laptopcamrep_selected);
+			data.append('keyboardrep_selected',this.booking.repairKey.keyboardrep_selected);
+			data.append('fanrep_selected',this.booking.repairKey.fanrep_selected);
+			data.append('datarecovery',this.booking.repairKey.datarecovery);
+			data.append('virusremoval',this.booking.repairKey.virusremoval);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+
+			//Gaming Consoles
+
+
 			if (this.device == 'Phone'||this.device =='Tablet')
 				data.append("test",JSON.stringify(this.booking.mobileTest));
 			else
