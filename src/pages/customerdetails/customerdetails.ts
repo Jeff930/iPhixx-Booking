@@ -286,228 +286,228 @@ export class CustomerdetailsPage {
 	this.action = "Create Customer";
   }
 
-  check(user){
-	  console.log(user);
-	  if(user.consentStore){
-		if(user.consentMarketing){
-			//this.createCustomer(user);
-			this.prepareData(user,'');
-		  }else{
-			let alert = this.alertCtrl.create({
-				title: 'Required Consent for Marketing',
-				subTitle: 'Please check the Consent to Email for Marketing',
-				buttons: ['Ok']
-			  });
-			  alert.present();
-		  }
-	  }else{
-		let alert = this.alertCtrl.create({
-			title: 'Required Consent for Storing Data',
-			subTitle: 'Please check the Consent to Store Data checkbox',
-			buttons: ['Ok']
-		  });
-		  alert.present();
-	  }
-  }
+//   check(user){
+// 	  console.log(user);
+// 	  if(user.consentStore){
+// 		if(user.consentMarketing){
+// 			//this.createCustomer(user);
+// 			this.prepareData(user,'');
+// 		  }else{
+// 			let alert = this.alertCtrl.create({
+// 				title: 'Required Consent for Marketing',
+// 				subTitle: 'Please check the Consent to Email for Marketing',
+// 				buttons: ['Ok']
+// 			  });
+// 			  alert.present();
+// 		  }
+// 	  }else{
+// 		let alert = this.alertCtrl.create({
+// 			title: 'Required Consent for Storing Data',
+// 			subTitle: 'Please check the Consent to Store Data checkbox',
+// 			buttons: ['Ok']
+// 		  });
+// 		  alert.present();
+// 	  }
+//   }
 
-  prepareData(user,addData){
-	  console.log(user);
-	  console.log(addData);
-	// let loading = this.loadingCtrl.create({
-	//   //content: 'Preparing Data...'
-   	// });
-   	// loading.present();
-   	this.device=this.booking.userData.device;
-   	this.brand=this.booking.userData.brand;
-   	this.model=this.booking.userData.model;
-   	this.color=this.booking.userData.color;
-	this.carrier=this.booking.userData.network;
-	if (this.action=="Create Customer"){
-		this.pin=user.pin;
-	}else{
-		this.pin=addData.pin;
-	}
+//   prepareData(user,addData){
+// 	  console.log(user);
+// 	  console.log(addData);
+// 	// let loading = this.loadingCtrl.create({
+// 	//   //content: 'Preparing Data...'
+//    	// });
+//    	// loading.present();
+//    	this.device=this.booking.userData.device;
+//    	this.brand=this.booking.userData.brand;
+//    	this.model=this.booking.userData.model;
+//    	this.color=this.booking.userData.color;
+// 	this.carrier=this.booking.userData.network;
+// 	if (this.action=="Create Customer"){
+// 		this.pin=user.pin;
+// 	}else{
+// 		this.pin=addData.pin;
+// 	}
 
-   	this.screenProtect=this.booking.userData.screenoffer;
-   	this.tempPhone=this.booking.userData.phoneoffer;
-	this.notes=this.booking.note;
+//    	this.screenProtect=this.booking.userData.screenoffer;
+//    	this.tempPhone=this.booking.userData.phoneoffer;
+// 	this.notes=this.booking.note;
 	
-	if (this.cart.otherRepairSelected==true){
-		this.customRepair=this.cart.customRepair;
-		this.customRepairPrice=this.cart.customRepairPrice;
-	}
+// 	if (this.cart.otherRepairSelected==true){
+// 		this.customRepair=this.cart.customRepair;
+// 		this.customRepairPrice=this.cart.customRepairPrice;
+// 	}
 
    	
-	for (var i=0;i<this.selectedRepairs.length;i++){
-		switch (this.selectedRepairs[i]){
-			case "Screen Replacement":
-				this.screenRep = "Yes";
-				break;
+// 	for (var i=0;i<this.selectedRepairs.length;i++){
+// 		switch (this.selectedRepairs[i]){
+// 			case "Screen Replacement":
+// 				this.screenRep = "Yes";
+// 				break;
 
-			case "Headphone Repair":
-				this.headRep = "Yes";
-				break;
+// 			case "Headphone Repair":
+// 				this.headRep = "Yes";
+// 				break;
 
-			case "Earpiece Repair":
-				this.earPieceRep = "Yes";
-				break;
+// 			case "Earpiece Repair":
+// 				this.earPieceRep = "Yes";
+// 				break;
 
-			case "Power Button Repair":
-				this.powerRep = "Yes";
-				break;
+// 			case "Power Button Repair":
+// 				this.powerRep = "Yes";
+// 				break;
 
-			case "Rear Camera Repair":
-				this.rearCamRep = "Yes";
-				break;
+// 			case "Rear Camera Repair":
+// 				this.rearCamRep = "Yes";
+// 				break;
 			
-			case "Front Camera Repair":
-				this.frontCamRep = "Yes";
-				break;
+// 			case "Front Camera Repair":
+// 				this.frontCamRep = "Yes";
+// 				break;
 
-			case "Home Button Repair":
-				this.homeRep = "Yes";
-				break;
+// 			case "Home Button Repair":
+// 				this.homeRep = "Yes";
+// 				break;
 
-			case "Microphone Repair":
-				this.micRep = "Yes";
-				break;
+// 			case "Microphone Repair":
+// 				this.micRep = "Yes";
+// 				break;
 
-			case "Charger Port Repair":
-				this.chargePortRep = "Yes";
-				break;
+// 			case "Charger Port Repair":
+// 				this.chargePortRep = "Yes";
+// 				break;
 
-			case "Power Button Repair":
-				this.powerRep = "Yes";
-				break;
+// 			case "Power Button Repair":
+// 				this.powerRep = "Yes";
+// 				break;
 
-			case "Volume Button Repair":
-				this.volumeRep = "Yes";
-				break;
+// 			case "Volume Button Repair":
+// 				this.volumeRep = "Yes";
+// 				break;
 			
-			case "Battery Replacement":
-				this.battRep = "Yes";
-				break;
+// 			case "Battery Replacement":
+// 				this.battRep = "Yes";
+// 				break;
 
-			case "Cellular Signal Repair":
-				this.signalRep = "Yes";
-				break;
+// 			case "Cellular Signal Repair":
+// 				this.signalRep = "Yes";
+// 				break;
 
-			case "Back Glass Repair":
-				this.backGlassRep = "Yes";
-				break;
+// 			case "Back Glass Repair":
+// 				this.backGlassRep = "Yes";
+// 				break;
 			
-			case "Trackpad Replacement":
-				this.trackpadRep = "Yes";
-				break;		
-		}
+// 			case "Trackpad Replacement":
+// 				this.trackpadRep = "Yes";
+// 				break;		
+// 		}
 		
-	}
+// 	}
 
-	if (this.device == 'Phone'||this.device =='Tablet'){
-		var testForm=this.booking.mobileTest;
-		console.log(testForm);
-		  this.sdTest=testForm.SD;
-		  this.frontCamTest=testForm.frontCam;
-		  this.rearCamTest=testForm.rearCam;
-		  this.homeTest=testForm.home;
-		  this.volumeTest=testForm.volume;
-		this.vibrateTest=testForm.vibrate;
-		this.lockTest=testForm.lock;
-		this.lightSensorTest=testForm.vibrate;
-		this.earpieceTest=testForm.earpiece;
-		this.speakerTest=testForm.speaker;
-		this.micTest=testForm.microphone;
-		this.headphoneTest=testForm.headphone;
-		this.moistureTest=testForm.moisture;
-		this.wifiTest=testForm.wifi;			
-		this.barredTest=testForm.barred;  
-	}else{
-		var testForm=this.booking.nonMobileTest;
-		console.log(testForm);
-		this.powerTest=testForm.power;
-		this.displayTest=testForm.display;
-		  this.systemBootTest=testForm.systemBoot;
-		  this.audioTest=testForm.audio;
-		  this.keyboardTest=testForm.keyboard;
-		this.touchpadtest=testForm.touchpad;
-		this.wifiTest=testForm.wifi;
-		this.portTest=testForm.port;
-		this.webCamTest=testForm.webcam;
-		  this.battTest=testForm.battery;
-		this.harddriveTest=testForm.HDD;
-	}
+// 	if (this.device == 'Phone'||this.device =='Tablet'){
+// 		var testForm=this.booking.mobileTest;
+// 		console.log(testForm);
+// 		  this.sdTest=testForm.SD;
+// 		  this.frontCamTest=testForm.frontCam;
+// 		  this.rearCamTest=testForm.rearCam;
+// 		  this.homeTest=testForm.home;
+// 		  this.volumeTest=testForm.volume;
+// 		this.vibrateTest=testForm.vibrate;
+// 		this.lockTest=testForm.lock;
+// 		this.lightSensorTest=testForm.vibrate;
+// 		this.earpieceTest=testForm.earpiece;
+// 		this.speakerTest=testForm.speaker;
+// 		this.micTest=testForm.microphone;
+// 		this.headphoneTest=testForm.headphone;
+// 		this.moistureTest=testForm.moisture;
+// 		this.wifiTest=testForm.wifi;			
+// 		this.barredTest=testForm.barred;  
+// 	}else{
+// 		var testForm=this.booking.nonMobileTest;
+// 		console.log(testForm);
+// 		this.powerTest=testForm.power;
+// 		this.displayTest=testForm.display;
+// 		  this.systemBootTest=testForm.systemBoot;
+// 		  this.audioTest=testForm.audio;
+// 		  this.keyboardTest=testForm.keyboard;
+// 		this.touchpadtest=testForm.touchpad;
+// 		this.wifiTest=testForm.wifi;
+// 		this.portTest=testForm.port;
+// 		this.webCamTest=testForm.webcam;
+// 		  this.battTest=testForm.battery;
+// 		this.harddriveTest=testForm.HDD;
+// 	}
 
 		
-	//loading.dismiss();
-	if (this.action=="Create Customer"){
-		this.createCustomer(user);
-	}else{
-		this.assignCustomer(user,addData);
-	}
-  }
+// 	//loading.dismiss();
+// 	if (this.action=="Create Customer"){
+// 		this.createCustomer(user);
+// 	}else{
+// 		this.assignCustomer(user,addData);
+// 	}
+//   }
 
-  createCustomer(user){
-	this.booking.phone=user.phone;
-	this.booking.mobile=user.phone2;
-	this.booking.userData.user = user;
-	// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
-		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
-			//+"&properties="+userData;
-	let data = new FormData();
-	data.append("email", user.email);
-	data.append("lastName", user.lastname);
-	data.append("firstName", user.firstname);
-	data.append("birthdate", user.birthdate);
-	data.append("mobile", user.phone);
-	data.append("phone", user.phone2);
-	console.log(data);
-	//   let loading = this.loadingCtrl.create({
-	// 	//content: 'Creating Customer...'
-	//  });
-	//  loading.present();
+//   createCustomer(user){
+// 	this.booking.phone=user.phone;
+// 	this.booking.mobile=user.phone2;
+// 	this.booking.userData.user = user;
+// 	// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+// 		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
+// 			//+"&properties="+userData;
+// 	let data = new FormData();
+// 	data.append("email", user.email);
+// 	data.append("lastName", user.lastname);
+// 	data.append("firstName", user.firstname);
+// 	data.append("birthdate", user.birthdate);
+// 	data.append("mobile", user.phone);
+// 	data.append("phone", user.phone2);
+// 	console.log(data);
+// 	//   let loading = this.loadingCtrl.create({
+// 	// 	//content: 'Creating Customer...'
+// 	//  });
+// 	//  loading.present();
 
-		let xhr = new XMLHttpRequest();
-		//xhr.withCredentials = true;
+// 		let xhr = new XMLHttpRequest();
+// 		//xhr.withCredentials = true;
 	
-		xhr.addEventListener("readystatechange",  () =>{
+// 		xhr.addEventListener("readystatechange",  () =>{
 			
-		  if (xhr.readyState === 4) {
-			console.log(xhr.responseText);
-			let result = JSON.parse(xhr.responseText);
-			console.log(result);
-			console.log(result.id);
-			  if(result.id!=undefined){
-				//loading.dismiss();
-				//localStorage.setItem('authenticated' , JSON.stringify(result));
-				//this.booking.userData.customer_id = result.user_id;
-				console.log(result.id);
-				this.createBooking(result.id);
-				//this.navCtrl.setRoot(ConfirmationPage);
-			 }else{
-				//loading.dismiss();
-				console.log(result);
-				let alert = this.alertCtrl.create({
-				  title: 'Error',
-				  subTitle: 'Customer Not Created',
-				  buttons: ['Ok']
-				});
-				alert.present();
-			 }
-		  }
-		});
-		console.log(JSON.stringify(this.booking.userData));
-		var userData = JSON.stringify(this.booking.userData);
-		userData = userData.substring(1,userData.length-1);
-		console.log(userData);
-		// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
-		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
-			//+"&properties="+userData;
-			var url = "https://admin.iphixx.com/api/v1/customers/";
-			xhr.open("POST", url);
-	   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+// 		  if (xhr.readyState === 4) {
+// 			console.log(xhr.responseText);
+// 			let result = JSON.parse(xhr.responseText);
+// 			console.log(result);
+// 			console.log(result.id);
+// 			  if(result.id!=undefined){
+// 				//loading.dismiss();
+// 				//localStorage.setItem('authenticated' , JSON.stringify(result));
+// 				//this.booking.userData.customer_id = result.user_id;
+// 				console.log(result.id);
+// 				this.createBooking(result.id);
+// 				//this.navCtrl.setRoot(ConfirmationPage);
+// 			 }else{
+// 				//loading.dismiss();
+// 				console.log(result);
+// 				let alert = this.alertCtrl.create({
+// 				  title: 'Error',
+// 				  subTitle: 'Customer Not Created',
+// 				  buttons: ['Ok']
+// 				});
+// 				alert.present();
+// 			 }
+// 		  }
+// 		});
+// 		console.log(JSON.stringify(this.booking.userData));
+// 		var userData = JSON.stringify(this.booking.userData);
+// 		userData = userData.substring(1,userData.length-1);
+// 		console.log(userData);
+// 		// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+// 		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
+// 			//+"&properties="+userData;
+// 			var url = "https://admin.iphixx.com/api/v1/customers/";
+// 			xhr.open("POST", url);
+// 	   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 	
-		xhr.send(data);
-		}
+// 		xhr.send(data);
+// 		}
 	
 		createBooking(id){
 			console.log(this.booking.repairKey);
