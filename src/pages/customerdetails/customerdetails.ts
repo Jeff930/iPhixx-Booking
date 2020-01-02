@@ -554,18 +554,18 @@ export class CustomerdetailsPage {
 			data.append('laptopcamrep_selected',this.booking.repairKey.laptopcamrep_selected);
 			data.append('keyboardrep_selected',this.booking.repairKey.keyboardrep_selected);
 			data.append('fanrep_selected',this.booking.repairKey.fanrep_selected);
+			data.append('laptopspeakerrep_selected',this.booking.repairKey.laptopspeakerrep_selected);
 			data.append('datarecovery',this.booking.repairKey.datarecovery);
 			data.append('virusremoval',this.booking.repairKey.virusremoval);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
-			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
+			data.append('virusremoval_withsoftware',this.booking.repairKey.virusremoval_withsoftware);
+			data.append('HDDHalfTeraWithDataTransfer',this.booking.repairKey.HDDHalfTeraWithDataTransfer);
+			data.append('HDDTeraWithDataTransfer',this.booking.repairKey.HDDTeraWithDataTransfer);
+			data.append('HDDHalfTera',this.booking.repairKey.HDDHalfTera);
+			data.append('HDDTera',this.booking.repairKey.HDDTera);
+			data.append('SSDHalfTeraWithDataTransfer',this.booking.repairKey.SSDHalfTeraWithDataTransfer);
+			data.append('SSDTeraWithDataTransfer',this.booking.repairKey.SSDTeraWithDataTransfer);
+			data.append('SSDHalfTera',this.booking.repairKey.SSDHalfTera);
+			data.append('SSDTera',this.booking.repairKey.SSDTera);
 
 			//Gaming Consoles
 
