@@ -446,68 +446,68 @@ export class CustomerdetailsPage {
 // 	}
 //   }
 
-//   createCustomer(user){
-// 	this.booking.phone=user.phone;
-// 	this.booking.mobile=user.phone2;
-// 	this.booking.userData.user = user;
-// 	// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
-// 		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
-// 			//+"&properties="+userData;
-// 	let data = new FormData();
-// 	data.append("email", user.email);
-// 	data.append("lastName", user.lastname);
-// 	data.append("firstName", user.firstname);
-// 	data.append("birthdate", user.birthdate);
-// 	data.append("mobile", user.phone);
-// 	data.append("phone", user.phone2);
-// 	console.log(data);
-// 	//   let loading = this.loadingCtrl.create({
-// 	// 	//content: 'Creating Customer...'
-// 	//  });
-// 	//  loading.present();
+  createCustomer(user){
+	this.booking.phone=user.phone;
+	this.booking.mobile=user.phone2;
+	this.booking.userData.user = user;
+	// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
+			//+"&properties="+userData;
+	let data = new FormData();
+	data.append("email", user.email);
+	data.append("lastName", user.lastname);
+	data.append("firstName", user.firstname);
+	data.append("birthdate", user.birthdate);
+	data.append("mobile", user.phone);
+	data.append("phone", user.phone2);
+	console.log(data);
+	//   let loading = this.loadingCtrl.create({
+	// 	//content: 'Creating Customer...'
+	//  });
+	//  loading.present();
 
-// 		let xhr = new XMLHttpRequest();
-// 		//xhr.withCredentials = true;
+		let xhr = new XMLHttpRequest();
+		//xhr.withCredentials = true;
 	
-// 		xhr.addEventListener("readystatechange",  () =>{
+		xhr.addEventListener("readystatechange",  () =>{
 			
-// 		  if (xhr.readyState === 4) {
-// 			console.log(xhr.responseText);
-// 			let result = JSON.parse(xhr.responseText);
-// 			console.log(result);
-// 			console.log(result.id);
-// 			  if(result.id!=undefined){
-// 				//loading.dismiss();
-// 				//localStorage.setItem('authenticated' , JSON.stringify(result));
-// 				//this.booking.userData.customer_id = result.user_id;
-// 				console.log(result.id);
-// 				this.createBooking(result.id);
-// 				//this.navCtrl.setRoot(ConfirmationPage);
-// 			 }else{
-// 				//loading.dismiss();
-// 				console.log(result);
-// 				let alert = this.alertCtrl.create({
-// 				  title: 'Error',
-// 				  subTitle: 'Customer Not Created',
-// 				  buttons: ['Ok']
-// 				});
-// 				alert.present();
-// 			 }
-// 		  }
-// 		});
-// 		console.log(JSON.stringify(this.booking.userData));
-// 		var userData = JSON.stringify(this.booking.userData);
-// 		userData = userData.substring(1,userData.length-1);
-// 		console.log(userData);
-// 		// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
-// 		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
-// 			//+"&properties="+userData;
-// 			var url = "https://admin.iphixx.com/api/v1/customers/";
-// 			xhr.open("POST", url);
-// 	   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
+		  if (xhr.readyState === 4) {
+			console.log(xhr.responseText);
+			let result = JSON.parse(xhr.responseText);
+			console.log(result);
+			console.log(result.id);
+			  if(result.id!=undefined){
+				//loading.dismiss();
+				//localStorage.setItem('authenticated' , JSON.stringify(result));
+				//this.booking.userData.customer_id = result.user_id;
+				console.log(result.id);
+				this.createBooking(result.id);
+				//this.navCtrl.setRoot(ConfirmationPage);
+			 }else{
+				//loading.dismiss();
+				console.log(result);
+				let alert = this.alertCtrl.create({
+				  title: 'Error',
+				  subTitle: 'Customer Not Created',
+				  buttons: ['Ok']
+				});
+				alert.present();
+			 }
+		  }
+		});
+		console.log(JSON.stringify(this.booking.userData));
+		var userData = JSON.stringify(this.booking.userData);
+		userData = userData.substring(1,userData.length-1);
+		console.log(userData);
+		// var url = "https://cors-anywhere.herokuapp.com/https://iphixx.repairshopr.com/api/v1/customers?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670&email="+
+		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
+			//+"&properties="+userData;
+			var url = "https://admin.iphixx.com/api/v1/customers/";
+			xhr.open("POST", url);
+	   // xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/sign-in");
 	
-// 		xhr.send(data);
-// 		}
+		xhr.send(data);
+		}
 	
 		createBooking(id){
 			console.log(this.booking.repairKey);
