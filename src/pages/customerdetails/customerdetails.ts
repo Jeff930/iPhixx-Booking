@@ -447,6 +447,7 @@ export class CustomerdetailsPage {
 //   }
 
   createCustomer(user){
+	console.log(user);
 	this.booking.phone=user.phone;
 	this.booking.mobile=user.phone2;
 	this.booking.userData.user = user;
@@ -461,10 +462,10 @@ export class CustomerdetailsPage {
 	data.append("mobile", user.phone);
 	data.append("phone", user.phone2);
 	console.log(data);
-	//   let loading = this.loadingCtrl.create({
-	// 	//content: 'Creating Customer...'
-	//  });
-	//  loading.present();
+	  let loading = this.loadingCtrl.create({
+		//content: 'Creating Customer...'
+	 });
+	 loading.present();
 
 		let xhr = new XMLHttpRequest();
 		//xhr.withCredentials = true;
@@ -477,14 +478,14 @@ export class CustomerdetailsPage {
 			console.log(result);
 			console.log(result.id);
 			  if(result.id!=undefined){
-				//loading.dismiss();
+				loading.dismiss();
 				//localStorage.setItem('authenticated' , JSON.stringify(result));
 				//this.booking.userData.customer_id = result.user_id;
 				console.log(result.id);
-				this.createBooking(result.id);
+				//this.createBooking(result.id);
 				//this.navCtrl.setRoot(ConfirmationPage);
 			 }else{
-				//loading.dismiss();
+				loading.dismiss();
 				console.log(result);
 				let alert = this.alertCtrl.create({
 				  title: 'Error',
