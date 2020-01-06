@@ -482,7 +482,7 @@ export class CustomerdetailsPage {
 				//localStorage.setItem('authenticated' , JSON.stringify(result));
 				//this.booking.userData.customer_id = result.user_id;
 				console.log(result.id);
-				//this.createBooking(result.id);
+				this.createBooking(result.id);
 				//this.navCtrl.setRoot(ConfirmationPage);
 			 }else{
 				loading.dismiss();
