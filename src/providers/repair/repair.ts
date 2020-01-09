@@ -19,6 +19,7 @@ export class RepairProvider {
   model:string;
   device:string;
   other=0;
+  selectedModel;
 
   repairs;
   modelrepairs =[];
@@ -109,6 +110,7 @@ export class RepairProvider {
     console.log(this.models[i].model_number+this.booking.userData.modelNum);
     if (this.booking.userData.model == this.models[i].model_name&&this.booking.userData.modelNum == this.models[i].model_number){
       console.log("true")
+      this.selectedModel = i;
       if (this.models[i].screenrep_price!=null){
         this.prices.push(this.models[i].screenrep_price);
         this.modelrepairs.push("Screen Replacement");
