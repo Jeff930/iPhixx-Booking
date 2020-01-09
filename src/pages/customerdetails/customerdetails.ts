@@ -553,18 +553,18 @@ export class CustomerdetailsPage {
 
 			//prices
 			data.append('screenrep_price',this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("headrep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("earrep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("powerrep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("rearcamrep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("frontcamrep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("homerep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("microphone_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("chargeport_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("volumerep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("battrep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
+			data.append("headrep_price",this.repair.models[this.repair.selectedModel].headrep_price);
+			data.append("earrep_price",this.repair.models[this.repair.selectedModel].earrep_price);
+			data.append("powerrep_price",this.repair.models[this.repair.selectedModel].powerrep_price);
+			data.append("rearcamrep_price",this.repair.models[this.repair.selectedModel].rearcamrep_price);
+			data.append("frontcamrep_price",this.repair.models[this.repair.selectedModel].frontcamrep_price);
+			data.append("homerep_price",this.repair.models[this.repair.selectedModel].homerep_price);
+			data.append("microphone_price",this.repair.models[this.repair.selectedModel].microphone_price);
+			data.append("chargeport_price",this.repair.models[this.repair.selectedModel].chargeport_price);
+			data.append("volumerep_price",this.repair.models[this.repair.selectedModel].volumerep_price);
+			data.append("battrep_price",this.repair.models[this.repair.selectedModel].battrep_price);
 			data.append("signalrep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
-			data.append("backglassrep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
+			data.append("backglassrep_price",this.repair.models[this.repair.selectedModel].backglassrep_price);
 			data.append("screenOffer", '15.00');
 			data.append("phoneOffer", '50.00');
 
