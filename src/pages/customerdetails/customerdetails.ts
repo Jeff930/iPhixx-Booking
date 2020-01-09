@@ -6,7 +6,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { NavigationProvider } from '../../providers/navigation/navigation';
 
 import { BookingProvider } from '../../providers/booking/booking';
-
+import { RepairProvider } from '../../providers/repair/repair';
 import { ModalController } from 'ionic-angular';
 import { CartProvider } from '../../providers/cart/cart';
 import { ConfirmationPage } from '../../pages/confirmation/confirmation';
@@ -118,7 +118,8 @@ export class CustomerdetailsPage {
     public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder,
     public navParams: NavParams,
-    public booking: BookingProvider,
+	public booking: BookingProvider,
+	public repair: RepairProvider,
 		public alertCtrl: AlertController,
 		public navigation: NavigationProvider,
 		public modalCtrl : ModalController,
@@ -547,6 +548,23 @@ export class CustomerdetailsPage {
 			data.append("battrep_selected",this.booking.repairKey.battrep_selected);
 			data.append("signalrep_selected",this.booking.repairKey.signalrep_selected);
 			data.append("backglassrep_selected",this.booking.repairKey.backglassrep_selected);
+			data.append("screenOffer", this.booking.userData.screenoffer);
+			data.append("phoneOffer", this.booking.userData.phoneoffer);
+
+			//prices
+			data.append('screenrep_price',this.repair.screenrep_price);
+			data.append("headrep_price",this.booking.repairKey.headrep_selected);
+			data.append("earrep_price",this.booking.repairKey.earrep_selected);
+			data.append("powerrep_price",this.booking.repairKey.powerrep_selected);
+			data.append("rearcamrep_price",this.booking.repairKey.rearcamrep_selected);
+			data.append("frontcamrep_price",this.booking.repairKey.frontcamrep_selected);
+			data.append("homerep_price",this.booking.repairKey.homerep_selected);
+			data.append("microphone_price",this.booking.repairKey.microphone_selected);
+			data.append("chargeport_price",this.booking.repairKey.chargeport_selected);
+			data.append("volumerep_price",this.booking.repairKey.volumerep_selected);
+			data.append("battrep_price",this.booking.repairKey.battrep_selected);
+			data.append("signalrep_price",this.booking.repairKey.signalrep_selected);
+			data.append("backglassrep_price",this.booking.repairKey.backglassrep_selected);
 			data.append("screenOffer", this.booking.userData.screenoffer);
 			data.append("phoneOffer", this.booking.userData.phoneoffer);
 
