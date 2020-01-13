@@ -551,7 +551,7 @@ export class CustomerdetailsPage {
 			data.append("screenOffer", this.booking.userData.screenoffer);
 			data.append("phoneOffer", this.booking.userData.phoneoffer);
 
-			//prices
+			//prices of mobile
 			data.append('screenrep_price',this.repair.models[this.repair.selectedModel].screenrep_price);
 			data.append("headrep_price",this.repair.models[this.repair.selectedModel].headrep_price);
 			data.append("earrep_price",this.repair.models[this.repair.selectedModel].earrep_price);
@@ -565,8 +565,8 @@ export class CustomerdetailsPage {
 			data.append("battrep_price",this.repair.models[this.repair.selectedModel].battrep_price);
 			data.append("signalrep_price",this.repair.models[this.repair.selectedModel].screenrep_price);
 			data.append("backglassrep_price",this.repair.models[this.repair.selectedModel].backglassrep_price);
-			data.append("screenOffer", '15.00');
-			data.append("phoneOffer", '50.00');
+			data.append("screenOffer_price", '15.00');
+			data.append("phoneOffer_price", '50.00');
 
 			//Laptop
 			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
