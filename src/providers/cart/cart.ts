@@ -38,6 +38,8 @@ export class CartProvider {
     battrep_selected='0';
     signalrep_selected='0';
     backglassrep_selected='0';
+    harddriverep_selected='0';
+    hdmirep_selected='0';
   
   constructor(public repair: RepairProvider,public booking:BookingProvider,public navigation:NavigationProvider) {
     console.log('Hello CartProvider Provider');
@@ -96,6 +98,12 @@ export class CartProvider {
       }
       if (selectedRepair=="Back Glass Repair"){
         this.backglassrep_selected = '1';
+      }
+      if (selectedRepair=="Hard Drive Repair"){
+        this.harddriverep_selected = '1';
+      }
+      if (selectedRepair=="HDMI Port Replacement"){
+        this.hdmirep_selected = '1';
       }
       this.selectedIndex.push(index);
       console.log(price);
@@ -176,6 +184,8 @@ export class CartProvider {
       'battrep_selected':this.battrep_selected,
       'signalrep_selected':this.signalrep_selected,
       'backglassrep_selected':this.backglassrep_selected,
+      'harddriverep_selected':this.harddriverep_selected,
+      'hdmirep_selected':this.hdmirep_selected,
     }
     console.log(this.booking.repairKey);
   }
@@ -272,6 +282,12 @@ export class CartProvider {
         this.signalrep_selected = '0';
       }
       if (this.selectedRepairs[index]=="Back Glass Repair"){
+        this.backglassrep_selected = '0';
+      }
+      if (this.selectedRepairs[index]=="Hard Drive Repair"){
+        this.signalrep_selected = '0';
+      }
+      if (this.selectedRepairs[index]=="HDMI Port Replacement"){
         this.backglassrep_selected = '0';
       }
       this.selectedRepairs.splice(index, 1);
