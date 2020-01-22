@@ -571,7 +571,7 @@ export class CustomerdetailsPage {
 			}
 
 			//Laptop
-			if ( this.booking.userData.deviceKey == '5'){
+			if ( this.booking.userData.deviceKey == '3'){
 			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
 			data.append('laptopcamrep_selected',this.booking.repairKey.laptopcamrep_selected);
 			data.append('keyboardrep_selected',this.booking.repairKey.keyboardrep_selected);
