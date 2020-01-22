@@ -69,6 +69,28 @@ export class RepairProvider {
             if (result.result.length != 0){
               this.rawPrice = result.result[0];
               console.log(this.rawPrice.laptopscreenrep_price);
+              for (var i=0;i<this.repairs.length;i++){
+                this.modelrepairs.push(this.repairs[i].repair);
+                this.deposit.push(this.repairs[i].deposit);}
+          
+                this.prices.push(this.rawPrice.laptopscreenrep_price);
+                this.prices.push(this.rawPrice.keyboardrep_price);
+                this.prices.push(this.rawPrice.fanrep_price);
+                this.prices.push(this.rawPrice.laptopcamrep_price);
+                this.prices.push(this.rawPrice.laptopspeakerrep_price);
+                this.prices.push(this.rawPrice.laptopchargerep_price);
+                this.prices.push(this.rawPrice.datarecovery);
+                this.prices.push(this.rawPrice.laptopspeakerrep_price);
+                this.prices.push(this.rawPrice.laptopbatteryrep_price);
+                this.prices.push(this.rawPrice.virusremoval_withsoftware);
+                this.prices.push(this.rawPrice.HDDHalfTera);
+                this.prices.push(this.rawPrice.HDDTera);
+                this.prices.push(this.rawPrice.SSDHalfTera);
+                this.prices.push(this.rawPrice.SSDTera);
+                this.prices.push(this.rawPrice.HDDHalfTeraWithDataTransfer);
+                this.prices.push(this.rawPrice.HDDTeraWithDataTransfer);
+                this.prices.push(this.rawPrice.SSDHalfTeraWithDataTransfer);
+                this.prices.push(this.rawPrice.SSDTeraWithDataTransfer);
             }
             
           }
@@ -76,28 +98,7 @@ export class RepairProvider {
         xhr.open("GET", "https://admin.iphixx.com/api/v1/bookings/laptop-prices");
         xhr.send();
 
-      for (var i=0;i<this.repairs.length;i++){
-      this.modelrepairs.push(this.repairs[i].repair);
-      this.deposit.push(this.repairs[i].deposit);}
-
-      this.prices.push(this.rawPrice.laptopscreenrep_price);
-      this.prices.push(this.rawPrice.keyboardrep_price);
-      this.prices.push(this.rawPrice.fanrep_price);
-      this.prices.push(this.rawPrice.laptopcamrep_price);
-      this.prices.push(this.rawPrice.laptopspeakerrep_price);
-      this.prices.push(this.rawPrice.laptopchargerep_price);
-      this.prices.push(this.rawPrice.datarecovery);
-      this.prices.push(this.rawPrice.laptopspeakerrep_price);
-      this.prices.push(this.rawPrice.laptopbatteryrep_price);
-      this.prices.push(this.rawPrice.virusremoval_withsoftware);
-      this.prices.push(this.rawPrice.HDDHalfTera);
-      this.prices.push(this.rawPrice.HDDTera);
-      this.prices.push(this.rawPrice.SSDHalfTera);
-      this.prices.push(this.rawPrice.SSDTera);
-      this.prices.push(this.rawPrice.HDDHalfTeraWithDataTransfer);
-      this.prices.push(this.rawPrice.HDDTeraWithDataTransfer);
-      this.prices.push(this.rawPrice.SSDHalfTeraWithDataTransfer);
-      this.prices.push(this.rawPrice.SSDTeraWithDataTransfer);
+     
     }else{ 
       if (this.booking.userData.device=='Phone'
           ||this.booking.userData.device=='Tablet'
