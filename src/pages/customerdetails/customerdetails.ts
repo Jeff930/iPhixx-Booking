@@ -551,8 +551,8 @@ export class CustomerdetailsPage {
 			data.append("screenOffer", this.booking.userData.screenoffer);
 			data.append("phoneOffer", this.booking.userData.phoneoffer);
 
-			//prices of mobile
-			if ( this.booking.userData.deviceKey == '1' ||  this.booking.userData.deviceKey == '2'){
+			//prices of mobile and MacBook
+			if ( this.booking.userData.deviceKey == '1' ||  this.booking.userData.deviceKey == '2' ||  this.booking.userData.deviceKey == '4'){
 			data.append('screenrep_price',this.repair.models[this.repair.selectedModel].screenrep_price);
 			data.append("headrep_price",this.repair.models[this.repair.selectedModel].headrep_price);
 			data.append("earrep_price",this.repair.models[this.repair.selectedModel].earrep_price);
@@ -571,6 +571,7 @@ export class CustomerdetailsPage {
 			}
 
 			//Laptop
+			if ( this.booking.userData.deviceKey == '5'){
 			data.append('laptopscreenrep_selected',this.booking.repairKey.laptopscreenrep_selected);
 			data.append('laptopcamrep_selected',this.booking.repairKey.laptopcamrep_selected);
 			data.append('keyboardrep_selected',this.booking.repairKey.keyboardrep_selected);
@@ -587,14 +588,17 @@ export class CustomerdetailsPage {
 			data.append('SSDTeraWithDataTransfer',this.booking.repairKey.SSDTeraWithDataTransfer);
 			data.append('SSDHalfTera',this.booking.repairKey.SSDHalfTera);
 			data.append('SSDTera',this.booking.repairKey.SSDTera);
+			}
 
 			//repair of Gaming Consoles
 			data.append('harddriverep_selected',this.booking.repairKey.harddriverep_selected);
 			data.append('hdmirep_selected',this.booking.repairKey.hdmirep_selected);
 
 			//prices of Gaming Consoles
+			if ( this.booking.userData.deviceKey == '5'){
 			data.append('harddrive_rep',this.repair.models[this.repair.selectedModel].harddrive_rep);
 			data.append("hdmirep_price",this.repair.models[this.repair.selectedModel].hdmirep_price);
+			}
 
 			if (this.device == 'Phone'||this.device =='Tablet')
 				data.append("test",JSON.stringify(this.booking.mobileTest));
