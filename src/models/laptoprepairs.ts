@@ -1,5 +1,5 @@
 export const laptoprepairs = [
-	{ repair : 'Screen Replacement',
+	{ repair : 'Laptop Screen Replacement',
 	  price:'75.00',
 		deposit: '€75.00 Deposit Required'},
 	{ repair : 'Keyboard Replacement',
