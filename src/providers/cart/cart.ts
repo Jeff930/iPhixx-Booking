@@ -40,6 +40,22 @@ export class CartProvider {
     backglassrep_selected='0';
     harddriverep_selected='0';
     hdmirep_selected='0';
+    laptopscreenrep_selected='0';
+		laptopcamrep_selected='0';
+		keyboardrep_selected='0';
+		fanrep_selected='0';
+		laptopspeakerrep_selected='0';
+		datarecovery='0';
+		virusremoval='0';
+		virusremoval_withsoftware='0';
+		HDDHalfTeraWithDataTransfer='0';
+		HDDTeraWithDataTransfer='0';
+		HDDHalfTera='0';
+		HDDTera='0';
+		SSDHalfTeraWithDataTransfer='0';
+		SSDTeraWithDataTransfer='0';
+		SSDHalfTera='0';
+		SSDTera='0';
   
   constructor(public repair: RepairProvider,public booking:BookingProvider,public navigation:NavigationProvider) {
     console.log('Hello CartProvider Provider');
