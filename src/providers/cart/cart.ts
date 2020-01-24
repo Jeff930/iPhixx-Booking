@@ -78,7 +78,6 @@ export class CartProvider {
       if (selectedRepair=="Screen Replacement"){
         this.screenrep_selected = '1';
       }
-      console.log("selected2",this.screenrep_selected);
       if (selectedRepair=="Headphone Repair"){
         this.headrep_selected = '1';
       }
@@ -121,6 +120,60 @@ export class CartProvider {
       if (selectedRepair=="HDMI Port Replacement"){
         this.hdmirep_selected = '1';
       }
+
+      if (selectedRepair=="Laptop Screen Replacement"){
+        this.screenrep_selected = '1';
+      }
+      if (selectedRepair=="Keyboard Replacement"){
+        this.headrep_selected = '1';
+      }
+      if (selectedRepair=="Fan Replacement"){
+        this.earrep_selected = '1';
+      }
+      if (selectedRepair=="Laptop Camera Repair"){
+        this.powerrep_selected = '1';
+      }
+      if (selectedRepair=="Laptop Speaker Repair"){
+        this.rearcamrep_selected = '1';
+      }
+      if (selectedRepair=="Laptop Charging Port Repair"){
+        this.frontcamrep_selected = '1';
+      }
+      if (selectedRepair=="Data Recovery"){
+        this.homerep_selected = '1';
+      }
+      if (selectedRepair=="Battery Replacement"){
+        this.microphone_selected = '1';
+      }
+      if (selectedRepair=="Virus Removal with 1 free year of Anti-Virus Software"){
+        this.chargeport_selected = '1';
+      }
+      if (selectedRepair=="Hard Drive Replacement - 500GB HDD (Operating System Reinstall)"){
+        this.volumerep_selected = '1';
+      }
+      if (selectedRepair=="Hard Drive Replacement - 1TB HDD (Operating System Reinstall)"){
+        this.battrep_selected = '1';
+      }
+      if (selectedRepair=="Hard Drive Replacement - 500GB SSD (Operating System Reinstall)"){
+        this.signalrep_selected = '1';
+      }
+      if (selectedRepair=="Hard Drive Replacement - 1TB SSD (Operating System Reinstall)"){
+        this.backglassrep_selected = '1';
+      }
+      if (selectedRepair=="Hard Drive Replacement - 500GB HDD (Operating System & Data Transfer)"){
+        this.harddriverep_selected = '1';
+      }
+      if (selectedRepair=="Hard Drive Replacement - 1TB HDD (Operating System & Data Transfer)"){
+        this.hdmirep_selected = '1';
+      }
+      if (selectedRepair=="HDMI Port Replacement"){
+        this.hdmirep_selected = '1';
+      }
+      if (selectedRepair=="HDMI Port Replacement"){
+        this.hdmirep_selected = '1';
+      }
+
+      
       this.selectedIndex.push(index);
       console.log(price);
       console.log(index);
