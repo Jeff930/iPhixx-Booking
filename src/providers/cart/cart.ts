@@ -45,7 +45,8 @@ export class CartProvider {
 		laptopcamrep_selected='0';
 		keyboardrep_selected='0';
 		fanrep_selected='0';
-		laptopspeakerrep_selected='0';
+    laptopspeakerrep_selected='0';
+    laptopchargeport_selected='0';
 		datarecovery='0';
 		virusremoval='0';
 		virusremoval_withsoftware='0';
@@ -124,12 +125,7 @@ export class CartProvider {
 
       if (selectedRepair=="Laptop Screen Replacement"){
         this.laptopscreenrep_selected = '1';
-        ='0';
 		='0';
-		='0';
-		='0';
-		laptopspeakerrep_selected='0';
-		datarecovery='0';
 		virusremoval='0';
 		virusremoval_withsoftware='0';
 		HDDHalfTeraWithDataTransfer='0';
@@ -151,13 +147,13 @@ export class CartProvider {
         this.laptopcamrep_selected = '1';
       }
       if (selectedRepair=="Laptop Speaker Repair"){
-        this.rearcamrep_selected = '1';
+        this.laptopspeakerrep_selected = '1';
       }
       if (selectedRepair=="Laptop Charging Port Repair"){
-        this.frontcamrep_selected = '1';
+        this.laptopchargeport_selected = '1';
       }
       if (selectedRepair=="Data Recovery"){
-        this.homerep_selected = '1';
+        this.datarecovery = '1';
       }
       if (selectedRepair=="Battery Replacement"){
         this.microphone_selected = '1';
