@@ -577,6 +577,7 @@ export class CustomerdetailsPage {
 			data.append('keyboardrep_selected',this.booking.repairKey.keyboardrep_selected);
 			data.append('fanrep_selected',this.booking.repairKey.fanrep_selected);
 			data.append('laptopspeakerrep_selected',this.booking.repairKey.laptopspeakerrep_selected);
+			data.append('laptopchargeport_selected',this.booking.repairKey.laptopchargeport_selected);
 			data.append('datarecovery',this.booking.repairKey.datarecovery);
 			data.append('virusremoval',this.booking.repairKey.virusremoval);
 			data.append('virusremoval_withsoftware',this.booking.repairKey.virusremoval_withsoftware);
