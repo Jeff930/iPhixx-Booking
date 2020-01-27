@@ -123,16 +123,32 @@ export class CartProvider {
       }
 
       if (selectedRepair=="Laptop Screen Replacement"){
-        this.screenrep_selected = '1';
+        this.laptopscreenrep_selected = '1';
+        ='0';
+		='0';
+		='0';
+		='0';
+		laptopspeakerrep_selected='0';
+		datarecovery='0';
+		virusremoval='0';
+		virusremoval_withsoftware='0';
+		HDDHalfTeraWithDataTransfer='0';
+		HDDTeraWithDataTransfer='0';
+		HDDHalfTera='0';
+		HDDTera='0';
+		SSDHalfTeraWithDataTransfer='0';
+		SSDTeraWithDataTransfer='0';
+		SSDHalfTera='0';
+		SSDTera='0';
       }
       if (selectedRepair=="Keyboard Replacement"){
-        this.headrep_selected = '1';
+        this.keyboardrep_selected = '1';
       }
       if (selectedRepair=="Fan Replacement"){
-        this.earrep_selected = '1';
+        this.fanrep_selected = '1';
       }
       if (selectedRepair=="Laptop Camera Repair"){
-        this.powerrep_selected = '1';
+        this.laptopcamrep_selected = '1';
       }
       if (selectedRepair=="Laptop Speaker Repair"){
         this.rearcamrep_selected = '1';
