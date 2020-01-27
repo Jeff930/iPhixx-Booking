@@ -40,6 +40,7 @@ export class CartProvider {
     backglassrep_selected='0';
     harddriverep_selected='0';
     hdmirep_selected='0';
+    
     laptopscreenrep_selected='0';
 		laptopcamrep_selected='0';
 		keyboardrep_selected='0';
@@ -166,10 +167,10 @@ export class CartProvider {
       if (selectedRepair=="Hard Drive Replacement - 1TB HDD (Operating System & Data Transfer)"){
         this.hdmirep_selected = '1';
       }
-      if (selectedRepair=="HDMI Port Replacement"){
+      if (selectedRepair=="Hard Drive Replacement - 500GB SSD (Operating System & Data Transfer)"){
         this.hdmirep_selected = '1';
       }
-      if (selectedRepair=="HDMI Port Replacement"){
+      if (selectedRepair=="Hard Drive Replacement - 1TB SSD (Operating System & Data Transfer)"){
         this.hdmirep_selected = '1';
       }
 
