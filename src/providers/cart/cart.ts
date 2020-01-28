@@ -125,17 +125,6 @@ export class CartProvider {
 
       if (selectedRepair=="Laptop Screen Replacement"){
         this.laptopscreenrep_selected = '1';
-	
-		='0';
-		='0';
-		='0';
-		='0';
-		='0';
-		='0';
-		='0';
-		='0';
-		='0';
-		='0';
       }
       if (selectedRepair=="Keyboard Replacement"){
         this.keyboardrep_selected = '1';
