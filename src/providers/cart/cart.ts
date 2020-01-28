@@ -264,7 +264,7 @@ export class CartProvider {
       'laptopspeakerrep_selected':this.laptopspeakerrep_selected,
       'laptopchargeport_selected':this.laptopchargeport_selected,
       'datarecovery':this.datarecovery,
-      'virusremoval':this.virusremoval,
+      'laptopbattrep_selected':this.laptopbattrep_selected,
       'virusremoval_withsoftware':this.virusremoval_withsoftware,
       'HDDHalfTeraWithDataTransfer':this.HDDHalfTeraWithDataTransfer,
       'HDDTeraWithDataTransfer':this.HDDTeraWithDataTransfer,
