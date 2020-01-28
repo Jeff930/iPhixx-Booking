@@ -125,17 +125,17 @@ export class CartProvider {
 
       if (selectedRepair=="Laptop Screen Replacement"){
         this.laptopscreenrep_selected = '1';
+	
 		='0';
-		virusremoval='0';
-		virusremoval_withsoftware='0';
-		HDDHalfTeraWithDataTransfer='0';
-		HDDTeraWithDataTransfer='0';
-		HDDHalfTera='0';
-		HDDTera='0';
-		SSDHalfTeraWithDataTransfer='0';
-		SSDTeraWithDataTransfer='0';
-		SSDHalfTera='0';
-		SSDTera='0';
+		='0';
+		='0';
+		='0';
+		='0';
+		='0';
+		='0';
+		='0';
+		='0';
+		='0';
       }
       if (selectedRepair=="Keyboard Replacement"){
         this.keyboardrep_selected = '1';
@@ -159,31 +159,31 @@ export class CartProvider {
         this.microphone_selected = '1';
       }
       if (selectedRepair=="Virus Removal with 1 free year of Anti-Virus Software"){
-        this.chargeport_selected = '1';
+        this.virusremoval_withsoftware = '1';
       }
       if (selectedRepair=="Hard Drive Replacement - 500GB HDD (Operating System Reinstall)"){
-        this.volumerep_selected = '1';
+        this.HDDHalfTera = '1';
       }
       if (selectedRepair=="Hard Drive Replacement - 1TB HDD (Operating System Reinstall)"){
-        this.battrep_selected = '1';
+        this.HDDTera = '1';
       }
       if (selectedRepair=="Hard Drive Replacement - 500GB SSD (Operating System Reinstall)"){
-        this.signalrep_selected = '1';
+        this.SSDHalfTera = '1';
       }
       if (selectedRepair=="Hard Drive Replacement - 1TB SSD (Operating System Reinstall)"){
-        this.backglassrep_selected = '1';
+        this.SSDTera = '1';
       }
       if (selectedRepair=="Hard Drive Replacement - 500GB HDD (Operating System & Data Transfer)"){
-        this.harddriverep_selected = '1';
+        this.HDDHalfTeraWithDataTransfer = '1';
       }
       if (selectedRepair=="Hard Drive Replacement - 1TB HDD (Operating System & Data Transfer)"){
-        this.hdmirep_selected = '1';
+        this.HDDTeraWithDataTransfer = '1';
       }
       if (selectedRepair=="Hard Drive Replacement - 500GB SSD (Operating System & Data Transfer)"){
-        this.hdmirep_selected = '1';
+        this.SSDHalfTeraWithDataTransfer = '1';
       }
       if (selectedRepair=="Hard Drive Replacement - 1TB SSD (Operating System & Data Transfer)"){
-        this.hdmirep_selected = '1';
+        this.SSDTeraWithDataTransfer = '1';
       }
 
       
