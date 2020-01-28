@@ -378,6 +378,57 @@ export class CartProvider {
       if (this.selectedRepairs[index]=="HDMI Port Replacement"){
         this.backglassrep_selected = '0';
       }
+
+    
+      if (this.selectedRepairs[index]=="Screen Replacement"){
+        this.laptopscreenrep_selected = '0';
+      }
+      if (this.selectedRepairs[index]=="Headphone Repair"){
+        this.laptopcamrep_selected = '0';
+      }
+      if (this.selectedRepairs[index]=="Earpiece Repair"){
+        this.keyboardrep_selected = '0';
+      }
+      if (this.selectedRepairs[index]=="Power Button Repair"){
+        this.fanrep_selected = '0';
+      }
+      if (this.selectedRepairs[index]=="Rear Camera Repair"){
+        this.laptopspeakerrep_selected = '0';
+      }
+      if (this.selectedRepairs[index]=="Front Camera Repair"){
+        this.laptopchargeport_selected = '0';
+      }
+      if (this.selectedRepairs[index]=="Home Button Repair"){
+        this.datarecovery = '0';
+      }
+      if (this.selectedRepairs[index]=="Microphone Repair"){
+        this.virusremoval_withsoftware = '0';
+      }
+      if (this.selectedRepairs[index]=="Charger Port Repair"){
+        this.HDDHalfTeraWithDataTransfer = '0';
+      }
+      if (this.selectedRepairs[index]=="Volume Button Repair"){
+        this.HDDTeraWithDataTransfer = '0';
+      }
+      if (this.selectedRepairs[index]=="Battery Replacement"){
+        this.HDDHalfTera = '0';
+      }
+      if (this.selectedRepairs[index]=="Cellular Signal Repair"){
+        this.HDDTera = '0';
+      }
+      if (this.selectedRepairs[index]=="Back Glass Repair"){
+        this.SSDTeraWithDataTransfer = '0';
+      }
+      if (this.selectedRepairs[index]=="Hard Drive Repair"){
+        this.SSDTeraWithDataTransfer = '0';
+      }
+      if (this.selectedRepairs[index]=="HDMI Port Replacement"){
+        this.SSDHalfTera = '0';
+      }
+      if (this.selectedRepairs[index]=="HDMI Port Replacement"){
+        this.SSDTera = '0';
+      }
+
       this.selectedRepairs.splice(index, 1);
       this.costs.splice(index,1);
   }else{
