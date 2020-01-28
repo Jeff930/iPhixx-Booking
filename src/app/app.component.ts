@@ -43,9 +43,12 @@ export class MyApp {
   otherDev = 0;
   otherRepair = 0;
   agent;
+  username;
   constructor( platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public navigation: NavigationProvider, public booking: BookingProvider) {
 
-    
+    if (localStorage.getItem('authenticated')!=null)
+      this.username = JSON.parse(localStorage.getItem('authenticated')).agent_username;
+
     // localStorage.removeItem('authenticated');
     splashScreen.show();
     platform.ready().then(() => {
@@ -65,7 +68,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'Book A Repair', component: HomePage },
-      { title: 'Customer Collection', component: RepairnumberPage },
+      { title: 'Collection', component: RepairnumberPage },
 
     ];
     this.loginPages = [ 
