@@ -80,7 +80,6 @@ export class RepairProvider {
                 this.prices.push(this.rawPrice.laptopspeakerrep_price);
                 this.prices.push(this.rawPrice.laptopchargerep_price);
                 this.prices.push(this.rawPrice.datarecovery);
-                this.prices.push(this.rawPrice.laptopspeakerrep_price);
                 this.prices.push(this.rawPrice.laptopbatteryrep_price);
                 this.prices.push(this.rawPrice.virusremoval_withsoftware);
                 this.prices.push(this.rawPrice.HDDHalfTera);
