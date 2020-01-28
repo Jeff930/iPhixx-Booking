@@ -48,7 +48,7 @@ export class CartProvider {
     laptopspeakerrep_selected='0';
     laptopchargeport_selected='0';
 		datarecovery='0';
-		virusremoval='0';
+		laptopbattrep_selected='0';
 		virusremoval_withsoftware='0';
 		HDDHalfTeraWithDataTransfer='0';
 		HDDTeraWithDataTransfer='0';
@@ -380,25 +380,25 @@ export class CartProvider {
       }
 
     
-      if (this.selectedRepairs[index]=="Screen Replacement"){
+      if (this.selectedRepairs[index]=="Laptop Screen Replacement"){
         this.laptopscreenrep_selected = '0';
       }
-      if (this.selectedRepairs[index]=="Headphone Repair"){
+      if (this.selectedRepairs[index]=="Laptop Camera Repair"){
         this.laptopcamrep_selected = '0';
       }
-      if (this.selectedRepairs[index]=="Earpiece Repair"){
+      if (this.selectedRepairs[index]=="Keyboard Replacement"){
         this.keyboardrep_selected = '0';
       }
-      if (this.selectedRepairs[index]=="Power Button Repair"){
+      if (this.selectedRepairs[index]=="Fan Replacement"){
         this.fanrep_selected = '0';
       }
-      if (this.selectedRepairs[index]=="Rear Camera Repair"){
+      if (this.selectedRepairs[index]=="Laptop Speaker Repair"){
         this.laptopspeakerrep_selected = '0';
       }
-      if (this.selectedRepairs[index]=="Front Camera Repair"){
+      if (this.selectedRepairs[index]=="Laptop Charging Port Repair"){
         this.laptopchargeport_selected = '0';
       }
-      if (this.selectedRepairs[index]=="Home Button Repair"){
+      if (this.selectedRepairs[index]=="Data Recovery"){
         this.datarecovery = '0';
       }
       if (this.selectedRepairs[index]=="Microphone Repair"){
