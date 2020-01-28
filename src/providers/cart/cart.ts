@@ -257,6 +257,23 @@ export class CartProvider {
       'backglassrep_selected':this.backglassrep_selected,
       'harddriverep_selected':this.harddriverep_selected,
       'hdmirep_selected':this.hdmirep_selected,
+      'laptopscreenrep_selected':this.laptopscreenrep_selected,
+      'laptopcamrep_selected':this.laptopcamrep_selected,
+      'keyboardrep_selected':this.keyboardrep_selected,
+      'fanrep_selected':this.fanrep_selected,
+      'laptopspeakerrep_selected':this.laptopspeakerrep_selected,
+      'laptopchargeport_selected':this.laptopchargeport_selected,
+      'datarecovery':this.datarecovery,
+      'virusremoval':this.virusremoval,
+      'virusremoval_withsoftware':this.virusremoval_withsoftware,
+      'HDDHalfTeraWithDataTransfer':this.HDDHalfTeraWithDataTransfer,
+      'HDDTeraWithDataTransfer':this.HDDTeraWithDataTransfer,
+      'HDDHalfTera':this.HDDHalfTera,
+      'HDDTera':this.HDDTera,
+      'SSDHalfTeraWithDataTransfer':this.SSDHalfTeraWithDataTransfer,
+      'SSDTeraWithDataTransfer':this.SSDTeraWithDataTransfer,
+      'SSDHalfTera':this.SSDHalfTera,
+      'SSDTera':this.SSDTera,
     }
     console.log(this.booking.repairKey);
   }
