@@ -589,6 +589,24 @@ export class CustomerdetailsPage {
 			data.append('SSDTeraWithDataTransfer',this.booking.repairKey.SSDTeraWithDataTransfer);
 			data.append('SSDHalfTera',this.booking.repairKey.SSDHalfTera);
 			data.append('SSDTera',this.booking.repairKey.SSDTera);
+
+			data.append('laptopscreenrep_price',this.repair.rawPrice.laptopscreenrep_price);
+			data.append('laptopcamrep_selected',this.repair.rawPrice.);
+			data.append('keyboardrep_selected',this.repair.rawPrice.);
+			data.append('fanrep_selected',this.repair.rawPrice.);
+			data.append('laptopspeakerrep_selected',this.repair.rawPrice.);
+			data.append('laptopchargeport_selected',this.repair.rawPrice.);
+			data.append('laptopbattrep_selected',this.repair.rawPrice.);
+			data.append('datarecovery',this.repair.rawPrice.);
+			data.append('virusremoval_withsoftware',this.repair.rawPrice.);
+			data.append('HDDHalfTeraWithDataTransfer',this.repair.rawPrice.);
+			data.append('HDDTeraWithDataTransfer',this.repair.rawPrice.);
+			data.append('HDDHalfTera',this.repair.rawPrice.);
+			data.append('HDDTera',this.repair.rawPrice.);
+			data.append('SSDHalfTeraWithDataTransfer',this.repair.rawPrice.);
+			data.append('SSDTeraWithDataTransfer',this.repair.rawPrice.);
+			data.append('SSDHalfTera',this.repair.rawPrice.);
+			data.append('SSDTera',this.repair.rawPrice.);
 			}
 
 			//repair of Gaming Consoles
