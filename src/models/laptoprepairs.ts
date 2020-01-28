@@ -15,7 +15,7 @@ export const laptoprepairs = [
 	deposit: '€75.00 Deposit Required'},
 	{ repair : 'Data Recovery', price:'129.00',
 	deposit: '€75.00 Deposit Required'},
-	{ repair : 'Battery Replacement', price:'75.00',
+	{ repair : 'Laptop Battery Replacement', price:'75.00',
 	deposit: '€75.00 Deposit Required'},
 	{ repair : 'Virus Removal with 1 free year of Anti-Virus Software', price:'155.00',
 	deposit: ''},
