@@ -596,17 +596,17 @@ export class CustomerdetailsPage {
 			data.append('laptopcamrep_price',this.repair.rawPrice.laptopcamrep_price);
 			data.append('laptopspeakerrep_price',this.repair.rawPrice.laptopspeakerrep_price);
 			data.append('laptopchargerep_price',this.repair.rawPrice.laptopchargerep_price);
-			data.append('datarecovery',this.repair.rawPrice.datarecovery);
+			data.append('datarecovery_price',this.repair.rawPrice.datarecovery);
 			data.append('laptopbatteryrep_price',this.repair.rawPrice.laptopbatteryrep_price);
-			data.append('virusremoval_withsoftware',this.repair.rawPrice.virusremoval_withsoftware);
-			data.append('HDDHalfTera',this.repair.rawPrice.HDDHalfTera);
-			data.append('HDDTera',this.repair.rawPrice.HDDTera);
-			data.append('SSDHalfTera',this.repair.rawPrice.SSDHalfTera);
-			data.append('SSDTera',this.repair.rawPrice.SSDTera);
-			data.append('HDDHalfTeraWithDataTransfer',this.repair.rawPrice.HDDHalfTeraWithDataTransfer);
-			data.append('HDDTeraWithDataTransfer',this.repair.rawPrice.HDDTeraWithDataTransfer);
-			data.append('SSDHalfTeraWithDataTransfer',this.repair.rawPrice.SSDHalfTeraWithDataTransfer);
-			data.append('SSDTeraWithDataTransfer',this.repair.rawPrice.SSDTeraWithDataTransfer);
+			data.append('virusremoval_price',this.repair.rawPrice.virusremoval_withsoftware);
+			data.append('HDDHalfTera_price',this.repair.rawPrice.HDDHalfTera);
+			data.append('HDDTera_price',this.repair.rawPrice.HDDTera);
+			data.append('SSDHalfTera_price',this.repair.rawPrice.SSDHalfTera);
+			data.append('SSDTera_price',this.repair.rawPrice.SSDTera);
+			data.append('HDDHalfTeraWithDataTransfer_price',this.repair.rawPrice.HDDHalfTeraWithDataTransfer);
+			data.append('HDDTeraWithDataTransfer_price',this.repair.rawPrice.HDDTeraWithDataTransfer);
+			data.append('SSDHalfTeraWithDataTransfer_price',this.repair.rawPrice.SSDHalfTeraWithDataTransfer);
+			data.append('SSDTeraWithDataTransfer_price',this.repair.rawPrice.SSDTeraWithDataTransfer);
 			}
 
 			//repair of Gaming Consoles
