@@ -144,8 +144,8 @@ export class CartProvider {
       if (selectedRepair=="Data Recovery"){
         this.datarecovery = '1';
       }
-      if (selectedRepair=="Battery Replacement"){
-        this.microphone_selected = '1';
+      if (selectedRepair=="Laptop Battery Replacement"){
+        this.laptopbattrep_selected = '1';
       }
       if (selectedRepair=="Virus Removal with 1 free year of Anti-Virus Software"){
         this.virusremoval_withsoftware = '1';
@@ -397,6 +397,9 @@ export class CartProvider {
       }
       if (this.selectedRepairs[index]=="Laptop Charging Port Repair"){
         this.laptopchargeport_selected = '0';
+      }
+      if (this.selectedRepairs[index]=="Laptop Battery Replacement"){
+        this.laptopbattrep_selected = '0';
       }
       if (this.selectedRepairs[index]=="Data Recovery"){
         this.datarecovery = '0';
