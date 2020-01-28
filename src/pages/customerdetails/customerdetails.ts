@@ -630,22 +630,23 @@ export class CustomerdetailsPage {
 		
 			xhr.addEventListener("readystatechange",  () =>{
 				if (xhr.readyState === 4) {
-				console.log(xhr.responseText);
-				let result = JSON.parse(xhr.responseText);
-				console.log(result);
-					if(result.id!=null){
-					loading.dismiss();
+					console.log(xhr.responseText);
+					//let result = JSON.parse(xhr.responseText);
+					//console.log(result);
 					this.navCtrl.setRoot(ConfirmationPage);
-				 }
-					else{
-					loading.dismiss();
-					let alert = this.alertCtrl.create({
-						title: 'Error',
-						subTitle: 'Booking not created',
-						buttons: ['Ok']
-					});
-					alert.present();
-				 }
+					// if(result.id!=null){
+					// 	loading.dismiss();
+					// 	this.navCtrl.setRoot(ConfirmationPage);
+					// }
+					// else{
+					// 	loading.dismiss();
+					// 	let alert = this.alertCtrl.create({
+					// 		title: 'Error',
+					// 		subTitle: 'Booking not created',
+					// 		buttons: ['Ok']
+					// 	});
+					// 	alert.present();
+					// }
 				}
 			});
 			console.log(JSON.stringify(this.booking.userData));
