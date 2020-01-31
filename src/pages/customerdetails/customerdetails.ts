@@ -635,7 +635,7 @@ export class CustomerdetailsPage {
 					//console.log(result);
 					this.navCtrl.setRoot(ConfirmationPage);
 					// if(result.id!=null){
-						loading.dismiss();
+					loading.dismiss();
 					// 	this.navCtrl.setRoot(ConfirmationPage);
 					// }
 					// else{
