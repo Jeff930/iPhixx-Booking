@@ -137,7 +137,7 @@ export class CustomerdetailsPage {
 					'phone':['', Validators.compose([Validators.required])],
 					'phone2':['', Validators.compose([Validators.required])],
 					//'location':['', Validators.compose([Validators.required])],
-					//'smsService':[],
+					'smsService':[],
 					//'consentStore':[],
 					// //'consentStoreSource':[],
 					//'consentBusiness':[],
@@ -456,6 +456,12 @@ export class CustomerdetailsPage {
 		// 	user.email+"&mobile="+user.phone+"&lastname="+user.lastname+"&firstname="+user.firstname+"&phone="+user.phone+"&properties="+JSON.stringify(properties);
 			//+"&properties="+userData;
 	let data = new FormData();
+	
+	if (user.smsService)
+		data.append("smsService", '1');
+	else
+		data.append("smsService", '0');	
+
 	data.append("email", user.email);
 	data.append("lastName", user.lastname);
 	data.append("firstName", user.firstname);
