@@ -136,6 +136,7 @@ export class CustomerdetailsPage {
 					'email':['', Validators.compose([Validators.required])],
 					'phone':['', Validators.compose([Validators.required])],
 					'phone2':['', Validators.compose([Validators.required])],
+					'address':['', Validators.compose([Validators.required])],
 					//'location':['', Validators.compose([Validators.required])],
 					'smsService':[],
 					//'consentStore':[],
@@ -468,6 +469,7 @@ export class CustomerdetailsPage {
 	data.append("birthdate", user.birthdate);
 	data.append("mobile", user.phone);
 	data.append("phone", user.phone2);
+	data.append("address", user.address);
 	console.log(data);
 	  let loading = this.loadingCtrl.create({
 		//content: 'Creating Customer...'
