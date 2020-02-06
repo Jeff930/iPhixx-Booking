@@ -536,6 +536,7 @@ export class CustomerdetailsPage {
 		 let data = new FormData();
 		 	data.append("agent_id", JSON.parse(localStorage.getItem("authenticated")).agent_id);
 			data.append("customer_id", id);
+			data.append("location_id", JSON.parse(localStorage.getItem('authenticated')).location_id);
 			data.append("device", this.booking.userData.deviceKey);
 			data.append("brand", this.booking.userData.brandKey);
 			data.append("model", this.booking.userData.modelKey);
