@@ -470,6 +470,7 @@ export class CustomerdetailsPage {
 	data.append("mobile", user.phone);
 	data.append("phone", user.phone2);
 	data.append("address", user.address);
+	data.append("location_id", JSON.parse(localStorage.getItem('authenticated')).location_id);
 	console.log(data);
 	  let loading = this.loadingCtrl.create({
 		//content: 'Creating Customer...'
