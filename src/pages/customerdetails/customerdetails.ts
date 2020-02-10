@@ -459,9 +459,9 @@ export class CustomerdetailsPage {
 	let data = new FormData();
 	
 	if (user.smsService)
-		data.append("smsService", '1');
+		data.append("smsOption", '1');
 	else
-		data.append("smsService", '0');	
+		data.append("smsOption", '0');	
 
 	data.append("email", user.email);
 	data.append("lastName", user.lastname);
