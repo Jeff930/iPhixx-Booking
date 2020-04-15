@@ -641,9 +641,9 @@ export class CustomerdetailsPage {
 			xhr.addEventListener("readystatechange",  () =>{
 				if (xhr.readyState === 4) {
 					console.log(xhr.responseText);
-					//let result = JSON.parse(xhr.responseText);
-					//console.log(result);
-					this.navCtrl.setRoot(ConfirmationPage);
+					let result = JSON.parse(xhr.responseText);
+					console.log(result);
+					//this.navCtrl.setRoot(ConfirmationPage);
 					// if(result.id!=null){
 					loading.dismiss();
 					// 	this.navCtrl.setRoot(ConfirmationPage);
