@@ -644,8 +644,10 @@ export class CustomerdetailsPage {
 					let result = JSON.parse(xhr.responseText);
 					console.log(result);
 					//this.navCtrl.setRoot(ConfirmationPage);
-					// if(result.id!=null){
-					loading.dismiss();
+					if(result.length>=3){
+						loading.dismiss();
+						this.navCtrl.setRoot(ConfirmationPage);
+					}
 					// 	this.navCtrl.setRoot(ConfirmationPage);
 					// }
 					// else{
