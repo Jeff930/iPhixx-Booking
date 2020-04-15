@@ -703,7 +703,7 @@ export class ConfirmationPage {
     }else{
       this.createPdf();
     }
-    // this.downloadPdf();
+    this.downloadPdf();
     //this.createsmallPdf();
     //this.downloadsmallPdf();
     //this.sendEmail();
