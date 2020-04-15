@@ -17,6 +17,7 @@ import { Header } from 'ionic-angular/umd';
 */
 @Injectable()
 export class BookingProvider {
+  bookingNumber : any;
   userData : any;	
   repairKey:any;
   result;
