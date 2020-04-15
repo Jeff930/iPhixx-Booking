@@ -698,11 +698,11 @@ export class ConfirmationPage {
     this.timestamp=moment(this.booking.created).format("ddd, MMM DD YYYY, hh:mm:ss A"); 
     console.log(this.timestamp);
     console.log(this.timestamp);
-    // if (this.dev=='Tablet'||this.dev=='Phone'){
-    //   this.createMobilePdf();
-    // }else{
-    //   this.createPdf();
-    // }
+    if (this.dev=='Tablet'||this.dev=='Phone'){
+      this.createMobilePdf();
+    }else{
+      this.createPdf();
+    }
     // this.downloadPdf();
     //this.createsmallPdf();
     //this.downloadsmallPdf();
