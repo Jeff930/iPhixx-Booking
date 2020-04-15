@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController,PopoverController } from 'ionic-angular';
 
-
 import { BookingProvider } from '../../providers/booking/booking';
 import { CartProvider } from '../../providers/cart/cart';
 import { NavigationProvider } from '../../providers/navigation/navigation';
