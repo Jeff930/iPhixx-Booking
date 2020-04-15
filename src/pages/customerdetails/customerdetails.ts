@@ -643,7 +643,7 @@ export class CustomerdetailsPage {
 					console.log(xhr.responseText);
 					// let result = JSON.parse(xhr.responseText);
 					console.log(xhr.responseText);
-					//console.log(result.length);
+					this.booking.bookingNumber = xhr.responseText;
 					if(xhr.responseText.length<=5){
 						loading.dismiss();
 						this.navCtrl.setRoot(ConfirmationPage);
