@@ -125,7 +125,7 @@ export class ConfirmationPage {
         { text: 'Store Details', style: 'subheader' },
         { text: 'Name of Store: ' + this.booking.locationName, style: 'plain'},
         { text: 'Name of Agent: ' + this.booking.agentName, style: 'plain'},
-        { text: 'Repair Number Confirmation: ' + this.booking.ticketNumber, style: 'plain'},
+        { text: 'Booking Number Confirmation: ' + this.booking.bookingNumber, style: 'plain'},
         { text: 'Date of Booking: ' + this.timestamp, style: 'plain'},
 
         { text: 'Customer Details', style: 'subheader' },
@@ -238,7 +238,7 @@ export class ConfirmationPage {
         { text: 'Store Details', style: 'subheader' },
         { text: 'Name of Store: ' + this.booking.locationName, style: 'plain'},
         { text: 'Name of Agent: ' + this.booking.agentName, style: 'plain'},
-        { text: 'Repair Number Confirmation: ' + this.booking.ticketNumber, style: 'plain'},
+        { text: 'Booking Number: ' + this.booking.bookingNumber, style: 'plain'},
         { text: 'Date of Booking: ' + this.timestamp, style: 'plain'},
 
 
