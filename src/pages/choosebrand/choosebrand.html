@@ -19,7 +19,7 @@
             <p class="question">Choose Your {{device}} Brand</p>
             <p class="tip">What kind of phone do you have? Pick one option below</p>
           </div>
-          <ion-row *ngIf = "this.booking.userData.deviceKey!='5'">
+          <ion-row >
             <ion-col text-center  *ngFor = "let brand of brands" col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3>
               <div (click) ="selectBrand(brand.device_brand, brand.devicebrand_id)" class="brands-col" padding>
               <img src="{{'https://admin.iphixx.com/images/brands/'+ device + '/' + brand.device_brand +'.jpg'}}">
@@ -38,19 +38,7 @@
             </ion-col> -->
 
           </ion-row>
-           <ion-row *ngIf = "this.booking.userData.deviceKey=='5'">
-
-              <ion-col text-center   *ngFor = "let brand of brands" col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3>
-              <div (click) ="selectConsole(brand.model_name,brand.devicebrand_id,brand.devicemodel_id,brand.model_number)" class="brands-col" padding>
-              <img src="{{'assets/imgs/'+device+'/'+brand.model_name+'.jpg'}}">
-              <p>{{brand.model_name}}</p>
-              <!-- <button  ion-button full round (click) ="selectBrand(brand.brand)" > {{brand.brand}} </button> -->
-              </div>
-            </ion-col>
-            <!-- <ion-col text-center   col-6>
-              <button  ion-button full round (click)="presentPopover($event)">Other</button>
-            </ion-col> -->
-          </ion-row>
+           
       </ion-col>
       <ion-col col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-3>
         <checkout class="checkout"></checkout>
