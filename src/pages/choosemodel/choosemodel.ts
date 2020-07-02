@@ -112,45 +112,15 @@ export class ChoosemodelPage {
 	  if (this.booking.userData.device=="MacBook"){
 		this.navCtrl.push(RepairPage);
 	  }else{
-		console.log(model);
-  	this.navCtrl.push(ColorPage);
+		if (this.booking.userData.device=="Gaming Console"){
+			this.navCtrl.push(RepairPage);
+		  }else{
+			console.log(model);
+			this.navCtrl.push(ColorPage);
+		  }
 	  }
   }
-
-  getBrand(id){
-	  console.log(id);
-	if (id == 1)
-	  return "iPhone";
-	if (id == 2)
-	  return "Samsung";
-	if (id == 3)
-	  return "Huawei";
-	if (id == 4)
-	  return "Sony";	  
-	if (id == 5)
-	  return "Nokia";
-	if (id == 6)
-	  return "iPad";
-	if (id == 7)
-	  return "Hewlett Packard(HP)";
-	if (id == 8)
-	  return "Lenovo";
-	if (id == 9)
-	  return "Dell";
-	if (id == 10)
-	  return "Asus";	  
-	if (id == 11)
-	  return "Acer";
-	if (id == 12)
-	  return "Microsoft";
-	if (id == 13)
-	  return "Chromebook";
-	if (id == 14)
-	  return "Toshiba";
-	if (id == 15)
-	  return "MacBook";
-  }
-
+  
   goToRepair(model){
 	this.booking.userData.model = model.model;
 	console.log(this.booking.userData.model)
