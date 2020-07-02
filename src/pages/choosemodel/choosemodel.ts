@@ -34,16 +34,40 @@ export class ChoosemodelPage {
   	this.device = this.booking.userData.device+', '+this.booking.userData.brand;
   		console.log(this.booking.userData.device);  	
 
-	  this.brand = this.booking.userData.brand;	
+	  
+	}
 
-	  this.modelNumberForm = formBuilder.group({
-		'model':['', Validators.compose([Validators.required])],
-	});
+	ionViewWillLoad(){
+		// if (this.booking.userData.device == 'Laptop'){
+		// 	document.getElementById('mobile').style.display = 'none';
+		// 	document.getElementById('laptop').style.display = 'block';
+		// }else{
+		// 	document.getElementById('mobile').style.display = 'block';
+		// 	document.getElementById('laptop').style.display = 'none';
+		// }
+		this.booking.model="selected";
+		
+		this.booking.selected=3;
+    if (this.booking.selected==3){
+      this.booking.device="selected";
+      this.booking.brand="selected";
+      this.booking.model="last-selected";
+      this.booking.color="not-selected";
+      this.booking.carrier="not-selected";
+      this.booking.repair="last-not-selected";
+	}
+	this.booking.updateCurrentPage();
+	this.navigation.activePageIndex=9;
+	this.navigation.other=0;
+
+	this.brand = this.booking.userData.brand;	
 
 		let loading = this.loadingCtrl.create({
 			//content: 'Logging in please wait...'
 		 });
 		 loading.present();
+
+		//  if (this.booking.userData.deviceKey = )
 			
 		 let data = new FormData();
 		 	data.append("devtype_id", this.booking.userData.deviceKey);
@@ -67,30 +91,6 @@ export class ChoosemodelPage {
 			});
 			xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/devices/");
 			xhr.send(data);
-	}
-
-	ionViewWillEnter(){
-		// if (this.booking.userData.device == 'Laptop'){
-		// 	document.getElementById('mobile').style.display = 'none';
-		// 	document.getElementById('laptop').style.display = 'block';
-		// }else{
-		// 	document.getElementById('mobile').style.display = 'block';
-		// 	document.getElementById('laptop').style.display = 'none';
-		// }
-		this.booking.model="selected";
-		
-		this.booking.selected=3;
-    if (this.booking.selected==3){
-      this.booking.device="selected";
-      this.booking.brand="selected";
-      this.booking.model="last-selected";
-      this.booking.color="not-selected";
-      this.booking.carrier="not-selected";
-      this.booking.repair="last-not-selected";
-	}
-	this.booking.updateCurrentPage();
-	this.navigation.activePageIndex=9;
-	this.navigation.other=0;
 	}
 
   selectModel(model,modelNum,key){
