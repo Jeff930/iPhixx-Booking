@@ -10,12 +10,6 @@ import { ChoosemodelPage } from '../choosemodel/choosemodel';
 import { RepairPage } from '../repair/repair';
 import { OtherdevicePage } from '../otherdevice/otherdevice';
 
-import { phonebrands } from '../../models/phonebrands';
-import { tabletbrands } from '../../models/tabletbrands';
-import { laptopbrands } from '../../models/laptopbrands';
-import { gamebrands } from '../../models/gamebrands';
-
-
 
 /**
  * Generated class for the ChoosebrandPage page.
@@ -39,7 +33,7 @@ export class ChoosebrandPage {
   	public popoverCtrl: PopoverController, public loadingCtrl: LoadingController,public cart: CartProvider,public navigation: NavigationProvider,public repair:RepairProvider) {	
   }
 
-  ionViewWillLoad(){
+  ionViewWillEnter(){
     this.booking.brand="selected";
     this.booking.selected=2;
     if (this.booking.selected==2){
@@ -83,34 +77,6 @@ export class ChoosebrandPage {
         xhr.send(data);
 
 
-
-    // if (this.booking.userData.deviceKey=='5'){
-    //   let loading = this.loadingCtrl.create({
-		// 	  //content: 'Logging in please wait...'
-		//   });
-		//   loading.present();
-			
-		//   let data = new FormData();
-		//  	  data.append("devtype_id", '5');
-		
-		// 	  let xhr = new XMLHttpRequest();
-		// 	  //xhr.withCredentials = true;
-		
-		// 	  xhr.addEventListener("readystatechange",  () =>{
-		// 		  if (xhr.readyState === 4) {
-		// 			  console.log(xhr.responseText);
-		// 			  let result = JSON.parse(xhr.responseText);
-		// 			  console.log(result.result.length);
-		// 			  loading.dismiss();
-		// 			  if (result.result.length != 0){
-		// 				  this.repair.models = result.result;
-		// 				  this.brands = result.result;
-		// 			  }	
-		// 		  }
-		// 	  });
-		// 	  xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/consoles/");
-    //     xhr.send(data);
-    // }
   }
 
   selectBrand(brand, key){

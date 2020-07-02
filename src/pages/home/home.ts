@@ -3,7 +3,6 @@ import { NavController , AlertController, LoadingController } from 'ionic-angula
 
 import { BookingProvider } from '../../providers/booking/booking';
 import { NavigationProvider } from '../../providers/navigation/navigation';
-import { devices } from '../../models/devicetypes';
 
 import { ChoosebrandPage } from '../choosebrand/choosebrand';
 import { ChoosemodelPage } from '../choosemodel/choosemodel';
@@ -20,8 +19,7 @@ import { OtherdevtypePage } from '../otherdevtype/otherdevtype';
 export class HomePage {
  
   devices;			
-  constructor(public loadingCtrl: LoadingController, public navCtrl: NavController , public booking : BookingProvider , public alertCtrl : AlertController,public navigation: NavigationProvider,) {
-    
+  constructor(public loadingCtrl: LoadingController, public navCtrl: NavController , public booking : BookingProvider , public alertCtrl : AlertController,public navigation: NavigationProvider,) { 
   }
 
   selectdevice(device,key){
@@ -71,7 +69,7 @@ export class HomePage {
     this.navCtrl.setRoot(ChooseactionPage ,{}, {animate: true, direction: 'back'});
   }
 
-  ionViewWillLoad(){
+  ionViewWillEnter(){
     this.booking.selected=1;
     if (this.booking.selected==1){
       this.booking.device="last-selected";
@@ -89,7 +87,6 @@ export class HomePage {
 			//content: 'Logging in please wait...'
 		 });
 		 loading.present();
-			
 	
 			let xhr = new XMLHttpRequest();
 			//xhr.withCredentials = true;
@@ -104,7 +101,6 @@ export class HomePage {
 					if (result.length != 0){
             this.devices = result;
 					}
-					
 				}
 			});
 			xhr.open("GET", "https://admin.iphixx.com/api/v1/bookings/list-devtypes");

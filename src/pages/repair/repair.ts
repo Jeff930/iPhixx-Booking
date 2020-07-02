@@ -33,7 +33,7 @@ export class RepairPage {
 
     this.brand=this.booking.userData.brand;
     this.model=this.booking.userData.model;
-    this.devices = this.booking.userData.device.toLowerCase();
+    this.devices = this.booking.userData.device;
     console.log("try"+this.model);
     console.log(this,repair);
   }
@@ -42,20 +42,19 @@ export class RepairPage {
     this.booking.repair="last";
 		if (this.booking.selected<6)
       this.booking.selected=6;
-	if (this.booking.selected==6){
-    this.booking.device="selected";
-    this.booking.brand="selected";
-    this.booking.model="selected";
-    this.booking.color="selected";
-    this.booking.carrier="selected";
-    this.booking.repair="last";
-  }
+	  if (this.booking.selected==6){
+      this.booking.device="selected";
+      this.booking.brand="selected";
+      this.booking.model="selected";
+      this.booking.color="selected";
+      this.booking.carrier="selected";
+      this.booking.repair="last";
+    }
   this.booking.updateCurrentPage();
   this.navigation.activePageIndex=12;
   this.cart.checkMessage();
   this.cart.checkSelected();
   }
-
 
   enterRepair() {
     console.log(this.cart.otherRepairSelected)

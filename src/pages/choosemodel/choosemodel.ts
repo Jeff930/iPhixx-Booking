@@ -37,7 +37,7 @@ export class ChoosemodelPage {
 	  
 	}
 
-	ionViewWillLoad(){
+	ionViewWillEnter(){
 		// if (this.booking.userData.device == 'Laptop'){
 		// 	document.getElementById('mobile').style.display = 'none';
 		// 	document.getElementById('laptop').style.display = 'block';
@@ -120,7 +120,7 @@ export class ChoosemodelPage {
 		  }
 	  }
   }
-  
+
   goToRepair(model){
 	this.booking.userData.model = model.model;
 	console.log(this.booking.userData.model)
@@ -136,7 +136,7 @@ export class ChoosemodelPage {
 	this.cart.completeCheckout=[];
 	this.cart.goCheckout=[];
 	this.repair.updatemodelrepairs();
-	  this.navCtrl.setRoot(RepairPage);
+	this.navCtrl.setRoot(RepairPage);
   }
 
 	ionViewDidLoad() {
