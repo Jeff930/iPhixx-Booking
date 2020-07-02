@@ -36,8 +36,7 @@ export class ChoosebrandPage {
   devWidth:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public booking : BookingProvider ,
-  	public popoverCtrl: PopoverController, public loadingCtrl: LoadingController,public cart: CartProvider,public navigation: NavigationProvider,public repair:RepairProvider) {
-  	
+  	public popoverCtrl: PopoverController, public loadingCtrl: LoadingController,public cart: CartProvider,public navigation: NavigationProvider,public repair:RepairProvider) {	
   }
 
   ionViewWillLoad(){

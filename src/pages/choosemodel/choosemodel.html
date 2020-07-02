@@ -23,7 +23,7 @@
               <div (click) ="selectModel(model.model_name,model.model_number, model.devicemodel_id)" class="brands-col" padding>
               <!-- <img *ngIf = "model.model_name == 'Pro Retina 13-inches - Early'" src="{{'assets/imgs/MacBook/proretina 13-inches - early (2).jpg'}}"> -->
               <!-- <img *ngIf="model.model_name == 'Air 11-inches - Early'" src="{{'assets/imgs/MacBook/air11-inches - early (2).jpg'}}"> -->
-              <img src="{{'assets/imgs/'+getBrand(model.devicebrand_id)+'/'+model.model_name.replace(' ','').replace( brand , '').toLowerCase()+'.jpg'}}">
+              <img src="{{'https://admin.iphixx.com/images/models/'+ booking.userData.brand+'/'+ model.model_name +'.jpg'}}">
               <p>{{model.model_name}}</p>
               <p>{{model.model_number}}</p>
               <!-- <button  ion-button full round (click) ="selectBrand(brand.brand)" > {{brand.brand}} </button> -->

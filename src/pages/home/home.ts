@@ -71,7 +71,7 @@ export class HomePage {
     this.navCtrl.setRoot(ChooseactionPage ,{}, {animate: true, direction: 'back'});
   }
 
-  ionViewWillEnter(){
+  ionViewWillLoad(){
     this.booking.selected=1;
     if (this.booking.selected==1){
       this.booking.device="last-selected";
