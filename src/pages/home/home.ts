@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController , AlertController } from 'ionic-angular';
+import { NavController , AlertController, LoadingController } from 'ionic-angular';
 
 import { BookingProvider } from '../../providers/booking/booking';
 import { NavigationProvider } from '../../providers/navigation/navigation';
@@ -19,9 +19,33 @@ import { OtherdevtypePage } from '../otherdevtype/otherdevtype';
 })
 export class HomePage {
  
-  devices = devices;			
-  constructor(public navCtrl: NavController , public booking : BookingProvider , public alertCtrl : AlertController,public navigation: NavigationProvider,) {
-  	console.log(this.devices);
+  devices;			
+  constructor(public loadingCtrl: LoadingController, public navCtrl: NavController , public booking : BookingProvider , public alertCtrl : AlertController,public navigation: NavigationProvider,) {
+    console.log(this.devices);
+    let loading = this.loadingCtrl.create({
+			//content: 'Logging in please wait...'
+		 });
+		 loading.present();
+			
+	
+			let xhr = new XMLHttpRequest();
+			//xhr.withCredentials = true;
+		
+			xhr.addEventListener("readystatechange",  () =>{
+				if (xhr.readyState === 4) {
+					console.log(xhr.responseText);
+          let result = JSON.parse(xhr.responseText);
+          console.log(result);
+					console.log(result.length);
+					loading.dismiss();
+					if (result.length != 0){
+            this.devices = result;
+					}
+					
+				}
+			});
+			xhr.open("GET", "https://admin.iphixx.com/api/v1/bookings/list-devtypes");
+			xhr.send();
   }
 
   selectdevice(device,key){
@@ -48,7 +72,6 @@ export class HomePage {
         title: 'Tip',
         subTitle: 'Are you sure you want to Log Out?',
         buttons: [
-
            {
               text: 'No',
               role: 'cancel',
@@ -59,14 +82,13 @@ export class HomePage {
             {
               text: 'Yes',
               handler: () => {
-                console.log('Buy clicked');
+                console.log('Yes clicked');
                 localStorage.clear();
                 this.navCtrl.setRoot(LoginPage);
               }
             }
         ]
     });
-
     alert.present();
   }
 

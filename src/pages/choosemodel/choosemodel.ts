@@ -31,7 +31,7 @@ export class ChoosemodelPage {
  	  
   constructor(public navCtrl: NavController, 
     public loadingCtrl: LoadingController, public navParams: NavParams, public booking : BookingProvider,public navigation: NavigationProvider,public repair:RepairProvider,public cart:CartProvider,public formBuilder: FormBuilder,) {
-  	this.device = this.booking.userData.device+', '+this.booking.userData.brand ;
+  	this.device = this.booking.userData.device+', '+this.booking.userData.brand;
   		console.log(this.booking.userData.device);  	
 
 	  this.brand = this.booking.userData.brand;	
