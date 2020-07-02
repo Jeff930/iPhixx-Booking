@@ -21,31 +21,7 @@ export class HomePage {
  
   devices;			
   constructor(public loadingCtrl: LoadingController, public navCtrl: NavController , public booking : BookingProvider , public alertCtrl : AlertController,public navigation: NavigationProvider,) {
-    console.log(this.devices);
-    let loading = this.loadingCtrl.create({
-			//content: 'Logging in please wait...'
-		 });
-		 loading.present();
-			
-	
-			let xhr = new XMLHttpRequest();
-			//xhr.withCredentials = true;
-		
-			xhr.addEventListener("readystatechange",  () =>{
-				if (xhr.readyState === 4) {
-					console.log(xhr.responseText);
-          let result = JSON.parse(xhr.responseText);
-          console.log(result);
-					console.log(result.length);
-					loading.dismiss();
-					if (result.length != 0){
-            this.devices = result;
-					}
-					
-				}
-			});
-			xhr.open("GET", "https://admin.iphixx.com/api/v1/bookings/list-devtypes");
-			xhr.send();
+    
   }
 
   selectdevice(device,key){
@@ -67,7 +43,6 @@ export class HomePage {
   }
 
   logOut(){
-  
     let alert = this.alertCtrl.create({
         title: 'Tip',
         subTitle: 'Are you sure you want to Log Out?',
@@ -108,7 +83,34 @@ export class HomePage {
     }
     this.booking.updateCurrentPage();
     this.navigation.activePageIndex=6;
-}
+
+    console.log(this.devices);
+    let loading = this.loadingCtrl.create({
+			//content: 'Logging in please wait...'
+		 });
+		 loading.present();
+			
+	
+			let xhr = new XMLHttpRequest();
+			//xhr.withCredentials = true;
+		
+			xhr.addEventListener("readystatechange",  () =>{
+				if (xhr.readyState === 4) {
+					console.log(xhr.responseText);
+          let result = JSON.parse(xhr.responseText);
+          console.log(result);
+					console.log(result.length);
+					loading.dismiss();
+					if (result.length != 0){
+            this.devices = result;
+					}
+					
+				}
+			});
+			xhr.open("GET", "https://admin.iphixx.com/api/v1/bookings/list-devtypes");
+			xhr.send();
+  }
+  
   ionViewDidLoad() {
     this.navigation.activePageIndex = 6;
   }
