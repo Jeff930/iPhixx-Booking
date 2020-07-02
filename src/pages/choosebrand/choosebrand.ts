@@ -40,7 +40,7 @@ export class ChoosebrandPage {
   	
   }
 
-  ionViewWillEnter(){
+  ionViewWillLoad(){
     this.booking.brand="selected";
     this.booking.selected=2;
     if (this.booking.selected==2){
@@ -82,35 +82,36 @@ export class ChoosebrandPage {
         });
         xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/list-brands-by-device/");
         xhr.send(data);
-    
 
-    if (this.booking.userData.deviceKey=='5'){
-      let loading = this.loadingCtrl.create({
-			  //content: 'Logging in please wait...'
-		  });
-		  loading.present();
+
+
+    // if (this.booking.userData.deviceKey=='5'){
+    //   let loading = this.loadingCtrl.create({
+		// 	  //content: 'Logging in please wait...'
+		//   });
+		//   loading.present();
 			
-		  let data = new FormData();
-		 	  data.append("devtype_id", '5');
+		//   let data = new FormData();
+		//  	  data.append("devtype_id", '5');
 		
-			  let xhr = new XMLHttpRequest();
-			  //xhr.withCredentials = true;
+		// 	  let xhr = new XMLHttpRequest();
+		// 	  //xhr.withCredentials = true;
 		
-			  xhr.addEventListener("readystatechange",  () =>{
-				  if (xhr.readyState === 4) {
-					  console.log(xhr.responseText);
-					  let result = JSON.parse(xhr.responseText);
-					  console.log(result.result.length);
-					  loading.dismiss();
-					  if (result.result.length != 0){
-						  this.repair.models = result.result;
-						  this.brands = result.result;
-					  }	
-				  }
-			  });
-			  xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/consoles/");
-        xhr.send(data);
-    }
+		// 	  xhr.addEventListener("readystatechange",  () =>{
+		// 		  if (xhr.readyState === 4) {
+		// 			  console.log(xhr.responseText);
+		// 			  let result = JSON.parse(xhr.responseText);
+		// 			  console.log(result.result.length);
+		// 			  loading.dismiss();
+		// 			  if (result.result.length != 0){
+		// 				  this.repair.models = result.result;
+		// 				  this.brands = result.result;
+		// 			  }	
+		// 		  }
+		// 	  });
+		// 	  xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/consoles/");
+    //     xhr.send(data);
+    // }
   }
 
   selectBrand(brand, key){
@@ -118,24 +119,24 @@ export class ChoosebrandPage {
       this.navCtrl.push(OtherdevicePage);
     }
     else{
-      if (this.device == 'Gaming Console'){
-        this.booking.userData.model = '';
-	      this.booking.userData.modelNum = '';
-	      this.cart.selectedRepairs=[];
-	      this.cart.selectedIndex=[];
-	      this.cart.cartMessage="There are currently no items in your cart.";
-	      this.cart.Total=0;
-	      this.cart.costs=[];
-	      this.repair.modelrepairs=[];
-	      this.repair.other=0;
-	      this.repair.prices=[];
-	      this.cart.completeCheckout=[];
-	      this.cart.goCheckout=[];
-	      this.repair.updatemodelrepairs();
-        this.navCtrl.setRoot(RepairPage);
-      }else{
+      // if (this.device == 'Gaming Console'){
+      //   this.booking.userData.model = '';
+	    //   this.booking.userData.modelNum = '';
+	    //   this.cart.selectedRepairs=[];
+	    //   this.cart.selectedIndex=[];
+	    //   this.cart.cartMessage="There are currently no items in your cart.";
+	    //   this.cart.Total=0;
+	    //   this.cart.costs=[];
+	    //   this.repair.modelrepairs=[];
+	    //   this.repair.other=0;
+	    //   this.repair.prices=[];
+	    //   this.cart.completeCheckout=[];
+	    //   this.cart.goCheckout=[];
+	    //   this.repair.updatemodelrepairs();
+      //   this.navCtrl.setRoot(RepairPage);
+      // }else{
         this.navCtrl.push(ChoosemodelPage , { brand: brand});
-      }
+      //}
     }
     this.booking.userData.brand = brand;
     this.booking.userData.brandKey = key;
