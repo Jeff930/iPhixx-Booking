@@ -37,23 +37,52 @@ export class ChoosebrandPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public booking : BookingProvider ,
   	public popoverCtrl: PopoverController, public loadingCtrl: LoadingController,public cart: CartProvider,public navigation: NavigationProvider,public repair:RepairProvider) {
-  	this.device = this.booking.userData.device;
-      console.log("brand" + this.device);
+  	
+  }
 
-    switch (this.device){
-      case 'Phone':
-        this.brands = phonebrands;
-        break;
-      case 'Tablet':
-        this.brands = tabletbrands;
-        break;
-      case 'Laptop':
-        this.brands = laptopbrands;
-        break;
-      case 'Gaming Console':
-        this.brands = gamebrands;
-        break;
+  ionViewWillEnter(){
+    this.booking.brand="selected";
+    this.booking.selected=2;
+    if (this.booking.selected==2){
+      this.booking.device="selected";
+      this.booking.brand="last-selected";
+      this.booking.model="not-selected";
+      this.booking.color="not-selected";
+      this.booking.carrier="not-selected";
+      this.booking.repair="last-not-selected";
     }
+    this.booking.updateCurrentPage();
+    this.navigation.activePageIndex=7;
+    this.navigation.other=0;
+
+    this.device = this.booking.userData.device;
+      console.log("device" + this.device);
+
+      let loading = this.loadingCtrl.create({
+        //content: 'Logging in please wait...'
+       });
+       loading.present();
+      
+       let data = new FormData();
+          data.append("devtype_id", this.booking.userData.deviceKey);
+      
+        let xhr = new XMLHttpRequest();
+      
+        xhr.addEventListener("readystatechange",  () =>{
+          if (xhr.readyState === 4) {
+            console.log(xhr.responseText);
+            let result = JSON.parse(xhr.responseText);
+            console.log(result);
+            console.log(result.length);
+            loading.dismiss();
+            if (result.length != 0){
+              this.brands = result;
+            }
+          }
+        });
+        xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/list-brands-by-device/");
+        xhr.send(data);
+    
 
     if (this.booking.userData.deviceKey=='5'){
       let loading = this.loadingCtrl.create({
@@ -82,22 +111,6 @@ export class ChoosebrandPage {
 			  xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/consoles/");
         xhr.send(data);
     }
-  }
-
-  ionViewWillEnter(){
-    this.booking.brand="selected";
-    this.booking.selected=2;
-    if (this.booking.selected==2){
-      this.booking.device="selected";
-      this.booking.brand="last-selected";
-      this.booking.model="not-selected";
-      this.booking.color="not-selected";
-      this.booking.carrier="not-selected";
-      this.booking.repair="last-not-selected";
-    }
-    this.booking.updateCurrentPage();
-    this.navigation.activePageIndex=7;
-    this.navigation.other=0;
   }
 
   selectBrand(brand, key){
@@ -150,16 +163,6 @@ export class ChoosebrandPage {
     }
 
   ionViewDidLoad() {
-    
     this.navigation.activePageIndex = 7;
   }
-
-
-  // presentPopover(myEvent) {
-  //   let popover = this.popoverCtrl.create(OtherPage);
-  //   popover.present({
-  //     ev: myEvent
-  //   });
-  // }
-
 }
