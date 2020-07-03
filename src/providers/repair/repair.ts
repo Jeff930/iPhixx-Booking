@@ -47,14 +47,14 @@ export class RepairProvider {
     console.log("model"+this.model);
     console.log("device" + this.device);
 
-    if (this.booking.userData.device=='Gaming Console'){
-      this.repairs = gamerepairs;
+    // if (this.booking.userData.device=='Gaming Console'){
+    //   this.repairs = gamerepairs;
       
-      // for (var i=0;i<this.repairs.length;i++){
-      // this.modelrepairs.push(this.repairs[i].repair);
-      // this.prices.push(this.repairs[i].price);
-      // console.log("game"+this.modelrepairs);}
-    }
+    //   // for (var i=0;i<this.repairs.length;i++){
+    //   // this.modelrepairs.push(this.repairs[i].repair);
+    //   // this.prices.push(this.repairs[i].price);
+    //   // console.log("game"+this.modelrepairs);}
+    // }
     
     if (this.booking.userData.device=='Laptop'){
       this.repairs = laptoprepairs;      
@@ -111,6 +111,8 @@ export class RepairProvider {
     if (this.booking.userData.model == this.models[i].model_name&&this.booking.userData.modelNum == this.models[i].model_number){
       console.log("true")
       this.selectedModel = i;
+      console.log("selected",this.selectedModel);
+      console.log(this.models, "price");
       if (this.models[i].screenrep_price!=null){
         this.prices.push(this.models[i].screenrep_price);
         this.modelrepairs.push("Screen Replacement");
@@ -170,10 +172,12 @@ export class RepairProvider {
       }
       if (this.models[i].harddrive_rep!=null){
         this.prices.push(this.models[i].harddrive_rep);
+        console.log("testGC");
         this.modelrepairs.push("Hard Drive Repair");
       }
       if (this.models[i].hdmirep_price!=null){
         this.prices.push(this.models[i].hdmirep_price);
+        console.log("testGC");
         this.modelrepairs.push("HDMI Port Replacement");
       }
         this.other=1;
