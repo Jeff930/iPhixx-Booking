@@ -5,6 +5,13 @@
         <ion-col  col-md-3 col-lg-3 col-xl-3>
            <img src="assets/imgs/logo.png"> 
         </ion-col>
+
+         <ion-col  col-md-3 col-lg-2 col-xl-2 >
+              <!-- <div col-12 clear style="{padding:5px;}" round color="light" >
+                 Be An iPhixx Partner
+              </div> -->
+        </ion-col >
+
         <ion-col col-md-3 col-lg-2 col-xl-2>       
             <button col-12 outline ion-button round color="light" (click)="openPage(1)">
               Terms of Service
@@ -19,14 +26,10 @@
             </button>
           
         </ion-col>
-        <ion-col  col-md-3 col-lg-2 col-xl-2 >
-              <button col-12 outline ion-button round color="light" >
-                 Be An iPhixx Partner
-              </button >
-        </ion-col >
+       
         <ion-col col-md-4 col-lg-3 col-xl-3>
               <button col-12 class="sbmtBtn" round ion-button color="primary" (click)="register()" >
-                  Submit an Application
+                  Be an iPhixx Partner!
               </button>
         </ion-col>
       </ion-row>
@@ -57,11 +60,11 @@
 <ion-header class="loginNavbar">
 
   <ion-navbar>
-    <ion-buttons start>
+    <!-- <ion-buttons start>
     <button ion-button icon-only>
       <ion-icon name="menu"></ion-icon>
     </button>
-  </ion-buttons>
+  </ion-buttons> -->
 
     <ion-title>
       <img src="assets/imgs/logo.png">
@@ -77,9 +80,31 @@
 <form  [formGroup]="login_form" >
    
 <ion-grid class="login-form" >
-  
+   <ion-row>        
+        <ion-col col-12>       
+            <button col-12 outline ion-button round color="light" (click)="openPage(1)">
+              Terms of Service
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col col-12 >
+            <button col-12 outline ion-button round color="light" (click)="openPage(2)">
+             All Policies
+            </button>
+        </ion-col>
+    </ion-row>
+       
+    <ion-row>   
+        <ion-col col-12>
+            <button col-12 class="sbmtBtn" round ion-button color="primary" (click)="register()" >
+                  Be an iPhixx Partner!
+            </button>
+        </ion-col>
+  </ion-row>
+
   <ion-row>
- 
     <ion-col col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center  class="login" >
         <h3>Connect Your Shop to iPhixx</h3>
         

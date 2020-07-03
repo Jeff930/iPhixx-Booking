@@ -49,9 +49,13 @@ page-login {
     border-radius: 30px;
   }
 
+  .connect{
+    margin-top:20px;
+  }
 
 .login-form{
-  margin-top: 10em;
+  margin-top: 7em;
+  margin-bottom: 7em;
   h3,p{
       color : #fff;
       
@@ -79,8 +83,9 @@ button[color="light"]{
 
 .login {
   max-width: 360px;
-  margin: 0 auto;
+  margin-top:20px;
 }
+
 .hidden-xs-up{
      display: none !important;
 }
