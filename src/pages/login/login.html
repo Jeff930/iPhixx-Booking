@@ -79,8 +79,8 @@
 
 <form  [formGroup]="login_form" >
    
-<ion-grid class="login-form" >
-   <ion-row>        
+<ion-grid class="login-form " >
+   <ion-row class="hidden-md-up">        
         <ion-col col-12>       
             <button col-12 outline ion-button round color="light" (click)="openPage(1)">
               Terms of Service
@@ -88,7 +88,7 @@
         </ion-col>
     </ion-row>
 
-    <ion-row>
+    <ion-row class="hidden-md-up">
         <ion-col col-12 >
             <button col-12 outline ion-button round color="light" (click)="openPage(2)">
              All Policies
@@ -96,7 +96,7 @@
         </ion-col>
     </ion-row>
        
-    <ion-row>   
+    <ion-row class="hidden-md-up">   
         <ion-col col-12>
             <button col-12 class="sbmtBtn" round ion-button color="primary" (click)="register()" >
                   Be an iPhixx Partner!

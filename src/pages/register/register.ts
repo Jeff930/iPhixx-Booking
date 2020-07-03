@@ -62,7 +62,6 @@ export class RegisterPage {
         form.append("address", data.address );
 
         let xhr = new XMLHttpRequest();
-        // xhr.withCredentials = true;
 
         xhr.addEventListener("readystatechange",  ()=> {
           if (xhr.readyState === 4) {

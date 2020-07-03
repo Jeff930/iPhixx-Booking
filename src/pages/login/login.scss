@@ -92,6 +92,7 @@ button[color="light"]{
 .form-controll {
   padding: 0px 5px 0px 10px;
 }
+
 .hidden-md-up{
      display: none !important;
 }
@@ -119,6 +120,9 @@ button[color="light"]{
   }
   .hidden-sm-down {
     display: block !important;
+  }
+  .hidden-md-up {
+    display: none  !important;
   }
 }
 
