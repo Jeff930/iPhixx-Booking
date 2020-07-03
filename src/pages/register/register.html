@@ -67,16 +67,7 @@
             <ion-label color="dark" stacked>E-mail</ion-label>
             <ion-input type="email" formControlName="email"  ></ion-input>
           </ion-item>
-          <ion-item no-padding>
-            <ion-label color="dark" stacked>Password</ion-label>
-            <ion-input type="password" [(ngModel)]="password" formControlName="password"></ion-input>
-          </ion-item>
-          <ion-item no-padding>
-            <ion-label color="dark" stacked>Confirm Password </ion-label>
-            <ion-input type="password" [(ngModel)]="confirmPassword" formControlName="password"></ion-input>
-          </ion-item>
-          <ion-icon float-right class="check iconValidate" *ngIf="password==confirmPassword && password && confirmPassword" ios="ios-checkmark" md="md-checkmark"></ion-icon>
-          <ion-icon float-right *ngIf="password!=confirmPassword && password && confirmPassword" class="close iconValidate" ios="ios-close" md="md-close"></ion-icon>
+         
           <h4> Address </h4>
           <ion-item no-padding >
             <ion-label color="dark" stacked>Street Address</ion-label>
