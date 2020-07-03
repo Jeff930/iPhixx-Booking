@@ -34,66 +34,47 @@ export class RegisterPage {
   }
 
   ionViewWillLoad() {
-
-
-
     this.login_form = this.formBuilder.group({
       fullname: new FormControl('', Validators.required),
       contact: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      street: new FormControl('', Validators.required),
-      city: new FormControl('', Validators.required),
-      state: new FormControl('', Validators.required),
-      zip: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-     
-
+      address: new FormControl('', Validators.required),
     });
     this.navigation.activePageIndex=2;
   }
 
   register(data){
     let alert = this.alert.create({
-        title: 'Succes',
-        subTitle: 'Account has been created',
-        buttons: ['Ok']
+        title: 'Success',
+        subTitle: 'Account has been created.',
+        buttons: ['OK']
     })
     let loading = this.loading.create({
       //content : 'Signing up please wait...'
     })
     loading.present();
     console.log(data)
-   
+  
         let form = new FormData();
-        form.append("fullname", data.fullname);
-        form.append("email", data.email);
-        form.append("phone", data.contact);
-        form.append("address", data.street);
-        form.append("password", data.password);
-        form.append("city", data.city);
-        form.append("state", data.state);
-        form.append("zip", data.zip);
+        form.append("location_name", data.fullname);
+        form.append("location_email", data.email);
+        form.append("main_contact", data.contact);
+        form.append("address", data.address );
 
         let xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
+        // xhr.withCredentials = true;
 
         xhr.addEventListener("readystatechange",  ()=> {
           if (xhr.readyState === 4) {
             console.log(JSON.parse(xhr.responseText));
             loading.dismiss();
             alert.present();
-            this.navCtrl.push(LoginPage);
-
-
+            this.navCtrl.setRoot(LoginPage);
           }
         });
-
-
-
-        xhr.open("POST", "https://admin.iphixx.com/api/v1/customers/add");
+        xhr.open("POST", "https://admin.iphixx.com/api/v1/bookings/add-location/");
         xhr.send(form);
-
-  }
+    }
 
   login(){
     this.navCtrl.setRoot(LoginPage);

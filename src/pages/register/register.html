@@ -56,7 +56,7 @@
             <ion-input type="text" placeholder="Email Address" formControlName="username" class="form-controll" required></ion-input>
           </ion-item> -->
           <ion-item no-padding >
-            <ion-label color="dark" stacked>Business/Owner Name</ion-label>
+            <ion-label color="dark" stacked>Location Name</ion-label>
             <ion-input type="text" formControlName="fullname" ></ion-input>
           </ion-item>
           <ion-item no-padding >
@@ -68,35 +68,11 @@
             <ion-input type="email" formControlName="email"  ></ion-input>
           </ion-item>
          
-          <h4> Address </h4>
           <ion-item no-padding >
-            <ion-label color="dark" stacked>Street Address</ion-label>
-            <ion-input type="text" formControlName="street"  ></ion-input>
+            <ion-label color="dark" stacked>Full Address</ion-label>
+            <ion-input type="text" formControlName="address" ></ion-input>
           </ion-item>
-          
-          <ion-row>
-          	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-6  col-xl-6>
-	          	<ion-item no-padding >
-	            <ion-label color="dark" stacked>City</ion-label>
-	            <ion-input type="text" formControlName="city"  ></ion-input>
-	          	</ion-item>
-          	</ion-col>
-          	<ion-col>
-	          	
-		        <ion-item no-padding >
-		            <ion-label color="dark" stacked>State/Province</ion-label>
-		            <ion-input type="text" formControlName="state"  ></ion-input>
-		          </ion-item>
-          	</ion-col>	
-          </ion-row>
-          <ion-row>
-          	<ion-col col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6>
-          		<ion-item no-padding>
-		            <ion-label color="dark" stacked>Postal/Zip Code</ion-label>
-		            <ion-input type="tel" onkeypress='return event.charCode >= 48 && event.charCode <=57 ' maxlength=4 formControlName="zip" pattern="^[0-9]*$" ></ion-input>
-		        </ion-item>
-          	</ion-col>
-          </ion-row>       
+                        
           <ion-row class="login-row">
             <ion-col text-center>
               <button round  (click)="register(login_form.value)" ion-button color="primary" [disabled]="!(login_form.valid && password==confirmPassword && password != '')" type="submit">REGISTER</button>
