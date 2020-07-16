@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, ModalController} from 'ionic-angular';
 
-
+import { BookingProvider } from '../../providers/booking/booking';
 
 
 
@@ -25,19 +25,24 @@ export class RepairnumberinfoPage {
 	cellularSignalRepair;
 	chargingPortRepair;
 	dataRecovery;
+	invoice: any;
 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-  	public alertCtrl : AlertController, public modalController:ModalController ) {
-
+	  public alertCtrl : AlertController, public modalController:ModalController,
+	  public booking: BookingProvider ) {
 		this.userData = this.navParams.get('repairinfo');
-		
-  	  	console.log(this.userData);
+		this.invoice = this.navParams.get('invoice');
+		console.log(this.userData);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RepairnumberinfoPage');
+  }
+
+  ionViewWillEnter(){
+	
   }
 
 
@@ -63,6 +68,18 @@ export class RepairnumberinfoPage {
 		    ]
 		});
   	alert.present();
+  }
+
+  getDate(date){
+	if (date == null)
+		return "N/A";
+	else
+		return date;
+  }
+
+  getTotal(tax,total){
+	  let vat = parseInt(total) + ((tax/100)*total);
+	  return vat;
   }
 
   // openSignatureModel(){
