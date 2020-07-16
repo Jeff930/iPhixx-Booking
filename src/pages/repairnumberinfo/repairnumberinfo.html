@@ -89,31 +89,39 @@
           </ion-item> -->
           <h2 margin-top>Ticket Details</h2>
           <ion-list >
-             <ion-item>Ticket Number : {{userData[0].number}}</ion-item>
-             <ion-item>Ticket ID : {{userData[0].id}}</ion-item>
-             <ion-item>Status : {{userData[0].status}}</ion-item>
-             <ion-item>Created At : {{userData[0].created_at}}</ion-item>
-             <ion-item>Due-date : {{userData[0].due_date}}</ion-item>
-             <ion-item>Updated At : {{userData[0].updated_at}}</ion-item>
-             <ion-item>Resolve-date : {{userData[0].resolved_at}}</ion-item>
+             <ion-item>Ticket Number : {{userData.ticket_no }}</ion-item>
+             <ion-item>Status : {{userData.ticket_status}}</ion-item>
+             <ion-item>Created At : {{userData.created_at}}</ion-item>
+             <ion-item>Shipped for Repair Date : {{getDate(userData.outbound_timestamp)}}</ion-item>
+             <ion-item>Repair Started : {{getDate(userData.ongoing_timestamp)}}</ion-item>
+             <ion-item>Shipped for Retrieval : {{getDate(userData.inbound_timestamp)}}</ion-item>
+             <ion-item>Customer Collection Date : {{getDate(userData.resolved_timestamp)}}</ion-item>
+             <ion-item>Cancelled Timestamp : {{getDate(userData.cancelled_timestamp)}}</ion-item>
 	         </ion-list>
 
           <h2 margin-top>Customer Details</h2>
           <ion-list >
-             <ion-item>Full Name : {{userData[1].fullname}}</ion-item>
-             <ion-item>Email : {{userData[1].email}}</ion-item>
-             <ion-item>Phone Number : {{userData[1].mobile}}</ion-item>
-             <ion-item>Alternative Phone : {{userData[1].phone}}</ion-item>
-             <ion-item>Birthdate :  {{userData[1].properties.Birthdate}}</ion-item>
+             <ion-item>Full Name : {{userData.customer_fname}} {{userData.customer_lname}}</ion-item>
+             <ion-item>Email : {{userData.email}}</ion-item>
+             <ion-item>Phone Number : {{userData.phone}}</ion-item>
+             <ion-item>Alternative Phone : {{userData.altPhone}}</ion-item>
+             <ion-item>Birthdate :  {{userData.birthdate}}</ion-item>
            </ion-list>
 
           <h2 margin-top>Device Details</h2>
           <ion-list >
-             <ion-item>Device Model : {{userData[0].properties.Brand}} {{userData[0].properties.Model}}</ion-item>
-             <ion-item>Device Color : {{userData[0].properties.Color}}</ion-item>
-             <ion-item>Device Carrier : {{userData[0].properties.Carrier}}</ion-item>
+             <ion-item>Device Model : {{userData.device_brand}} {{userData.model_name}}</ion-item>
+             <ion-item *ngIf="userData.color_name != null">Device Color : {{userData.color_name}}</ion-item>
+             <ion-item *ngIf="userData.carrier_name != null">Device Carrier : {{userData.carrier_name}}</ion-item>
            </ion-list>
 
+          <h2 margin-top>Payment Details</h2>
+          <ion-list >
+             <ion-item>VAT-exluded Total : € {{userData.total_price}}</ion-item>
+             <ion-item>Applied Tax : {{invoice.tax_value}} %</ion-item>
+           </ion-list>
+
+           <h2 margin-top>TOTAL AMOUNT: € {{getTotal(invoice.tax_value, userData.total_price)}}</h2>
          <!--  <h2 margin-top>Repair Details</h2>
           <ion-list >
              <ion-item>Back Glass Repair: {{userData[0].properties.Back Glass Repair}}</ion-item>
