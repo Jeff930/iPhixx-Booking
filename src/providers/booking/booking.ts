@@ -104,12 +104,13 @@ export class BookingProvider {
     }
   }
 
-  
-
-  
-
   gettrackinginfo(id){
-  	return this.http.get('https://iphixx.repairshopr.com/api/v1/tickets/?number='+id+'&api_key=8e5044d0-6f23-49ef-9c9a-25c516f3debc')
+  	return this.http.get('https://admin.iphixx.com/api/v1/bookings/ticket/'+id)
+  	.map(res => res.json() );
+  }
+
+  getInvoice(id){
+    return this.http.get('https://admin.iphixx.com/api/v1/bookings/invoice/'+id)
   	.map(res => res.json() );
   }
   getcustomer(id){
