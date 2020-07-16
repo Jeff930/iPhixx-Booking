@@ -112,12 +112,12 @@
           <div [formGroup]="login_form">
           <ion-item no-padding >
             <ion-label color="dark" stacked>Ticket Number </ion-label>
-            <ion-input type="text" formControlName="repairnum"></ion-input>
+            <ion-input type="num" formControlName="repairnum"></ion-input>
           </ion-item>
           </div>
           <ion-row class="login-row">
             <ion-col text-center col-xs-12 col-sm-12 offset-md-3 col-md-6 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4>
-              <button round [disabled]="!login_form.valid" (click)="login(login_form.value)" ion-button full class="login-button" 
+              <button round [disabled]="!login_form.valid" (click)="getTicket(login_form.value)" ion-button full class="login-button" 
             type="submit">Submit</button>
   <!-- [disabled]="!login_form.valid" --> 
             </ion-col>

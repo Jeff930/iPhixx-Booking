@@ -6,7 +6,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 
 import {  RepairnumberinfoPage } from '../repairnumberinfo/repairnumberinfo';
 
-import { BookingProvider } from '../../providers/booking/booking'
+import { BookingProvider } from '../../providers/booking/booking';
 
 import { ChoosemodelPage } from '../choosemodel/choosemodel';
 import { ChoosebrandPage } from '../choosebrand/choosebrand';
@@ -62,7 +62,7 @@ export class RepairnumberPage {
     public alertCtrl : AlertController,
     public navigation: NavigationProvider
   	) {
-    this.username = localStorage.getItem('authenticated');
+    this.username = JSON.parse(localStorage.getItem('authenticated')).agent_username;
     console.log(this.username);
     this.booking.agentName = this.username;
   	// this.signatureImage = navParams.get('signatureImage');
@@ -84,8 +84,7 @@ export class RepairnumberPage {
     });
   }
 
-   login(repairnum){
-   	
+   getTicket(repairnum){
   	console.log(repairnum);
   	let loading = this.loadingCtrl.create({
     });
@@ -93,19 +92,25 @@ export class RepairnumberPage {
     loading.present();
   	this.booking.gettrackinginfo(repairnum.repairnum).subscribe(res => {
   		
-      	console.log(res.tickets);
-        let tickets = res.tickets;
+      	console.log(res);
+        let tickets = res;
         loading.dismiss();
         if(tickets.length !== 0){ 
-          this.booking.getcustomer(res.tickets[0].customer_id).subscribe(res => {
-           
-           
-             tickets.push(res.customer);
              console.log(tickets); 
-             this.navCtrl.push(RepairnumberinfoPage ,{ repairinfo : tickets });
-
-          })
-
+             this.booking.getInvoice(tickets.invoice_no).subscribe(res => {	
+              let invoice = res;
+              console.log(invoice);
+              this.navCtrl.push(RepairnumberinfoPage ,{ repairinfo : tickets, invoice : invoice });
+              },err =>{
+                console.log(err);
+                let alert = this.alertCtrl.create({
+                title: 'Error',
+                subTitle: 'Information not found!',
+                buttons: ['Ok']
+              });
+                alert.present();
+              })
+            
        }
        else{
                  let alert = this.alertCtrl.create({
@@ -122,7 +127,7 @@ export class RepairnumberPage {
       	console.log(err);
       	let alert = this.alertCtrl.create({
 		    title: 'Error',
-		    subTitle: 'Repair Number not found!'+JSON.stringify(err),
+		    subTitle: 'Repair Number not found!',
 		    buttons: ['Ok']
 		});
   		alert.present();
