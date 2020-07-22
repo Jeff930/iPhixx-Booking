@@ -17,6 +17,7 @@ import { RegisterPage } from '../register/register';
 import { PrivacyPage } from '../privacy/privacy';
 import { TermsPage } from '../terms/terms';
 import { NavigationProvider } from '../../providers/navigation/navigation';
+import {Md5} from 'ts-md5/dist/md5';
 
 // @IonicPage()
 @Component({
@@ -102,10 +103,11 @@ export class LoginPage {
     // return this.http.post('https://heroku-app.com/https://iphixx.repairshopr.com/api/v1/sign_in?api_key=79bc78aa-81d3-4d8c-94db-5a07a0374670',
     //   body.toString(), { headers : { 'Content-Type' : 'application/json',
     //                         } ,params : {  } })
-
-    let data = new FormData();
-    data.append("email", user.email);
-    data.append("password", user.password);
+    const password =  Md5.hashStr(user.password);
+    console.log(password);
+    const data = new HttpParams()
+    .set("email", user.email)
+    .set("password", JSON.stringify(password) );
     let xhr = new XMLHttpRequest();
     //xhr.withCredentials = true;
 
