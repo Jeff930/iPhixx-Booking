@@ -7,6 +7,4 @@ export const colors = [
 		color : 'RoseGold'},
 	{ 	key:'4',
 		color : 'Silver'},
-	{ 	key:null,
-		color : 'Other'},
 ];

@@ -11,6 +11,6 @@ export const networks = [
 		network : 'Tesco'},
 	{	key:'6', 
 		network : 'Eir'},
-	{	key:null, 
-		network : 'Other'},
+	// {	key:null, 
+	// 	network : 'Other'},
 ];
