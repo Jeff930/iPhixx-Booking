@@ -55,7 +55,7 @@
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
     "jquery": "^3.3.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "pdfmake": "^0.1.38",
     "rxjs": "5.5.11",
     "safe-json-parse": "^4.0.0",
